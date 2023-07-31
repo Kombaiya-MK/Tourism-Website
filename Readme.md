@@ -1,5 +1,7 @@
-# Kanini Tourism Website (Japan) - Requirement Analysis
+# Kanini Tourism Website (Japan) 
 
+## Sprint 0 - Requirement Analysis
+## --------------------------------------------------------------------------
 ## Introduction
 
 Kanini Tourism Website aims to provide a user-friendly platform for travelers to explore and plan their trips to various destinations in Japan. Inspired by the UI design of Visit Saudi, the website caters to three types of users: Admin, Travel Agents, and regular Users. The website will be built as a set of Micro Services, each responsible for specific functionalities.
@@ -22,8 +24,6 @@ Kanini Tourism Website aims to provide a user-friendly platform for travelers to
 - Approve Travel Agent: Admin can approve registration requests from Travel Agents after reviewing their details.
 - View Users: Admin can view a list of all registered users and their details.
 - Update User Details: Admin can edit and update user information (e.g., name, email, contact details).
-- Delete User: Admin can delete user accounts if required.
-- Assign Roles: Admin can assign different roles (e.g., Admin, Travel Agent, User) to users.
 
 ### 2. Bus, Train, Airplane, Hotel, Locations
 
@@ -80,3 +80,23 @@ Kanini Tourism Website aims to provide a user-friendly platform for travelers to
 ## Conclusion
 
 This document provides a comprehensive requirement analysis for the Kanini Tourism Website. The website's development team should use this information as a foundation for planning, designing, and implementing the various modules and functionalities. As the project progresses, additional features may emerge, and it's essential to engage in continuous discussions and iterations to meet the users' needs effectively. By delivering an intuitive and feature-rich platform, the Kanini Tourism Website will enhance travelers' experiences while exploring the beauty and culture of Japan.
+
+
+## Sprint 1 - Features needs to be implemented
+
+## Modules
+- User Management
+- Locations(Gallery)
+- Tour Packages
+- Hotels and Rooms
+- Bookings
+- Feedbacks 
+
+
+## Features 
+- Interactive Maps
+- Weather on Location
+- tour Packages with hotel and without hotel
+- Bill generation
+- Contact page
+
