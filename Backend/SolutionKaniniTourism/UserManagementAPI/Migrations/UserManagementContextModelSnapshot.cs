@@ -87,9 +87,9 @@ namespace UserManagementAPI.Migrations
                         new
                         {
                             Email = "Admin@gmail.com",
-                            HashKey = new byte[] { 136, 74, 215, 45, 125, 125, 134, 118, 105, 106, 183, 63, 15, 38, 143, 70, 70, 228, 217, 184, 54, 70, 226, 60, 230, 218, 176, 159, 12, 219, 53, 89 },
+                            HashKey = new byte[] { 8, 20, 117, 122, 0, 186, 155, 160, 8, 183, 193, 154, 236, 255, 29, 20, 193, 223, 4, 161, 120, 127, 112, 129, 109, 103, 193, 66, 24, 167, 201, 92 },
                             Id = 1,
-                            Password = new byte[] { 214, 103, 110, 34, 133, 85, 194, 4, 199, 18, 128, 177, 107, 236, 148, 16, 196, 92, 18, 49, 71, 81, 155, 189, 58, 222, 173, 15, 77, 202, 192, 230, 174, 168, 173, 175, 152, 0, 185, 80, 191, 252, 86, 232, 2, 99, 116, 39, 94, 196, 84, 202, 99, 20, 40, 104, 135, 17, 43, 32, 165, 119, 123, 26 },
+                            Password = new byte[] { 168, 202, 99, 27, 117, 228, 22, 145, 243, 192, 182, 152, 213, 49, 78, 193, 243, 194, 93, 252, 111, 69, 41, 76, 212, 66, 4, 236, 245, 213, 171, 231, 34, 78, 78, 67, 53, 175, 143, 141, 250, 99, 5, 101, 205, 71, 216, 209, 39, 103, 192, 135, 187, 50, 135, 143, 111, 117, 81, 53, 75, 5, 177, 150 },
                             Role = "Admin"
                         });
                 });
@@ -131,6 +131,36 @@ namespace UserManagementAPI.Migrations
                     b.ToTable("Details");
                 });
 
+            modelBuilder.Entity("UserManagementAPI.Models.VerificationCodes", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("Codes")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Email");
+
+                    b.ToTable("VerificationCodes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Codes = 909885,
+                            Email = "Admin@gmail.com"
+                        });
+                });
+
             modelBuilder.Entity("UserManagementAPI.Models.TravelAgent", b =>
                 {
                     b.HasOne("UserManagementAPI.Models.User", "User")
@@ -146,6 +176,17 @@ namespace UserManagementAPI.Migrations
                 {
                     b.HasOne("UserManagementAPI.Models.User", "User")
                         .WithMany("UserDetails")
+                        .HasForeignKey("Email")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("UserManagementAPI.Models.VerificationCodes", b =>
+                {
+                    b.HasOne("UserManagementAPI.Models.User", "User")
+                        .WithMany()
                         .HasForeignKey("Email")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

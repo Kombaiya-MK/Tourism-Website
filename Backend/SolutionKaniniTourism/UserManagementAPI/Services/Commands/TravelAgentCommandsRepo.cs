@@ -18,7 +18,6 @@ namespace UserManagementAPI.Services
         //Add TravelAgent 
         public async Task<TravelAgent> Add(TravelAgent item)
         {
-            var transaction = _context.Database.BeginTransaction();
             if (item == null)
             {
                 _logger.LogError("Empty object being Passed");
@@ -29,11 +28,9 @@ namespace UserManagementAPI.Services
             if (travelagent == null)
             {
                 _logger.LogError("Unable to add object");
-                await transaction.RollbackAsync();
                 throw new UnableToAddException("Unable To Add Travel Service");
             }
             await _context.SaveChangesAsync();
-            await transaction.CommitAsync();
             _logger.LogInformation("Travel Service Added Successfully");
             throw new UnableToAddException("Unable To Add Travel Service");
         }
@@ -42,7 +39,6 @@ namespace UserManagementAPI.Services
         //Update TravelAgent
         public async Task<TravelAgent> Update(TravelAgent item)
         {
-            var transaction = _context.Database.BeginTransaction();
             if (item == null)
             {
                 _logger.LogError("Empty object being Passed");
@@ -59,7 +55,6 @@ namespace UserManagementAPI.Services
                 travelagent.AgencyName = item.AgencyName ?? travelagent.AgencyName;
                 travelagent.AgencyAddress = item.AgencyAddress ?? travelagent.AgencyAddress;
                 await _context.SaveChangesAsync();
-                await transaction.CommitAsync();
             }
             return travelagent;
             throw new UnableToUpdateException("Unable to update the travel agent");

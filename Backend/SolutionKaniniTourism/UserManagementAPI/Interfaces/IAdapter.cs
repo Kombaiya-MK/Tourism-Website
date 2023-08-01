@@ -6,6 +6,7 @@ namespace UserManagementAPI.Interfaces
     public interface IAdapter
     {
         User UserDTOtoUserAdapter(UserDTO user);
+        UserDTO UsertoDTOAdapter(User user);
 
     }
 }

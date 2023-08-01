@@ -20,5 +20,16 @@ namespace UserManagementAPI.Utilities.Adapters
             user.Status = register.Status;
             return user;
         }
+
+        public UserDTO UsertoDTOAdapter(User user)
+        {
+            var userdto = new UserDTO
+            {
+                Email = user.Email,
+                Role = user.Role,
+                Status = user.Status,
+            };
+            return userdto;
+        }
     }
 }
