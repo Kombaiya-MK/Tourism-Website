@@ -35,6 +35,7 @@ namespace UserManagementAPI.Services.Commands
             await _context.SaveChangesAsync();
             await transaction.CommitAsync();
             _logger.LogInformation("Travel Service Added Successfully");
+            return item;
             throw new UnableToAddException("Unable To Add Travel Service");
         }
 

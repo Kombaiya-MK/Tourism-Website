@@ -18,12 +18,14 @@ Kanini Tourism Website aims to provide a user-friendly platform for travelers to
 
 #### Functionalities:
 - Login: Admin can log in using valid credentials to access the Admin dashboard.
-- Registration: Admin can register new users, both Travel Agents and regular Users, by providing necessary information.
+- Registration: Admin can register new users, both Travel Agents and regular Users, by providing necessary information (It affects only user entity).
 - Forgot Password: Admin can initiate a password reset process for any user who has forgotten their password.
 - Change Password: Admin can change their own password or reset the password of other users.
 - Approve Travel Agent: Admin can approve registration requests from Travel Agents after reviewing their details.
 - View Users: Admin can view a list of all registered users and their details.
 - Update User Details: Admin can edit and update user information (e.g., name, email, contact details).
+- Add Travel Agency: User can add his agency based on the service.
+- Add Personal Details : (User details) it will add the user details in the userdetails entity.
 
 ### 2. Bus, Train, Airplane, Hotel, Locations
 

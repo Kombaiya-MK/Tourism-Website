@@ -18,9 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Logs\" />
-    <Folder Include="Utilities\Adapters\" />
   </ItemGroup>
 
 </Project>

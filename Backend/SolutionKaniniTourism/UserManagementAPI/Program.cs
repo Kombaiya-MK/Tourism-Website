@@ -3,7 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using System.Text;
+using System.Windows.Input;
+using UserAPI.Interfaces;
+using UserAPI.Services;
+using UserManagementAPI.Interfaces;
 using UserManagementAPI.Models;
+using UserManagementAPI.Services;
+using UserManagementAPI.Services.Commands;
+using UserManagementAPI.Services.Queries;
+using UserManagementAPI.Utilities.Adapters;
 
 namespace UserManagementAPI
 {
@@ -20,14 +28,20 @@ namespace UserManagementAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            //User Defined Services
+            //User Defined Services Injections
             builder.Services.AddDbContext<UserManagementContext>(opts =>
             {
                 opts.UseSqlServer(builder.Configuration.GetConnectionString("UserConn"));
             });
-
-
-
+            builder.Services.AddScoped<ICommandRepo<User,string>,UserCommandsRepo>();
+            builder.Services.AddScoped<ICommandRepo<UserDetails, string>, UserDetailsCommandsRepo>();
+            builder.Services.AddScoped<ICommandRepo<TravelAgent, string>, TravelAgentCommandsRepo>();
+            builder.Services.AddScoped<IQueryRepo<User, string>, UserQueryRepo>();
+            builder.Services.AddScoped<IQueryRepo<UserDetails, string>, UserDetailsQueryRepo>();
+            builder.Services.AddScoped<IQueryRepo<TravelAgent, string>, TravelAgentQueryRepo>();
+            builder.Services.AddScoped<IManageUser,ManageUserService>();
+            builder.Services.AddScoped<ITokenGenerate,TokenService>();
+            builder.Services.AddScoped<IAdapter,UserAdapter>();
             //CORS Service Injection
             builder.Services.AddCors(opts =>
             {
