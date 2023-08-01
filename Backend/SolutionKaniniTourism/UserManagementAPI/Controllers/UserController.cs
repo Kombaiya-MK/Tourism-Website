@@ -8,6 +8,7 @@ using UserManagementAPI.Models;
 using UserManagementAPI.Interfaces;
 using static UserAPI.Models.Error;
 using UserAPI.Services;
+using UserManagementAPI.Models.DTO;
 
 namespace UserManagementAPI.Controllers
 {
@@ -173,6 +174,89 @@ namespace UserManagementAPI.Controllers
             return BadRequest(new Error((int)(ErrorCode.BadRequest), "Details not added!!!"));
         }
 
+
+        //Validate Verification Code
+        [HttpPost]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<bool>> ValidateVerificationCode(ForgotPasswordDTO item)
+        {
+            try
+            {
+                var result = await _service.ValidateCode(item);
+                if (result)
+                {
+                    return Created("Updation Successfull!!!", result);
+                }
+                return BadRequest(new Error((int)(ErrorCode.BadRequest), "Updation Failed"));
+            }
+            catch (InvalidUserException ex)
+            {
+                return BadRequest(new Error((int)(ErrorCode.BadRequest), ex.Message));
+            }
+
+            catch (Exception ex)
+            {
+                return BadRequest(new Error((int)(ErrorCode.BadRequest), ex.Message));
+            }
+
+        }
+
+        //Trigger Email
+        [HttpPost]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public Task<ActionResult<bool>> TriggerEmail(ForgotPasswordDTO item)
+        {
+            //try
+            //{
+            //    var user1 = await _service.TriggerVerificationCodeToEmail(item);
+            //    if (user1 != null)
+            //    {
+            //        return Created("Updation Successfull!!!", user1);
+            //    }
+            //    return BadRequest(new Error((int)(ErrorCode.BadRequest), "Updation Failed"));
+            //}
+            //catch (InvalidUserException ex)
+            //{
+            //    return BadRequest(new Error((int)(ErrorCode.BadRequest), ex.Message));
+            //}
+
+            //catch (Exception ex)
+            //{
+            //    return BadRequest(new Error((int)(ErrorCode.BadRequest), ex.Message));
+            //}
+            throw new NotImplementedException();
+
+        }
+
+
+        //Update Password
+        [HttpPut]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<UserDTO>> UpdatePassword(UpdatePasswordDTO password)
+        {
+            try
+            {
+                var user1 = await _service.UpdatePassword(password);
+                if (user1 != null)
+                {
+                    return Created("Updation Successfull!!!", user1);
+                }
+                return BadRequest(new Error((int)(ErrorCode.BadRequest), "Updation Failed"));
+            }
+            catch (InvalidUserException ex)
+            {
+                return BadRequest(new Error((int)(ErrorCode.BadRequest), ex.Message));
+            }
+
+            catch (Exception ex)
+            {
+                return BadRequest(new Error((int)(ErrorCode.BadRequest), ex.Message));
+            }
+
+        }
         //Admin Controllers
         //Approve agency request
         [HttpPut]

@@ -13,7 +13,10 @@ namespace UserManagementAPI.Interfaces
         Task<ICollection<User>> GetAllUsers();
         Task<ICollection<UserDetails>> GetAllUserDetails();
         Task<ICollection<TravelAgent>> GetAllTravelAgents();
+        Task<bool> TriggerVerificationCodeToEmail(ForgotPasswordDTO item);
+        Task<bool> ValidateCode(ForgotPasswordDTO item);
 
+        Task<UserDTO> UpdatePassword(UpdatePasswordDTO password);
         Task<AgencyDTO> AddTravelAgency(TravelAgent agent);
 
         Task<UserDetails> AddUserDetails(UserDetails userDetails);

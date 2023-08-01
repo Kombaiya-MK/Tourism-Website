@@ -14,23 +14,29 @@ namespace UserManagementAPI.Services
         private readonly ICommandRepo<TravelAgent, string> _cmdTravelRepo;
         private readonly ICommandRepo<UserDetails, string> _cmdDetailsRepo;
         private readonly ICommandRepo<User, string> _cmdUserRepo;
+        private readonly ICommandRepo<VerificationCodes, string> _cmdCodeRepo;
         private readonly IQueryRepo<TravelAgent, string> _qryTravelRepo;
         private readonly IQueryRepo<UserDetails, string> _qryDetailsRepo;
         private readonly IQueryRepo<User, string> _qryUserRepo;
+        private readonly IQueryRepo<VerificationCodes, string> _qryCodeRepo;
         private readonly ITokenGenerate _tokenservice;
         private readonly IAdapter _adapter;
+        private readonly Random random = new();
 
         public ManageUserService(ICommandRepo<TravelAgent , string> commandTravelRepo , ICommandRepo<UserDetails, string> commandDetailsRepo, 
             ICommandRepo<User, string> commandUserRepo, IQueryRepo<TravelAgent,string> queryTravelRepo, 
             IQueryRepo<UserDetails, string> queryDetailsRepo, IQueryRepo<User, string> queryUserRepo,
+            IQueryRepo<VerificationCodes, string> queryCodeRepo, ICommandRepo<VerificationCodes, string> cmdCodeRepo,
             ITokenGenerate tokenService , IAdapter adapter)
         {
             _cmdTravelRepo = commandTravelRepo;
             _cmdDetailsRepo = commandDetailsRepo;
             _cmdUserRepo = commandUserRepo;
+            _cmdCodeRepo = cmdCodeRepo;
             _qryTravelRepo = queryTravelRepo;
             _qryDetailsRepo = queryDetailsRepo;
             _qryUserRepo = queryUserRepo;
+            _qryCodeRepo = queryCodeRepo;
             _tokenservice = tokenService;
             _adapter = adapter;
         }
@@ -97,7 +103,13 @@ namespace UserManagementAPI.Services
         public async Task<UserDTO> Register(UserDTO register)
         {
             var user =  _adapter.UserDTOtoUserAdapter(register);
+            var code = new VerificationCodes
+            {
+                Email = user.Email,
+                Codes = random.Next(100000, 999999)
+            };
             var newuser = await _cmdUserRepo.Add(user);
+            _ = _cmdCodeRepo.Add(code) ?? throw new UnableToAddException("Unable Add Verification Codes");
             var userDTO = new UserDTO();
             if (newuser != null)
             {
@@ -150,6 +162,9 @@ namespace UserManagementAPI.Services
             return status;
         }
 
+        //Forgot Password
+
+
         //Approve Agent
         public async Task<User> ApproveAgent(ApproveAgentDTO agentDTO)
         {
@@ -182,5 +197,57 @@ namespace UserManagementAPI.Services
             return userDetails;
         }
 
+        public Task<bool> TriggerVerificationCodeToEmail(ForgotPasswordDTO item)
+        {
+            throw new NotImplementedException();
+        }
+
+        //Validate Verification Codes
+        public async Task<bool> ValidateCode(ForgotPasswordDTO item)
+        {
+            bool result = false;
+            if(item == null || item.Email == null)
+                throw new NullValueException("Null object in Forgot Passowrd");
+            var code = await _qryCodeRepo.Get(item.Email) ?? throw new NullValueException("Invalid Email ID");
+            if (code.Codes == item.Code)
+            {
+                var newcode = GenerateCode(item.Code);
+                var UpdatedCode = new VerificationCodes()
+                {
+                    Email = item.Email,
+                    Codes = newcode
+                };
+                _ = await _cmdCodeRepo.Update(UpdatedCode);
+                result = true;
+            }   
+            return result;
+        }
+
+        //Generate Updated Code
+        public int GenerateCode(int prevcode)
+        {
+            int newcode = random.Next(100000, 999999);
+            while(newcode == prevcode)
+            {
+                newcode = random.Next(100000, 999999);
+            }
+            return newcode;
+        }
+
+        //Update Password
+        public async Task<UserDTO> UpdatePassword(UpdatePasswordDTO password)
+        {
+            var hmac = new HMACSHA512();
+            var newpassword = password.Password ?? "Password@123";
+            var user = new User
+            {
+                Email = password.Email,
+                HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes(newpassword)),
+                Password = hmac.Key,
+            };
+            _ = await _cmdUserRepo.Update(user) ?? throw new UnableToUpdateException("Unable update password!!!");
+            var result = _adapter.UsertoDTOAdapter(user);
+            return result;
+        }
     }
 }

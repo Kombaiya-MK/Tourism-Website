@@ -73,10 +73,40 @@ namespace UserManagementAPI.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "VerificationCodes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Codes = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_VerificationCodes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_VerificationCodes_Users_Email",
+                        column: x => x.Email,
+                        principalTable: "Users",
+                        principalColumn: "Email",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Email", "HashKey", "Id", "Password", "Role", "Status" },
-                values: new object[] { "Admin@gmail.com", new byte[] { 136, 74, 215, 45, 125, 125, 134, 118, 105, 106, 183, 63, 15, 38, 143, 70, 70, 228, 217, 184, 54, 70, 226, 60, 230, 218, 176, 159, 12, 219, 53, 89 }, 1, new byte[] { 214, 103, 110, 34, 133, 85, 194, 4, 199, 18, 128, 177, 107, 236, 148, 16, 196, 92, 18, 49, 71, 81, 155, 189, 58, 222, 173, 15, 77, 202, 192, 230, 174, 168, 173, 175, 152, 0, 185, 80, 191, 252, 86, 232, 2, 99, 116, 39, 94, 196, 84, 202, 99, 20, 40, 104, 135, 17, 43, 32, 165, 119, 123, 26 }, "Admin", null });
+                values: new object[] { "Admin@gmail.com", new byte[] { 8, 20, 117, 122, 0, 186, 155, 160, 8, 183, 193, 154, 236, 255, 29, 20, 193, 223, 4, 161, 120, 127, 112, 129, 109, 103, 193, 66, 24, 167, 201, 92 }, 1, new byte[] { 168, 202, 99, 27, 117, 228, 22, 145, 243, 192, 182, 152, 213, 49, 78, 193, 243, 194, 93, 252, 111, 69, 41, 76, 212, 66, 4, 236, 245, 213, 171, 231, 34, 78, 78, 67, 53, 175, 143, 141, 250, 99, 5, 101, 205, 71, 216, 209, 39, 103, 192, 135, 187, 50, 135, 143, 111, 117, 81, 53, 75, 5, 177, 150 }, "Admin", null });
+
+            migrationBuilder.InsertData(
+                table: "VerificationCodes",
+                columns: new[] { "Id", "Codes", "Email" },
+                values: new object[] { 1, 909885, "Admin@gmail.com" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_VerificationCodes_Email",
+                table: "VerificationCodes",
+                column: "Email");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -86,6 +116,9 @@ namespace UserManagementAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "TravelAgents");
+
+            migrationBuilder.DropTable(
+                name: "VerificationCodes");
 
             migrationBuilder.DropTable(
                 name: "Users");
