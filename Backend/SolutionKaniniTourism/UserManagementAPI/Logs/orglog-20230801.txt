@@ -1,0 +1,971 @@
+2023-08-01 11:18:48.992 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 11:18:49.188 +05:30 [INF] Creating key {9bf39cac-8006-430a-b6fc-4d24dc7be727} with creation date 2023-08-01 05:48:49Z, activation date 2023-08-01 09:24:29Z, and expiration date 2023-10-30 05:48:49Z.
+2023-08-01 11:18:49.201 +05:30 [INF] Writing data to file 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys\key-9bf39cac-8006-430a-b6fc-4d24dc7be727.xml'.
+2023-08-01 11:18:49.675 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 11:18:49.676 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 11:18:49.681 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 11:18:49.682 +05:30 [INF] Hosting environment: Development
+2023-08-01 11:18:49.684 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 11:18:51.772 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger - -
+2023-08-01 11:18:51.937 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger - - - 301 0 - 171.2541ms
+2023-08-01 11:18:51.953 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 11:18:52.387 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/swagger-ui.css - -
+2023-08-01 11:18:52.391 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/swagger-ui-bundle.js - -
+2023-08-01 11:18:52.391 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/swagger-ui-standalone-preset.js - -
+2023-08-01 11:18:52.392 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 11:18:52.393 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 440.6699ms
+2023-08-01 11:18:52.407 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 15.4550ms
+2023-08-01 11:18:52.418 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 11:18:52.471 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-08-01 11:18:52.471 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-08-01 11:18:52.475 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/swagger-ui.css - - - 200 144929 text/css 88.3955ms
+2023-08-01 11:18:52.482 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 90.5579ms
+2023-08-01 11:18:52.517 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-08-01 11:18:52.522 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 131.2890ms
+2023-08-01 11:18:52.579 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 161.0276ms
+2023-08-01 11:18:52.759 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 11:18:52.788 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/favicon-32x32.png - -
+2023-08-01 11:18:52.790 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-08-01 11:18:52.792 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/favicon-32x32.png - - - 200 628 image/png 4.2454ms
+2023-08-01 11:18:52.793 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/User" for actions - UserManagementAPI.Controllers.UserController.Login (UserManagementAPI),UserManagementAPI.Controllers.UserController.DoctorRegister (UserManagementAPI),UserManagementAPI.Controllers.UserController.AddUserDetails (UserManagementAPI),UserManagementAPI.Controllers.UserController.AddAgency (UserManagementAPI). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-08-01 11:18:52.873 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 113.7447ms
+2023-08-01 11:19:18.961 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 11:19:19.348 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 11:19:19.349 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 11:19:19.352 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 11:19:19.353 +05:30 [INF] Hosting environment: Development
+2023-08-01 11:19:19.353 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 11:19:20.357 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 11:19:20.726 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 373.6367ms
+2023-08-01 11:19:20.730 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 11:19:20.742 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 11:19:20.750 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 20.1807ms
+2023-08-01 11:19:20.778 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 35.9080ms
+2023-08-01 11:19:21.033 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 11:19:21.185 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 151.9346ms
+2023-08-01 11:19:28.363 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/api/User/GetAllUsers - -
+2023-08-01 11:19:29.019 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI)'
+2023-08-01 11:19:29.059 +05:30 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[UserManagementAPI.Models.User]]] GetAllUsers() on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 11:19:29.546 +05:30 [INF] Inside GetAll of User
+2023-08-01 11:19:30.844 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 11:19:32.913 +05:30 [INF] Executed DbCommand (140ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+2023-08-01 11:19:33.135 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[UserManagementAPI.Models.User, UserManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-01 11:19:33.163 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI) in 4088.9046ms
+2023-08-01 11:19:33.169 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI)'
+2023-08-01 11:19:33.177 +05:30 [INF] HTTP GET /api/User/GetAllUsers responded 200 in 4799.0304 ms
+2023-08-01 11:19:33.199 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/api/User/GetAllUsers - - - 200 - application/json;+charset=utf-8 4836.8473ms
+2023-08-01 11:20:23.682 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 60
+2023-08-01 11:20:23.700 +05:30 [INF] CORS policy execution successful.
+2023-08-01 11:20:23.702 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 11:20:23.720 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 11:20:23.785 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-01 11:20:23.791 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 68.265ms
+2023-08-01 11:20:23.792 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 11:20:23.793 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 91.1220 ms
+2023-08-01 11:20:23.794 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 60 - 400 - application/problem+json;+charset=utf-8 111.7041ms
+2023-08-01 11:22:31.638 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 11:22:32.061 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 11:22:32.062 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 11:22:32.066 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 11:22:32.066 +05:30 [INF] Hosting environment: Development
+2023-08-01 11:22:32.067 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 11:22:33.422 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 11:22:33.834 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 414.5991ms
+2023-08-01 11:22:33.836 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 11:22:33.849 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 11:22:33.854 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 17.9011ms
+2023-08-01 11:22:33.879 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.2479ms
+2023-08-01 11:22:33.952 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 11:22:34.105 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 153.0351ms
+2023-08-01 11:23:18.342 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 60
+2023-08-01 11:23:18.354 +05:30 [INF] CORS policy execution successful.
+2023-08-01 11:23:18.493 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 11:23:18.545 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 11:23:18.925 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-01 11:23:18.942 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 386.3842ms
+2023-08-01 11:23:18.948 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 11:23:18.953 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 591.1524 ms
+2023-08-01 11:23:18.958 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 60 - 400 - application/problem+json;+charset=utf-8 616.9262ms
+2023-08-01 11:23:53.204 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/api/User/GetAllUsers - -
+2023-08-01 11:23:53.220 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI)'
+2023-08-01 11:23:53.226 +05:30 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[UserManagementAPI.Models.User]]] GetAllUsers() on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 11:23:53.243 +05:30 [INF] Inside GetAll of User
+2023-08-01 11:23:54.491 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 11:23:55.749 +05:30 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+2023-08-01 11:23:55.920 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[UserManagementAPI.Models.User, UserManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-01 11:23:55.933 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI) in 2704.6546ms
+2023-08-01 11:23:55.937 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI)'
+2023-08-01 11:23:55.943 +05:30 [INF] HTTP GET /api/User/GetAllUsers responded 200 in 2723.8363 ms
+2023-08-01 11:23:55.955 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/api/User/GetAllUsers - - - 200 - application/json;+charset=utf-8 2751.1928ms
+2023-08-01 11:25:41.763 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 60
+2023-08-01 11:25:41.766 +05:30 [INF] CORS policy execution successful.
+2023-08-01 11:25:41.769 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 11:25:41.770 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 11:25:41.777 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-01 11:25:41.778 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 7.1791ms
+2023-08-01 11:25:41.779 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 11:25:41.780 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 12.4084 ms
+2023-08-01 11:25:41.781 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 60 - 400 - application/problem+json;+charset=utf-8 18.3952ms
+2023-08-01 11:26:14.927 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 60
+2023-08-01 11:26:14.931 +05:30 [INF] CORS policy execution successful.
+2023-08-01 11:26:14.935 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 11:26:14.937 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 11:26:14.940 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-01 11:26:14.941 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 2.4212ms
+2023-08-01 11:26:14.943 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 11:26:14.943 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 8.0510 ms
+2023-08-01 11:26:14.945 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 60 - 400 - application/problem+json;+charset=utf-8 17.5014ms
+2023-08-01 11:26:29.362 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 110
+2023-08-01 11:26:29.364 +05:30 [INF] CORS policy execution successful.
+2023-08-01 11:26:29.365 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 11:26:29.367 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 11:26:50.247 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 11:26:50.637 +05:30 [INF] Executed DbCommand (71ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__key_0
+2023-08-01 11:26:53.465 +05:30 [ERR] Invalid id or no data available
+2023-08-01 11:27:23.943 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 11:27:24.058 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 54689.6367ms
+2023-08-01 11:27:24.059 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 11:27:24.060 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 54694.8108 ms
+2023-08-01 11:27:24.062 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 110 - 400 - application/json;+charset=utf-8 54699.8095ms
+2023-08-01 12:02:24.640 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 59
+2023-08-01 12:02:24.644 +05:30 [INF] CORS policy execution successful.
+2023-08-01 12:02:24.648 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 12:02:24.649 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 12:02:32.892 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 12:02:33.023 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__key_0
+2023-08-01 12:02:58.341 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 12:02:58.368 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 33716.4409ms
+2023-08-01 12:02:58.370 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 12:02:58.372 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 33725.3835 ms
+2023-08-01 12:02:58.373 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 59 - 400 - application/json;+charset=utf-8 33734.2790ms
+2023-08-01 12:05:19.817 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 12:05:20.144 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 12:05:20.145 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 12:05:20.149 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 12:05:20.150 +05:30 [INF] Hosting environment: Development
+2023-08-01 12:05:20.151 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 12:05:21.039 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 12:05:21.472 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 440.0536ms
+2023-08-01 12:05:21.472 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 12:05:21.476 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 12:05:21.491 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 19.0569ms
+2023-08-01 12:05:21.534 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 57.8361ms
+2023-08-01 12:05:21.634 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 12:05:21.826 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 192.5951ms
+2023-08-01 12:05:39.603 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 12:05:39.844 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 12:05:39.845 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 12:05:39.848 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 12:05:39.849 +05:30 [INF] Hosting environment: Development
+2023-08-01 12:05:39.849 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 12:05:40.666 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 12:05:41.035 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 375.2922ms
+2023-08-01 12:05:41.049 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 12:05:41.056 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 6.4050ms
+2023-08-01 12:05:41.061 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 12:05:41.090 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 28.6285ms
+2023-08-01 12:05:41.204 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 12:05:41.354 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 150.0991ms
+2023-08-01 12:06:16.814 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 67
+2023-08-01 12:06:16.830 +05:30 [INF] CORS policy execution successful.
+2023-08-01 12:06:16.962 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 12:06:17.006 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 12:06:18.921 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 12:06:19.712 +05:30 [INF] Into the Add Method
+2023-08-01 12:06:20.395 +05:30 [INF] Executed DbCommand (146ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 8000) (DbType = Binary), @p2='?' (Size = 8000) (DbType = Binary), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [HashKey], [Password], [Role], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Email] = @p0;
+2023-08-01 12:06:20.594 +05:30 [INF] Travel Service Added Successfully
+2023-08-01 12:06:20.757 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 12:06:20.770 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 3756.9456ms
+2023-08-01 12:06:20.774 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 12:06:20.783 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 3942.9652 ms
+2023-08-01 12:06:20.799 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 67 - 400 - application/json;+charset=utf-8 3984.7870ms
+2023-08-01 12:07:09.964 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 106
+2023-08-01 12:07:09.975 +05:30 [INF] CORS policy execution successful.
+2023-08-01 12:07:09.976 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 12:07:09.979 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 12:07:09.997 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 12:07:10.011 +05:30 [INF] Into the Add Method
+2023-08-01 12:07:10.023 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 8000) (DbType = Binary), @p2='?' (Size = 8000) (DbType = Binary), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [HashKey], [Password], [Role], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Email] = @p0;
+2023-08-01 12:07:10.026 +05:30 [INF] Travel Service Added Successfully
+2023-08-01 12:07:10.466 +05:30 [INF] Executing CreatedResult, writing value of type 'UserAPI.Models.DTO.UserDTO'.
+2023-08-01 12:07:10.471 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 489.7745ms
+2023-08-01 12:07:10.474 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 12:07:10.475 +05:30 [INF] HTTP POST /api/User/Register responded 201 in 498.7253 ms
+2023-08-01 12:07:10.477 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 106 - 201 - application/json;+charset=utf-8 512.6028ms
+2023-08-01 12:07:34.259 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 63
+2023-08-01 12:07:34.272 +05:30 [INF] CORS policy execution successful.
+2023-08-01 12:07:34.275 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 12:07:34.278 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 12:07:36.689 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 12:07:37.323 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__key_0
+2023-08-01 12:07:37.364 +05:30 [INF] Executing CreatedResult, writing value of type 'UserAPI.Models.DTO.UserDTO'.
+2023-08-01 12:07:37.365 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 3085.7335ms
+2023-08-01 12:07:37.366 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 12:07:37.367 +05:30 [INF] HTTP POST /api/User/Login responded 201 in 3094.7039 ms
+2023-08-01 12:07:37.369 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 63 - 201 - application/json;+charset=utf-8 3109.9659ms
+2023-08-01 12:08:08.669 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/api/User/GetAllUsers - -
+2023-08-01 12:08:08.679 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI)'
+2023-08-01 12:08:08.683 +05:30 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[UserManagementAPI.Models.User]]] GetAllUsers() on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 12:08:08.686 +05:30 [INF] Inside GetAll of User
+2023-08-01 12:08:08.695 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 12:08:08.715 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+2023-08-01 12:08:08.725 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[UserManagementAPI.Models.User, UserManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-01 12:08:08.738 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI) in 53.6628ms
+2023-08-01 12:08:08.741 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI)'
+2023-08-01 12:08:08.742 +05:30 [INF] HTTP GET /api/User/GetAllUsers responded 200 in 63.8848 ms
+2023-08-01 12:08:08.746 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/api/User/GetAllUsers - - - 200 - application/json;+charset=utf-8 77.1465ms
+2023-08-01 15:04:59.871 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 15:05:00.355 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 15:05:00.356 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 15:05:00.360 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 15:05:00.361 +05:30 [INF] Hosting environment: Development
+2023-08-01 15:05:00.362 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 15:05:02.086 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 15:05:02.640 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 15:05:02.652 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 15:05:02.655 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 13.3593ms
+2023-08-01 15:05:02.655 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 574.1499ms
+2023-08-01 15:05:02.765 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 113.0761ms
+2023-08-01 15:05:02.829 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 15:05:03.045 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 216.2333ms
+2023-08-01 15:05:33.350 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 67
+2023-08-01 15:05:33.371 +05:30 [INF] CORS policy execution successful.
+2023-08-01 15:05:34.037 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 15:05:34.078 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 15:05:35.877 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 15:05:37.772 +05:30 [INF] Executed DbCommand (139ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__key_0
+2023-08-01 15:05:38.047 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 15:05:38.063 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 3973.8242ms
+2023-08-01 15:05:38.066 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 15:05:38.075 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 4696.2285 ms
+2023-08-01 15:05:38.091 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 67 - 400 - application/json;+charset=utf-8 4740.7068ms
+2023-08-01 15:05:59.753 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/api/User/GetAllUsers - -
+2023-08-01 15:05:59.760 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI)'
+2023-08-01 15:05:59.765 +05:30 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[UserManagementAPI.Models.User]]] GetAllUsers() on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 15:05:59.769 +05:30 [INF] Inside GetAll of User
+2023-08-01 15:05:59.786 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 15:05:59.855 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+2023-08-01 15:05:59.864 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[UserManagementAPI.Models.User, UserManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-01 15:05:59.869 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI) in 102.0834ms
+2023-08-01 15:05:59.870 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI)'
+2023-08-01 15:05:59.871 +05:30 [INF] HTTP GET /api/User/GetAllUsers responded 200 in 111.4751 ms
+2023-08-01 15:05:59.874 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/api/User/GetAllUsers - - - 200 - application/json;+charset=utf-8 120.8719ms
+2023-08-01 15:06:27.172 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 82
+2023-08-01 15:06:27.174 +05:30 [INF] CORS policy execution successful.
+2023-08-01 15:06:27.176 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 15:06:27.176 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 15:06:27.235 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 15:06:27.244 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__key_0
+2023-08-01 15:06:27.355 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 15:06:27.356 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 179.0424ms
+2023-08-01 15:06:27.358 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 15:06:27.359 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 184.5985 ms
+2023-08-01 15:06:27.361 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 82 - 400 - application/json;+charset=utf-8 189.3061ms
+2023-08-01 15:06:33.320 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 82
+2023-08-01 15:06:33.322 +05:30 [INF] CORS policy execution successful.
+2023-08-01 15:06:33.323 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 15:06:33.324 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 15:06:33.329 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 15:06:33.334 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__key_0
+2023-08-01 15:06:33.394 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 15:06:33.396 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 67.4891ms
+2023-08-01 15:06:33.397 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 15:06:33.397 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 74.7304 ms
+2023-08-01 15:06:33.398 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 82 - 400 - application/json;+charset=utf-8 78.7363ms
+2023-08-01 15:06:44.342 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 84
+2023-08-01 15:06:44.352 +05:30 [INF] CORS policy execution successful.
+2023-08-01 15:06:44.354 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 15:06:44.358 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 15:06:44.366 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 15:06:44.375 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__key_0
+2023-08-01 15:06:44.467 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 15:06:44.469 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 105.8682ms
+2023-08-01 15:06:44.471 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 15:06:44.472 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 118.0086 ms
+2023-08-01 15:06:44.474 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 84 - 400 - application/json;+charset=utf-8 132.1705ms
+2023-08-01 15:07:14.975 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 82
+2023-08-01 15:07:14.983 +05:30 [INF] CORS policy execution successful.
+2023-08-01 15:07:14.993 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 15:07:14.995 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 15:07:14.998 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 15:07:15.013 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__key_0
+2023-08-01 15:07:15.092 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 15:07:15.094 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 97.1172ms
+2023-08-01 15:07:15.095 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 15:07:15.095 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 102.4519 ms
+2023-08-01 15:07:15.096 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 82 - 400 - application/json;+charset=utf-8 122.0936ms
+2023-08-01 15:07:49.456 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 69
+2023-08-01 15:07:49.457 +05:30 [INF] CORS policy execution successful.
+2023-08-01 15:07:49.459 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 15:07:49.463 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 15:07:49.469 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 15:07:49.497 +05:30 [INF] Into the Add Method
+2023-08-01 15:07:49.673 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 8000) (DbType = Binary), @p2='?' (Size = 8000) (DbType = Binary), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [HashKey], [Password], [Role], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Email] = @p0;
+2023-08-01 15:07:49.732 +05:30 [INF] Travel Service Added Successfully
+2023-08-01 15:07:50.168 +05:30 [INF] Executing CreatedResult, writing value of type 'UserAPI.Models.DTO.UserDTO'.
+2023-08-01 15:07:50.173 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 707.4204ms
+2023-08-01 15:07:50.174 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 15:07:50.176 +05:30 [INF] HTTP POST /api/User/Register responded 201 in 717.5954 ms
+2023-08-01 15:07:50.178 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 69 - 201 - application/json;+charset=utf-8 722.5020ms
+2023-08-01 15:07:57.259 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 69
+2023-08-01 15:07:57.265 +05:30 [INF] CORS policy execution successful.
+2023-08-01 15:07:57.267 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 15:07:57.268 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 15:07:57.274 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 15:07:57.287 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__key_0
+2023-08-01 15:07:57.289 +05:30 [INF] Executing CreatedResult, writing value of type 'UserAPI.Models.DTO.UserDTO'.
+2023-08-01 15:07:57.291 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (UserManagementAPI) in 19.2069ms
+2023-08-01 15:07:57.293 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (UserManagementAPI)'
+2023-08-01 15:07:57.294 +05:30 [INF] HTTP POST /api/User/Login responded 201 in 27.8514 ms
+2023-08-01 15:07:57.297 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 69 - 201 - application/json;+charset=utf-8 38.2015ms
+2023-08-01 15:58:22.113 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 15:58:32.105 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 15:58:32.630 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-01 15:58:32.686 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-08-01 15:58:32.691 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-01 15:58:32.692 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-08-01 15:58:32.781 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-08-01 15:58:32.802 +05:30 [INF] Applying migration '20230801102822_Init'.
+2023-08-01 15:58:32.929 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Email] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [Password] varbinary(max) NULL,
+    [HashKey] varbinary(max) NULL,
+    [Role] nvarchar(max) NULL,
+    [Status] nvarchar(max) NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Email])
+);
+2023-08-01 15:58:32.938 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Details] (
+    [Email] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [UserName] nvarchar(max) NOT NULL,
+    [Gender] nvarchar(max) NOT NULL,
+    [DateofBirth] datetime2 NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [PhoneNumber] nvarchar(10) NOT NULL,
+    CONSTRAINT [PK_Details] PRIMARY KEY ([Email]),
+    CONSTRAINT [FK_Details_Users_Email] FOREIGN KEY ([Email]) REFERENCES [Users] ([Email]) ON DELETE CASCADE
+);
+2023-08-01 15:58:32.943 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TravelAgents] (
+    [Email] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [AgencyName] nvarchar(50) NOT NULL,
+    [AgencyPhone] nvarchar(15) NOT NULL,
+    [AgencyEmail] nvarchar(max) NOT NULL,
+    [AgencyAddress] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_TravelAgents] PRIMARY KEY ([Email]),
+    CONSTRAINT [FK_TravelAgents_Users_Email] FOREIGN KEY ([Email]) REFERENCES [Users] ([Email]) ON DELETE CASCADE
+);
+2023-08-01 15:58:32.950 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [VerificationCodes] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(450) NOT NULL,
+    [Codes] int NOT NULL,
+    CONSTRAINT [PK_VerificationCodes] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_VerificationCodes_Users_Email] FOREIGN KEY ([Email]) REFERENCES [Users] ([Email]) ON DELETE CASCADE
+);
+2023-08-01 15:58:33.097 +05:30 [INF] Executed DbCommand (147ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Email', N'HashKey', N'Id', N'Password', N'Role', N'Status') AND [object_id] = OBJECT_ID(N'[Users]'))
+    SET IDENTITY_INSERT [Users] ON;
+INSERT INTO [Users] ([Email], [HashKey], [Id], [Password], [Role], [Status])
+VALUES (N'Admin@gmail.com', 0x0814757A00BA9BA008B7C19AECFF1D14C1DF04A1787F70816D67C14218A7C95C, 1, 0xA8CA631B75E41691F3C0B698D5314EC1F3C25DFC6F45294CD44204ECF5D5ABE7224E4E4335AF8F8DFA630565CD47D8D12767C087BB32878F6F7551354B05B196, N'Admin', NULL);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Email', N'HashKey', N'Id', N'Password', N'Role', N'Status') AND [object_id] = OBJECT_ID(N'[Users]'))
+    SET IDENTITY_INSERT [Users] OFF;
+2023-08-01 15:58:33.146 +05:30 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Codes', N'Email') AND [object_id] = OBJECT_ID(N'[VerificationCodes]'))
+    SET IDENTITY_INSERT [VerificationCodes] ON;
+INSERT INTO [VerificationCodes] ([Id], [Codes], [Email])
+VALUES (1, 909885, N'Admin@gmail.com');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Codes', N'Email') AND [object_id] = OBJECT_ID(N'[VerificationCodes]'))
+    SET IDENTITY_INSERT [VerificationCodes] OFF;
+2023-08-01 15:58:33.204 +05:30 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_VerificationCodes_Email] ON [VerificationCodes] ([Email]);
+2023-08-01 15:58:33.217 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230801102822_Init', N'6.0.20');
+2023-08-01 15:59:15.537 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 15:59:16.083 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 15:59:16.084 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 15:59:16.089 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 15:59:16.090 +05:30 [INF] Hosting environment: Development
+2023-08-01 15:59:16.092 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 15:59:17.395 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 15:59:18.130 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 741.1725ms
+2023-08-01 15:59:18.154 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 15:59:18.154 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 15:59:18.162 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 8.6490ms
+2023-08-01 15:59:18.234 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 80.4977ms
+2023-08-01 15:59:18.317 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 15:59:18.513 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 196.6030ms
+2023-08-01 16:00:17.539 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 84
+2023-08-01 16:00:17.574 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:00:17.887 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:00:18.017 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:00:18.878 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-01 16:00:18.917 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 875.639ms
+2023-08-01 16:00:18.939 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:00:18.953 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 1353.4743 ms
+2023-08-01 16:00:18.977 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 84 - 400 - application/problem+json;+charset=utf-8 1437.4749ms
+2023-08-01 16:00:29.121 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 85
+2023-08-01 16:00:29.131 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:00:29.134 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:00:29.138 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:00:32.674 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 16:00:34.075 +05:30 [INF] Into the Add Method
+2023-08-01 16:00:35.066 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 16:00:35.074 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 5929.133ms
+2023-08-01 16:00:35.075 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:00:35.077 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 5943.6949 ms
+2023-08-01 16:00:35.173 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 85 - 400 - application/json;+charset=utf-8 6051.6336ms
+2023-08-01 16:00:35.558 +05:30 [ERR] Failed executing DbCommand (247ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VerificationCodes] ([Codes], [Email])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [VerificationCodes]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-01 16:00:53.336 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 85
+2023-08-01 16:00:53.350 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:00:53.359 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:00:53.364 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:00:53.395 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 16:00:53.402 +05:30 [INF] Into the Add Method
+2023-08-01 16:00:53.657 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 16:00:53.659 +05:30 [ERR] Failed executing DbCommand (231ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VerificationCodes] ([Codes], [Email])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [VerificationCodes]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-01 16:00:53.662 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 291.7622ms
+2023-08-01 16:00:53.672 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:00:53.676 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 322.3540 ms
+2023-08-01 16:00:53.682 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 85 - 400 - application/json;+charset=utf-8 346.2325ms
+2023-08-01 16:00:53.711 +05:30 [ERR] An error occurred using a transaction.
+2023-08-01 16:01:27.551 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 85
+2023-08-01 16:01:27.570 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:01:27.580 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:01:27.583 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:02:25.930 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 16:02:27.307 +05:30 [INF] Into the Add Method
+2023-08-01 16:02:34.573 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 16:02:34.573 +05:30 [ERR] Failed executing DbCommand (138ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VerificationCodes] ([Codes], [Email])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [VerificationCodes]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-01 16:02:34.577 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 66988.8824ms
+2023-08-01 16:02:34.587 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:02:34.599 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 67019.4797 ms
+2023-08-01 16:02:34.610 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 85 - 400 - application/json;+charset=utf-8 67058.9588ms
+2023-08-01 16:02:34.740 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'UserManagementAPI.Models.UserManagementContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_VerificationCodes_Users_Email". The conflict occurred in database "DBUserManagementKTW", table "dbo.Users", column 'Email'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:dd34fd19-b469-47cf-9077-d0e0cececd80
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_VerificationCodes_Users_Email". The conflict occurred in database "DBUserManagementKTW", table "dbo.Users", column 'Email'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:dd34fd19-b469-47cf-9077-d0e0cececd80
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-08-01 16:04:02.481 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 16:04:03.173 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 16:04:03.176 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 16:04:03.185 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 16:04:03.188 +05:30 [INF] Hosting environment: Development
+2023-08-01 16:04:03.190 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 16:04:04.027 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 16:04:04.523 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 501.0653ms
+2023-08-01 16:04:04.540 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 16:04:04.540 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 16:04:04.565 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 24.7566ms
+2023-08-01 16:04:04.594 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.6468ms
+2023-08-01 16:04:04.696 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 16:04:04.898 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 201.8907ms
+2023-08-01 16:04:22.364 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 84
+2023-08-01 16:04:22.408 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:04:22.710 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:04:22.819 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:04:23.673 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-01 16:04:23.710 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 865.0135ms
+2023-08-01 16:04:23.733 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:04:23.751 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 1316.4035 ms
+2023-08-01 16:04:23.768 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 84 - 400 - application/problem+json;+charset=utf-8 1403.5552ms
+2023-08-01 16:04:47.011 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 85
+2023-08-01 16:04:47.030 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:04:47.033 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:04:47.036 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:05:20.678 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 16:05:26.754 +05:30 [INF] Into the Add Method
+2023-08-01 16:05:31.043 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 16:05:31.054 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 44012.8064ms
+2023-08-01 16:05:31.058 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:05:31.061 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 44028.6084 ms
+2023-08-01 16:05:31.175 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 85 - 400 - application/json;+charset=utf-8 44164.6052ms
+2023-08-01 16:05:31.694 +05:30 [ERR] Failed executing DbCommand (341ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VerificationCodes] ([Codes], [Email])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [VerificationCodes]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-01 16:20:25.892 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 16:20:26.602 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 16:20:26.604 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 16:20:26.615 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 16:20:26.616 +05:30 [INF] Hosting environment: Development
+2023-08-01 16:20:26.619 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 16:20:27.293 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 16:20:27.737 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 16:20:27.746 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 16:20:27.749 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 10.5026ms
+2023-08-01 16:20:27.749 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 460.8087ms
+2023-08-01 16:20:27.790 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.7196ms
+2023-08-01 16:20:27.910 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 16:20:28.204 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 293.9896ms
+2023-08-01 16:20:58.039 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 85
+2023-08-01 16:20:58.081 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:20:58.313 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:20:58.395 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:21:33.611 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 16:21:37.332 +05:30 [INF] Into the Add Method
+2023-08-01 16:21:49.769 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 16:21:49.807 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 51380.716ms
+2023-08-01 16:21:49.824 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:21:49.834 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 51737.5583 ms
+2023-08-01 16:21:49.915 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 85 - 400 - application/json;+charset=utf-8 51875.8451ms
+2023-08-01 16:21:50.157 +05:30 [ERR] Failed executing DbCommand (182ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VerificationCodes] ([Codes], [Email])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [VerificationCodes]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-01 16:31:10.613 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 16:31:11.033 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 16:31:11.035 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 16:31:11.040 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 16:31:11.043 +05:30 [INF] Hosting environment: Development
+2023-08-01 16:31:11.046 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 16:31:12.963 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 16:31:13.388 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 16:31:13.391 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 16:31:13.399 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 434.3236ms
+2023-08-01 16:31:13.417 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 26.4361ms
+2023-08-01 16:31:13.466 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 78.4228ms
+2023-08-01 16:31:13.587 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 16:31:13.758 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 170.7509ms
+2023-08-01 16:32:09.575 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 85
+2023-08-01 16:32:09.587 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:32:10.624 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:32:10.717 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:32:40.768 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 16:32:47.212 +05:30 [INF] Into the Add Method
+2023-08-01 16:32:55.151 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 16:32:55.185 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 44439.736ms
+2023-08-01 16:32:55.197 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:32:55.204 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 45605.3407 ms
+2023-08-01 16:32:55.234 +05:30 [ERR] Failed executing DbCommand (293ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VerificationCodes] ([Codes], [Email])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [VerificationCodes]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-01 16:32:55.241 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 85 - 400 - application/json;+charset=utf-8 45665.8822ms
+2023-08-01 16:38:43.265 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 16:38:43.818 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 16:38:43.820 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 16:38:43.824 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 16:38:43.827 +05:30 [INF] Hosting environment: Development
+2023-08-01 16:38:43.828 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 16:38:44.532 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 16:38:45.196 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 16:38:45.203 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 673.6165ms
+2023-08-01 16:38:45.209 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 16:38:45.215 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 13.8075ms
+2023-08-01 16:38:45.253 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 44.5613ms
+2023-08-01 16:38:45.375 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 16:38:45.605 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 230.4674ms
+2023-08-01 16:39:21.114 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 85
+2023-08-01 16:39:21.146 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:39:21.434 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:39:21.544 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:39:46.835 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 16:39:52.832 +05:30 [INF] Into the Add Method
+2023-08-01 16:39:56.421 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 16:39:56.458 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 34891.8531ms
+2023-08-01 16:39:56.477 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:39:56.483 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 35318.8793 ms
+2023-08-01 16:39:56.603 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 85 - 400 - application/json;+charset=utf-8 35488.1911ms
+2023-08-01 16:39:57.056 +05:30 [ERR] Failed executing DbCommand (360ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VerificationCodes] ([Codes], [Email])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [VerificationCodes]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-01 16:41:38.362 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 16:41:38.744 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 16:41:38.753 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 16:41:38.758 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 16:41:38.760 +05:30 [INF] Hosting environment: Development
+2023-08-01 16:41:38.765 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 16:41:39.353 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 16:41:39.747 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 16:41:39.755 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 16:41:39.761 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 12.4777ms
+2023-08-01 16:41:39.762 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 413.7701ms
+2023-08-01 16:41:39.798 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 42.9389ms
+2023-08-01 16:41:39.975 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 16:41:40.177 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 202.6347ms
+2023-08-01 16:42:17.602 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 85
+2023-08-01 16:42:17.630 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:42:17.863 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:42:17.956 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:42:28.700 +05:30 [INF] Into the Add Method
+2023-08-01 16:42:35.603 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 16:42:38.485 +05:30 [ERR] An error occurred using the connection to database 'DBUserManagementKTW' on server 'LAPTOP-GGUGVPR9\SQLEXPRESS'.
+2023-08-01 16:42:38.628 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 16:42:38.690 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 20704.8819ms
+2023-08-01 16:42:38.709 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:42:38.724 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 21072.7346 ms
+2023-08-01 16:42:38.782 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 85 - 400 - application/json;+charset=utf-8 21179.7671ms
+2023-08-01 16:42:38.788 +05:30 [ERR] An error occurred using the connection to database 'DBUserManagementKTW' on server 'LAPTOP-GGUGVPR9\SQLEXPRESS'.
+2023-08-01 16:45:28.499 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 16:45:28.806 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 16:45:28.808 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 16:45:28.815 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 16:45:28.817 +05:30 [INF] Hosting environment: Development
+2023-08-01 16:45:28.819 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 16:45:29.547 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 16:45:30.013 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 16:45:30.030 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 16:45:30.045 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 29.7648ms
+2023-08-01 16:45:30.045 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 502.0350ms
+2023-08-01 16:45:30.075 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 44.8621ms
+2023-08-01 16:45:30.204 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 16:45:30.487 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 282.8837ms
+2023-08-01 16:46:08.462 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 73
+2023-08-01 16:46:08.484 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:46:08.721 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:46:08.817 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:46:23.482 +05:30 [INF] Into the Add Method
+2023-08-01 16:46:26.259 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 16:46:32.231 +05:30 [ERR] An error occurred using the connection to database 'DBUserManagementKTW' on server 'LAPTOP-GGUGVPR9\SQLEXPRESS'.
+2023-08-01 16:46:32.392 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 16:46:32.451 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 23602.9745ms
+2023-08-01 16:46:32.467 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:46:32.478 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 23970.4371 ms
+2023-08-01 16:46:32.532 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 73 - 400 - application/json;+charset=utf-8 24070.2708ms
+2023-08-01 16:46:32.538 +05:30 [ERR] An error occurred using the connection to database 'DBUserManagementKTW' on server 'LAPTOP-GGUGVPR9\SQLEXPRESS'.
+2023-08-01 16:50:32.094 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 73
+2023-08-01 16:50:32.108 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:50:32.111 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:50:32.114 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:51:05.587 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 16:51:06.056 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 16:51:06.057 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 16:51:06.061 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 16:51:06.074 +05:30 [INF] Hosting environment: Development
+2023-08-01 16:51:06.074 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 16:51:06.774 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 16:51:07.213 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 16:51:07.232 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 16:51:07.233 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 11.6090ms
+2023-08-01 16:51:07.233 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 462.4421ms
+2023-08-01 16:51:07.274 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.8692ms
+2023-08-01 16:51:07.550 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 16:51:07.708 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 157.4946ms
+2023-08-01 16:51:23.988 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 73
+2023-08-01 16:51:24.013 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:51:24.244 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:51:24.337 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:51:27.767 +05:30 [INF] Into the Add Method
+2023-08-01 16:51:30.519 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 16:51:31.330 +05:30 [ERR] An error occurred using the connection to database 'DBUserManagementKTW' on server 'LAPTOP-GGUGVPR9\SQLEXPRESS'.
+2023-08-01 16:51:31.528 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 16:51:31.588 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 7199.4731ms
+2023-08-01 16:51:31.607 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:51:31.620 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 7587.8632 ms
+2023-08-01 16:51:31.675 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 73 - 400 - application/json;+charset=utf-8 7687.0145ms
+2023-08-01 16:51:31.679 +05:30 [ERR] An error occurred using the connection to database 'DBUserManagementKTW' on server 'LAPTOP-GGUGVPR9\SQLEXPRESS'.
+2023-08-01 16:57:01.163 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 16:57:01.522 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 16:57:01.523 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 16:57:01.533 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 16:57:01.534 +05:30 [INF] Hosting environment: Development
+2023-08-01 16:57:01.535 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 16:57:01.894 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 16:57:02.286 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 16:57:02.296 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 8.4286ms
+2023-08-01 16:57:02.296 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 406.0394ms
+2023-08-01 16:57:02.297 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 16:57:02.331 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.7413ms
+2023-08-01 16:57:02.473 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 16:57:02.639 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 166.2463ms
+2023-08-01 16:57:11.079 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 73
+2023-08-01 16:57:11.103 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:57:11.333 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:57:11.419 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:57:14.872 +05:30 [INF] Into the Add Method
+2023-08-01 16:57:17.631 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 16:57:18.467 +05:30 [ERR] An error occurred using the connection to database 'DBUserManagementKTW' on server 'LAPTOP-GGUGVPR9\SQLEXPRESS'.
+2023-08-01 16:57:18.658 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-01 16:57:18.711 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 7259.6368ms
+2023-08-01 16:57:18.729 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:57:18.741 +05:30 [INF] HTTP POST /api/User/Register responded 400 in 7619.6957 ms
+2023-08-01 16:57:18.801 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 73 - 400 - application/json;+charset=utf-8 7722.6690ms
+2023-08-01 16:57:18.806 +05:30 [ERR] An error occurred using the connection to database 'DBUserManagementKTW' on server 'LAPTOP-GGUGVPR9\SQLEXPRESS'.
+2023-08-01 16:57:50.601 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 73
+2023-08-01 16:57:50.613 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:57:50.616 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:57:50.619 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:58:37.720 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 16:58:38.284 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 16:58:38.287 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 16:58:38.294 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 16:58:38.295 +05:30 [INF] Hosting environment: Development
+2023-08-01 16:58:38.298 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 16:58:39.088 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 16:58:39.609 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 16:58:39.617 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 16:58:39.623 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 12.5159ms
+2023-08-01 16:58:39.623 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 541.2252ms
+2023-08-01 16:58:39.658 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.5897ms
+2023-08-01 16:58:39.849 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 16:58:40.041 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 191.6550ms
+2023-08-01 16:58:53.674 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Register application/json 73
+2023-08-01 16:58:53.695 +05:30 [INF] CORS policy execution successful.
+2023-08-01 16:58:53.948 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:58:54.042 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserManagementAPI.Models.User]] Register(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 16:58:58.793 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 16:59:00.035 +05:30 [INF] Into the Add Method
+2023-08-01 16:59:01.264 +05:30 [INF] Executed DbCommand (245ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 8000) (DbType = Binary), @p2='?' (Size = 8000) (DbType = Binary), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [HashKey], [Password], [Role], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Email] = @p0;
+2023-08-01 16:59:01.601 +05:30 [INF] Travel Service Added Successfully
+2023-08-01 16:59:01.606 +05:30 [INF] Into the Add Method
+2023-08-01 16:59:01.792 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [VerificationCodes] ([Codes], [Email])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [VerificationCodes]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-01 16:59:01.837 +05:30 [INF] Travel Service Added Successfully
+2023-08-01 16:59:02.664 +05:30 [INF] Executing CreatedResult, writing value of type 'UserAPI.Models.DTO.UserDTO'.
+2023-08-01 16:59:02.697 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Register (UserManagementAPI) in 8630.8263ms
+2023-08-01 16:59:02.708 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Register (UserManagementAPI)'
+2023-08-01 16:59:02.729 +05:30 [INF] HTTP POST /api/User/Register responded 201 in 9015.8950 ms
+2023-08-01 16:59:02.758 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Register application/json 73 - 201 - application/json;+charset=utf-8 9083.7155ms
+2023-08-01 17:00:41.734 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 17:00:42.400 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 17:00:42.401 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 17:00:42.406 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 17:00:42.408 +05:30 [INF] Hosting environment: Development
+2023-08-01 17:00:42.409 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 17:00:43.157 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 17:00:43.630 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 17:00:43.639 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 7.5334ms
+2023-08-01 17:00:43.639 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 486.0914ms
+2023-08-01 17:00:43.646 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 17:00:43.699 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.3110ms
+2023-08-01 17:00:43.969 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 17:00:44.189 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 219.5141ms
+2023-08-01 17:09:32.622 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 17:09:33.093 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 17:09:33.094 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 17:09:33.098 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 17:09:33.099 +05:30 [INF] Hosting environment: Development
+2023-08-01 17:09:33.099 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 17:09:33.892 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 17:09:34.493 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 17:09:34.501 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 613.7408ms
+2023-08-01 17:09:34.503 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 9.4619ms
+2023-08-01 17:09:34.504 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 17:09:34.539 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 35.5280ms
+2023-08-01 17:09:34.700 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 17:09:34.984 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 284.1528ms
+2023-08-01 17:10:03.039 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/ValidateVerificationCode application/json 50
+2023-08-01 17:10:03.066 +05:30 [INF] CORS policy execution successful.
+2023-08-01 17:10:03.341 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.ValidateVerificationCode (UserManagementAPI)'
+2023-08-01 17:10:03.434 +05:30 [INF] Route matched with {action = "ValidateVerificationCode", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] ValidateVerificationCode(UserManagementAPI.Models.DTO.ForgotPasswordDTO) on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 17:10:07.226 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 17:10:10.162 +05:30 [INF] Executed DbCommand (318ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Codes], [v].[Email]
+FROM [VerificationCodes] AS [v]
+WHERE [v].[Email] = @__key_0
+2023-08-01 17:10:10.582 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__item_Email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Codes], [v].[Email]
+FROM [VerificationCodes] AS [v]
+WHERE [v].[Email] = @__item_Email_0
+2023-08-01 17:10:11.045 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [VerificationCodes] SET [Codes] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2023-08-01 17:10:11.230 +05:30 [INF] Executing CreatedResult, writing value of type 'System.Boolean'.
+2023-08-01 17:10:11.277 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.ValidateVerificationCode (UserManagementAPI) in 7811.4287ms
+2023-08-01 17:10:11.287 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.ValidateVerificationCode (UserManagementAPI)'
+2023-08-01 17:10:11.311 +05:30 [INF] HTTP POST /api/User/ValidateVerificationCode responded 201 in 8220.9147 ms
+2023-08-01 17:10:11.345 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/ValidateVerificationCode application/json 50 - 201 - application/json;+charset=utf-8 8305.5092ms
+2023-08-01 17:20:43.464 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-01 17:20:43.984 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-01 17:20:43.985 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-01 17:20:43.991 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-01 17:20:43.992 +05:30 [INF] Hosting environment: Development
+2023-08-01 17:20:43.993 +05:30 [INF] Content root path: D:\Kanini-Tourism-Website\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-01 17:20:44.750 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger - -
+2023-08-01 17:20:44.982 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger - - - 301 0 - 233.5260ms
+2023-08-01 17:20:45.003 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-01 17:20:45.307 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 303.8739ms
+2023-08-01 17:20:45.314 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/swagger-ui-standalone-preset.js - -
+2023-08-01 17:20:45.314 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/swagger-ui.css - -
+2023-08-01 17:20:45.314 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-01 17:20:45.314 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/swagger-ui-bundle.js - -
+2023-08-01 17:20:45.326 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 12.1371ms
+2023-08-01 17:20:45.373 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-08-01 17:20:45.373 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-08-01 17:20:45.379 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 65.2585ms
+2023-08-01 17:20:45.383 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-01 17:20:45.385 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-08-01 17:20:45.386 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/swagger-ui.css - - - 200 144929 text/css 71.3919ms
+2023-08-01 17:20:45.387 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 72.4070ms
+2023-08-01 17:20:45.424 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.6654ms
+2023-08-01 17:20:45.638 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-01 17:20:45.680 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/favicon-32x32.png - -
+2023-08-01 17:20:45.682 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-08-01 17:20:45.684 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/favicon-32x32.png - - - 200 628 image/png 3.6171ms
+2023-08-01 17:20:45.820 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 182.2361ms
+2023-08-01 17:20:53.429 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/api/User/GetAllUsers - -
+2023-08-01 17:20:53.676 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI)'
+2023-08-01 17:20:53.729 +05:30 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[UserManagementAPI.Models.User]]] GetAllUsers() on controller UserManagementAPI.Controllers.UserController (UserManagementAPI).
+2023-08-01 17:20:54.210 +05:30 [INF] Inside GetAll of User
+2023-08-01 17:20:55.824 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-01 17:20:57.174 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+2023-08-01 17:20:57.456 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[UserManagementAPI.Models.User, UserManagementAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-01 17:20:57.493 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI) in 3747.197ms
+2023-08-01 17:20:57.500 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI)'
+2023-08-01 17:20:57.516 +05:30 [INF] HTTP GET /api/User/GetAllUsers responded 200 in 4067.7830 ms
+2023-08-01 17:20:57.542 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/api/User/GetAllUsers - - - 200 - application/json;+charset=utf-8 4113.1774ms

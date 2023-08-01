@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KWEUserManagementAPI", "UserManagementAPI\KWEUserManagementAPI.csproj", "{CC8B6D5E-35DE-4999-B042-17F347D83A2F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestUserAPI", "TestUserAPI\TestUserAPI.csproj", "{A2FC6CD6-D33D-49E7-B53F-825D35090C84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTWBookingAPI", "KTWBookingAPI\KTWBookingAPI.csproj", "{C471E882-2793-488B-933D-69CD5DCBBCD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTWFeedbackAPI", "KTWFeedbackAPI\KTWFeedbackAPI.csproj", "{98E0196A-28C1-4517-8E62-B724B9C32630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTWLocationsAPI", "KTWLocationsAPI\KTWLocationsAPI.csproj", "{BFBBDF7F-1D1C-4335-A064-54ECA4F42D43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTWTourPackages", "KTWTourPackages\KTWTourPackages.csproj", "{FC7B789B-3B1B-45BC-A233-529B72102564}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTWWishListAPI", "KTWWishListAPI\KTWWishListAPI.csproj", "{6F623AF6-789F-4B76-9AD0-8EE68749CB50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC8B6D5E-35DE-4999-B042-17F347D83A2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC8B6D5E-35DE-4999-B042-17F347D83A2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC8B6D5E-35DE-4999-B042-17F347D83A2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC8B6D5E-35DE-4999-B042-17F347D83A2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2FC6CD6-D33D-49E7-B53F-825D35090C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2FC6CD6-D33D-49E7-B53F-825D35090C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2FC6CD6-D33D-49E7-B53F-825D35090C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2FC6CD6-D33D-49E7-B53F-825D35090C84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C471E882-2793-488B-933D-69CD5DCBBCD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C471E882-2793-488B-933D-69CD5DCBBCD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C471E882-2793-488B-933D-69CD5DCBBCD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C471E882-2793-488B-933D-69CD5DCBBCD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98E0196A-28C1-4517-8E62-B724B9C32630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98E0196A-28C1-4517-8E62-B724B9C32630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98E0196A-28C1-4517-8E62-B724B9C32630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98E0196A-28C1-4517-8E62-B724B9C32630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFBBDF7F-1D1C-4335-A064-54ECA4F42D43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBBDF7F-1D1C-4335-A064-54ECA4F42D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBBDF7F-1D1C-4335-A064-54ECA4F42D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBBDF7F-1D1C-4335-A064-54ECA4F42D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC7B789B-3B1B-45BC-A233-529B72102564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC7B789B-3B1B-45BC-A233-529B72102564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC7B789B-3B1B-45BC-A233-529B72102564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC7B789B-3B1B-45BC-A233-529B72102564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F623AF6-789F-4B76-9AD0-8EE68749CB50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F623AF6-789F-4B76-9AD0-8EE68749CB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F623AF6-789F-4B76-9AD0-8EE68749CB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F623AF6-789F-4B76-9AD0-8EE68749CB50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {793EA4E9-D94E-48DA-89BC-DB00F869266F}
+	EndGlobalSection
+EndGlobal

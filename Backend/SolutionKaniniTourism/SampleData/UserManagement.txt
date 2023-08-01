@@ -1,0 +1,9 @@
+//Sample data
+
+{
+  "email": "abc@gmail.com",
+  "password": "abc@123",
+  "role": "user"
+}
+
+//Session Based Storage
