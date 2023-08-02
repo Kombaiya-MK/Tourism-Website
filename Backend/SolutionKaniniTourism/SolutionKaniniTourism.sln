@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
+<<<<<<< HEAD
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KWEUserManagementAPI", "UserManagementAPI\KWEUserManagementAPI.csproj", "{CC8B6D5E-35DE-4999-B042-17F347D83A2F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestUserAPI", "TestUserAPI\TestUserAPI.csproj", "{A2FC6CD6-D33D-49E7-B53F-825D35090C84}"
@@ -16,6 +17,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTWTourPackages", "KTWTourPackages\KTWTourPackages.csproj", "{FC7B789B-3B1B-45BC-A233-529B72102564}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTWWishListAPI", "KTWWishListAPI\KTWWishListAPI.csproj", "{6F623AF6-789F-4B76-9AD0-8EE68749CB50}"
+=======
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserManagementAPI", "UserManagementAPI\UserManagementAPI.csproj", "{CC8B6D5E-35DE-4999-B042-17F347D83A2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUserAPI", "TestUserAPI\TestUserAPI.csproj", "{A2FC6CD6-D33D-49E7-B53F-825D35090C84}"
+>>>>>>> 4937c5a40d898d528f734aa7630daff1936145df
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +37,7 @@ Global
 		{A2FC6CD6-D33D-49E7-B53F-825D35090C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2FC6CD6-D33D-49E7-B53F-825D35090C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2FC6CD6-D33D-49E7-B53F-825D35090C84}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{C471E882-2793-488B-933D-69CD5DCBBCD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C471E882-2793-488B-933D-69CD5DCBBCD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C471E882-2793-488B-933D-69CD5DCBBCD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +58,8 @@ Global
 		{6F623AF6-789F-4B76-9AD0-8EE68749CB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F623AF6-789F-4B76-9AD0-8EE68749CB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F623AF6-789F-4B76-9AD0-8EE68749CB50}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+>>>>>>> 4937c5a40d898d528f734aa7630daff1936145df
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
