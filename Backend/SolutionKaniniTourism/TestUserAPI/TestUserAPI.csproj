@@ -16,8 +16,11 @@
     <PackageReference Include="coverlet.collector" Version="3.2.0" />
   </ItemGroup>
 
+<<<<<<< HEAD
   <ItemGroup>
     <ProjectReference Include="..\UserManagementAPI\KWEUserManagementAPI.csproj" />
   </ItemGroup>
 
+=======
+>>>>>>> 4937c5a40d898d528f734aa7630daff1936145df
 </Project>
