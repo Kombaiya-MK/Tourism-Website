@@ -1,4 +1,5 @@
-﻿using KTWBookingAPI.Interfaces;
+﻿
+using KTWLocationsAPI.Interfaces;
 using KTWLocationsAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
