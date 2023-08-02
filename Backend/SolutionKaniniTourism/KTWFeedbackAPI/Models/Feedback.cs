@@ -18,6 +18,12 @@ namespace KTWFeedbackAPI.Models
         [Required(ErrorMessage = "Service type is required")]
         public string? ServiceType { get; set; }
 
+        [Required(ErrorMessage = "Service Id is required")]
+        public string? PackId { get; set; }
+
+        [Required(ErrorMessage = "Service Name is required")]
+        public string? ServiceName { get; set; }
+
         [Required]
         public int Rating { get; set; }
 

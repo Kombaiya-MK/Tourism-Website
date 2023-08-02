@@ -15,7 +15,7 @@ namespace KTWFeedbackAPI.Services.Commands
             _logger = logger;
         }
 
-        //Add User 
+        //Add Feedback 
         public async Task<Feedback> Add(Feedback item)
         {
             var transaction = _context.Database.BeginTransaction();
@@ -40,13 +40,14 @@ namespace KTWFeedbackAPI.Services.Commands
         }
 
 
-        //Update User
+        //Update Feedback
         public async Task<Feedback> Update(Feedback item)
         {
             var transaction = _context.Database.BeginTransaction();
             if (item == null)
             {
                 _logger.LogError("Empty object being Passed");
+                await transaction.RollbackAsync();
                 throw new EmptyValueException("Feedback Object is null");
             }
 

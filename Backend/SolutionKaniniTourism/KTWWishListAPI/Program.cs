@@ -1,4 +1,6 @@
+using KTWWishListAPI.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -12,6 +14,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//User Defined Services
+builder.Services.AddDbContext<WishlistContext>(opts =>
+{
+    opts.UseSqlServer(builder.Configuration.GetConnectionString(""));
+});
 
 //CORS Service Injection
 builder.Services.AddCors(opts =>

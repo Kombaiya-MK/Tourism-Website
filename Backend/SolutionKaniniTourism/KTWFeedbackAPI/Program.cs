@@ -1,4 +1,11 @@
+using KTWFeedbackAPI.Interfaces;
+using KTWFeedbackAPI.Models;
+using KTWFeedbackAPI.Services;
+using KTWFeedbackAPI.Services.Commands;
+using KTWFeedbackAPI.Services.Queries;
+using KTWFeedbackAPI.Utilities.Adapters;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Azure;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -18,6 +25,8 @@ builder.Services.AddAzureClients(clientBuilder =>
     clientBuilder.AddBlobServiceClient(builder.Configuration["FeedbackStore:blob"], preferMsi: true);
     clientBuilder.AddQueueServiceClient(builder.Configuration["FeedbackStore:queue"], preferMsi: true);
 });
+
+
 
 //CORS Service Injection
 builder.Services.AddCors(opts =>
@@ -71,6 +80,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                         ValidateAudience = false
                     };
                 });
+
+
+//User Defined Services Injections
+builder.Services.AddDbContext<FeedbackContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("FbConn")));
+builder.Services.AddScoped<ICommandRepo<Feedback, string>, FeedbackCommandRepo>();
+builder.Services.AddScoped<IQueryRepo<Feedback, string>, FeedbackQueryRepo>();
+builder.Services.AddScoped<IFeedbackServices, FeedbackService>();
+builder.Services.AddScoped<IAdapter, FeedbackDTOtoFeedback>();
+
 
 //Serilog Injection
 Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
