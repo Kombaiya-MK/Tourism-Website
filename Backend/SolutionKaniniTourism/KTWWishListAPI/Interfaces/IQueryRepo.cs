@@ -1,6 +1,9 @@
-﻿namespace KTWBookingAPI.Interfaces
+﻿namespace KTWWishListAPI.Interfaces
 {
-    public interface IQueryRepo
+    public interface IQueryRepo<T, K>
     {
+        Task<T> Get(K key);
+        Task<ICollection<T>> GetAll();
+
     }
 }

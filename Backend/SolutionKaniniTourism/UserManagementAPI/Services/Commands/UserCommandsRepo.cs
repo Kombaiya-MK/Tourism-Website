@@ -22,7 +22,7 @@ namespace UserManagementAPI.Services.Commands
             if (item == null)
             {
                 _logger.LogError("Empty object being Passed");
-                throw new EmptyValueException("Travel Agent Object is null");
+                throw new EmptyValueException("User Object is null");
             }
             _logger.LogInformation("Into the Add Method");
             var user = _context.Users.Add(item);
@@ -30,13 +30,13 @@ namespace UserManagementAPI.Services.Commands
             {
                 _logger.LogError("Unable to add object");
                 await transaction.RollbackAsync();
-                throw new UnableToAddException("Unable To Add Travel Service");
+                throw new UnableToAddException("Unable To Add User");
             }
             await _context.SaveChangesAsync();
             await transaction.CommitAsync();
-            _logger.LogInformation("Travel Service Added Successfully");
+            _logger.LogInformation("User Added Successfully");
             return item;
-            throw new UnableToAddException("Unable To Add Travel Service");
+            throw new UnableToAddException("Unable To Add User");
         }
 
 

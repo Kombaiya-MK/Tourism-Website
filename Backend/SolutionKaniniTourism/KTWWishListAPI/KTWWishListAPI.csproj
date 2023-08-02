@@ -7,13 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.20" />
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
+    <Folder Include="Logs\" />
+    <Folder Include="Models\DTO\" />
+    <Folder Include="Services\Commands\" />
+    <Folder Include="Services\Queries\" />
     <Folder Include="Utilities\Adapters\" />
     <Folder Include="Utilities\CustomExceptions\" />
   </ItemGroup>
