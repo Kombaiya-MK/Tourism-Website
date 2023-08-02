@@ -1,4 +1,5 @@
 ﻿#nullable disable
+using KTWTourPackages.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace KTWTourPackages.Models

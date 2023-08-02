@@ -15,7 +15,7 @@ namespace KTWLocationsAPI.Services.Commands
             _logger = logger;
         }
 
-        //Add User 
+        //Add Location 
         public async Task<Location> Add(Location item)
         {
             var transaction = _context.Database.BeginTransaction();
@@ -47,16 +47,23 @@ namespace KTWLocationsAPI.Services.Commands
             if (item == null)
             {
                 _logger.LogError("Empty object being Passed");
+                await transaction.RollbackAsync();
                 throw new EmptyValueException("location Object is null");
             }
 
-            var location = await _context.Locations.FirstOrDefaultAsync(x => x.LocationId == item.LocationId)
-                ?? throw new EmptyValueException("Invalid Object!!! No such location Exist!!");
+            var location = await _context.Locations.FirstOrDefaultAsync(x => x.LocationId == item.LocationId);
+            if (location == null)
+            {
+                await transaction.RollbackAsync();
+                throw new EmptyValueException("Invalid Object!!! No such location Exist!!");
+            }
 
             if (item != null)
             {
                 location.Name = item.Name ?? location.Name;
                 location.Description = item.Description ?? location.Description;
+                location.Status = item.Status ?? location.Status;
+                location.LocationType = item.LocationType ?? location.LocationType;
                 await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
             }

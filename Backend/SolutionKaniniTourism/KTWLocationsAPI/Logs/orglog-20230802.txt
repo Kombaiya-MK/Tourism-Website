@@ -1,0 +1,89 @@
+2023-08-02 18:09:12.745 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-02 18:09:13.080 +05:30 [INF] Now listening on: https://localhost:7153
+2023-08-02 18:09:13.083 +05:30 [INF] Now listening on: http://localhost:5261
+2023-08-02 18:09:13.093 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-02 18:09:13.096 +05:30 [INF] Hosting environment: Development
+2023-08-02 18:09:13.098 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWLocationsAPI\
+2023-08-02 18:09:13.894 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger - -
+2023-08-02 18:09:14.033 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger - - - 301 0 - 141.6110ms
+2023-08-02 18:09:14.046 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/index.html - -
+2023-08-02 18:09:14.757 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/swagger-ui.css - -
+2023-08-02 18:09:14.757 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/swagger-ui-standalone-preset.js - -
+2023-08-02 18:09:14.757 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/swagger-ui-bundle.js - -
+2023-08-02 18:09:14.758 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/_framework/aspnetcore-browser-refresh.js - -
+2023-08-02 18:09:14.761 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/index.html - - - 200 - text/html;charset=utf-8 715.3029ms
+2023-08-02 18:09:14.767 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/_framework/aspnetcore-browser-refresh.js - - - 200 12362 application/javascript;+charset=utf-8 9.2678ms
+2023-08-02 18:09:14.779 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/_vs/browserLink - -
+2023-08-02 18:09:14.784 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-08-02 18:09:14.806 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/swagger-ui.css - - - 200 144929 text/css 48.9003ms
+2023-08-02 18:09:14.816 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-08-02 18:09:14.819 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 61.2989ms
+2023-08-02 18:09:14.840 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-08-02 18:09:14.841 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 62.4474ms
+2023-08-02 18:09:14.842 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 84.5413ms
+2023-08-02 18:09:15.006 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/v1/swagger.json - -
+2023-08-02 18:09:15.055 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/favicon-32x32.png - -
+2023-08-02 18:09:15.056 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-08-02 18:09:15.056 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 50.2106ms
+2023-08-02 18:09:15.058 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/favicon-32x32.png - - - 200 628 image/png 3.3126ms
+2023-08-02 22:21:40.085 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-02 22:21:53.979 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-02 22:21:55.544 +05:30 [INF] Executed DbCommand (373ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [DBLocationKTW];
+2023-08-02 22:21:55.796 +05:30 [INF] Executed DbCommand (247ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [DBLocationKTW] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2023-08-02 22:21:55.829 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-02 22:21:55.999 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2023-08-02 22:21:56.002 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-02 22:21:56.057 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-08-02 22:21:56.103 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-08-02 22:21:56.141 +05:30 [INF] Applying migration '20230802165140_Init'.
+2023-08-02 22:21:56.207 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Locations] (
+    [LocationId] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [Latitiude] nvarchar(max) NOT NULL,
+    [Longitude] nvarchar(max) NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    [LocationType] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Locations] PRIMARY KEY ([LocationId])
+);
+2023-08-02 22:21:56.212 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Images] (
+    [Id] int NOT NULL IDENTITY,
+    [LocationId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Images] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Images_Locations_LocationId] FOREIGN KEY ([LocationId]) REFERENCES [Locations] ([LocationId]) ON DELETE CASCADE
+);
+2023-08-02 22:21:56.217 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Specializations] (
+    [Id] int NOT NULL IDENTITY,
+    [LocationId] nvarchar(450) NOT NULL,
+    [Special] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Specializations] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Specializations_Locations_LocationId] FOREIGN KEY ([LocationId]) REFERENCES [Locations] ([LocationId]) ON DELETE CASCADE
+);
+2023-08-02 22:21:56.222 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Images_LocationId] ON [Images] ([LocationId]);
+2023-08-02 22:21:56.224 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Specializations_LocationId] ON [Specializations] ([LocationId]);
+2023-08-02 22:21:56.245 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230802165140_Init', N'6.0.20');

@@ -7,8 +7,6 @@ namespace KTWTourPackages.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
-       
         [Key]
         [Required(ErrorMessage = "Pack Id is required")]
         public string? PackId { get; set; }
@@ -30,6 +28,9 @@ namespace KTWTourPackages.Models
 
         [Required(ErrorMessage = "Capacity is required")]
         public int Capacity { get; set; }
+
+        [Required(ErrorMessage = "Status is required")]
+        public int Status { get; set; }
 
 
     }

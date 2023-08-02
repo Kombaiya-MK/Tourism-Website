@@ -34,6 +34,9 @@ namespace KTWTourPackages.Models
         [Required(ErrorMessage = "Location is required")]
         public string? Location { get; set; }
 
+        [Required(ErrorMessage = "Status is required")]
+        public string? Status { get; set; }
+
 
     }
 }

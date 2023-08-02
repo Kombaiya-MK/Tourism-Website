@@ -16,6 +16,7 @@ namespace KTWLocationsAPI.Models
         public Location? Location { get; set; }
 
         [Required(ErrorMessage = "Picture is required")]
+        [NotMapped]
         public IFormFile? Picture { get; set; }
     }
 }

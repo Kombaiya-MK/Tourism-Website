@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Models\DTO\" />
     <Folder Include="Services\Commands\" />
     <Folder Include="Services\Queries\" />
     <Folder Include="Utilities\Adapters\" />

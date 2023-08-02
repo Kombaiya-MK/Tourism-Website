@@ -21,8 +21,14 @@ namespace KTWLocationsAPI.Models
         [Required(ErrorMessage = "Latitiude is required")]
         public string? Latitiude { get; set; }
 
-        [Required(ErrorMessage = "Longtitude is required")]
-        public string? Longtitude { get; set; }
+        [Required(ErrorMessage = "Longitude is required")]
+        public string? Longitude { get; set; }
+
+        [Required(ErrorMessage = "Status is required")]
+        public string? Status { get; set; }
+
+        [Required(ErrorMessage = "Type is required")]
+        public string? LocationType { get; set; }
 
         public ICollection<Image>? Images { get; set; }
         public ICollection<Speciality>? Specialities { get; set; }

@@ -12,5 +12,6 @@ namespace KTWBookingAPI.Models
 
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<PackageBooking> Packages { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }

@@ -1,4 +1,12 @@
+#nullable disable
+using KTWLocationsAPI.Interfaces;
+using KTWLocationsAPI.Models;
+using KTWLocationsAPI.Services;
+using KTWLocationsAPI.Services.Commands;
+using KTWLocationsAPI.Services.Queries;
+using KTWLocationsAPI.Utilities.Adapters;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -13,6 +21,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//User Defined Services
+builder.Services.AddDbContext<LocationContext>(opts =>
+{
+    opts.UseSqlServer(builder.Configuration.GetConnectionString("LocationConn"));
+});
+builder.Services.AddScoped<ICommandRepo<Location, string>, LocationCommandRepo>();
+builder.Services.AddScoped<ICommandRepo<Image, string>, ImageCommandRepo>();
+builder.Services.AddScoped<ICommandRepo<Speciality, string>, SpecialityCommandRepo>();
+builder.Services.AddScoped<IQueryRepo<Location , string> , LocationQueryRepo>();
+builder.Services.AddScoped<IQueryRepo<Image, string>, ImageQueryRepo>();
+builder.Services.AddScoped<IQueryRepo<Speciality, string>, SpecialityQueryRepo>();
+builder.Services.AddScoped<IAdapter,LocationAdapter>();
+builder.Services.AddScoped<ILocationService , LocationServices>();
+
 //CORS Service Injection
 builder.Services.AddCors(opts =>
 {
@@ -24,7 +46,7 @@ builder.Services.AddCors(opts =>
     });
 });
 
-//Authentication Inside Swagger UI
+//Authentication Inside Swagger API
 builder.Services.AddSwaggerGen(c => {
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
