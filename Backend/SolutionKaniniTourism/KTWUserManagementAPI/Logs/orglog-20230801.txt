@@ -928,6 +928,7 @@ SELECT @@ROWCOUNT;
 2023-08-01 17:10:11.287 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.ValidateVerificationCode (UserManagementAPI)'
 2023-08-01 17:10:11.311 +05:30 [INF] HTTP POST /api/User/ValidateVerificationCode responded 201 in 8220.9147 ms
 2023-08-01 17:10:11.345 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/ValidateVerificationCode application/json 50 - 201 - application/json;+charset=utf-8 8305.5092ms
+<<<<<<< HEAD
 2023-08-01 17:20:43.464 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
 2023-08-01 17:20:43.984 +05:30 [INF] Now listening on: https://localhost:7289
 2023-08-01 17:20:43.985 +05:30 [INF] Now listening on: http://localhost:5243
@@ -969,3 +970,5 @@ FROM [Users] AS [u]
 2023-08-01 17:20:57.500 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.GetAllUsers (UserManagementAPI)'
 2023-08-01 17:20:57.516 +05:30 [INF] HTTP GET /api/User/GetAllUsers responded 200 in 4067.7830 ms
 2023-08-01 17:20:57.542 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/api/User/GetAllUsers - - - 200 - application/json;+charset=utf-8 4113.1774ms
+=======
+>>>>>>> 4937c5a40d898d528f734aa7630daff1936145df
