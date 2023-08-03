@@ -47,7 +47,11 @@ namespace UserManagementAPI.Services.Commands
             if (item == null)
             {
                 _logger.LogError("Empty object being Passed");
+<<<<<<< HEAD
                 throw new EmptyValueException("user Object is null");
+=======
+                throw new EmptyValueException("Travel Agent Object is null");
+>>>>>>> 4937c5a40d898d528f734aa7630daff1936145df
             }
 
             var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == item.Email)
@@ -63,7 +67,11 @@ namespace UserManagementAPI.Services.Commands
                 await transaction.CommitAsync();
             }
             return user;
+<<<<<<< HEAD
             throw new UnableToUpdateException("Unable to update the user");
+=======
+            throw new UnableToUpdateException("Unable to update the travel agent");
+>>>>>>> 4937c5a40d898d528f734aa7630daff1936145df
         }
     }
 }
