@@ -1,0 +1,1 @@
+2023-08-03 12:06:37.725 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None

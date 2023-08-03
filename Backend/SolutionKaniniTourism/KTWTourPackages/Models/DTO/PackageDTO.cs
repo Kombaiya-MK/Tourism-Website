@@ -6,7 +6,8 @@
         public string? Description { get; set; }
         public string? Duration { get; set; }
         public string? LocationId { get; set; }
-        public string? Price { get; set;}
-        public string? Capacity { get; set;}
+        public double Price { get; set;}
+        public int Capacity { get; set;}
+        public string? Status { get; set; }
     }
 }

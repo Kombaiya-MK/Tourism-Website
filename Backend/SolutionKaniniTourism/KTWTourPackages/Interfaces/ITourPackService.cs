@@ -10,9 +10,10 @@ namespace KTWTourPackages.Interfaces
         Task<TourPackage> DeletePackage(UpdatePackStatusDTO package);
         Task<ICollection<TourPackage>> GetTourPackages();
         Task<TourPackage> GetPackage(string packageId);
-        Task<ItineraryItem> AddItinerary(ItineraryItem item);
-        Task<ItineraryItem> UpdateItinerary(ItineraryItem item);
-        Task<ItineraryItem> DeleteItinerary(string id);
+        Task<ItineraryItem> AddItinerary(ItemDTO item);
+        Task<ItineraryItem> UpdateItinerary(ItemDTO item);
+        Task<ItineraryItem> DeleteItinerary(UpdateItemDTO item);
+        Task<ICollection<Itinerary>> GetItineraries(string packid);
 
     }
 }

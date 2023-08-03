@@ -32,6 +32,7 @@ namespace KTWTourPackages.Services.Commands
             }
             await _context.SaveChangesAsync();
             _logger.LogInformation("ItineraryItem Added Successfully");
+            return item;
             throw new UnableToAddException("Unable To Add ItineraryItem");
         }
 
@@ -55,7 +56,6 @@ namespace KTWTourPackages.Services.Commands
                 ItineraryItem.EndTime = item.EndTime ?? ItineraryItem.EndTime;
                 ItineraryItem.Location = item.Location ?? ItineraryItem.Location;
                 ItineraryItem.DayNumber = ItineraryItem.DayNumber == 0 ? item.DayNumber : ItineraryItem.DayNumber;
-                ItineraryItem.PackId = item.PackId ?? ItineraryItem.PackId;
                 await _context.SaveChangesAsync();
             }
             return ItineraryItem;

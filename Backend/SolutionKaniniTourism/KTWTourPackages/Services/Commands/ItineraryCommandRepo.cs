@@ -32,6 +32,7 @@ namespace KTWTourPackages.Services.Commands
             }
             await _context.SaveChangesAsync();
             _logger.LogInformation("Itinerary Added Successfully");
+            return item;
             throw new UnableToAddException("Unable To Add Itinerary");
         }
 

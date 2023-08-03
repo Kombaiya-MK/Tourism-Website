@@ -1,4 +1,11 @@
+using KTWTourPackages.Interfaces;
+using KTWTourPackages.Models;
+using KTWTourPackages.Services;
+using KTWTourPackages.Services.Commands;
+using KTWTourPackages.Services.Queries;
+using KTWTourPackages.Utilities.Adapters;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -12,6 +19,20 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//User Defined Services
+builder.Services.AddDbContext<PackageContext>(opts =>
+{
+    opts.UseSqlServer(builder.Configuration.GetConnectionString("TourConn"));
+});
+builder.Services.AddScoped<ICommandRepo<TourPackage, string>, PackCommandRepo>();
+builder.Services.AddScoped<ICommandRepo<Itinerary, string>, ItineraryCommandRepo>();
+builder.Services.AddScoped<ICommandRepo<ItineraryItem, string>, ItemCommandRepo>();
+builder.Services.AddScoped<IQueryRepo<TourPackage, string>, PackageQueryRepo>();
+builder.Services.AddScoped<IQueryRepo<Itinerary, string>, ItineraryQueryRepo>();
+builder.Services.AddScoped<IQueryRepo<ItineraryItem, string>, ItemQueryRepo>();
+builder.Services.AddScoped<ITourPackService, PackageService>();
+builder.Services.AddScoped<IAdapter, PackageAdapter>();
 
 //CORS Service Injection
 builder.Services.AddCors(opts =>

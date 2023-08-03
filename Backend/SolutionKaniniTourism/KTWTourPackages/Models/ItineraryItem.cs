@@ -5,19 +5,18 @@ namespace KTWTourPackages.Models
 {
     public class ItineraryItem
     {
-        [Key]
+        
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
+        [Key]
+        [Required(ErrorMessage = "Itinerary Item id is required")]
+        public string? ItemId { get; set; }
 
         [Required(ErrorMessage = "Itinerary Id is required")]
         public string? ItineraryId { get; set; }
         [ForeignKey("ItineraryId")]
         public Itinerary? Itinerary { get; set; }
-
-        [Required(ErrorMessage = "Pack Id is required")]
-        public string? PackId { get; set; }
-        [ForeignKey("PackId")]
-        public TourPackage? Package { get; set; }
 
         [Required(ErrorMessage = "DayNumber is required")]
         public int DayNumber { get; set; }

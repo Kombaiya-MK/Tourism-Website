@@ -1,0 +1,387 @@
+2023-08-03 12:07:55.543 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:08:03.667 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:08:04.891 +05:30 [INF] Executed DbCommand (239ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [DBTourPackagesKTW];
+2023-08-03 12:08:05.014 +05:30 [INF] Executed DbCommand (120ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [DBTourPackagesKTW] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2023-08-03 12:08:05.028 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-03 12:08:05.116 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2023-08-03 12:08:05.117 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-03 12:08:05.137 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-08-03 12:08:05.156 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-08-03 12:08:05.170 +05:30 [INF] Applying migration '20230803063755_Init'.
+2023-08-03 12:08:05.202 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TourPackages] (
+    [PackId] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [Duration] nvarchar(max) NOT NULL,
+    [LocationId] nvarchar(max) NOT NULL,
+    [Price] float NOT NULL,
+    [Capacity] int NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_TourPackages] PRIMARY KEY ([PackId])
+);
+2023-08-03 12:08:05.205 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Touraries] (
+    [ItineraryId] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [PackId] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Touraries] PRIMARY KEY ([ItineraryId]),
+    CONSTRAINT [FK_Touraries_TourPackages_PackId] FOREIGN KEY ([PackId]) REFERENCES [TourPackages] ([PackId]) ON DELETE CASCADE
+);
+2023-08-03 12:08:05.216 +05:30 [ERR] Failed executing DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TourariesItem] (
+    [ItemId] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [ItineraryId] nvarchar(450) NOT NULL,
+    [PackId] nvarchar(450) NOT NULL,
+    [DayNumber] int NOT NULL,
+    [Activity] nvarchar(max) NOT NULL,
+    [StartTime] nvarchar(max) NOT NULL,
+    [EndTime] nvarchar(max) NOT NULL,
+    [Location] nvarchar(max) NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_TourariesItem] PRIMARY KEY ([ItemId]),
+    CONSTRAINT [FK_TourariesItem_Touraries_ItineraryId] FOREIGN KEY ([ItineraryId]) REFERENCES [Touraries] ([ItineraryId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_TourariesItem_TourPackages_PackId] FOREIGN KEY ([PackId]) REFERENCES [TourPackages] ([PackId]) ON DELETE CASCADE
+);
+2023-08-03 12:10:41.421 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:10:41.688 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-03 12:10:41.707 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-08-03 12:10:41.710 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-03 12:10:41.711 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-08-03 12:10:41.735 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-08-03 12:10:41.750 +05:30 [INF] Applying migration '20230803063755_Init'.
+2023-08-03 12:10:41.799 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TourPackages] (
+    [PackId] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [Duration] nvarchar(max) NOT NULL,
+    [LocationId] nvarchar(max) NOT NULL,
+    [Price] float NOT NULL,
+    [Capacity] int NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_TourPackages] PRIMARY KEY ([PackId])
+);
+2023-08-03 12:10:41.802 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Touraries] (
+    [ItineraryId] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [PackId] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Touraries] PRIMARY KEY ([ItineraryId]),
+    CONSTRAINT [FK_Touraries_TourPackages_PackId] FOREIGN KEY ([PackId]) REFERENCES [TourPackages] ([PackId]) ON DELETE CASCADE
+);
+2023-08-03 12:10:41.808 +05:30 [ERR] Failed executing DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TourariesItem] (
+    [ItemId] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [ItineraryId] nvarchar(450) NOT NULL,
+    [PackId] nvarchar(450) NOT NULL,
+    [DayNumber] int NOT NULL,
+    [Activity] nvarchar(max) NOT NULL,
+    [StartTime] nvarchar(max) NOT NULL,
+    [EndTime] nvarchar(max) NOT NULL,
+    [Location] nvarchar(max) NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_TourariesItem] PRIMARY KEY ([ItemId]),
+    CONSTRAINT [FK_TourariesItem_Touraries_ItineraryId] FOREIGN KEY ([ItineraryId]) REFERENCES [Touraries] ([ItineraryId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_TourariesItem_TourPackages_PackId] FOREIGN KEY ([PackId]) REFERENCES [TourPackages] ([PackId]) ON DELETE CASCADE
+);
+2023-08-03 12:12:30.463 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:12:30.813 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-03 12:12:30.833 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-08-03 12:12:30.855 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-08-03 12:12:37.111 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:12:44.907 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:12:51.443 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:12:51.707 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-03 12:12:51.727 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-08-03 12:12:51.730 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-03 12:12:51.731 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-08-03 12:12:51.753 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-08-03 12:12:51.764 +05:30 [INF] Applying migration '20230803064245_Init'.
+2023-08-03 12:12:51.810 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TourPackages] (
+    [PackId] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [Duration] nvarchar(max) NOT NULL,
+    [LocationId] nvarchar(max) NOT NULL,
+    [Price] float NOT NULL,
+    [Capacity] int NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_TourPackages] PRIMARY KEY ([PackId])
+);
+2023-08-03 12:12:51.813 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Touraries] (
+    [ItineraryId] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [PackId] nvarchar(450) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Touraries] PRIMARY KEY ([ItineraryId]),
+    CONSTRAINT [FK_Touraries_TourPackages_PackId] FOREIGN KEY ([PackId]) REFERENCES [TourPackages] ([PackId]) ON DELETE CASCADE
+);
+2023-08-03 12:12:51.815 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TourariesItem] (
+    [ItemId] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [ItineraryId] nvarchar(450) NOT NULL,
+    [DayNumber] int NOT NULL,
+    [Activity] nvarchar(max) NOT NULL,
+    [StartTime] nvarchar(max) NOT NULL,
+    [EndTime] nvarchar(max) NOT NULL,
+    [Location] nvarchar(max) NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_TourariesItem] PRIMARY KEY ([ItemId]),
+    CONSTRAINT [FK_TourariesItem_Touraries_ItineraryId] FOREIGN KEY ([ItineraryId]) REFERENCES [Touraries] ([ItineraryId]) ON DELETE CASCADE
+);
+2023-08-03 12:12:51.819 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Touraries_PackId] ON [Touraries] ([PackId]);
+2023-08-03 12:12:51.820 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_TourariesItem_ItineraryId] ON [TourariesItem] ([ItineraryId]);
+2023-08-03 12:12:51.827 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230803064245_Init', N'6.0.20');
+2023-08-03 12:13:04.860 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 12:13:05.173 +05:30 [INF] Now listening on: https://localhost:7169
+2023-08-03 12:13:05.174 +05:30 [INF] Now listening on: http://localhost:5004
+2023-08-03 12:13:05.178 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 12:13:05.180 +05:30 [INF] Hosting environment: Development
+2023-08-03 12:13:05.180 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWTourPackages\
+2023-08-03 12:13:06.682 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger - -
+2023-08-03 12:13:06.828 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger - - - 301 0 - 154.0176ms
+2023-08-03 12:13:06.830 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/index.html - -
+2023-08-03 12:13:07.319 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/index.html - - - 200 - text/html;charset=utf-8 488.6789ms
+2023-08-03 12:13:07.326 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/swagger-ui-standalone-preset.js - -
+2023-08-03 12:13:07.327 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 12:13:07.327 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/swagger-ui-bundle.js - -
+2023-08-03 12:13:07.327 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/swagger-ui.css - -
+2023-08-03 12:13:07.333 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - - - 200 12361 application/javascript;+charset=utf-8 6.8422ms
+2023-08-03 12:13:07.382 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-08-03 12:13:07.391 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/swagger-ui.css - - - 200 144929 text/css 64.5955ms
+2023-08-03 12:13:07.392 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-08-03 12:13:07.396 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_vs/browserLink - -
+2023-08-03 12:13:07.400 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 73.2367ms
+2023-08-03 12:13:07.430 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-08-03 12:13:07.432 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 104.8935ms
+2023-08-03 12:13:07.667 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 271.5903ms
+2023-08-03 12:13:07.758 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - -
+2023-08-03 12:13:07.932 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 173.9598ms
+2023-08-03 12:13:15.470 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - -
+2023-08-03 12:13:16.019 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-03 12:13:16.060 +05:30 [INF] Route matched with {action = "GetAllPacks", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.TourPackage]]] GetAllPacks() on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-03 12:13:16.398 +05:30 [INF] Inside GetAll of TourPackages
+2023-08-03 12:13:17.242 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:13:18.115 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PackId], [t].[Capacity], [t].[Description], [t].[Duration], [t].[Id], [t].[LocationId], [t].[Name], [t].[Price], [t].[Status]
+FROM [TourPackages] AS [t]
+2023-08-03 12:13:18.173 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-03 12:13:18.198 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages) in 2128.766ms
+2023-08-03 12:13:18.202 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-03 12:13:18.206 +05:30 [INF] HTTP GET /api/TourPack/GetAllPacks responded 404 in 2721.9845 ms
+2023-08-03 12:13:18.218 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - - - 404 - application/json;+charset=utf-8 2748.0669ms
+2023-08-03 12:14:10.526 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7169/api/TourPack/AddPack application/json 163
+2023-08-03 12:14:10.541 +05:30 [INF] CORS policy execution successful.
+2023-08-03 12:14:10.542 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.AddPack (KTWTourPackages)'
+2023-08-03 12:14:10.559 +05:30 [INF] Route matched with {action = "AddPack", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWTourPackages.Models.DTO.PackageDTO]] AddPack(KTWTourPackages.Models.DTO.PackageDTO) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-03 12:14:10.648 +05:30 [INF] Inside GetAll of TourPackages
+2023-08-03 12:14:10.669 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:14:10.690 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PackId], [t].[Capacity], [t].[Description], [t].[Duration], [t].[Id], [t].[LocationId], [t].[Name], [t].[Price], [t].[Status]
+FROM [TourPackages] AS [t]
+2023-08-03 12:14:10.723 +05:30 [INF] Into the Add Method
+2023-08-03 12:14:11.078 +05:30 [INF] Executed DbCommand (71ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Double), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TourPackages] ([PackId], [Capacity], [Description], [Duration], [LocationId], [Name], [Price], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [TourPackages]
+WHERE @@ROWCOUNT = 1 AND [PackId] = @p0;
+2023-08-03 12:14:11.153 +05:30 [INF] TourPackage Added Successfully
+2023-08-03 12:14:11.156 +05:30 [INF] Executing CreatedResult, writing value of type 'KTWTourPackages.Models.TourPackage'.
+2023-08-03 12:14:11.169 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.AddPack (KTWTourPackages) in 606.228ms
+2023-08-03 12:14:11.172 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.AddPack (KTWTourPackages)'
+2023-08-03 12:14:11.174 +05:30 [INF] HTTP POST /api/TourPack/AddPack responded 201 in 632.0328 ms
+2023-08-03 12:14:11.178 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7169/api/TourPack/AddPack application/json 163 - 201 - application/json;+charset=utf-8 653.4688ms
+2023-08-03 12:14:20.492 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - -
+2023-08-03 12:14:20.497 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-03 12:14:20.500 +05:30 [INF] Route matched with {action = "GetAllPacks", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.TourPackage]]] GetAllPacks() on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-03 12:14:20.511 +05:30 [INF] Inside GetAll of TourPackages
+2023-08-03 12:14:20.564 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:14:20.573 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PackId], [t].[Capacity], [t].[Description], [t].[Duration], [t].[Id], [t].[LocationId], [t].[Name], [t].[Price], [t].[Status]
+FROM [TourPackages] AS [t]
+2023-08-03 12:14:20.580 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.TourPackage, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-03 12:14:20.582 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages) in 77.9059ms
+2023-08-03 12:14:20.583 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-03 12:14:20.584 +05:30 [INF] HTTP GET /api/TourPack/GetAllPacks responded 200 in 88.6334 ms
+2023-08-03 12:14:20.587 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - - - 200 - application/json;+charset=utf-8 94.5069ms
+2023-08-03 12:15:58.437 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7169/api/TourPack/AddItineraryItem application/json 255
+2023-08-03 12:15:58.439 +05:30 [INF] CORS policy execution successful.
+2023-08-03 12:15:58.440 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.AddItineraryItem (KTWTourPackages)'
+2023-08-03 12:15:58.444 +05:30 [INF] Route matched with {action = "AddItineraryItem", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWTourPackages.Models.ItineraryItem]] AddItineraryItem(KTWTourPackages.Models.DTO.ItemDTO) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-03 12:15:58.452 +05:30 [INF] Inside GetAll of Itineraries
+2023-08-03 12:15:58.453 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:15:58.460 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItineraryId], [t].[Description], [t].[Id], [t].[Name], [t].[PackId]
+FROM [Touraries] AS [t]
+2023-08-03 12:15:58.464 +05:30 [INF] Inside GetAll of ItineraryItems
+2023-08-03 12:15:58.470 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItemId], [t].[Activity], [t].[DayNumber], [t].[EndTime], [t].[Id], [t].[ItineraryId], [t].[Location], [t].[StartTime], [t].[Status]
+FROM [TourariesItem] AS [t]
+2023-08-03 12:15:58.475 +05:30 [INF] Into the Add Method
+2023-08-03 12:15:58.505 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Touraries] ([ItineraryId], [Description], [Name], [PackId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Touraries]
+WHERE @@ROWCOUNT = 1 AND [ItineraryId] = @p0;
+2023-08-03 12:15:58.522 +05:30 [INF] Itinerary Added Successfully
+2023-08-03 12:15:58.671 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-03 12:15:58.674 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.AddItineraryItem (KTWTourPackages) in 228.3885ms
+2023-08-03 12:15:58.677 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.AddItineraryItem (KTWTourPackages)'
+2023-08-03 12:15:58.678 +05:30 [INF] HTTP POST /api/TourPack/AddItineraryItem responded 400 in 237.7191 ms
+2023-08-03 12:15:58.680 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7169/api/TourPack/AddItineraryItem application/json 255 - 400 - application/json;+charset=utf-8 242.4508ms
+2023-08-03 12:16:52.051 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 12:16:52.404 +05:30 [INF] Now listening on: https://localhost:7169
+2023-08-03 12:16:52.405 +05:30 [INF] Now listening on: http://localhost:5004
+2023-08-03 12:16:52.413 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 12:16:52.414 +05:30 [INF] Hosting environment: Development
+2023-08-03 12:16:52.415 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWTourPackages\
+2023-08-03 12:16:53.020 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/index.html - -
+2023-08-03 12:16:53.466 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 12:16:53.466 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/index.html - - - 200 - text/html;charset=utf-8 449.6245ms
+2023-08-03 12:16:53.480 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_vs/browserLink - -
+2023-08-03 12:16:53.485 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - - - 200 12361 application/javascript;+charset=utf-8 18.5438ms
+2023-08-03 12:16:53.556 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 76.1290ms
+2023-08-03 12:16:53.728 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - -
+2023-08-03 12:16:53.890 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 161.7670ms
+2023-08-03 12:17:57.317 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7169/api/TourPack/AddItineraryItem application/json 254
+2023-08-03 12:17:57.330 +05:30 [INF] CORS policy execution successful.
+2023-08-03 12:17:57.433 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.AddItineraryItem (KTWTourPackages)'
+2023-08-03 12:17:57.494 +05:30 [INF] Route matched with {action = "AddItineraryItem", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWTourPackages.Models.ItineraryItem]] AddItineraryItem(KTWTourPackages.Models.DTO.ItemDTO) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-03 12:18:15.446 +05:30 [INF] Inside GetAll of Itineraries
+2023-08-03 12:18:17.537 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:18:18.567 +05:30 [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItineraryId], [t].[Description], [t].[Id], [t].[Name], [t].[PackId]
+FROM [Touraries] AS [t]
+2023-08-03 12:19:16.814 +05:30 [INF] Inside GetAll of ItineraryItems
+2023-08-03 12:19:18.001 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItemId], [t].[Activity], [t].[DayNumber], [t].[EndTime], [t].[Id], [t].[ItineraryId], [t].[Location], [t].[StartTime], [t].[Status]
+FROM [TourariesItem] AS [t]
+2023-08-03 12:19:46.004 +05:30 [INF] Into the Add Method
+2023-08-03 12:19:49.763 +05:30 [INF] Executed DbCommand (79ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Touraries] ([ItineraryId], [Description], [Name], [PackId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Touraries]
+WHERE @@ROWCOUNT = 1 AND [ItineraryId] = @p0;
+2023-08-03 12:19:52.357 +05:30 [INF] Itinerary Added Successfully
+2023-08-03 12:21:00.601 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 12:21:01.092 +05:30 [INF] Now listening on: https://localhost:7169
+2023-08-03 12:21:01.092 +05:30 [INF] Now listening on: http://localhost:5004
+2023-08-03 12:21:01.098 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 12:21:01.100 +05:30 [INF] Hosting environment: Development
+2023-08-03 12:21:01.100 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWTourPackages\
+2023-08-03 12:21:01.709 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/index.html - -
+2023-08-03 12:21:02.183 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 12:21:02.193 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_vs/browserLink - -
+2023-08-03 12:21:02.195 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - - - 200 12361 application/javascript;+charset=utf-8 10.4257ms
+2023-08-03 12:21:02.197 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/index.html - - - 200 - text/html;charset=utf-8 491.4903ms
+2023-08-03 12:21:02.368 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 175.4294ms
+2023-08-03 12:21:02.584 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - -
+2023-08-03 12:21:02.995 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 410.9192ms
+2023-08-03 12:21:11.893 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - -
+2023-08-03 12:21:11.996 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-03 12:21:12.054 +05:30 [INF] Route matched with {action = "GetAllTouraries", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.Itinerary]]] GetAllTouraries(System.String) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-03 12:21:12.318 +05:30 [INF] Inside GetAll of Itineraries
+2023-08-03 12:21:13.563 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:21:14.857 +05:30 [INF] Executed DbCommand (106ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItineraryId], [t].[Description], [t].[Id], [t].[Name], [t].[PackId]
+FROM [Touraries] AS [t]
+2023-08-03 12:21:15.055 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.Itinerary, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-03 12:21:15.104 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages) in 3032.3475ms
+2023-08-03 12:21:15.111 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-03 12:21:15.122 +05:30 [INF] HTTP GET /api/TourPack/GetAllTouraries responded 200 in 3215.7569 ms
+2023-08-03 12:21:15.143 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - - - 200 - application/json;+charset=utf-8 3250.4769ms
+2023-08-03 12:22:18.460 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7169/api/TourPack/AddItineraryItem application/json 254
+2023-08-03 12:22:18.470 +05:30 [INF] CORS policy execution successful.
+2023-08-03 12:22:18.474 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.AddItineraryItem (KTWTourPackages)'
+2023-08-03 12:22:18.485 +05:30 [INF] Route matched with {action = "AddItineraryItem", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWTourPackages.Models.ItineraryItem]] AddItineraryItem(KTWTourPackages.Models.DTO.ItemDTO) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-03 12:22:23.116 +05:30 [INF] Inside GetAll of Itineraries
+2023-08-03 12:22:23.401 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 12:22:23.479 +05:30 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItineraryId], [t].[Description], [t].[Id], [t].[Name], [t].[PackId]
+FROM [Touraries] AS [t]
+2023-08-03 12:22:30.412 +05:30 [INF] Inside GetAll of ItineraryItems
+2023-08-03 12:22:30.847 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItemId], [t].[Activity], [t].[DayNumber], [t].[EndTime], [t].[Id], [t].[ItineraryId], [t].[Location], [t].[StartTime], [t].[Status]
+FROM [TourariesItem] AS [t]
+2023-08-03 12:22:39.522 +05:30 [INF] Into the Add Method
+2023-08-03 12:22:40.736 +05:30 [INF] Executed DbCommand (75ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Touraries] ([ItineraryId], [Description], [Name], [PackId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Touraries]
+WHERE @@ROWCOUNT = 1 AND [ItineraryId] = @p0;
+2023-08-03 12:22:45.877 +05:30 [INF] Itinerary Added Successfully
+2023-08-03 12:23:20.922 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 12:23:21.287 +05:30 [INF] Now listening on: https://localhost:7169
+2023-08-03 12:23:21.288 +05:30 [INF] Now listening on: http://localhost:5004
+2023-08-03 12:23:21.296 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 12:23:21.297 +05:30 [INF] Hosting environment: Development
+2023-08-03 12:23:21.298 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWTourPackages\
+2023-08-03 12:23:22.228 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/index.html - -
+2023-08-03 12:23:22.639 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 12:23:22.646 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/index.html - - - 200 - text/html;charset=utf-8 421.8534ms
+2023-08-03 12:23:22.647 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_vs/browserLink - -
+2023-08-03 12:23:22.658 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - - - 200 12361 application/javascript;+charset=utf-8 18.8473ms
+2023-08-03 12:23:22.684 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.2956ms
+2023-08-03 12:23:22.842 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - -
+2023-08-03 12:23:22.981 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 139.4675ms

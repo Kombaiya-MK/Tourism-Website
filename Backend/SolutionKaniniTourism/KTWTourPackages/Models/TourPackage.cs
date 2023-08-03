@@ -30,7 +30,9 @@ namespace KTWTourPackages.Models
         public int Capacity { get; set; }
 
         [Required(ErrorMessage = "Status is required")]
-        public int Status { get; set; }
+        public string? Status { get; set; }
+
+        public ICollection<Itinerary>? Itiners { get; set; }
 
 
     }

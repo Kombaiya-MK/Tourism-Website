@@ -21,7 +21,7 @@ namespace KTWTourPackages.Services.Queries
                 _logger.LogError("Given Email address is null");
                 throw new ArgumentNullException(nameof(key));
             }
-            var ItineraryItem = await _context.TourariesItem.FirstOrDefaultAsync(x => x.PackId == key);
+            var ItineraryItem = await _context.TourariesItem.FirstOrDefaultAsync(x => x.ItineraryId == key);
             if (ItineraryItem == null)
             {
                 _logger.LogError("Invalid id or no data available");

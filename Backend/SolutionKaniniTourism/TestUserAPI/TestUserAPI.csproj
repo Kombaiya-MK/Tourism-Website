@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UserManagementAPI\KWEUserManagementAPI.csproj" />
+    <ProjectReference Include="..\UserManagementAPI\KTWUserManagementAPI.csproj" />
   </ItemGroup>
 
 </Project>
