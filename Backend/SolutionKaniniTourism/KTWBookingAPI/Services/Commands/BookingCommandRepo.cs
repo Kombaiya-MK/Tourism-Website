@@ -1,5 +1,6 @@
 ﻿using KTWBookingAPI.Interfaces;
 using KTWBookingAPI.Models;
+using KTWBookingAPI.Utilities.CustomExceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace KTWBookingAPI.Services.Commands
@@ -32,6 +33,7 @@ namespace KTWBookingAPI.Services.Commands
             }
             await _context.SaveChangesAsync();
             _logger.LogInformation("Booking Added Successfully");
+            return item;
             throw new UnableToAddException("Unable To Add Booking");
         }
 
@@ -50,12 +52,12 @@ namespace KTWBookingAPI.Services.Commands
                 throw new EmptyValueException("Invalid Object!!! No such user Exist!!");
             if (item != null)
             {
-                booking.Email = item.Email ?? booking.Email;
+                booking.Email = (item.Email != null && item.Email.Length > 0) ? item.Email : booking.Email;
                 booking.CheckInDate = item.CheckInDate ?? booking.CheckInDate;
                 booking.CheckOutDate = item.CheckOutDate ?? booking.CheckOutDate;
                 booking.Price = item.Price ?? booking.Price;
-                booking.Status = item.Status ?? booking.Status;
-                booking.PaymentMethod = item.PaymentMethod ?? booking.PaymentMethod;
+                booking.Status = (item.Status  != null && item.Status.Length > 0) ? item.Status : booking.Status;
+                booking.PaymentMethod = (item.PaymentMethod  != null && item.PaymentMethod.Length > 0) ? item.PaymentMethod : booking.PaymentMethod;
                 await _context.SaveChangesAsync();
             }
             return booking;

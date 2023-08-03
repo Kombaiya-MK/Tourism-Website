@@ -1,5 +1,6 @@
 ﻿using KTWBookingAPI.Interfaces;
 using KTWBookingAPI.Models;
+using KTWBookingAPI.Utilities.CustomExceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace KTWBookingAPI.Services.Commands
@@ -8,7 +9,6 @@ namespace KTWBookingAPI.Services.Commands
     {
         private readonly BookingContext _context;
         private readonly ILogger<PackageBooking> _logger;
-
         public PackageCommandRepo(BookingContext context, ILogger<PackageBooking> logger)
         {
             _context = context;
@@ -32,6 +32,7 @@ namespace KTWBookingAPI.Services.Commands
             }
             await _context.SaveChangesAsync();
             _logger.LogInformation("Package Booking Added Successfully");
+            return item;
             throw new UnableToAddException("Unable To Add Package Booking");
         }
 
@@ -50,9 +51,9 @@ namespace KTWBookingAPI.Services.Commands
                 throw new EmptyValueException("Invalid Object!!! No such user Exist!!");
             if (item != null)
             {
-                packageBooking.BookingId = item.BookingId ?? packageBooking.BookingId;
-                packageBooking.NoofChildren = item.NoofChildren == 0 ? packageBooking.NoofChildren : item.NoofChildren;
-                packageBooking.NoofAdults = item.NoofAdults == 0 ? packageBooking.NoofAdults : item.NoofAdults;
+                packageBooking.BookingId = (item.BookingId  != null && item.BookingId.Length != 0) ? item.BookingId : packageBooking.BookingId;
+                packageBooking.NoofChildren = (item.NoofChildren != 0 ) ? item.NoofChildren : packageBooking.NoofChildren;
+                packageBooking.NoofAdults = (item.NoofAdults != 0) ? item.NoofAdults : packageBooking.NoofAdults;
                 await _context.SaveChangesAsync();
             }
             return packageBooking;

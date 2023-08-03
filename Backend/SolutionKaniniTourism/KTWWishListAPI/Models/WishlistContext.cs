@@ -1,4 +1,5 @@
 ﻿#nullable disable
+using KTWWishListAPI.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace KTWWishListAPI.Models

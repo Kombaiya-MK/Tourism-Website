@@ -1,0 +1,618 @@
+2023-08-03 15:32:10.351 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:32:19.010 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:32:21.038 +05:30 [INF] Executed DbCommand (334ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [DBBookingKTW];
+2023-08-03 15:32:21.242 +05:30 [INF] Executed DbCommand (196ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [DBBookingKTW] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2023-08-03 15:32:21.279 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-03 15:32:21.463 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2023-08-03 15:32:21.467 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-03 15:32:21.512 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-08-03 15:32:21.546 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-08-03 15:32:21.587 +05:30 [INF] Applying migration '20230803100210_Init'.
+2023-08-03 15:32:21.684 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [BookedDate] datetime2 NOT NULL,
+    [CheckInDate] datetime2 NOT NULL,
+    [CheckOutDate] datetime2 NOT NULL,
+    [Price] float NOT NULL,
+    [Status] nvarchar(max) NOT NULL,
+    [PaymentMethod] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId])
+);
+2023-08-03 15:32:21.691 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Customers] (
+    [Id] int NOT NULL IDENTITY,
+    [CustomerId] nvarchar(max) NOT NULL,
+    [CustomerName] nvarchar(max) NOT NULL,
+    [CustomerGender] nvarchar(max) NOT NULL,
+    [CustomerAge] nvarchar(max) NOT NULL,
+    [CustomerStatus] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Customers] PRIMARY KEY ([Id])
+);
+2023-08-03 15:32:21.698 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Packages] (
+    [PackageId] nvarchar(450) NOT NULL,
+    [Id] int NOT NULL IDENTITY,
+    [BookingId] nvarchar(max) NOT NULL,
+    [BookindId] nvarchar(450) NULL,
+    [NoofAdults] int NOT NULL,
+    [NoofChildren] int NOT NULL,
+    CONSTRAINT [PK_Packages] PRIMARY KEY ([PackageId]),
+    CONSTRAINT [FK_Packages_Bookings_BookindId] FOREIGN KEY ([BookindId]) REFERENCES [Bookings] ([BookingId])
+);
+2023-08-03 15:32:21.704 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Packages_BookindId] ON [Packages] ([BookindId]);
+2023-08-03 15:32:21.727 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230803100210_Init', N'6.0.20');
+2023-08-03 15:32:34.003 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 15:32:34.923 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-03 15:32:34.930 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 15:32:34.932 +05:30 [INF] Hosting environment: Development
+2023-08-03 15:32:34.934 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-03 15:32:36.027 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger - -
+2023-08-03 15:32:36.217 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger - - - 301 0 - 194.5893ms
+2023-08-03 15:32:36.232 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-03 15:32:36.668 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-standalone-preset.js - -
+2023-08-03 15:32:36.668 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui.css - -
+2023-08-03 15:32:36.669 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-bundle.js - -
+2023-08-03 15:32:36.677 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 444.8716ms
+2023-08-03 15:32:36.679 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 15:32:36.682 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-03 15:32:36.691 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12358 application/javascript;+charset=utf-8 11.1211ms
+2023-08-03 15:32:36.738 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-08-03 15:32:36.738 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-08-03 15:32:36.742 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 73.3319ms
+2023-08-03 15:32:36.744 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui.css - - - 200 144929 text/css 75.6635ms
+2023-08-03 15:32:36.750 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-08-03 15:32:36.750 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 66.5750ms
+2023-08-03 15:32:36.752 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 83.8829ms
+2023-08-03 15:32:37.051 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-03 15:32:37.101 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/favicon-32x32.png - -
+2023-08-03 15:32:37.103 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-08-03 15:32:37.106 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/favicon-32x32.png - - - 200 628 image/png 5.1611ms
+2023-08-03 15:32:37.110 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/Booking" for actions - KTWBookingAPI.Controllers.BookingController.AddBooking (KTWBookingAPI),KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI),KTWBookingAPI.Controllers.BookingController.GeneratePrice (KTWBookingAPI),KTWBookingAPI.Controllers.BookingController.ConfirmBooking (KTWBookingAPI). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-08-03 15:32:37.237 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 186.2946ms
+2023-08-03 15:32:57.576 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 15:32:57.873 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-03 15:32:57.878 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 15:32:57.880 +05:30 [INF] Hosting environment: Development
+2023-08-03 15:32:57.882 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-03 15:32:58.536 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-03 15:32:59.204 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 675.2717ms
+2023-08-03 15:32:59.242 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-03 15:32:59.248 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 15:32:59.261 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12358 application/javascript;+charset=utf-8 13.3187ms
+2023-08-03 15:32:59.346 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 103.2334ms
+2023-08-03 15:32:59.553 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-03 15:32:59.755 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 201.6688ms
+2023-08-03 15:33:07.788 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Booking/GetAllBookings - -
+2023-08-03 15:33:07.825 +05:30 [WRN] Failed to determine the https port for redirect.
+2023-08-03 15:33:09.447 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.GetAllBookings (KTWBookingAPI)'
+2023-08-03 15:33:09.558 +05:30 [INF] Route matched with {action = "GetAllBookings", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWBookingAPI.Models.Booking]]] GetAllBookings() on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:33:10.264 +05:30 [INF] Inside GetAll of Bookings
+2023-08-03 15:33:13.420 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:33:17.554 +05:30 [INF] Executed DbCommand (227ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingId], [b].[BookedDate], [b].[CheckInDate], [b].[CheckOutDate], [b].[Email], [b].[Id], [b].[PaymentMethod], [b].[Price], [b].[Status]
+FROM [Bookings] AS [b]
+2023-08-03 15:33:17.807 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-03 15:33:17.887 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.GetAllBookings (KTWBookingAPI) in 8304.0618ms
+2023-08-03 15:33:17.894 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.GetAllBookings (KTWBookingAPI)'
+2023-08-03 15:33:17.916 +05:30 [INF] HTTP GET /api/Booking/GetAllBookings responded 404 in 10066.8899 ms
+2023-08-03 15:33:17.951 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Booking/GetAllBookings - - - 404 - application/json;+charset=utf-8 10162.9526ms
+2023-08-03 15:35:07.421 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Booking/AddBooking application/json 280
+2023-08-03 15:35:07.453 +05:30 [INF] CORS policy execution successful.
+2023-08-03 15:35:07.505 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.AddBooking (KTWBookingAPI)'
+2023-08-03 15:35:07.592 +05:30 [INF] Route matched with {action = "AddBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWBookingAPI.Models.Booking]] AddBooking(KTWBookingAPI.Models.DTO.BookingDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:35:07.898 +05:30 [INF] Inside GetAll of Bookings
+2023-08-03 15:35:07.906 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:35:07.942 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingId], [b].[BookedDate], [b].[CheckInDate], [b].[CheckOutDate], [b].[Email], [b].[Id], [b].[PaymentMethod], [b].[Price], [b].[Status]
+FROM [Bookings] AS [b]
+2023-08-03 15:35:07.955 +05:30 [INF] Inside GetAll of booked packages
+2023-08-03 15:35:07.989 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PackageId], [p].[BookindId], [p].[BookingId], [p].[Id], [p].[NoofAdults], [p].[NoofChildren]
+FROM [Packages] AS [p]
+2023-08-03 15:35:08.002 +05:30 [INF] Into the Add Method
+2023-08-03 15:35:09.034 +05:30 [INF] Executed DbCommand (199ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Double), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([BookingId], [BookedDate], [CheckInDate], [CheckOutDate], [Email], [PaymentMethod], [Price], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [Bookings]
+WHERE @@ROWCOUNT = 1 AND [BookingId] = @p0;
+2023-08-03 15:35:09.302 +05:30 [INF] Booking Added Successfully
+2023-08-03 15:35:09.309 +05:30 [INF] Into the Add Method
+2023-08-03 15:35:09.406 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Packages] ([PackageId], [BookindId], [BookingId], [NoofAdults], [NoofChildren])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Packages]
+WHERE @@ROWCOUNT = 1 AND [PackageId] = @p0;
+2023-08-03 15:35:09.420 +05:30 [INF] Package Booking Added Successfully
+2023-08-03 15:35:09.426 +05:30 [INF] Executing CreatedResult, writing value of type 'System.Boolean'.
+2023-08-03 15:35:09.436 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.AddBooking (KTWBookingAPI) in 1838.0273ms
+2023-08-03 15:35:09.442 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.AddBooking (KTWBookingAPI)'
+2023-08-03 15:35:09.445 +05:30 [INF] HTTP POST /api/Booking/AddBooking responded 201 in 1984.5512 ms
+2023-08-03 15:35:09.453 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Booking/AddBooking application/json 280 - 201 - application/json;+charset=utf-8 2032.4841ms
+2023-08-03 15:35:16.428 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Booking/GetAllBookings - -
+2023-08-03 15:35:16.438 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.GetAllBookings (KTWBookingAPI)'
+2023-08-03 15:35:16.441 +05:30 [INF] Route matched with {action = "GetAllBookings", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWBookingAPI.Models.Booking]]] GetAllBookings() on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:35:16.468 +05:30 [INF] Inside GetAll of Bookings
+2023-08-03 15:35:16.628 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:35:16.647 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingId], [b].[BookedDate], [b].[CheckInDate], [b].[CheckOutDate], [b].[Email], [b].[Id], [b].[PaymentMethod], [b].[Price], [b].[Status]
+FROM [Bookings] AS [b]
+2023-08-03 15:35:16.689 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWBookingAPI.Models.Booking, KTWBookingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-03 15:35:16.738 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.GetAllBookings (KTWBookingAPI) in 290.886ms
+2023-08-03 15:35:16.742 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.GetAllBookings (KTWBookingAPI)'
+2023-08-03 15:35:16.746 +05:30 [INF] HTTP GET /api/Booking/GetAllBookings responded 200 in 313.4154 ms
+2023-08-03 15:35:16.752 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Booking/GetAllBookings - - - 200 - application/json;+charset=utf-8 323.8926ms
+2023-08-03 15:35:56.094 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Booking/AddCustomer application/json 84
+2023-08-03 15:35:56.098 +05:30 [INF] CORS policy execution successful.
+2023-08-03 15:35:56.101 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI)'
+2023-08-03 15:35:56.113 +05:30 [INF] Route matched with {action = "AddCustomer", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWBookingAPI.Models.Customer]] AddCustomer(KTWBookingAPI.Models.DTO.CustomerDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:35:56.135 +05:30 [INF] Inside GetAll of Customers
+2023-08-03 15:35:56.139 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:35:56.193 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CustomerAge], [c].[CustomerGender], [c].[CustomerId], [c].[CustomerName], [c].[CustomerStatus]
+FROM [Customers] AS [c]
+2023-08-03 15:35:56.228 +05:30 [INF] Into the Add Method
+2023-08-03 15:35:56.408 +05:30 [ERR] Failed executing DbCommand (58ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([CustomerAge], [CustomerGender], [CustomerId], [CustomerName], [CustomerStatus])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Customers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-03 15:35:56.532 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'KTWBookingAPI.Models.BookingContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'CustomerStatus', table 'DBBookingKTW.dbo.Customers'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:abbda167-7bae-4db0-9cc9-b69b8fd8a15a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'CustomerStatus', table 'DBBookingKTW.dbo.Customers'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:abbda167-7bae-4db0-9cc9-b69b8fd8a15a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-08-03 15:35:56.981 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-03 15:35:56.986 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI) in 867.5273ms
+2023-08-03 15:35:56.990 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI)'
+2023-08-03 15:35:56.992 +05:30 [INF] HTTP POST /api/Booking/AddCustomer responded 400 in 891.3117 ms
+2023-08-03 15:35:56.997 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Booking/AddCustomer application/json 84 - 400 - application/json;+charset=utf-8 903.4157ms
+2023-08-03 15:36:30.268 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Booking/AddCustomer application/json 84
+2023-08-03 15:36:30.269 +05:30 [INF] CORS policy execution successful.
+2023-08-03 15:36:30.270 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI)'
+2023-08-03 15:36:30.271 +05:30 [INF] Route matched with {action = "AddCustomer", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWBookingAPI.Models.Customer]] AddCustomer(KTWBookingAPI.Models.DTO.CustomerDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:36:40.987 +05:30 [INF] Inside GetAll of Customers
+2023-08-03 15:36:42.125 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:36:42.165 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CustomerAge], [c].[CustomerGender], [c].[CustomerId], [c].[CustomerName], [c].[CustomerStatus]
+FROM [Customers] AS [c]
+2023-08-03 15:37:04.866 +05:30 [INF] Into the Add Method
+2023-08-03 15:37:07.153 +05:30 [ERR] Failed executing DbCommand (40ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([CustomerAge], [CustomerGender], [CustomerId], [CustomerName], [CustomerStatus])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Customers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-03 15:37:07.164 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'KTWBookingAPI.Models.BookingContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'CustomerStatus', table 'DBBookingKTW.dbo.Customers'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:abbda167-7bae-4db0-9cc9-b69b8fd8a15a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'CustomerStatus', table 'DBBookingKTW.dbo.Customers'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:abbda167-7bae-4db0-9cc9-b69b8fd8a15a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-08-03 15:37:11.825 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-03 15:37:11.827 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI) in 41554.2982ms
+2023-08-03 15:37:11.829 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI)'
+2023-08-03 15:37:11.830 +05:30 [INF] HTTP POST /api/Booking/AddCustomer responded 400 in 41560.6400 ms
+2023-08-03 15:37:11.833 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Booking/AddCustomer application/json 84 - 400 - application/json;+charset=utf-8 41565.5330ms
+2023-08-03 15:39:17.426 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Booking/AddCustomer application/json 84
+2023-08-03 15:39:17.429 +05:30 [INF] CORS policy execution successful.
+2023-08-03 15:39:17.431 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI)'
+2023-08-03 15:39:17.434 +05:30 [INF] Route matched with {action = "AddCustomer", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWBookingAPI.Models.Customer]] AddCustomer(KTWBookingAPI.Models.DTO.CustomerDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:39:24.136 +05:30 [INF] Inside GetAll of Customers
+2023-08-03 15:39:24.650 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:39:24.705 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CustomerAge], [c].[CustomerGender], [c].[CustomerId], [c].[CustomerName], [c].[CustomerStatus]
+FROM [Customers] AS [c]
+2023-08-03 15:39:50.423 +05:30 [INF] Into the Add Method
+2023-08-03 15:40:01.596 +05:30 [ERR] Failed executing DbCommand (57ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([CustomerAge], [CustomerGender], [CustomerId], [CustomerName], [CustomerStatus])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Customers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-03 15:40:01.611 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'KTWBookingAPI.Models.BookingContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'CustomerStatus', table 'DBBookingKTW.dbo.Customers'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:abbda167-7bae-4db0-9cc9-b69b8fd8a15a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'CustomerStatus', table 'DBBookingKTW.dbo.Customers'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:abbda167-7bae-4db0-9cc9-b69b8fd8a15a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-08-03 15:41:22.147 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 15:41:22.531 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-03 15:41:22.540 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 15:41:22.543 +05:30 [INF] Hosting environment: Development
+2023-08-03 15:41:22.545 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-03 15:41:23.454 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-03 15:41:24.377 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 926.7449ms
+2023-08-03 15:41:24.380 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-03 15:41:24.399 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 15:41:24.410 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12358 application/javascript;+charset=utf-8 10.9993ms
+2023-08-03 15:41:24.437 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 57.1127ms
+2023-08-03 15:41:24.524 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-03 15:41:24.744 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 219.6000ms
+2023-08-03 15:41:39.438 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Booking/AddCustomer application/json 84
+2023-08-03 15:41:39.470 +05:30 [WRN] Failed to determine the https port for redirect.
+2023-08-03 15:41:39.478 +05:30 [INF] CORS policy execution successful.
+2023-08-03 15:41:39.802 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI)'
+2023-08-03 15:41:39.944 +05:30 [INF] Route matched with {action = "AddCustomer", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWBookingAPI.Models.Customer]] AddCustomer(KTWBookingAPI.Models.DTO.CustomerDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:41:45.711 +05:30 [INF] Inside GetAll of Customers
+2023-08-03 15:41:49.127 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:41:51.754 +05:30 [INF] Executed DbCommand (204ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CustomerAge], [c].[CustomerGender], [c].[CustomerId], [c].[CustomerName], [c].[CustomerStatus]
+FROM [Customers] AS [c]
+2023-08-03 15:42:09.393 +05:30 [INF] Into the Add Method
+2023-08-03 15:42:12.821 +05:30 [INF] Executed DbCommand (147ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([CustomerAge], [CustomerGender], [CustomerId], [CustomerName], [CustomerStatus])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Customers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-03 15:42:15.698 +05:30 [INF] Customer Added Successfully
+2023-08-03 15:42:26.240 +05:30 [INF] Executing CreatedResult, writing value of type 'KTWBookingAPI.Models.Customer'.
+2023-08-03 15:42:26.338 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI) in 46372.1161ms
+2023-08-03 15:42:26.346 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI)'
+2023-08-03 15:42:26.366 +05:30 [INF] HTTP POST /api/Booking/AddCustomer responded 201 in 46865.0132 ms
+2023-08-03 15:42:26.393 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Booking/AddCustomer application/json 84 - 201 - application/json;+charset=utf-8 46955.8482ms
+2023-08-03 15:43:48.739 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateBooking application/json 71
+2023-08-03 15:43:48.758 +05:30 [INF] CORS policy execution successful.
+2023-08-03 15:43:48.774 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI)'
+2023-08-03 15:43:48.798 +05:30 [INF] Route matched with {action = "UpdateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] UpdateBooking(KTWBookingAPI.Models.DTO.UpdateBookingDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:43:49.013 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:43:49.654 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__item_BookingId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingId], [b].[BookedDate], [b].[CheckInDate], [b].[CheckOutDate], [b].[Email], [b].[Id], [b].[PaymentMethod], [b].[Price], [b].[Status]
+FROM [Bookings] AS [b]
+WHERE [b].[BookingId] = @__item_BookingId_0
+2023-08-03 15:43:49.846 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-08-03 15:43:49.850 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI) in 1046.2295ms
+2023-08-03 15:43:49.855 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI)'
+2023-08-03 15:43:49.859 +05:30 [INF] HTTP PUT /api/Booking/UpdateBooking responded 200 in 1086.5594 ms
+2023-08-03 15:43:49.864 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateBooking application/json 71 - 200 - text/plain;+charset=utf-8 1125.3615ms
+2023-08-03 15:49:59.239 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 15:49:59.604 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-03 15:49:59.613 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 15:49:59.615 +05:30 [INF] Hosting environment: Development
+2023-08-03 15:49:59.617 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-03 15:50:00.746 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-03 15:50:01.653 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-03 15:50:01.654 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 907.8064ms
+2023-08-03 15:50:02.370 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 15:50:02.382 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12358 application/javascript;+charset=utf-8 11.8750ms
+2023-08-03 15:50:02.414 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 760.7557ms
+2023-08-03 15:50:02.501 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-03 15:50:02.692 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 190.9131ms
+2023-08-03 15:50:53.501 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateBooking application/json 112
+2023-08-03 15:50:53.558 +05:30 [WRN] Failed to determine the https port for redirect.
+2023-08-03 15:50:53.565 +05:30 [INF] CORS policy execution successful.
+2023-08-03 15:50:53.895 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI)'
+2023-08-03 15:50:54.033 +05:30 [INF] Route matched with {action = "UpdateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] UpdateBooking(KTWBookingAPI.Models.DTO.UpdateBookingDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:50:58.297 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:51:01.791 +05:30 [INF] Executed DbCommand (330ms) [Parameters=[@__item_BookingId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingId], [b].[BookedDate], [b].[CheckInDate], [b].[CheckOutDate], [b].[Email], [b].[Id], [b].[PaymentMethod], [b].[Price], [b].[Status]
+FROM [Bookings] AS [b]
+WHERE [b].[BookingId] = @__item_BookingId_0
+2023-08-03 15:51:02.328 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-03 15:51:02.403 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI) in 8346.5772ms
+2023-08-03 15:51:02.413 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI)'
+2023-08-03 15:51:02.434 +05:30 [INF] HTTP PUT /api/Booking/UpdateBooking responded 400 in 8845.2293 ms
+2023-08-03 15:51:02.469 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateBooking application/json 112 - 400 - application/json;+charset=utf-8 8968.3907ms
+2023-08-03 15:51:17.666 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateBooking application/json 116
+2023-08-03 15:51:17.679 +05:30 [INF] CORS policy execution successful.
+2023-08-03 15:51:17.682 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI)'
+2023-08-03 15:51:17.685 +05:30 [INF] Route matched with {action = "UpdateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] UpdateBooking(KTWBookingAPI.Models.DTO.UpdateBookingDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:51:17.761 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:51:17.813 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[@__item_BookingId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingId], [b].[BookedDate], [b].[CheckInDate], [b].[CheckOutDate], [b].[Email], [b].[Id], [b].[PaymentMethod], [b].[Price], [b].[Status]
+FROM [Bookings] AS [b]
+WHERE [b].[BookingId] = @__item_BookingId_0
+2023-08-03 15:51:18.647 +05:30 [INF] Executed DbCommand (48ms) [Parameters=[@p2='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Bookings] SET [PaymentMethod] = @p0, [Price] = @p1
+WHERE [BookingId] = @p2;
+SELECT @@ROWCOUNT;
+2023-08-03 15:51:18.812 +05:30 [INF] Inside GetAll of booked packages
+2023-08-03 15:51:18.866 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PackageId], [p].[BookindId], [p].[BookingId], [p].[Id], [p].[NoofAdults], [p].[NoofChildren]
+FROM [Packages] AS [p]
+2023-08-03 15:51:18.972 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__item_PackageId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[PackageId], [p].[BookindId], [p].[BookingId], [p].[Id], [p].[NoofAdults], [p].[NoofChildren]
+FROM [Packages] AS [p]
+WHERE [p].[PackageId] = @__item_PackageId_0
+2023-08-03 15:51:18.994 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-08-03 15:51:18.998 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI) in 1307.3965ms
+2023-08-03 15:51:19.003 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI)'
+2023-08-03 15:51:19.006 +05:30 [INF] HTTP PUT /api/Booking/UpdateBooking responded 200 in 1324.4059 ms
+2023-08-03 15:51:19.012 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateBooking application/json 116 - 200 - text/plain;+charset=utf-8 1345.9161ms
+2023-08-03 15:52:43.657 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 15:52:43.944 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-03 15:52:43.953 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 15:52:43.955 +05:30 [INF] Hosting environment: Development
+2023-08-03 15:52:43.956 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-03 15:52:45.011 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-03 15:52:45.618 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 613.9103ms
+2023-08-03 15:52:45.633 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-03 15:52:45.636 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 15:52:45.643 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12358 application/javascript;+charset=utf-8 6.9505ms
+2023-08-03 15:52:45.696 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 63.0851ms
+2023-08-03 15:52:45.775 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-03 15:52:45.965 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 190.3544ms
+2023-08-03 15:53:01.648 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateBooking application/json 116
+2023-08-03 15:53:01.676 +05:30 [WRN] Failed to determine the https port for redirect.
+2023-08-03 15:53:01.682 +05:30 [INF] CORS policy execution successful.
+2023-08-03 15:53:01.974 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI)'
+2023-08-03 15:53:02.104 +05:30 [INF] Route matched with {action = "UpdateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] UpdateBooking(KTWBookingAPI.Models.DTO.UpdateBookingDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:53:06.186 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:53:09.404 +05:30 [INF] Executed DbCommand (301ms) [Parameters=[@__item_BookingId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingId], [b].[BookedDate], [b].[CheckInDate], [b].[CheckOutDate], [b].[Email], [b].[Id], [b].[PaymentMethod], [b].[Price], [b].[Status]
+FROM [Bookings] AS [b]
+WHERE [b].[BookingId] = @__item_BookingId_0
+2023-08-03 15:53:10.080 +05:30 [INF] Inside GetAll of booked packages
+2023-08-03 15:53:10.141 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PackageId], [p].[BookindId], [p].[BookingId], [p].[Id], [p].[NoofAdults], [p].[NoofChildren]
+FROM [Packages] AS [p]
+2023-08-03 15:53:10.233 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__item_PackageId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[PackageId], [p].[BookindId], [p].[BookingId], [p].[Id], [p].[NoofAdults], [p].[NoofChildren]
+FROM [Packages] AS [p]
+WHERE [p].[PackageId] = @__item_PackageId_0
+2023-08-03 15:53:10.310 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-08-03 15:53:10.340 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI) in 8209.6305ms
+2023-08-03 15:53:10.348 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI)'
+2023-08-03 15:53:10.368 +05:30 [INF] HTTP PUT /api/Booking/UpdateBooking responded 200 in 8662.1678 ms
+2023-08-03 15:53:10.397 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateBooking application/json 116 - 200 - text/plain;+charset=utf-8 8748.9731ms
+2023-08-03 15:54:19.645 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateBooking application/json 116
+2023-08-03 15:54:19.663 +05:30 [INF] CORS policy execution successful.
+2023-08-03 15:54:19.686 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI)'
+2023-08-03 15:54:19.707 +05:30 [INF] Route matched with {action = "UpdateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] UpdateBooking(KTWBookingAPI.Models.DTO.UpdateBookingDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:54:33.803 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:54:33.871 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@__item_BookingId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingId], [b].[BookedDate], [b].[CheckInDate], [b].[CheckOutDate], [b].[Email], [b].[Id], [b].[PaymentMethod], [b].[Price], [b].[Status]
+FROM [Bookings] AS [b]
+WHERE [b].[BookingId] = @__item_BookingId_0
+2023-08-03 15:54:51.786 +05:30 [INF] Inside GetAll of booked packages
+2023-08-03 15:54:52.449 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PackageId], [p].[BookindId], [p].[BookingId], [p].[Id], [p].[NoofAdults], [p].[NoofChildren]
+FROM [Packages] AS [p]
+2023-08-03 15:55:07.007 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__item_PackageId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[PackageId], [p].[BookindId], [p].[BookingId], [p].[Id], [p].[NoofAdults], [p].[NoofChildren]
+FROM [Packages] AS [p]
+WHERE [p].[PackageId] = @__item_PackageId_0
+2023-08-03 15:56:14.672 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 15:56:15.066 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-03 15:56:15.072 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 15:56:15.074 +05:30 [INF] Hosting environment: Development
+2023-08-03 15:56:15.076 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-03 15:56:16.163 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-03 15:56:16.881 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 728.5357ms
+2023-08-03 15:56:16.890 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-03 15:56:16.908 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 15:56:16.926 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12358 application/javascript;+charset=utf-8 17.4995ms
+2023-08-03 15:56:16.947 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 57.6471ms
+2023-08-03 15:56:17.048 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-03 15:56:17.248 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 200.2492ms
+2023-08-03 15:56:26.000 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateBooking application/json 116
+2023-08-03 15:56:26.033 +05:30 [WRN] Failed to determine the https port for redirect.
+2023-08-03 15:56:26.039 +05:30 [INF] CORS policy execution successful.
+2023-08-03 15:56:26.358 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI)'
+2023-08-03 15:56:26.491 +05:30 [INF] Route matched with {action = "UpdateBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] UpdateBooking(KTWBookingAPI.Models.DTO.UpdateBookingDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:56:33.573 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 15:56:36.762 +05:30 [INF] Executed DbCommand (287ms) [Parameters=[@__item_BookingId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingId], [b].[BookedDate], [b].[CheckInDate], [b].[CheckOutDate], [b].[Email], [b].[Id], [b].[PaymentMethod], [b].[Price], [b].[Status]
+FROM [Bookings] AS [b]
+WHERE [b].[BookingId] = @__item_BookingId_0
+2023-08-03 15:56:37.330 +05:30 [INF] Inside GetAll of booked packages
+2023-08-03 15:56:37.392 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PackageId], [p].[BookindId], [p].[BookingId], [p].[Id], [p].[NoofAdults], [p].[NoofChildren]
+FROM [Packages] AS [p]
+2023-08-03 15:56:37.478 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__item_PackageId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[PackageId], [p].[BookindId], [p].[BookingId], [p].[Id], [p].[NoofAdults], [p].[NoofChildren]
+FROM [Packages] AS [p]
+WHERE [p].[PackageId] = @__item_PackageId_0
+2023-08-03 15:56:37.812 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p2='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Packages] SET [NoofAdults] = @p0, [NoofChildren] = @p1
+WHERE [PackageId] = @p2;
+SELECT @@ROWCOUNT;
+2023-08-03 15:56:38.006 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-08-03 15:56:38.038 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI) in 11525.0616ms
+2023-08-03 15:56:38.052 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateBooking (KTWBookingAPI)'
+2023-08-03 15:56:38.077 +05:30 [INF] HTTP PUT /api/Booking/UpdateBooking responded 200 in 12015.1782 ms
+2023-08-03 15:56:38.116 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateBooking application/json 116 - 200 - text/plain;+charset=utf-8 12115.1776ms
+2023-08-03 15:57:37.885 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateCustomers application/json 104
+2023-08-03 15:57:37.918 +05:30 [INF] CORS policy execution successful.
+2023-08-03 15:57:37.945 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateCustomers (KTWBookingAPI)'
+2023-08-03 15:57:37.970 +05:30 [INF] Route matched with {action = "UpdateCustomers", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWBookingAPI.Models.Customer]] UpdateCustomers(KTWBookingAPI.Models.DTO.CustomerDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 15:57:38.034 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-03 15:57:38.106 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.UpdateCustomers (KTWBookingAPI) in 129.3328ms
+2023-08-03 15:57:38.109 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateCustomers (KTWBookingAPI)'
+2023-08-03 15:57:38.111 +05:30 [INF] HTTP PUT /api/Booking/UpdateCustomers responded 400 in 170.0927 ms
+2023-08-03 15:57:38.115 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateCustomers application/json 104 - 400 - application/problem+json;+charset=utf-8 229.5019ms
+2023-08-03 16:29:37.827 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateCustomers application/json 103
+2023-08-03 16:29:37.842 +05:30 [INF] CORS policy execution successful.
+2023-08-03 16:29:37.850 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateCustomers (KTWBookingAPI)'
+2023-08-03 16:29:37.856 +05:30 [INF] Route matched with {action = "UpdateCustomers", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWBookingAPI.Models.Customer]] UpdateCustomers(KTWBookingAPI.Models.DTO.CustomerDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-03 16:29:37.981 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 16:29:38.048 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[@__item_CustomerId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CustomerAge], [c].[CustomerGender], [c].[CustomerId], [c].[CustomerName], [c].[CustomerStatus]
+FROM [Customers] AS [c]
+WHERE [c].[CustomerId] = @__item_CustomerId_0
+2023-08-03 16:29:38.125 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Customers] SET [CustomerAge] = @p0, [CustomerGender] = @p1, [CustomerName] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+2023-08-03 16:29:38.136 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-08-03 16:29:38.140 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.UpdateCustomers (KTWBookingAPI) in 273.2155ms
+2023-08-03 16:29:38.144 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.UpdateCustomers (KTWBookingAPI)'
+2023-08-03 16:29:38.148 +05:30 [INF] HTTP PUT /api/Booking/UpdateCustomers responded 200 in 303.2304 ms
+2023-08-03 16:29:38.155 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5066/api/Booking/UpdateCustomers application/json 103 - 200 - text/plain;+charset=utf-8 327.6081ms

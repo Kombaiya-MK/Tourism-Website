@@ -1,4 +1,5 @@
 ﻿using KTWBookingAPI.Models;
+using KTWBookingAPI.Models.DTO;
 
 namespace KTWBookingAPI.Interfaces
 {
@@ -6,16 +7,16 @@ namespace KTWBookingAPI.Interfaces
     {
         // Booking functions
         Task<ICollection<Booking>> GetAllBookings();
-        Task<Booking> GetBookingById(int bookingId);
-        Task<int> CreateBooking(Booking booking);
-        Task<bool> UpdateBooking(Booking booking);
-        Task<bool> DeleteBooking(int bookingId);
+        Task<ICollection<Booking>> GetBookingById(string UserId);
+        Task<bool> CreateBooking(BookingDTO booking);
+        Task<bool> UpdateBooking(UpdateBookingDTO updateBookingDTO);
         Task<bool> UpdatePackageBooking(PackageBooking packageBooking);
-        Task<bool> UpdateCustomer(Customer customer);
-        Task<decimal> CalculateTourPackagePrice(int packageBookingId, int numberOfParticipants);
-        Task<bool> ApplyTourPackageDiscount(int packageBookingId, string discountCode);
-        Task<bool> ValidateTourPackageBooking(Booking booking);
-        Task<string> GenerateBookingConfirmation(Booking booking);
-        Task<bool> HandleTourPackageCancellation(int packageBookingId);
+        Task<bool> UpdateCustomer(CustomerDTO customer);
+        Task<double> CalculateTourPackagePrice(GeneratePriceDTO generatePriceDTO);
+        Task<BillDTO> GenerateBookingConfirmation(UpdateStatusDTO updateStatusDTO);
+        Task<bool> HandleTourPackageCancellation(CancelPackDTO cancelPackDTO);
+
+        Task<Customer> AddCustomer(CustomerDTO customer);
+        Task<Customer> RemoveCustomer(CustomerDTO customer);
     }
 }

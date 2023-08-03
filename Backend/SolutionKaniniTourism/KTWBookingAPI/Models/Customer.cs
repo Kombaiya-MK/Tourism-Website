@@ -20,6 +20,8 @@ namespace KTWBookingAPI.Models
         [Required(ErrorMessage = "Customer Age is required")]
         public string? CustomerAge { get; set; }
 
+        [Required(ErrorMessage = "Customer Status is required")]
+        public string? CustomerStatus { get; set; }
 
     }
 }

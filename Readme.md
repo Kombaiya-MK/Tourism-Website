@@ -87,18 +87,11 @@ This document provides a comprehensive requirement analysis for the Kanini Touri
 ## Sprint 1 - Features needs to be implemented
 
 ## Modules
-- User Management
+- User Management 
 - Locations(Gallery)
 - Tour Packages
-- Hotels and Rooms
 - Bookings
 - Feedbacks 
 
 
 ## Features 
-- Interactive Maps
-- Weather on Location
-- tour Packages with hotel and without hotel
-- Bill generation
-- Contact page
-

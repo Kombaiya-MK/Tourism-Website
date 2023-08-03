@@ -1,4 +1,10 @@
+#nullable disable
+using KTWWishListAPI.Interfaces;
 using KTWWishListAPI.Models;
+using KTWWishListAPI.Services;
+using KTWWishListAPI.Services.Commands;
+using KTWWishListAPI.Services.Queries;
+using KTWWishListAPI.Utilities.Adapters;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -18,8 +24,13 @@ builder.Services.AddSwaggerGen();
 //User Defined Services
 builder.Services.AddDbContext<WishlistContext>(opts =>
 {
-    opts.UseSqlServer(builder.Configuration.GetConnectionString(""));
+    opts.UseSqlServer(builder.Configuration.GetConnectionString("WishlistConn"));
 });
+builder.Services.AddScoped<ICommandRepo<Wishlist, string>, WishlistCommandRepo>();
+builder.Services.AddScoped<IQueryRepo<Wishlist, string>, WishlistQueryRepo>();;
+builder.Services.AddScoped<IWishlistServices, WishlistService>();
+builder.Services.AddScoped<IAdapter, WishlistAdapter>();
+
 
 //CORS Service Injection
 builder.Services.AddCors(opts =>

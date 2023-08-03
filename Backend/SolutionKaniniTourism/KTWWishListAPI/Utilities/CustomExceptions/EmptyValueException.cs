@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace KTWWishListAPI.Services.Commands
+namespace KTWWishListAPI.Utilities.CustomExceptions
 {
     [Serializable]
     internal class EmptyValueException : Exception

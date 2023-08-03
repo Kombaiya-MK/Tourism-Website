@@ -1,6 +1,7 @@
 ﻿
 using KTWWishListAPI.Interfaces;
 using KTWWishListAPI.Models;
+using KTWWishListAPI.Utilities.CustomExceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace KTWWishListAPI.Services.Commands
@@ -16,7 +17,7 @@ namespace KTWWishListAPI.Services.Commands
             _logger = logger;
         }
 
-        //Add User 
+        //Add Cart 
         public async Task<Wishlist> Add(Wishlist item)
         {
             var transaction = _context.Database.BeginTransaction();
@@ -41,7 +42,7 @@ namespace KTWWishListAPI.Services.Commands
         }
 
 
-        //Update User
+        //Update Cart
         public async Task<Wishlist> Update(Wishlist item)
         {
             var transaction = _context.Database.BeginTransaction();
@@ -58,6 +59,7 @@ namespace KTWWishListAPI.Services.Commands
             {
                 Wishlist.Price = item.Price ?? Wishlist.Price;
                 Wishlist.Quantity = item.Quantity;
+                Wishlist.Status = (item.Status != null && item.Status.Length > 0) ? item.Status:Wishlist.Status;
                 await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
             }

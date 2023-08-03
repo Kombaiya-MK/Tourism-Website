@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace KTWBookingAPI.Services.Commands
+namespace KTWBookingAPI.Utilities.CustomExceptions
 {
     [Serializable]
     internal class EmptyValueException : Exception

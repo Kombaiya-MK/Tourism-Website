@@ -1,4 +1,12 @@
+#nullable disable
+using KTWBookingAPI.Interfaces;
+using KTWBookingAPI.Models;
+using KTWBookingAPI.Services;
+using KTWBookingAPI.Services.Commands;
+using KTWBookingAPI.Services.Queries;
+using KTWBookingAPI.Utilities.Adapters;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Azure;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -18,6 +26,20 @@ builder.Services.AddAzureClients(clientBuilder =>
     clientBuilder.AddBlobServiceClient(builder.Configuration["BookingStore:blob"], preferMsi: true);
     clientBuilder.AddQueueServiceClient(builder.Configuration["BookingStore:queue"], preferMsi: true);
 });
+
+//User Defined Services
+builder.Services.AddDbContext<BookingContext>(opts =>
+{
+    opts.UseSqlServer(builder.Configuration.GetConnectionString("BookingConn"));
+});
+builder.Services.AddScoped<ICommandRepo<Booking, string>, BookingCommandRepo>();
+builder.Services.AddScoped<ICommandRepo<PackageBooking, string>, PackageCommandRepo>();
+builder.Services.AddScoped<ICommandRepo<Customer, string>, CustomerCommandRepo>();
+builder.Services.AddScoped<IQueryRepo<Booking, string>, BookingQueryRepo>();
+builder.Services.AddScoped<IQueryRepo<PackageBooking, string>, PackageQueryRepo>();
+builder.Services.AddScoped<IQueryRepo<Customer, string>, CustomerQueryRepo>();
+builder.Services.AddScoped<IBookingService, BookingService>();
+builder.Services.AddScoped<IAdapter, BookingAdapter>();
 
 //CORS Service Injection
 builder.Services.AddCors(opts =>

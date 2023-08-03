@@ -5,7 +5,7 @@ namespace KTWWishListAPI.Models
 {
     public class Wishlist
     {
-        
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
@@ -27,5 +27,8 @@ namespace KTWWishListAPI.Models
 
         [Required(ErrorMessage = "Date is required")]
         public DateTime AddedDate { get; set; }
+
+        [Required(ErrorMessage = "Status is Required!!")]
+        public string? Status { get; set; }
     }
 }

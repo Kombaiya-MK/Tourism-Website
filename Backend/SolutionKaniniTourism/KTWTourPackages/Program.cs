@@ -1,3 +1,4 @@
+#nullable disable
 using KTWTourPackages.Interfaces;
 using KTWTourPackages.Models;
 using KTWTourPackages.Services;
