@@ -287,3 +287,23 @@ SELECT @@ROWCOUNT;
 2023-08-03 17:32:54.883 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.UpdateCart (KTWWishListAPI)'
 2023-08-03 17:32:54.886 +05:30 [INF] HTTP PUT /api/WishList/UpdateCart responded 200 in 235.4865 ms
 2023-08-03 17:32:54.887 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:7145/api/WishList/UpdateCart application/json 85 - 200 - text/plain;+charset=utf-8 248.6317ms
+2023-08-03 20:01:10.223 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 20:01:10.806 +05:30 [INF] Now listening on: https://localhost:7145
+2023-08-03 20:01:10.807 +05:30 [INF] Now listening on: http://localhost:5192
+2023-08-03 20:01:10.813 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 20:01:10.815 +05:30 [INF] Hosting environment: Development
+2023-08-03 20:01:10.816 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWWishListAPI\
+2023-08-03 20:01:38.501 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 20:01:38.905 +05:30 [INF] Now listening on: https://localhost:7145
+2023-08-03 20:01:38.907 +05:30 [INF] Now listening on: http://localhost:5192
+2023-08-03 20:01:38.919 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 20:01:38.922 +05:30 [INF] Hosting environment: Development
+2023-08-03 20:01:38.925 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWWishListAPI\
+2023-08-03 20:01:40.313 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/index.html - -
+2023-08-03 20:01:41.229 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 20:01:41.241 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/_vs/browserLink - -
+2023-08-03 20:01:41.241 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/_framework/aspnetcore-browser-refresh.js - - - 200 12360 application/javascript;+charset=utf-8 10.7351ms
+2023-08-03 20:01:41.242 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/index.html - - - 200 - text/html;charset=utf-8 934.9956ms
+2023-08-03 20:01:41.289 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 47.8789ms
+2023-08-03 20:01:41.489 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/v1/swagger.json - -
+2023-08-03 20:01:41.743 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 253.9287ms

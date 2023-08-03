@@ -33,6 +33,7 @@ namespace KTWLocationsAPI.Services.Commands
             }
             await _context.SaveChangesAsync();
             _logger.LogInformation("Image Added Successfully");
+            return item;
             throw new UnableToAddException("Unable To Add Images");
         }
 

@@ -32,6 +32,7 @@ namespace KTWLocationsAPI.Services.Commands
             }
             await _context.SaveChangesAsync();
             _logger.LogInformation("Speciality Added Successfully");
+            return item;
             throw new UnableToAddException("Unable To Add Speciality");
         }
 

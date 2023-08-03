@@ -56,9 +56,9 @@ namespace KTWFeedbackAPI.Services.Commands
 
             if (item != null)
             {
-                feedback.Review = item.Review ?? feedback.Review;
+                feedback.Review = (item.Review != null && item.Review.Length > 0) ? item.Review : feedback.Review;
                 feedback.Rating = item.Rating;
-                feedback.ServiceType = item.ServiceType ?? feedback.ServiceType;
+                feedback.ServiceType = (item.ServiceType != null && item.ServiceType.Length > 0) ? item.ServiceType : feedback.ServiceType;
                 await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
             }

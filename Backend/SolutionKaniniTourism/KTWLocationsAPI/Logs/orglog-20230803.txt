@@ -1,1 +1,35 @@
 2023-08-03 12:06:37.725 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 20:01:10.581 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 20:01:10.974 +05:30 [INF] Now listening on: https://localhost:7153
+2023-08-03 20:01:10.976 +05:30 [INF] Now listening on: http://localhost:5261
+2023-08-03 20:01:10.981 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 20:01:10.983 +05:30 [INF] Hosting environment: Development
+2023-08-03 20:01:10.984 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWLocationsAPI\
+2023-08-03 20:02:47.823 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 20:02:48.267 +05:30 [INF] Now listening on: https://localhost:7153
+2023-08-03 20:02:48.268 +05:30 [INF] Now listening on: http://localhost:5261
+2023-08-03 20:02:48.273 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 20:02:48.274 +05:30 [INF] Hosting environment: Development
+2023-08-03 20:02:48.275 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWLocationsAPI\
+2023-08-03 20:02:51.188 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger - -
+2023-08-03 20:02:51.365 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger - - - 301 0 - 179.3625ms
+2023-08-03 20:02:51.375 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/index.html - -
+2023-08-03 20:02:51.806 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/index.html - - - 200 - text/html;charset=utf-8 430.9762ms
+2023-08-03 20:02:51.813 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/swagger-ui-standalone-preset.js - -
+2023-08-03 20:02:51.813 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 20:02:51.814 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/swagger-ui-bundle.js - -
+2023-08-03 20:02:51.814 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/swagger-ui.css - -
+2023-08-03 20:02:51.818 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/_vs/browserLink - -
+2023-08-03 20:02:51.823 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/_framework/aspnetcore-browser-refresh.js - - - 200 12362 application/javascript;+charset=utf-8 9.2153ms
+2023-08-03 20:02:51.917 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 99.1205ms
+2023-08-03 20:02:51.925 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-08-03 20:02:51.925 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-08-03 20:02:51.929 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/swagger-ui.css - - - 200 144929 text/css 115.8025ms
+2023-08-03 20:02:51.932 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 118.4791ms
+2023-08-03 20:02:51.939 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-08-03 20:02:51.942 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 128.8787ms
+2023-08-03 20:02:52.252 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/v1/swagger.json - -
+2023-08-03 20:02:52.299 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/favicon-32x32.png - -
+2023-08-03 20:02:52.306 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-08-03 20:02:52.309 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/favicon-32x32.png - - - 200 628 image/png 9.3561ms
+2023-08-03 20:02:52.332 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 79.5112ms

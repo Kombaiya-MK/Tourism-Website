@@ -1,0 +1,59 @@
+2023-08-03 20:01:10.951 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 20:01:11.392 +05:30 [INF] Now listening on: https://localhost:7026
+2023-08-03 20:01:11.394 +05:30 [INF] Now listening on: http://localhost:5266
+2023-08-03 20:01:11.402 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 20:01:11.404 +05:30 [INF] Hosting environment: Development
+2023-08-03 20:01:11.406 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWFeedbackAPI\
+2023-08-03 20:03:17.895 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 20:03:18.455 +05:30 [INF] Now listening on: https://localhost:7026
+2023-08-03 20:03:18.467 +05:30 [INF] Now listening on: http://localhost:5266
+2023-08-03 20:03:18.476 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 20:03:18.479 +05:30 [INF] Hosting environment: Development
+2023-08-03 20:03:18.480 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWFeedbackAPI\
+2023-08-03 20:03:19.338 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - -
+2023-08-03 20:03:20.153 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 20:03:20.165 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - - - 200 - text/html;charset=utf-8 832.9119ms
+2023-08-03 20:03:20.167 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - - - 200 12360 application/javascript;+charset=utf-8 13.5476ms
+2023-08-03 20:03:20.178 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - -
+2023-08-03 20:03:20.236 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 58.5058ms
+2023-08-03 20:03:20.346 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - -
+2023-08-03 20:03:20.551 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 204.5777ms
+2023-08-03 20:05:33.461 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:7026/api/Feedback/EditFeedback application/json 104
+2023-08-03 20:05:33.493 +05:30 [INF] CORS policy execution successful.
+2023-08-03 20:05:35.324 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.EditFeedback (KTWFeedbackAPI)'
+2023-08-03 20:05:35.628 +05:30 [INF] Route matched with {action = "EditFeedback", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWFeedbackAPI.Models.Feedback]] EditFeedback(KTWFeedbackAPI.Models.DTO.UpdateFeedbackDTO) on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-03 20:05:39.488 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 20:05:56.801 +05:30 [ERR] An error occurred using the connection to database 'DBFeedbackManagementKTW' on server 'LAPTOP-GGUGVPR9\SQLEXPRESS'.
+2023-08-03 20:05:57.169 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'KTWFeedbackAPI.Models.Error'.
+2023-08-03 20:05:57.245 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.EditFeedback (KTWFeedbackAPI) in 21589.0373ms
+2023-08-03 20:05:57.265 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.EditFeedback (KTWFeedbackAPI)'
+2023-08-03 20:05:57.281 +05:30 [INF] HTTP PUT /api/Feedback/EditFeedback responded 400 in 23761.7875 ms
+2023-08-03 20:05:57.335 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:7026/api/Feedback/EditFeedback application/json 104 - 400 - application/json;+charset=utf-8 23874.7650ms
+2023-08-03 20:07:25.953 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-03 20:07:27.129 +05:30 [INF] Now listening on: https://localhost:7026
+2023-08-03 20:07:27.146 +05:30 [INF] Now listening on: http://localhost:5266
+2023-08-03 20:07:27.153 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-03 20:07:27.155 +05:30 [INF] Hosting environment: Development
+2023-08-03 20:07:27.156 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWFeedbackAPI\
+2023-08-03 20:07:28.073 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - -
+2023-08-03 20:07:29.717 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - - - 200 - text/html;charset=utf-8 1647.8342ms
+2023-08-03 20:07:29.767 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - -
+2023-08-03 20:07:29.763 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - -
+2023-08-03 20:07:29.935 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - - - 200 12360 application/javascript;+charset=utf-8 172.3583ms
+2023-08-03 20:07:30.094 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 326.9676ms
+2023-08-03 20:07:30.324 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - -
+2023-08-03 20:07:30.554 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 230.2592ms
+2023-08-03 20:07:42.989 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:7026/api/Feedback/EditFeedback application/json 104
+2023-08-03 20:07:43.004 +05:30 [INF] CORS policy execution successful.
+2023-08-03 20:07:43.204 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.EditFeedback (KTWFeedbackAPI)'
+2023-08-03 20:07:43.273 +05:30 [INF] Route matched with {action = "EditFeedback", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWFeedbackAPI.Models.Feedback]] EditFeedback(KTWFeedbackAPI.Models.DTO.UpdateFeedbackDTO) on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-03 20:07:44.768 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-03 20:07:47.572 +05:30 [INF] Executed DbCommand (361ms) [Parameters=[@__item_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+WHERE [f].[Email] = @__item_Email_0
+2023-08-03 20:07:47.988 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'KTWFeedbackAPI.Models.Error'.
+2023-08-03 20:07:48.019 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.EditFeedback (KTWFeedbackAPI) in 4737.5089ms
+2023-08-03 20:07:48.026 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.EditFeedback (KTWFeedbackAPI)'
+2023-08-03 20:07:48.037 +05:30 [INF] HTTP PUT /api/Feedback/EditFeedback responded 404 in 5023.6654 ms
+2023-08-03 20:07:48.110 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:7026/api/Feedback/EditFeedback application/json 104 - 404 - application/json;+charset=utf-8 5122.0672ms
