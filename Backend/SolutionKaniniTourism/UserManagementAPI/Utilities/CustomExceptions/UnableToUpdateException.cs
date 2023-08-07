@@ -3,7 +3,7 @@
 namespace UserManagementAPI.Services
 {
     [Serializable]
-    internal class UnableToUpdateException : Exception
+    public class UnableToUpdateException : Exception
     {
         public UnableToUpdateException()
         {

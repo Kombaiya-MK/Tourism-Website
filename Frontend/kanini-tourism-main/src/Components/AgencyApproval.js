@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Typography,
   Paper,
@@ -20,11 +20,30 @@ import {
 } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
+import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AgencyApproval = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedAgency, setSelectedAgency] = useState(null);
+  const [agencyApprovals, setAgencyApprovals] = useState([]);
+  const [registeredAgencies, setRegisteredAgencies] = useState([]);
+
+  useEffect(() => {
+    // Fetch agency approvals and registered agencies data
+    axios.get('https://localhost:7289/api/User/GetAllTravelAgents')
+      .then(response => {
+        const approvals = response.data.filter(agent => agent.travelAgent.length === 0);
+        const registered = response.data.filter(agent => agent.travelAgent.length > 0);
+        setAgencyApprovals(approvals);
+        setRegisteredAgencies(registered);
+      })
+      .catch(error => {
+        console.error('Error fetching agency data:', error);
+      });
+  }, []);
 
   const handleTabChange = (event, newValue) => {
     setSelectedTab(newValue);
@@ -33,11 +52,13 @@ const AgencyApproval = () => {
   const handleApprove = (agencyId) => {
     // Logic to approve the travel agency with the given agencyId
     console.log(`Approving agency with ID: ${agencyId}`);
+    toast.success('Agency approved successfully');
   };
 
   const handleDisapprove = (agencyId) => {
     // Logic to disapprove the travel agency with the given agencyId
     console.log(`Disapproving agency with ID: ${agencyId}`);
+    toast.error('Agency disapproved');
   };
 
   const handleModalOpen = (agency) => {
@@ -49,19 +70,6 @@ const AgencyApproval = () => {
     setSelectedAgency(null);
     setIsModalOpen(false);
   };
-
-  const agencyApprovals = [
-    { id: 1, name: 'Travel Agency 1', status: 'Pending' },
-    { id: 2, name: 'Travel Agency 2', status: 'Approved' },
-    { id: 3, name: 'Travel Agency 3', status: 'Pending' },
-    // Add more agency approvals
-  ];
-
-  const registeredAgencies = [
-    { id: 4, name: 'Travel Agency 4', status: 'Approved' },
-    { id: 5, name: 'Travel Agency 5', status: 'Approved' },
-    // Add more registered agencies
-  ];
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '40px auto', maxWidth: 800 }}>
@@ -88,8 +96,8 @@ const AgencyApproval = () => {
                 {selectedTab === 0 && agencyApprovals.map(agency => (
                   <TableRow key={agency.id}>
                     <TableCell>{agency.id}</TableCell>
-                    <TableCell>{agency.name}</TableCell>
-                    <TableCell>{agency.status}</TableCell>
+                    <TableCell>{agency.userDetails[0]?.userName}</TableCell>
+                    <TableCell>Pending</TableCell>
                     <TableCell>
                       <Tooltip title="View Agency">
                         <Button variant="outlined" color="primary" onClick={() => handleModalOpen(agency)}>View</Button>
@@ -100,8 +108,8 @@ const AgencyApproval = () => {
                 {selectedTab === 1 && registeredAgencies.map(agency => (
                   <TableRow key={agency.id}>
                     <TableCell>{agency.id}</TableCell>
-                    <TableCell>{agency.name}</TableCell>
-                    <TableCell>{agency.status}</TableCell>
+                    <TableCell>{agency.userDetails[0]?.userName}</TableCell>
+                    <TableCell>Approved</TableCell>
                     <TableCell>
                       <Tooltip title="View Agency">
                         <Button variant="outlined" color="primary" onClick={() => handleModalOpen(agency)}>View</Button>
@@ -116,10 +124,10 @@ const AgencyApproval = () => {
       </Paper>
 
       <Dialog open={isModalOpen} onClose={handleModalClose}>
-        <DialogTitle>{selectedAgency && selectedAgency.name}</DialogTitle>
+        <DialogTitle>{selectedAgency && selectedAgency.userDetails[0]?.userName}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Status: {selectedAgency && selectedAgency.status}
+            Status: {selectedAgency && (selectedAgency.travelAgent.length > 0 ? 'Approved' : 'Pending')}
           </DialogContentText>
         </DialogContent>
         <DialogActions>

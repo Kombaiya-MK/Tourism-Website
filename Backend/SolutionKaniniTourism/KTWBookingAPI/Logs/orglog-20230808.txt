@@ -1,0 +1,13 @@
+2023-08-08 02:27:37.626 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 02:27:38.673 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-08 02:27:38.690 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 02:27:38.692 +05:30 [INF] Hosting environment: Development
+2023-08-08 02:27:38.697 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-08 02:27:42.358 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-08 02:27:43.482 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 1132.9144ms
+2023-08-08 02:27:43.520 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-08 02:27:43.523 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 02:27:43.531 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12357 application/javascript;+charset=utf-8 7.6385ms
+2023-08-08 02:27:43.596 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 75.9087ms
+2023-08-08 02:27:43.969 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-08 02:27:44.568 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 598.8685ms

@@ -4,6 +4,11 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import ForgotPassword from './ForgotPassword';
+import Modal from '@mui/material/Modal';
+
 
 const containerStyle = {
   marginTop: '2rem',
@@ -44,6 +49,13 @@ const validationSchema = yup.object().shape({
 });
 
 function LoginForm() {
+
+  const [isForgotPasswordModalOpen, setIsForgotPasswordModalOpen] = useState(false);
+
+  const toggleForgotPasswordModal = () => {
+    setIsForgotPasswordModalOpen(!isForgotPasswordModalOpen);
+  };
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -52,18 +64,19 @@ function LoginForm() {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await fetch('https://localhost:7289/api/User/Login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(values),
-        });
+        const response = await axios.post('https://localhost:7289/api/User/Login', values);
 
-        const data = await response.json();
+        const data = response.data;
 
         if (data.token) {
+          localStorage.clear();
+          localStorage.setItem('email', data.email);
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('status', data.status);
+          localStorage.setItem('role', data.role);
+
           toast.success('Login successful');
+          navigate('/');
         } else {
           toast.error('Login failed');
         }
@@ -106,7 +119,7 @@ function LoginForm() {
         </Button>
       </form>
       <div style={{ marginTop: '1rem', textAlign: 'center' }}>
-        <Link href="#" style={linkStyle}>
+        <Link href="#" style={linkStyle} onClick={toggleForgotPasswordModal}>
           Forgot Password?
         </Link>
       </div>
@@ -118,6 +131,11 @@ function LoginForm() {
           Sign Up
         </Link>
       </div>
+      <Modal open={isForgotPasswordModalOpen} onClose={toggleForgotPasswordModal}>
+        <div style={{ width: 400, backgroundColor: 'white', padding: 20, position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+          <ForgotPassword onClose={toggleForgotPasswordModal} />
+        </div>
+      </Modal>
       <ToastContainer position="bottom-right" autoClose={3000} />
     </Container>
   );

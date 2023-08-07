@@ -1,618 +1,318 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+﻿
 using Moq;
+using System.Data;
 using System.Security.Cryptography;
 using System.Text;
+using UserAPI.Interfaces;
+using UserAPI.Models.DTO;
 using UserManagementAPI.Interfaces;
 using UserManagementAPI.Models;
-using UserManagementAPI.Services.Commands;
-using UserManagementAPI.Services.Queries;
+using UserManagementAPI.Services;
 
 namespace TestUserAPI
 {
     [TestClass]
-    public class TestUserServices
+    public class TestUserService
     {
-        private static UserManagementContext? _context;
+        private Mock<ICommandRepo<TravelAgent, string>>? _cmdTravelRepoMock;
+        private Mock<ICommandRepo<UserDetails, string>>? _cmdDetailsRepoMock;
+        private Mock<ICommandRepo<User, string>>? _cmdUserRepoMock;
+        private Mock<ICommandRepo<VerificationCodes, string>>? _cmdCodeRepoMock;
+        private Mock<IQueryRepo<TravelAgent, string>>? _qryTravelRepoMock;
+        private Mock<IQueryRepo<UserDetails, string>>? _qryDetailsRepoMock;
+        private Mock<IQueryRepo<User, string>>? _qryUserRepoMock;
+        private Mock<IQueryRepo<VerificationCodes, string>>? _qryCodeRepoMock;
+        private Mock<ITokenGenerate>? _tokenServiceMock;
+        private Mock<IAdapter>? _adapterMock;
 
-        public static DbContextOptions<UserManagementContext> GetDbContextOptions()
+        private ManageUserService _userService;
+
+        [TestInitialize]
+        public void Initialize()
         {
-            var options = new DbContextOptionsBuilder<UserManagementContext>()
-                .UseInMemoryDatabase(databaseName: "UserManagement")
-                .ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning))
-                .Options;
-            _context = new UserManagementContext(options);
-            return options;
-        }
+            _cmdTravelRepoMock = new Mock<ICommandRepo<TravelAgent, string>>();
+            _cmdDetailsRepoMock = new Mock<ICommandRepo<UserDetails, string>>();
+            _cmdUserRepoMock = new Mock<ICommandRepo<User, string>>();
+            _cmdCodeRepoMock = new Mock<ICommandRepo<VerificationCodes, string>>();
+            _qryTravelRepoMock = new Mock<IQueryRepo<TravelAgent, string>>();
+            _qryDetailsRepoMock = new Mock<IQueryRepo<UserDetails, string>>();
+            _qryUserRepoMock = new Mock<IQueryRepo<User, string>>();
+            _qryCodeRepoMock = new Mock<IQueryRepo<VerificationCodes, string>>();
+            _tokenServiceMock = new Mock<ITokenGenerate>();
+            _adapterMock = new Mock<IAdapter>();
 
-        [TestCleanup]
-        public void Cleanup()
-        {
-            _context?.Database.EnsureDeleted();
-            _context?.Dispose();
-        }
+            _userService = new ManageUserService(
+                _cmdTravelRepoMock.Object,
+                _cmdDetailsRepoMock.Object,
+                _cmdUserRepoMock.Object,
+                _qryTravelRepoMock.Object,
+                _qryDetailsRepoMock.Object,
+                _qryUserRepoMock.Object,
+                _qryCodeRepoMock.Object,
+                _cmdCodeRepoMock.Object,
+                _tokenServiceMock.Object,
+                _adapterMock.Object
+            );
 
-        //Positive Testing
-
-        [TestMethod]
-        public async Task Add_User_Returns_User()
-        {
-            var hmac = new HMACSHA512();
-
-            using (var context = new UserManagementContext(GetDbContextOptions()))
+            _adapterMock.Setup(a => a.UserDTOtoUserAdapter(It.IsAny<UserDTO>())).Returns((UserDTO userDTO) =>
             {
-                context.Users.Add(new User
+                return new User
                 {
-                    Id = 1,
-                    Role = "Admin",
-                    Email = "Admin@gmail.com",
-                    HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("admin@123")),
-                    Password = hmac.Key,
-                    Status = "Active"
-                });
-                context.Users.Add(new User
-                {
-                    Id = 2,
-                    Role = "TravelAgent",
-                    Email = "Agent@gmail.com",
-                    HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("agent@123")),
-                    Password = hmac.Key,
-                    Status = "Active"
-                });
-                context.Users.Add(new User
-                {
-                    Id = 2,
-                    Role = "user",
-                    Email = "user@gmail.com",
-                    HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("user@123")),
-                    Password = hmac.Key,
-                    Status = "Active"
-                });
-                await context.SaveChangesAsync();
-            }
-            using var userContext = new UserManagementContext(GetDbContextOptions());
-            var mock = new Mock<ILogger<User>>();
-            ILogger<User> logger = mock.Object;
-            IQueryRepo<User, string> repo = new UserQueryRepo(userContext, logger);
-            var data = await repo.GetAll();
-            Assert.AreEqual(3, data.Count);
-        }
-
-
-        [TestMethod]
-        public async Task GetAll_User_Returns_Users()
-        {
-            var hmac = new HMACSHA512();
-
-            using (var context = new UserManagementContext(GetDbContextOptions()))
-            {
-                context.Users.Add(new User
-                {
-                    Id = 1,
-                    Role = "Admin",
-                    Email = "Admin@gmail.com",
-                    HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("admin@123")),
-                    Password = hmac.Key,
-                    Status = "Active"
-                });
-                context.Users.Add(new User
-                {
-                    Id = 2,
-                    Role = "TravelAgent",
-                    Email = "Agent@gmail.com",
-                    HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("agent@123")),
-                    Password = hmac.Key,
-                    Status = "Active"
-                });
-                context.Users.Add(new User
-                {
-                    Id = 2,
-                    Role = "user",
-                    Email = "user@gmail.com",
-                    HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("user@123")),
-                    Password = hmac.Key,
-                    Status = "Active"
-                });
-                await context.SaveChangesAsync();
-            }
-            using var userContext = new UserManagementContext(GetDbContextOptions());
-            var mock = new Mock<ILogger<User>>();
-            ILogger<User> logger = mock.Object;
-            IQueryRepo<User, string> repo = new UserQueryRepo(userContext, logger);
-            var data = await repo.GetAll();
-            Assert.AreEqual(3, data.Count);
-        }
-
-        [TestMethod]
-        public async Task Get_User_Returns_User()
-        {
-            var hmac = new HMACSHA512();
-
-            using (var context = new UserManagementContext(GetDbContextOptions()))
-            {
-                context.Users.Add(new User
-                {
-                    Id = 1,
-                    Role = "Admin",
-                    Email = "Admin@gmail.com",
-                    HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("admin@123")),
-                    Password = hmac.Key,
-                    Status = "Active"
-                });
-                context.Users.Add(new User
-                {
-                    Id = 2,
-                    Role = "TravelAgent",
-                    Email = "Agent@gmail.com",
-                    HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("agent@123")),
-                    Password = hmac.Key,
-                    Status = "Active"
-                });
-                context.Users.Add(new User
-                {
-                    Id = 2,
-                    Role = "user",
-                    Email = "user@gmail.com",
-                    HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("user@123")),
-                    Password = hmac.Key,
-                    Status = "Active"
-                });
-                await context.SaveChangesAsync();
-            }
-            using var userContext = new UserManagementContext(GetDbContextOptions());
-            var mock = new Mock<ILogger<User>>();
-            ILogger<User> logger = mock.Object;
-            IQueryRepo<User, string> repo = new UserQueryRepo(userContext, logger);
-            var data = await repo.Get("Agent@gmail.com");
-            Assert.AreEqual(data.Role, "TravelAgent");
-        }
-
-        [TestMethod]
-        public async Task Update_User_Returns_User()
-        {
-            var hmac = new HMACSHA512();
-
-            using (var context = new UserManagementContext(GetDbContextOptions()))
-            {
-                context.Users.Add(new User
-                {
-                    Id = 1,
-                    Role = "Admin",
-                    Email = "Admin@gmail.com",
-                    HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("admin@123")),
-                    Password = hmac.Key,
-                    Status = "Active"
-                });
-                context.Users.Add(new User
-                {
-                    Id = 2,
-                    Role = "TravelAgent",
-                    Email = "Agent@gmail.com",
-                    HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("agent@123")),
-                    Password = hmac.Key,
-                    Status = "Active"
-                });
-                context.Users.Add(new User
-                {
-                    Id = 3,
-                    Role = "user",
-                    Email = "user@gmail.com",
-                    HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("user@123")),
-                    Password = hmac.Key,
-                    Status = "Active"
-                });
-                await context.SaveChangesAsync();
-            }
-            using var userContext = new UserManagementContext(GetDbContextOptions());
-            var mock = new Mock<ILogger<User>>();
-            ILogger<User> logger = mock.Object;
-            userContext.Update(new User
-            {
-                Id = 2,
-                Role = "Admin",
-                Email = "user@gmail.com",
-                HashKey = hmac.ComputeHash(Encoding.UTF8.GetBytes("user@123")),
-                Password = hmac.Key,
-                Status = "Active"
+                    Email = userDTO.Email,
+                    HashKey = new byte[] { 0, 1, 2, 3 },
+                    Password = new byte[] { 4, 5, 6, 7 }
+                };
             });
-            IQueryRepo<User, string> repo = new UserQueryRepo(userContext, logger);
-            var data = await repo.Get("user@gmail.com");
-            Assert.AreEqual(data.Role, "Admin");
+
+            // Set up default behavior for user query repo mock
+            _qryUserRepoMock.Setup(q => q.Get(It.IsAny<string>())).ReturnsAsync((string email) =>
+            {
+                return new User
+                {
+                    Email = email,
+                    HashKey = new byte[] { 0, 1, 2, 3 },
+                    Password = new byte[] { 4, 5, 6, 7 }
+                };
+            });
+
+            // Set up default behavior for user command repo mock
+            _cmdUserRepoMock.Setup(c => c.Add(It.IsAny<User>())).ReturnsAsync((User user) => user);
+            _cmdUserRepoMock.Setup(c => c.Update(It.IsAny<User>())).ReturnsAsync((User user) => user);
+
+            // Set up default behavior for token service mock
+            _tokenServiceMock.Setup(t => t.GenerateToken(It.IsAny<UserDTO>())).Returns("fake-token");
         }
 
         [TestMethod]
-        public async Task Add_UserDetail_Returns_UserDetail()
+        public async Task GetAllUsers_NoUsers_ThrowsException()
         {
-            using (var context = new UserManagementContext(GetDbContextOptions()))
+            _qryUserRepoMock?.Setup(q => q.GetAll()).ReturnsAsync(new List<User>());
+
+            // Act & Assert
+            await Assert.ThrowsExceptionAsync<NoDataException>(() => _userService.GetAllUsers());
+        }
+
+        [TestMethod]
+        public async Task GetAllUserDetails_NoDetails_ThrowsException()
+        {
+            _qryDetailsRepoMock?.Setup(q => q.GetAll()).ReturnsAsync(new List<UserDetails>());
+
+            // Act & Assert
+            await Assert.ThrowsExceptionAsync<NoDataException>(() => _userService.GetAllUserDetails());
+        }
+
+        [TestMethod]
+        public async Task GetAllTravelAgents_NoAgents_ThrowsException()
+        {
+            _qryTravelRepoMock?.Setup(q => q.GetAll()).ReturnsAsync(new List<TravelAgent>());
+
+            // Act & Assert
+            await Assert.ThrowsExceptionAsync<NoDataException>(() => _userService.GetAllTravelAgents());
+        }
+
+        [TestMethod]
+        public async Task Register_ValidUser_ReturnsUserDTO()
+        {
+            var userDTO = new UserDTO
             {
-                context.Details.Add(new UserDetails
-                {
-                    Id = 1,
-                    Email = "Admin@gmail.com",
-                    PhoneNumber = "9994291196",
-                    Address = "No 1 , ABC st , Coimbatore",
-                    Gender = "Male",
-                    UserName = "Test1",
-                    DateofBirth = DateTime.Now,
+                Role = "Admin",
+                Email = "Admin@gmail.com",
+                Password = "admin@123",
+                Status = "Active"
+            };
+            var user = new User
+            {
+                Role = "Admin",
+                Email = "Admin@gmail.com",
+                HashKey = new byte[] { 0, 1, 2, 3 },
+                Password = new byte[] { 4, 5, 6, 7 },
+                Status = "Active"
+            };
 
-                });
-                context.Details.Add(new UserDetails
-                {
-                    Id = 1,
-                    Email = "user@gmail.com",
-                    PhoneNumber = "9786543210",
-                    Address = "No 1 , ABC st , Coimbatore",
-                    Gender = "Male",
-                    UserName = "Test2",
-                    DateofBirth = DateTime.Now,
+            _adapterMock?.Setup(a => a.UserDTOtoUserAdapter(userDTO)).Returns(user);
+            _cmdUserRepoMock?.Setup(c => c.Add(user)).ReturnsAsync(user);
+            _tokenServiceMock?.Setup(t => t.GenerateToken(It.IsAny<UserDTO>())).Returns("fake-token");
 
-                });
-                context.Details.Add(new UserDetails
-                {
-                    Id = 1,
-                    Email = "agent@gmail.com",
-                    PhoneNumber = "6382205871",
-                    Address = "No 1 , ABC st , Coimbatore",
-                    Gender = "Male",
-                    UserName = "Test3",
-                    DateofBirth = DateTime.Now,
+            var result = await _userService.Register(userDTO);
 
-                });
-                await context.SaveChangesAsync();
+            Assert.IsNotNull(result);
+            Assert.AreEqual(userDTO.Email, result.Email);
+            Assert.AreEqual(userDTO.Role, result.Role);
+            Assert.AreEqual("fake-token", result.Token);
+        }
+
+        [TestMethod]
+        public async Task Login_ValidCredentials_ReturnsUserDTO()
+        {
+            // Arrange
+            var userEmail = "user@example.com";
+            var userPassword = "password";
+
+            var hashedPassword = new HMACSHA512().ComputeHash(Encoding.UTF8.GetBytes(userPassword));
+
+            var userMock = new Mock<IQueryRepo<User, string>>();
+            userMock.Setup(q => q.Get(userEmail)).ReturnsAsync(new User
+            {
+                Email = userEmail,
+                Password = hashedPassword,
+                HashKey = hashedPassword
+            });
+
+            _tokenServiceMock?.Setup(t => t.GenerateToken(It.IsAny<UserDTO>())).Returns("fake-token");
+
+            var userDTO = new UserDTO
+            {
+                Email = userEmail,
+                Password = userPassword
+            };
+
+            // Act
+            var result = await _userService.Login(userDTO);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(userDTO.Email, result.Email);
+            Assert.AreEqual("fake-token", result.Token);
+        }
+
+
+
+        [TestMethod]
+        public async Task ApproveAgent_ValidObject_ReturnsUser()
+        {
+            //Arrange
+            ApproveAgentDTO agentDTO = new()
+            {
+                Email = "agent@gmail.com",
+                Status = "Approved"
+            };
+
+            //Act
+            var result = await _userService.ApproveAgent(agentDTO);
+
+            //Assert
+            Assert.IsNotNull(result);
+
+        }
+
+        [TestMethod]
+        public async Task GetAllTravelAgents_Valid_ReturnsListOfAgents()
+        {
+            // Arrange
+            var travelAgentList = new List<TravelAgent>
+            {
+                new TravelAgent { AgencyEmail = "agent1@example.com", AgencyName = "Agent 1" },
+                new TravelAgent { AgencyEmail = "agent2@example.com", AgencyName = "Agent 2" }
+            };
+
+            _qryTravelRepoMock?.Setup(q => q.GetAll()).ReturnsAsync(travelAgentList);
+
+            // Act
+            var result = await _userService.GetAllTravelAgents();
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(travelAgentList.Count, result.Count);
+            foreach (var expectedAgent in travelAgentList)
+            {
+                var matchingResultAgent = result.FirstOrDefault(a => a.AgencyEmail == expectedAgent.AgencyEmail && a.AgencyName == expectedAgent.AgencyName);
+                Assert.IsNotNull(matchingResultAgent);
             }
-            using var userContext = new UserManagementContext(GetDbContextOptions());
-            var mock = new Mock<ILogger<UserDetails>>();
-            ILogger<UserDetails> logger = mock.Object;
-            IQueryRepo<UserDetails, string> repo = new UserDetailsQueryRepo(userContext, logger);
-            var data = await repo.GetAll();
-            Assert.AreEqual(3, data.Count);
         }
 
 
         [TestMethod]
-        public async Task GetAll_UserDetails_Returns_UserDetails()
+        public async Task GetAllUserDetails_Valid_ReturnsListOfUserDetails()
         {
-            using (var context = new UserManagementContext(GetDbContextOptions()))
+            // Arrange
+            var userdetails = new List<UserDetails>
             {
-                context.Details.Add(new UserDetails
-                {
-                    Id = 1,
-                    Email = "Admin@gmail.com",
-                    PhoneNumber = "9994291196",
-                    Address = "No 1 , ABC st , Coimbatore",
-                    Gender = "Male",
-                    UserName = "Test1",
-                    DateofBirth = DateTime.Now,
+                new UserDetails () { Email = "user1@gmail.com" , UserName = "User1"},
+                new UserDetails () { Email = "user2@gmail.com" , UserName = "User2"}
+            };
 
-                });
-                context.Details.Add(new UserDetails
-                {
-                    Id = 1,
-                    Email = "user@gmail.com",
-                    PhoneNumber = "9786543210",
-                    Address = "No 1 , ABC st , Coimbatore",
-                    Gender = "Male",
-                    UserName = "Test2",
-                    DateofBirth = DateTime.Now,
+            _qryDetailsRepoMock?.Setup(q => q.GetAll()).ReturnsAsync(userdetails);
 
-                });
-                context.Details.Add(new UserDetails
-                {
-                    Id = 1,
-                    Email = "agent@gmail.com",
-                    PhoneNumber = "6382205871",
-                    Address = "No 1 , ABC st , Coimbatore",
-                    Gender = "Male",
-                    UserName = "Test3",
-                    DateofBirth = DateTime.Now,
+            // Act
+            var result = await _userService.GetAllUserDetails();
 
-                });
-                await context.SaveChangesAsync();
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(userdetails.Count, result.Count);
+            foreach (var expectedAgent in userdetails)
+            {
+                var matchingResultAgent = result.FirstOrDefault(a => a.Email == expectedAgent.Email && a.UserName == expectedAgent.UserName);
+                Assert.IsNotNull(matchingResultAgent);
             }
-            using UserManagementContext userContext = new(GetDbContextOptions());
-            var mock = new Mock<ILogger<UserDetails>>();
-            ILogger<UserDetails> logger = mock.Object;
-            IQueryRepo<UserDetails, string> repo = new UserDetailsQueryRepo(userContext, logger);
-            var data = await repo.GetAll();
-            Assert.AreEqual(3, data.Count);
         }
 
         [TestMethod]
-        public async Task Get_UserDetails_Returns_UserDetails()
+        public async Task AddTravelAgency_ValidInput_ReturnsAgencyDTO()
         {
-            using (var context = new UserManagementContext(GetDbContextOptions()))
+            
+            //Arrange
+            AgencyDTO agencyDTO = new()
             {
-                context.Details.Add(new UserDetails
-                {
-                    Id = 1,
-                    Email = "Admin@gmail.com",
-                    PhoneNumber = "9994291196",
-                    Address = "No 1 , ABC st , Coimbatore",
-                    Gender = "Male",
-                    UserName = "Test1",
-                    DateofBirth = DateTime.Now,
+                AgencyEmail = "agency1@gmail.com",
+                AgencyName = "Agency1"
+            };
 
-                });
-                context.Details.Add(new UserDetails
-                {
-                    Id = 1,
-                    Email = "user@gmail.com",
-                    PhoneNumber = "9786543210",
-                    Address = "No 1 , ABC st , Coimbatore",
-                    Gender = "Male",
-                    UserName = "Test2",
-                    DateofBirth = DateTime.Now,
-
-                });
-                context.Details.Add(new UserDetails
-                {
-                    Id = 1,
-                    Email = "agent@gmail.com",
-                    PhoneNumber = "6382205871",
-                    Address = "No 1 , ABC st , Coimbatore",
-                    Gender = "Male",
-                    UserName = "Test3",
-                    DateofBirth = DateTime.Now,
-
-                });
-                await context.SaveChangesAsync();
-            }
-            using var userContext = new UserManagementContext(GetDbContextOptions());
-            var mock = new Mock<ILogger<UserDetails>>();
-            ILogger<UserDetails> logger = mock.Object;
-            IQueryRepo<UserDetails, string> repo = new UserDetailsQueryRepo(userContext, logger);
-            var data = await repo.Get("agent@gmail.com");
-            Assert.AreEqual(data.UserName, "Test3");
-        }
-
-        [TestMethod]
-        public async Task Update_UserDetails_Returns_UserDetails()
-        {
-            using (var context = new UserManagementContext(GetDbContextOptions()))
-            {
-                context.Details.Add(new UserDetails
-                {
-                    Id = 1,
-                    Email = "Admin@gmail.com",
-                    PhoneNumber = "9994291196",
-                    Address = "No 1 , ABC st , Coimbatore",
-                    Gender = "Male",
-                    UserName = "Test1",
-                    DateofBirth = DateTime.Now,
-
-                });
-                context.Details.Add(new UserDetails
-                {
-                    Id = 1,
-                    Email = "user@gmail.com",
-                    PhoneNumber = "9786543210",
-                    Address = "No 1 , ABC st , Coimbatore",
-                    Gender = "Male",
-                    UserName = "Test2",
-                    DateofBirth = DateTime.Now,
-
-                });
-                context.Details.Add(new UserDetails
-                {
-                    Id = 1,
-                    Email = "agent@gmail.com",
-                    PhoneNumber = "6382205871",
-                    Address = "No 1 , ABC st , Coimbatore",
-                    Gender = "Male",
-                    UserName = "Test3",
-                    DateofBirth = DateTime.Now,
-
-                });
-                await context.SaveChangesAsync();
-            }
-            using var userContext = new UserManagementContext(GetDbContextOptions());
-            var mock = new Mock<ILogger<UserDetails>>();
-            ILogger<UserDetails> logger = mock.Object;
-            userContext.Update(new UserDetails
+            TravelAgent agent = new()
             {
                 Id = 1,
+                AgencyName = "Agency1",
+                AgencyEmail = "agency1@gmail.com",
+                AgencyAddress = "123,ABS st , CBE",
+                AgencyPhone = "9994291196",
+                Email = "agent1@gmail.com"
+            };
+
+            //Act
+            _cmdTravelRepoMock?.Setup(c => c.Add(agent)).ReturnsAsync(agent);
+
+
+            //Assert
+            var result = await _userService.AddTravelAgency(agent);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(agent.AgencyName, result.AgencyName);
+            Assert.AreEqual(agent.AgencyEmail, result.AgencyEmail);
+        }
+
+        [TestMethod]
+        public async Task UpdatePassword_ValidInput_ReturnsBool()
+        {
+
+            //Arrange
+            UpdatePasswordDTO passwordDTO = new()
+            {
+                Password = "newPassword",
+                Email = "Admin@gmail.com"
+            };
+            var user = new User
+            {
+                Role = "Admin",
                 Email = "Admin@gmail.com",
-                PhoneNumber = "9994291196",
-                Address = "No 1 , ABC st , Coimbatore",
-                Gender = "Male",
-                UserName = "Test1"
-            });
-            IQueryRepo<UserDetails, string> repo = new UserDetailsQueryRepo(userContext, logger);
-            var data = await repo.Get("Admin@gmail.com");
-            Assert.AreEqual(data.UserName, "Test1");
-        }
+                HashKey = new byte[] { 0, 1, 2, 3 },
+                Password = new byte[] { 4, 5, 6, 7 },
+                Status = "Active"
+            };
 
-        [TestMethod]
-        public async Task Add_Agent_Returns_Agent()
-        {
-            using (var context = new UserManagementContext(GetDbContextOptions()))
+            var userDTO = new UserDTO
             {
-                context.TravelAgents.Add(new TravelAgent
-                {
-                    Id = 1,
-                    Email = "Admin@gmail.com",
-                    AgencyEmail = "Agency1@gmail.com",
-                    AgencyPhone = "9994291196",
-                    AgencyAddress = "No 1 , ABC st , Coimbatore",
-                    AgencyName = "Agency1",
+                Role = "Admin",
+                Email = "Admin@gmail.com",
+                Password = "newPassword",
+                Status = "Active"
+            };
 
-                });
-                context.TravelAgents.Add(new TravelAgent
-                {
-                    Id = 2,
-                    Email = "user@gmail.com",
-                    AgencyEmail = "Agency2@gmail.com",
-                    AgencyPhone = "9786543210",
-                    AgencyAddress = "No 1 , ABC st , Coimbatore",
-                    AgencyName = "Agency2",
-
-                });
-                context.TravelAgents.Add(new TravelAgent
-                {
-                    Id = 3,
-                    Email = "agent@gmail.com",
-                    AgencyEmail = "Agency3@gmail.com",
-                    AgencyPhone = "6382205871",
-                    AgencyAddress = "No 1 , ABC st , Coimbatore",
-                    AgencyName = "Agency3",
-
-                });
-                await context.SaveChangesAsync();
-            }
-            using var userContext = new UserManagementContext(GetDbContextOptions());
-            var mock = new Mock<ILogger<TravelAgent>>();
-            ILogger<TravelAgent> logger = mock.Object;
-            IQueryRepo<TravelAgent, string> repo = new TravelAgentQueryRepo(userContext, logger);
-            var data = await repo.GetAll();
-            Assert.AreEqual(3, data.Count);
-        }
+            //Act
+            _cmdUserRepoMock?.Setup(c => c.Update(user)).ReturnsAsync(user);
+            _adapterMock?.Setup(a => a.UsertoDTOAdapter(It.IsAny<User>())).Returns(userDTO);
 
 
-        [TestMethod]
-        public async Task GetAll_TravelAgent_Returns_TravelAgents()
-        { 
-            using (var context = new UserManagementContext(GetDbContextOptions()))
-            {
-                context.TravelAgents.Add(new TravelAgent
-                {
-                    Id = 1,
-                    Email = "Admin@gmail.com",
-                    AgencyEmail = "Agency1@gmail.com",
-                    AgencyPhone = "9994291196",
-                    AgencyAddress = "No 1 , ABC st , Coimbatore",
-                    AgencyName = "Agency1",
-
-                });
-                context.TravelAgents.Add(new TravelAgent
-                {
-                    Id = 2,
-                    Email = "user@gmail.com",
-                    AgencyEmail = "Agency2@gmail.com",
-                    AgencyPhone = "9786543210",
-                    AgencyAddress = "No 1 , ABC st , Coimbatore",
-                    AgencyName = "Agency2",
-
-                });
-                context.TravelAgents.Add(new TravelAgent
-                {
-                    Id = 3,
-                    Email = "agent@gmail.com",
-                    AgencyEmail = "Agency3@gmail.com",
-                    AgencyPhone = "6382205871",
-                    AgencyAddress = "No 1 , ABC st , Coimbatore",
-                    AgencyName = "Agency3",
-
-                });
-                await context.SaveChangesAsync();
-            }
-            using UserManagementContext userContext = new(GetDbContextOptions());
-            var mock = new Mock<ILogger<TravelAgent>>();
-            ILogger<TravelAgent> logger = mock.Object;
-            IQueryRepo<TravelAgent, string> repo = new TravelAgentQueryRepo(userContext, logger);
-            var data = await repo.GetAll();
-            Assert.AreEqual(3, data.Count);
-        }
-
-        [TestMethod]
-        public async Task Get_TravelAgent_Returns_TravelAgent()
-        {
-            using (var context = new UserManagementContext(GetDbContextOptions()))
-            {
-                context.TravelAgents.Add(new TravelAgent
-                {
-                    Id = 1,
-                    Email = "Admin@gmail.com",
-                    AgencyEmail = "Agency1@gmail.com",
-                    AgencyPhone = "9994291196",
-                    AgencyAddress = "No 1 , ABC st , Coimbatore",
-                    AgencyName = "Agency1",
-
-                });
-                context.TravelAgents.Add(new TravelAgent
-                {
-                    Id = 2,
-                    Email = "user@gmail.com",
-                    AgencyEmail = "Agency2@gmail.com",
-                    AgencyPhone = "9786543210",
-                    AgencyAddress = "No 1 , ABC st , Coimbatore",
-                    AgencyName = "Agency2",
-
-                });
-                context.TravelAgents.Add(new TravelAgent
-                {
-                    Id = 3,
-                    Email = "agent@gmail.com",
-                    AgencyEmail = "Agency3@gmail.com",
-                    AgencyPhone = "6382205871",
-                    AgencyAddress = "No 1 , ABC st , Coimbatore",
-                    AgencyName = "Agency3",
-
-                });
-                await context.SaveChangesAsync();
-            }
-            using var userContext = new UserManagementContext(GetDbContextOptions());
-            var mock = new Mock<ILogger<TravelAgent>>();
-            ILogger<TravelAgent> logger = mock.Object;
-            IQueryRepo<TravelAgent, string> repo = new TravelAgentQueryRepo(userContext, logger);
-            var data = await repo.Get("agent@gmail.com");
-            Assert.AreEqual(data.AgencyPhone, "6382205871");
-        }
-
-        [TestMethod]
-        public async Task Update_TravelAgent_Returns_TravelAgent()
-        {
-            using (var context = new UserManagementContext(GetDbContextOptions()))
-            {
-                context.TravelAgents.Add(new TravelAgent
-                {
-                    Id = 1,
-                    Email = "Admin@gmail.com",
-                    AgencyEmail = "Agency1@gmail.com",
-                    AgencyPhone = "9994291196",
-                    AgencyAddress = "No 1 , ABC st , Coimbatore",
-                    AgencyName = "Agency1",
-
-                });
-                context.TravelAgents.Add(new TravelAgent
-                {
-                    Id = 2,
-                    Email = "user@gmail.com",
-                    AgencyEmail = "Agency2@gmail.com",
-                    AgencyPhone = "9786543210",
-                    AgencyAddress = "No 1 , ABC st , Coimbatore",
-                    AgencyName = "Agency2",
-
-                });
-                context.TravelAgents.Add(new TravelAgent
-                {
-                    Id = 3,
-                    Email = "agent@gmail.com",
-                    AgencyEmail = "Agency3@gmail.com",
-                    AgencyPhone = "6382205871",
-                    AgencyAddress = "No 1 , ABC st , Coimbatore",
-                    AgencyName = "Agency3",
-
-                });
-                await context.SaveChangesAsync();
-            }
-            using var userContext = new UserManagementContext(GetDbContextOptions());
-            var mock = new Mock<ILogger<TravelAgent>>();
-            ILogger<TravelAgent> logger = mock.Object;
-            userContext.Update(new TravelAgent
-            {
-                Id = 3,
-                Email = "agent@gmail.com",
-                AgencyEmail = "Agency3@gmail.com",
-                AgencyPhone = "6382205872",
-                AgencyAddress = "No 1 , ABC st , Coimbatore",
-                AgencyName = "Agency3",
-
-            });
-            IQueryRepo<TravelAgent, string> repo = new TravelAgentQueryRepo(userContext, logger);
-            var data = await repo.Get("user@gmail.com");
-            Assert.AreEqual(data.AgencyPhone, "6382205872");
+            //Assert
+            var result = await _userService.UpdatePassword(passwordDTO);
+            Assert.IsNotNull(result);
         }
     }
 }

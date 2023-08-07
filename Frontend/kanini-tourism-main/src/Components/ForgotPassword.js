@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Container, Typography, TextField, Button, CircularProgress } from '@mui/material';
-import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,12 +19,6 @@ const formStyle = {
 const inputStyle = {
   marginBottom: '1rem',
   width: '100%',
-};
-
-const errorStyle = {
-  color: 'red',
-  fontSize: '0.8rem',
-  marginTop: '0.2rem',
 };
 
 const submitButtonStyle = {
@@ -49,67 +42,66 @@ const validationSchema = yup.object().shape({
 
 function ForgotPassword() {
   const [isCodeSent, setIsCodeSent] = useState(false);
+  const [email, setEmail] = useState('');
+  const [code, setCode] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      code: '',
-    },
-    validationSchema: validationSchema,
-    onSubmit: async (values) => {
-      try {
-        if (!isCodeSent) {
-          // Send verification code request
-          await fetch('https://localhost:7289/api/User/RequestVerificationCode', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email: values.email }),
-          });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-          setIsCodeSent(true);
-          toast.success('Verification code sent to your email');
+    try {
+      setIsSubmitting(true);
+
+      if (!isCodeSent) {
+        // Send verification code request
+        await fetch('https://localhost:7289/api/User/RequestVerificationCode', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        });
+
+        setIsCodeSent(true);
+        toast.success('Verification code sent to your email');
+      } else {
+        // Validate verification code
+        const response = await fetch('https://localhost:7289/api/User/ValidateVerificationCode', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, code }),
+        });
+
+        const data = await response.json();
+
+        if (data.isValid) {
+          toast.success('Verification successful');
         } else {
-          // Validate verification code
-          const response = await fetch('https://localhost:7289/api/User/ValidateVerificationCode', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(values),
-          });
-
-          const data = await response.json();
-
-          if (data.isValid) {
-            toast.success('Verification successful');
-          } else {
-            toast.error('Invalid verification code');
-          }
+          toast.error('Invalid verification code');
         }
-      } catch (error) {
-        toast.error('An error occurred');
       }
-    },
-  });
+    } catch (error) {
+      toast.error('An error occurred');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <Container maxWidth="sm" style={containerStyle}>
       <Typography variant="h4" align="center" gutterBottom>
         {isCodeSent ? 'Enter Verification Code' : 'Forgot Password'}
       </Typography>
-      <form style={formStyle} onSubmit={formik.handleSubmit}>
+      <form style={formStyle} onSubmit={handleSubmit}>
         <TextField
           type="text"
           label="Email"
           variant="outlined"
           style={inputStyle}
-          name="email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          error={formik.touched.email && !!formik.errors.email}
-          helperText={formik.touched.email && formik.errors.email}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           disabled={isCodeSent}
         />
         {isCodeSent && (
@@ -119,11 +111,8 @@ function ForgotPassword() {
               label="Verification Code"
               variant="outlined"
               style={inputStyle}
-              name="code"
-              value={formik.values.code}
-              onChange={formik.handleChange}
-              error={formik.touched.code && !!formik.errors.code}
-              helperText={formik.touched.code && formik.errors.code}
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
             />
           </div>
         )}
@@ -132,14 +121,14 @@ function ForgotPassword() {
           color="primary"
           style={submitButtonStyle}
           type="submit"
-          disabled={!formik.isValid || (isCodeSent && !formik.values.code)}
+          disabled={!email || (isCodeSent && !code) || isSubmitting}
         >
-          {isCodeSent ? 'Verify' : 'Send Verification Code'}
+          {isCodeSent ? (isSubmitting ? <CircularProgress size={24} /> : 'Verify') : 'Send Verification Code'}
         </Button>
       </form>
       {isCodeSent && (
         <div style={loaderStyle}>
-          {formik.isSubmitting && <CircularProgress />}
+          {isSubmitting && <CircularProgress />}
         </div>
       )}
       <ToastContainer position="bottom-right" autoClose={3000} />

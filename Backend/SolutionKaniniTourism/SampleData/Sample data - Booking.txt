@@ -1,0 +1,26 @@
+Sample data - Booking
+{
+  "email": "mksuresh044@gmail.com",
+  "bookedDate": "2023-08-03T10:03:27.105Z",
+  "checkInDate": "2023-08-03T10:03:27.105Z",
+  "checkOutDate": "2023-08-13T10:03:27.105Z",
+  "price": 50000,
+  "status": "Pending",
+  "paymentMethod": "UPI",
+  "noofAdults": 2,
+  "noofChildren": 1
+}
+
+{
+  "customerName": "Suresh Mk",
+  "customerGender": "Male",
+  "customerAge": "22"
+}
+
+{
+  "bookingId": "JPNTRPK001",
+  "price": 25000,
+  "paymentMethod": "Cash",
+  "noofAdults": 3,
+  "noofChildren": 4
+}

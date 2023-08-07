@@ -7,9 +7,9 @@ namespace KTWBookingAPI.Services.Queries
     public class PackageQueryRepo : IQueryRepo<PackageBooking, string>
     {
         private readonly BookingContext _context;
-        private readonly ILogger<Booking> _logger;
+        private readonly ILogger<PackageBooking> _logger;
 
-        public PackageQueryRepo(BookingContext context, ILogger<Booking> logger)
+        public PackageQueryRepo(BookingContext context, ILogger<PackageBooking> logger)
         {
             _context = context;
             _logger = logger;

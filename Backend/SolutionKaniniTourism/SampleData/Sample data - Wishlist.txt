@@ -1,0 +1,15 @@
+Sample data - Wishlist
+{
+  "email": "mksuresh044@gmail.com",
+  "packId": "JPNBOOKPACK001",
+  "quantity": 1,
+  "price": 25000,
+  "addedDate": "2023-08-03T11:45:57.052Z",
+  "status": ""
+}
+
+{
+  "email": "mksuresh044@gmail.com",
+  "cartId": "CART001",
+  "status": "Inactive"
+}

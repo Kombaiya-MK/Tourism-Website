@@ -16,6 +16,7 @@ import axios from 'axios';
 import * as yup from 'yup';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { BlobServiceClient } from '@azure/storage-blob';
 
 const validationSchema = yup.object().shape({
   location: yup.string().required('Location is required'),
@@ -53,25 +54,59 @@ const ImageGallery = () => {
 
   const handleUpload = () => {
     // Validate the form before uploading
+    const AZURITE_BLOB_SERVICE_URL = 'http://localhost:10000';
+    const ACCOUNT_NAME = 'devstoreaccount1';
+    const ACCOUNT_KEY = 'Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==';
+
+    const blobServiceClient = new BlobServiceClient(
+      "http://127.0.0.1:10000/devstoreaccount1/locations?sv=2018-03-28&st=2023-08-07T21%3A18%3A28Z&se=2023-08-08T21%3A18%3A28Z&sr=c&sp=racwdl&sig=PPX0G2c4rQ4a1QoJec12sKbMD5FOCls92W03FxEkkSs%3D",
+      "?sv=2018-03-28&st=2023-08-07T21%3A18%3A28Z&se=2023-08-08T21%3A18%3A28Z&sr=c&sp=racwdl&sig=PPX0G2c4rQ4a1QoJec12sKbMD5FOCls92W03FxEkkSs%3D"
+    );
+
+    const containerClient = blobServiceClient.getContainerClient('locations');
+    for(let i = 0; i < imageFiles.length;i++)
+    {
+      const blobClient = containerClient.getBlobClient(imageFiles[i].name);
+            const blockBlobClient = blobClient.getBlockBlobClient();
+            const result = blockBlobClient.uploadBrowserData(imageFiles[i], {
+                blockSize: 4 * 1024 * 1024,
+                concurrency: 20,
+                onProgress: ev => console.log(ev)
+            });
+    }
+
+
     validationSchema.validate({ location: selectedLocation, images: imageFiles })
       .then(() => {
-        const uploaded = imageFiles.map((file) => ({
-          location: locationName,
-          url: URL.createObjectURL(file),
-        }));
-        setUploadedImages((prevImages) => [...prevImages, ...uploaded]);
-        setImageFiles([]);
+        const formData = new FormData();
+        formData.append('locationId', selectedLocation);
+        imageFiles.forEach(file => {
+          formData.append('picture', imageFiles.name);
+        });
 
-        // Show success toast
-        toast.success('Images uploaded successfully');
+        axios.post('https://localhost:7153/api/Location/AddImage', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        })
+          .then(response => {
+            const uploaded = response.data.map(image => ({
+              location: locationName,
+              url: image,
+            }));
+            setUploadedImages((prevImages) => [...prevImages, ...uploaded]);
+            setImageFiles([]);
+            toast.success('Images uploaded successfully');
+          })
+          .catch(error => {
+            console.error('Error uploading images:', error);
+            toast.error('An error occurred while uploading images');
+          });
       })
       .catch(error => {
-        // Show error toast for each validation error
         error.inner.forEach(err => {
           toast.error(err.message);
         });
-
-        // Show error toast for missing images
         if (imageFiles.length === 0) {
           toast.error('Please select at least one image');
         }

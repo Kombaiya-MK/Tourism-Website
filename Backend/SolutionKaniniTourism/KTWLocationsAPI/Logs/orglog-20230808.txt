@@ -1,0 +1,1075 @@
+2023-08-08 02:27:39.277 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 02:27:40.391 +05:30 [INF] Now listening on: https://localhost:7153
+2023-08-08 02:27:40.448 +05:30 [INF] Now listening on: http://localhost:5261
+2023-08-08 02:27:40.455 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 02:27:40.457 +05:30 [INF] Hosting environment: Development
+2023-08-08 02:27:40.463 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWLocationsAPI\
+2023-08-08 02:27:43.034 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/index.html - -
+2023-08-08 02:27:43.881 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/index.html - - - 200 - text/html;charset=utf-8 854.2805ms
+2023-08-08 02:27:43.892 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/_vs/browserLink - -
+2023-08-08 02:27:43.892 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 02:27:43.930 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/_framework/aspnetcore-browser-refresh.js - - - 200 12361 application/javascript;+charset=utf-8 38.4030ms
+2023-08-08 02:27:43.966 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 74.3987ms
+2023-08-08 02:27:44.387 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/v1/swagger.json - -
+2023-08-08 02:27:44.676 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 289.2640ms
+2023-08-08 02:28:07.720 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:28:07.723 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:28:07.743 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:28:07.743 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:28:08.431 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:28:08.431 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:28:08.472 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:28:08.477 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:28:08.935 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:28:08.957 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:28:09.891 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:28:09.891 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:28:11.347 +05:30 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:28:11.347 +05:30 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:28:11.468 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:28:11.468 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:28:11.481 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:28:11.487 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:28:11.491 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:28:11.491 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:28:11.494 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 3009.2705ms
+2023-08-08 02:28:11.494 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 3003.2444ms
+2023-08-08 02:28:11.495 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:28:11.498 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:28:11.495 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:28:11.498 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:28:11.498 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:28:11.501 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:28:11.506 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 3754.4488 ms
+2023-08-08 02:28:11.506 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 3754.4470 ms
+2023-08-08 02:28:11.509 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:28:11.510 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:28:11.520 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 3797.1867ms
+2023-08-08 02:28:11.520 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 3800.0179ms
+2023-08-08 02:28:11.574 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:28:11.574 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:28:11.588 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:28:11.588 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:28:11.593 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:28:11.594 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:28:11.595 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 90.895ms
+2023-08-08 02:28:11.597 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 90.6202ms
+2023-08-08 02:28:11.598 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:28:11.600 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:28:11.602 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 107.5431 ms
+2023-08-08 02:28:11.602 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 109.2828 ms
+2023-08-08 02:28:11.605 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 123.4728ms
+2023-08-08 02:28:11.606 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 122.5956ms
+2023-08-08 02:28:39.410 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:28:39.414 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:28:39.418 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:28:39.425 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:28:39.426 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:28:39.427 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:28:39.428 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:28:39.430 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:28:39.432 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:28:39.435 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:28:39.436 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:28:39.437 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:28:39.445 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:28:39.446 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:28:39.449 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:28:39.450 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:28:39.451 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 18.5914ms
+2023-08-08 02:28:39.452 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 16.8826ms
+2023-08-08 02:28:39.457 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:28:39.457 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:28:39.458 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:28:39.458 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:28:39.459 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:28:39.460 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:28:39.461 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 34.9969 ms
+2023-08-08 02:28:39.462 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 35.2260 ms
+2023-08-08 02:28:39.463 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:28:39.464 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:28:39.466 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 55.7237ms
+2023-08-08 02:28:39.467 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 53.1660ms
+2023-08-08 02:28:39.467 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:28:39.468 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:28:39.472 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:28:39.473 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:28:39.474 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:28:39.474 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:28:39.477 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:28:39.483 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:28:39.491 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:28:39.495 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 23.8349ms
+2023-08-08 02:28:39.495 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:28:39.496 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:28:39.497 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 24.3294ms
+2023-08-08 02:28:39.498 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 35.3890 ms
+2023-08-08 02:28:39.499 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:28:39.500 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 43.0879ms
+2023-08-08 02:28:39.501 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 37.6980 ms
+2023-08-08 02:28:39.503 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 45.9068ms
+2023-08-08 02:33:39.437 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:33:39.437 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:33:39.443 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:33:39.444 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:33:39.446 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:33:39.447 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:33:39.450 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:33:39.450 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:33:39.459 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:33:39.459 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:33:39.468 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:33:39.468 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:33:39.490 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:33:39.491 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:33:39.511 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:33:39.550 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:33:39.551 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 93.0064ms
+2023-08-08 02:33:39.554 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:33:39.556 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:33:39.554 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 99.6186ms
+2023-08-08 02:33:39.557 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:33:39.558 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:33:39.560 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 113.3441 ms
+2023-08-08 02:33:39.562 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:33:39.563 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:33:39.566 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:33:39.569 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 133.9363ms
+2023-08-08 02:33:39.571 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 125.8549 ms
+2023-08-08 02:33:39.573 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:33:39.577 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:33:39.581 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 146.3969ms
+2023-08-08 02:33:39.583 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:33:39.585 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:33:39.593 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:33:39.594 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:33:39.594 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:33:39.599 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:33:39.605 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:33:39.610 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:33:39.614 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 28.568ms
+2023-08-08 02:33:39.615 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:33:39.616 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 50.8321 ms
+2023-08-08 02:33:39.616 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:33:39.619 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 65.1005ms
+2023-08-08 02:33:39.620 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 28.529ms
+2023-08-08 02:33:39.623 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:33:39.625 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 52.1976 ms
+2023-08-08 02:33:39.628 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 71.0706ms
+2023-08-08 02:35:30.173 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:35:30.184 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:35:30.187 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:35:30.188 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:35:30.189 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:35:30.190 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:35:30.192 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:35:30.194 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:35:30.195 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:35:30.199 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:35:30.201 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:35:30.215 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:35:30.215 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:35:30.218 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:35:30.223 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 30.4416ms
+2023-08-08 02:35:30.225 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:35:30.225 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:35:30.230 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:35:30.232 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 44.0913 ms
+2023-08-08 02:35:30.233 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:35:30.235 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 62.1008ms
+2023-08-08 02:35:30.235 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:35:30.236 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:35:30.240 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 39.305ms
+2023-08-08 02:35:30.241 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:35:30.243 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:35:30.245 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:35:30.246 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 54.7097 ms
+2023-08-08 02:35:30.248 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:35:30.250 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 62.6501ms
+2023-08-08 02:35:30.255 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:35:30.259 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:35:30.268 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:35:30.277 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 31.7717ms
+2023-08-08 02:35:30.277 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:35:30.278 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:35:30.279 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:35:30.280 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 44.3842 ms
+2023-08-08 02:35:30.281 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:35:30.282 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 52.0741ms
+2023-08-08 02:35:30.284 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:35:30.285 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:35:30.289 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:35:30.296 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:35:30.297 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 13.622ms
+2023-08-08 02:35:30.298 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:35:30.299 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 20.0186 ms
+2023-08-08 02:35:30.300 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 32.9437ms
+2023-08-08 02:36:45.088 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:36:45.089 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:36:45.099 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:36:45.104 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:36:45.107 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:36:45.113 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:36:45.114 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:36:45.116 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:36:45.118 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:36:45.120 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:36:45.122 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:36:45.122 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:36:45.140 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:36:45.145 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:36:45.145 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:36:45.147 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 29.5254ms
+2023-08-08 02:36:45.158 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:36:45.159 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:36:45.159 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:36:45.159 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:36:45.161 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 53.9057 ms
+2023-08-08 02:36:45.163 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:36:45.162 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 42.9086ms
+2023-08-08 02:36:45.164 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:36:45.166 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 78.0452ms
+2023-08-08 02:36:45.167 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:36:45.169 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:36:45.170 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:36:45.175 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:36:45.176 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 64.2372 ms
+2023-08-08 02:36:45.177 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:36:45.178 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:36:45.180 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 91.5427ms
+2023-08-08 02:36:45.181 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:36:45.189 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:36:45.190 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:36:45.193 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:36:45.194 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:36:45.195 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 20.6094ms
+2023-08-08 02:36:45.200 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:36:45.199 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:36:45.202 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 38.3745 ms
+2023-08-08 02:36:45.206 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 48.3896ms
+2023-08-08 02:36:45.209 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:36:45.211 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 21.8255ms
+2023-08-08 02:36:45.214 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:36:45.215 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 38.0008 ms
+2023-08-08 02:36:45.216 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 51.8394ms
+2023-08-08 02:38:10.491 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:38:10.491 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:38:10.493 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:38:10.493 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:38:10.494 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:38:10.495 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:38:10.496 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:38:10.497 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:38:10.500 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:38:10.503 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:38:10.505 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:38:10.505 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:38:10.522 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:38:10.523 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:38:10.526 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:38:10.530 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 30.0112ms
+2023-08-08 02:38:10.531 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:38:10.531 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:38:10.637 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 134.6579ms
+2023-08-08 02:38:10.645 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:38:10.647 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 152.4894 ms
+2023-08-08 02:38:10.661 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:38:10.665 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:38:10.667 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:38:10.669 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 178.6577ms
+2023-08-08 02:38:10.671 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:38:10.672 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 176.8030 ms
+2023-08-08 02:38:10.673 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:38:10.676 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:38:10.679 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 187.9811ms
+2023-08-08 02:38:10.680 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:38:10.681 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:38:10.686 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:38:10.688 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:38:10.689 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:38:10.690 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:38:10.700 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:38:10.702 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:38:10.707 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:38:10.711 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 25.2674ms
+2023-08-08 02:38:10.712 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:38:10.712 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:38:10.715 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 27.1097ms
+2023-08-08 02:38:10.717 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 43.6258 ms
+2023-08-08 02:38:10.719 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:38:10.723 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 78.5225ms
+2023-08-08 02:38:10.725 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 49.3164 ms
+2023-08-08 02:38:10.729 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 67.6901ms
+2023-08-08 02:40:22.993 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:40:22.994 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:40:22.996 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:40:23.008 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:40:23.010 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:40:23.016 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:40:23.022 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:40:23.025 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:40:23.027 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:40:23.028 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:40:23.031 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:40:23.032 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:40:23.052 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:40:23.052 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:40:23.055 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:40:23.058 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 29.9029ms
+2023-08-08 02:40:23.062 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:40:23.068 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:40:23.068 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 51.4915 ms
+2023-08-08 02:40:23.069 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:40:23.072 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 78.2247ms
+2023-08-08 02:40:23.070 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 43.3427ms
+2023-08-08 02:40:23.075 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:40:23.075 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:40:23.076 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:40:23.077 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:40:23.077 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:40:23.078 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 68.3315 ms
+2023-08-08 02:40:23.079 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:40:23.080 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:40:23.083 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 89.6905ms
+2023-08-08 02:40:23.084 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:40:23.087 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:40:23.089 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:40:23.089 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:40:23.090 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:40:23.095 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:40:23.100 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:40:23.103 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:40:23.106 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 19.7021ms
+2023-08-08 02:40:23.107 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:40:23.107 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:40:23.108 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 30.7163 ms
+2023-08-08 02:40:23.109 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 20.7404ms
+2023-08-08 02:40:23.110 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 41.4577ms
+2023-08-08 02:40:23.111 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:40:23.114 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 35.1702 ms
+2023-08-08 02:40:23.116 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 40.8648ms
+2023-08-08 02:40:48.373 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:40:48.373 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:40:48.375 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:40:48.376 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:40:48.378 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:40:48.378 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:40:48.379 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:40:48.381 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:40:48.383 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:40:48.385 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:40:48.386 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:40:48.386 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:40:48.398 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:40:48.398 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:40:48.401 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:40:48.404 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 19.4684ms
+2023-08-08 02:40:48.406 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:40:48.411 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 32.7831 ms
+2023-08-08 02:40:48.414 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:40:48.421 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:40:48.421 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 47.3355ms
+2023-08-08 02:40:48.423 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:40:48.424 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 41.7414ms
+2023-08-08 02:40:48.426 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:40:48.426 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:40:48.427 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:40:48.428 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:40:48.429 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:40:48.430 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 52.0120 ms
+2023-08-08 02:40:48.432 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:40:48.432 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:40:48.434 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 60.5677ms
+2023-08-08 02:40:48.435 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:40:48.435 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:40:48.440 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:40:48.442 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:40:48.445 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:40:48.445 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:40:48.446 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 14.4374ms
+2023-08-08 02:40:48.449 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:40:48.451 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:40:48.453 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 27.6476 ms
+2023-08-08 02:40:48.456 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 40.8060ms
+2023-08-08 02:40:48.456 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:40:48.458 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 16.9056ms
+2023-08-08 02:40:48.460 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:40:48.461 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 28.7825 ms
+2023-08-08 02:40:48.464 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 37.0249ms
+2023-08-08 02:40:57.574 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:40:57.576 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:40:57.577 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:40:57.578 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:40:57.582 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:40:57.584 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:40:57.596 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:40:57.600 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:40:57.602 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 20.4142ms
+2023-08-08 02:40:57.605 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:40:57.605 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:40:57.606 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:40:57.608 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 30.5734 ms
+2023-08-08 02:40:57.608 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:40:57.610 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 36.9167ms
+2023-08-08 02:40:57.611 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:40:57.613 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:40:57.614 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:40:57.619 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:40:57.624 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:40:57.625 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 12.7846ms
+2023-08-08 02:40:57.627 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:40:57.627 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 19.2382 ms
+2023-08-08 02:40:57.629 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 24.2574ms
+2023-08-08 02:41:07.461 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:41:07.463 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:41:07.465 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:41:07.468 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:41:07.471 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:41:07.474 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:41:07.486 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:41:07.495 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:41:07.497 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 27.688ms
+2023-08-08 02:41:07.499 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:41:07.499 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:41:07.500 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:41:07.501 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 35.3775 ms
+2023-08-08 02:41:07.501 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:41:07.503 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 41.9694ms
+2023-08-08 02:41:07.503 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:41:07.507 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:41:07.509 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:41:07.512 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:41:07.515 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:41:07.517 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 11.1569ms
+2023-08-08 02:41:07.518 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:41:07.519 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 17.8301 ms
+2023-08-08 02:41:07.521 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 21.9353ms
+2023-08-08 02:41:17.423 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundaryRJlbPDyQ4v8LaQRb 16781435
+2023-08-08 02:41:17.425 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:41:17.426 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 02:41:17.484 +05:30 [INF] Route matched with {action = "AddImage", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWLocationsAPI.Models.Image]] AddImage(KTWLocationsAPI.Models.DTO.ImageDTO) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:41:18.204 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-08-08 02:41:18.234 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI) in 747.5586ms
+2023-08-08 02:41:18.235 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 02:41:18.236 +05:30 [INF] HTTP POST /api/Location/AddImage responded 415 in 810.7209 ms
+2023-08-08 02:41:18.252 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundaryRJlbPDyQ4v8LaQRb 16781435 - 415 - application/problem+json;+charset=utf-8 828.9654ms
+2023-08-08 02:41:59.648 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:41:59.657 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:41:59.659 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:41:59.660 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:41:59.662 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:41:59.666 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:41:59.682 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:41:59.687 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:41:59.689 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 26.3604ms
+2023-08-08 02:41:59.692 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:41:59.697 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:41:59.697 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 38.9004 ms
+2023-08-08 02:41:59.699 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:41:59.702 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 54.1009ms
+2023-08-08 02:41:59.703 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:41:59.705 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:41:59.709 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:41:59.710 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:41:59.715 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:41:59.727 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:41:59.730 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 21.4571ms
+2023-08-08 02:41:59.731 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:41:59.733 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 30.1526 ms
+2023-08-08 02:41:59.735 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 38.6442ms
+2023-08-08 02:42:13.216 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundarykXBzPIWLuc0xMLiB 16781435
+2023-08-08 02:42:13.217 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:42:13.218 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 02:42:13.220 +05:30 [INF] Route matched with {action = "AddImage", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWLocationsAPI.Models.Image]] AddImage(KTWLocationsAPI.Models.DTO.ImageDTO) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:42:13.720 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-08-08 02:42:13.721 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI) in 499.1686ms
+2023-08-08 02:42:13.722 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 02:42:13.723 +05:30 [INF] HTTP POST /api/Location/AddImage responded 415 in 504.5862 ms
+2023-08-08 02:42:13.729 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundarykXBzPIWLuc0xMLiB 16781435 - 415 - application/problem+json;+charset=utf-8 513.5389ms
+2023-08-08 02:42:17.690 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:42:17.691 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:42:17.692 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:42:17.693 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:42:17.694 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:42:17.696 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:42:17.697 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:42:17.699 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:42:17.703 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:42:17.705 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:42:17.708 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:42:17.709 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:42:17.718 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:42:17.727 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:42:17.731 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:42:17.734 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 31.4154ms
+2023-08-08 02:42:17.736 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:42:17.738 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:42:17.738 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:42:17.740 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:42:17.742 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 47.4709 ms
+2023-08-08 02:42:17.746 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:42:17.751 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:42:17.760 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:42:17.763 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:42:17.744 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 39.3389ms
+2023-08-08 02:42:17.750 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 59.9959ms
+2023-08-08 02:42:17.749 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:42:17.771 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:42:17.774 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:42:17.777 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:42:17.787 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:42:17.785 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 89.5342 ms
+2023-08-08 02:42:17.782 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:42:17.793 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:42:17.804 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 113.2616ms
+2023-08-08 02:42:17.805 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 45.951ms
+2023-08-08 02:42:17.815 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:42:17.816 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:42:17.817 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:42:17.817 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 72.3395 ms
+2023-08-08 02:42:17.823 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:42:17.825 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 88.4574ms
+2023-08-08 02:42:17.829 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:42:17.831 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 16.2921ms
+2023-08-08 02:42:17.832 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:42:17.833 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 46.4394 ms
+2023-08-08 02:42:17.835 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 86.0663ms
+2023-08-08 02:42:56.768 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:42:56.808 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:42:56.813 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:42:56.834 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:42:56.836 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:42:56.837 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:42:56.864 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:42:56.864 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:42:56.866 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:42:56.867 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:42:56.877 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:42:56.879 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:42:56.898 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:42:56.898 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:42:56.902 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:42:56.907 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 43.1926ms
+2023-08-08 02:42:56.907 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:42:57.093 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:42:57.100 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 287.1930 ms
+2023-08-08 02:42:57.098 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:42:57.096 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 219.1991ms
+2023-08-08 02:42:57.102 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:42:57.104 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 338.0380ms
+2023-08-08 02:42:57.105 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:42:57.107 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:42:57.109 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 245.1711 ms
+2023-08-08 02:42:57.109 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:42:57.107 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:42:57.111 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 280.0577ms
+2023-08-08 02:42:57.112 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:42:57.113 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:42:57.122 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:42:57.123 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:42:57.125 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:42:57.126 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:42:57.142 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:42:57.142 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:42:57.150 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:42:57.162 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 39.7318ms
+2023-08-08 02:42:57.162 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:42:57.199 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:42:57.206 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:42:57.232 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 123.9741 ms
+2023-08-08 02:42:57.237 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 111.314ms
+2023-08-08 02:42:57.244 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 145.2703ms
+2023-08-08 02:42:57.244 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:42:57.247 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 133.7529 ms
+2023-08-08 02:42:57.249 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 147.0855ms
+2023-08-08 02:43:22.761 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:43:22.761 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:43:22.770 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:43:22.781 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:43:22.786 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:43:22.787 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:43:22.788 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:43:22.790 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:43:22.793 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:43:22.795 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:43:22.797 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:43:22.797 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:43:22.810 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:43:22.810 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:43:22.816 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:43:22.818 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 23.4905ms
+2023-08-08 02:43:22.824 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:43:22.824 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:43:22.827 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 02:43:22.828 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 40.8962 ms
+2023-08-08 02:43:22.830 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 37.5531ms
+2023-08-08 02:43:22.831 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:43:22.839 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 78.7653ms
+2023-08-08 02:43:22.840 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 02:43:22.841 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:43:22.842 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:43:22.844 +05:30 [INF] CORS policy execution successful.
+2023-08-08 02:43:22.845 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 59.1946 ms
+2023-08-08 02:43:22.847 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:43:22.848 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:43:22.850 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 88.9616ms
+2023-08-08 02:43:22.851 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 02:43:22.852 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 02:43:22.854 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:43:22.855 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 02:43:22.859 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 02:43:22.861 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 02:43:22.867 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:43:22.871 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 02:43:22.871 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 19.6437ms
+2023-08-08 02:43:22.874 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 02:43:22.875 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 33.2567 ms
+2023-08-08 02:43:22.876 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 02:43:22.877 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 49.5730ms
+2023-08-08 02:43:22.881 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 26.5239ms
+2023-08-08 02:43:22.884 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 02:43:22.885 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 37.2040 ms
+2023-08-08 02:43:22.886 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 46.3091ms
+2023-08-08 03:09:44.562 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:09:44.562 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 03:09:44.601 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:09:44.601 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:09:44.615 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 03:09:44.617 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:09:44.633 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:09:44.633 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:09:44.650 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:09:44.655 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 03:09:44.735 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:09:44.735 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:09:45.094 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:09:45.096 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 03:09:45.110 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:09:45.118 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:09:45.121 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 482.8564ms
+2023-08-08 03:09:45.122 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 486.3923ms
+2023-08-08 03:09:45.124 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 03:09:45.125 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 03:09:45.125 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:09:45.126 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:09:45.130 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 520.7693 ms
+2023-08-08 03:09:45.131 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:09:45.131 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:09:45.133 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 526.2442 ms
+2023-08-08 03:09:45.137 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 584.6961ms
+2023-08-08 03:09:45.137 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 03:09:45.138 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:09:45.141 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 589.0753ms
+2023-08-08 03:09:45.142 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:09:45.143 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:09:45.148 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 03:09:45.149 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:09:45.151 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:09:45.152 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:09:45.162 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:09:45.166 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 03:09:45.167 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:09:45.171 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 21.419ms
+2023-08-08 03:09:45.172 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:09:45.174 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 35.8163 ms
+2023-08-08 03:09:45.175 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:09:45.177 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 51.5443ms
+2023-08-08 03:09:45.178 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 30.7148ms
+2023-08-08 03:09:45.181 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 03:09:45.183 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 45.9714 ms
+2023-08-08 03:09:45.186 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 60.8544ms
+2023-08-08 03:21:35.527 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:21:35.527 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 03:21:35.550 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:21:35.550 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:21:35.554 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:21:35.554 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 03:21:35.564 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:21:35.564 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:21:35.575 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:21:35.582 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 03:21:35.596 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:21:35.596 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:21:36.044 +05:30 [INF] Executed DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:21:36.051 +05:30 [INF] Executed DbCommand (121ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 03:21:36.223 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:21:36.223 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:21:36.288 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 720.8646ms
+2023-08-08 03:21:36.291 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 03:21:36.294 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 727.762ms
+2023-08-08 03:21:36.295 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:21:36.297 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 745.8946 ms
+2023-08-08 03:21:36.301 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:21:36.297 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 746.1907 ms
+2023-08-08 03:21:36.303 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:21:36.305 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 783.3412ms
+2023-08-08 03:21:36.305 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 779.3259ms
+2023-08-08 03:21:36.306 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-08 03:21:36.307 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:21:36.315 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:21:36.317 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 03:21:36.316 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:21:36.318 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:21:36.320 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:21:36.328 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:21:36.330 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-08 03:21:36.332 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:21:36.351 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-08 03:21:36.352 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:21:36.358 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:21:36.358 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:21:36.359 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 37.2814ms
+2023-08-08 03:21:36.362 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-08 03:21:36.363 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 45.9267 ms
+2023-08-08 03:21:36.367 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 47.4418ms
+2023-08-08 03:21:36.367 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 61.3474ms
+2023-08-08 03:21:36.369 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:21:36.371 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 64.5697 ms
+2023-08-08 03:21:36.373 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 71.5737ms
+2023-08-08 03:21:38.848 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:21:38.850 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:21:38.851 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:21:38.853 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:21:38.855 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:21:38.856 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:21:38.860 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:21:38.862 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:21:38.864 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 9.2629ms
+2023-08-08 03:21:38.865 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:21:38.865 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:21:38.866 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 14.8079 ms
+2023-08-08 03:21:38.866 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:21:38.868 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 19.9602ms
+2023-08-08 03:21:38.868 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:21:38.870 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:21:38.872 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:21:38.874 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:21:38.877 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:21:38.881 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:21:38.883 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 10.5214ms
+2023-08-08 03:21:38.884 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:21:38.884 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 15.7997 ms
+2023-08-08 03:21:38.886 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 20.9509ms
+2023-08-08 03:21:48.421 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundaryxBfhHXym4a8ThbBf 251
+2023-08-08 03:21:48.422 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:21:48.422 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:21:48.423 +05:30 [INF] Route matched with {action = "AddImage", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWLocationsAPI.Models.Image]] AddImage(KTWLocationsAPI.Models.DTO.ImageDTO) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:21:48.442 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-08-08 03:21:48.443 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI) in 19.326ms
+2023-08-08 03:21:48.445 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:21:48.446 +05:30 [INF] HTTP POST /api/Location/AddImage responded 415 in 23.4964 ms
+2023-08-08 03:21:48.448 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundaryxBfhHXym4a8ThbBf 251 - 415 - application/problem+json;+charset=utf-8 26.7845ms
+2023-08-08 03:24:54.704 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundaryv1z5dHlAYl2Ilqdf 251
+2023-08-08 03:24:54.709 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:24:54.711 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:24:54.712 +05:30 [INF] Route matched with {action = "AddImage", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWLocationsAPI.Models.Image]] AddImage(KTWLocationsAPI.Models.DTO.ImageDTO) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:24:54.715 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-08-08 03:24:54.718 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI) in 3.3777ms
+2023-08-08 03:24:54.720 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:24:54.721 +05:30 [INF] HTTP POST /api/Location/AddImage responded 415 in 11.1463 ms
+2023-08-08 03:24:54.723 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundaryv1z5dHlAYl2Ilqdf 251 - 415 - application/problem+json;+charset=utf-8 19.7524ms
+2023-08-08 03:27:30.371 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:27:30.377 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:27:30.379 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:27:30.381 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:27:30.384 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:27:30.393 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:27:30.569 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:27:30.573 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:27:30.575 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 192.245ms
+2023-08-08 03:27:30.576 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:27:30.577 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 198.4483 ms
+2023-08-08 03:27:30.579 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 208.4750ms
+2023-08-08 03:27:31.082 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:27:31.083 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:27:31.084 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:27:31.085 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:27:31.086 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:27:31.088 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:27:31.100 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:27:31.103 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:27:31.105 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 19.0808ms
+2023-08-08 03:27:31.116 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:27:31.116 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 33.0153 ms
+2023-08-08 03:27:31.118 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 36.4679ms
+2023-08-08 03:27:31.134 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:27:31.136 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:27:31.136 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:27:31.137 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:27:31.139 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:27:31.142 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:27:31.147 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:27:31.150 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:27:31.151 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 12.7337ms
+2023-08-08 03:27:31.153 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:27:31.153 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 16.9760 ms
+2023-08-08 03:27:31.155 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 20.6014ms
+2023-08-08 03:27:54.366 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:27:54.372 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:27:54.373 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:27:54.376 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:27:54.379 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:27:54.381 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:27:54.389 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:27:54.392 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:27:54.394 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 15.6556ms
+2023-08-08 03:27:54.395 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:27:54.397 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 23.3484 ms
+2023-08-08 03:27:54.399 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 34.6282ms
+2023-08-08 03:28:00.341 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:28:00.343 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:28:00.345 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:28:00.346 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:28:00.348 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:28:00.350 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:28:00.353 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:28:00.356 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:28:00.357 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 8.4853ms
+2023-08-08 03:28:00.358 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:28:00.359 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 13.6203 ms
+2023-08-08 03:28:00.360 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 18.9589ms
+2023-08-08 03:28:07.449 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:28:07.449 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:28:07.450 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:28:07.451 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:28:07.455 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:28:07.471 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:28:07.484 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:28:07.502 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:28:07.503 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 48.7723ms
+2023-08-08 03:28:07.504 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:28:07.505 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 55.3210 ms
+2023-08-08 03:28:07.509 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 60.3068ms
+2023-08-08 03:28:10.450 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundaryaqUR0v82BzpBXu6B 251
+2023-08-08 03:28:10.452 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:28:10.453 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:28:10.454 +05:30 [INF] Route matched with {action = "AddImage", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWLocationsAPI.Models.Image]] AddImage(KTWLocationsAPI.Models.DTO.ImageDTO) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:28:10.457 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-08-08 03:28:10.459 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI) in 2.8655ms
+2023-08-08 03:28:10.460 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:28:10.460 +05:30 [INF] HTTP POST /api/Location/AddImage responded 415 in 7.1214 ms
+2023-08-08 03:28:10.462 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundaryaqUR0v82BzpBXu6B 251 - 415 - application/problem+json;+charset=utf-8 11.7534ms
+2023-08-08 03:28:32.150 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundaryRxjlbqFbnbDHTIZW 251
+2023-08-08 03:28:32.152 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:28:32.153 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:28:32.155 +05:30 [INF] Route matched with {action = "AddImage", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWLocationsAPI.Models.Image]] AddImage(KTWLocationsAPI.Models.DTO.ImageDTO) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:28:32.159 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-08-08 03:28:32.162 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI) in 3.056ms
+2023-08-08 03:28:32.168 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:28:32.170 +05:30 [INF] HTTP POST /api/Location/AddImage responded 415 in 16.2504 ms
+2023-08-08 03:28:32.174 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundaryRxjlbqFbnbDHTIZW 251 - 415 - application/problem+json;+charset=utf-8 23.1655ms
+2023-08-08 03:28:55.815 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:28:55.816 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:28:55.817 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:28:55.817 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:28:55.819 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:28:55.820 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:28:55.823 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:28:55.825 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:28:55.826 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 7.4762ms
+2023-08-08 03:28:55.827 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:28:55.828 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 11.4930 ms
+2023-08-08 03:28:55.829 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 14.0782ms
+2023-08-08 03:28:59.362 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundarysC72myCVGmGf7nMN 251
+2023-08-08 03:28:59.363 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:28:59.364 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:28:59.367 +05:30 [INF] Route matched with {action = "AddImage", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWLocationsAPI.Models.Image]] AddImage(KTWLocationsAPI.Models.DTO.ImageDTO) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:28:59.369 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-08-08 03:28:59.371 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI) in 2.5458ms
+2023-08-08 03:28:59.373 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:28:59.375 +05:30 [INF] HTTP POST /api/Location/AddImage responded 415 in 10.6715 ms
+2023-08-08 03:28:59.377 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundarysC72myCVGmGf7nMN 251 - 415 - application/problem+json;+charset=utf-8 15.5030ms
+2023-08-08 03:29:17.444 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:29:17.445 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:29:17.446 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:29:17.447 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:29:17.449 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:29:17.450 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:29:17.464 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:29:17.466 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:29:17.467 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 19.2099ms
+2023-08-08 03:29:17.481 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:29:17.481 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 35.7021 ms
+2023-08-08 03:29:17.519 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 74.9056ms
+2023-08-08 03:29:18.497 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundary2Yee2u3pmANAGUjF 251
+2023-08-08 03:29:18.511 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:29:18.517 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:29:18.522 +05:30 [INF] Route matched with {action = "AddImage", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWLocationsAPI.Models.Image]] AddImage(KTWLocationsAPI.Models.DTO.ImageDTO) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:29:18.526 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-08-08 03:29:18.527 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI) in 2.3064ms
+2023-08-08 03:29:18.528 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:29:18.530 +05:30 [INF] HTTP POST /api/Location/AddImage responded 415 in 12.9979 ms
+2023-08-08 03:29:18.531 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundary2Yee2u3pmANAGUjF 251 - 415 - application/problem+json;+charset=utf-8 34.9074ms
+2023-08-08 03:35:38.749 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundaryqF4Vz0c9eszTQMMx 251
+2023-08-08 03:35:38.756 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:35:38.759 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:35:38.762 +05:30 [INF] Route matched with {action = "AddImage", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWLocationsAPI.Models.Image]] AddImage(KTWLocationsAPI.Models.DTO.ImageDTO) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:35:38.783 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-08-08 03:35:38.788 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI) in 16.4592ms
+2023-08-08 03:35:38.790 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-08 03:35:38.792 +05:30 [INF] HTTP POST /api/Location/AddImage responded 415 in 34.0929 ms
+2023-08-08 03:35:38.797 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7153/api/Location/AddImage multipart/form-data;+boundary=----WebKitFormBoundaryqF4Vz0c9eszTQMMx 251 - 415 - application/problem+json;+charset=utf-8 47.9481ms
+2023-08-08 03:37:11.475 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:37:11.497 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:37:11.500 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:37:11.502 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:37:11.507 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:37:11.535 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:37:11.918 +05:30 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:37:11.941 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:37:11.944 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 439.6088ms
+2023-08-08 03:37:11.948 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-08 03:37:11.948 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:37:11.949 +05:30 [INF] CORS policy execution successful.
+2023-08-08 03:37:11.951 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 451.7133 ms
+2023-08-08 03:37:11.952 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:37:11.954 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 480.5715ms
+2023-08-08 03:37:11.956 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-08 03:37:11.960 +05:30 [INF] Inside GetAll of Locations
+2023-08-08 03:37:11.963 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 03:37:11.970 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-08 03:37:11.974 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 03:37:11.976 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 17.9962ms
+2023-08-08 03:37:11.979 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-08 03:37:11.980 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 28.3106 ms
+2023-08-08 03:37:11.984 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 35.5348ms

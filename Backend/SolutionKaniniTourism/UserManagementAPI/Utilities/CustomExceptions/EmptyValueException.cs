@@ -3,7 +3,7 @@
 namespace UserManagementAPI.Services
 {
     [Serializable]
-    internal class EmptyValueException : Exception
+    public class EmptyValueException : Exception
     {
         public EmptyValueException()
         {

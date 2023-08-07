@@ -1,0 +1,203 @@
+Sample data - Location API
+
+[
+  {
+    "location": "Tokyo, Japan",
+    "description": "The bustling capital city of Japan, known for its modern skyscrapers, historic temples, and vibrant street life.",
+    "latitude": "35.6895",
+    "longitude": "139.6917",
+    "locationType": "Metropolitan Area"
+  },
+  {
+    "location": "Kyoto, Japan",
+    "description": "A city renowned for its traditional wooden houses, stunning temples, and beautiful cherry blossoms.",
+    "latitude": "35.0116",
+    "longitude": "135.7681",
+    "locationType": "Historic City"
+  },
+  {
+    "location": "Osaka, Japan",
+    "description": "A major port city with a lively culinary scene, modern architecture, and the famous Universal Studios Japan.",
+    "latitude": "34.6937",
+    "longitude": "135.5023",
+    "locationType": "Metropolitan Area"
+  },
+  {
+    "location": "Hiroshima, Japan",
+    "description": "Known for its Peace Memorial Park and Museum, a somber reminder of the atomic bombing during World War II.",
+    "latitude": "34.3853",
+    "longitude": "132.4553",
+    "locationType": "City"
+  },
+  {
+    "location": "Sapporo, Japan",
+    "description": "The largest city in Hokkaido, famous for its snow festivals, skiing opportunities, and vibrant beer culture.",
+    "latitude": "43.0621",
+    "longitude": "141.3544",
+    "locationType": "Metropolitan Area"
+  },
+  {
+    "location": "Nagoya, Japan",
+    "description": "A major manufacturing and industrial hub, home to the famous Nagoya Castle and Toyota Motor Corporation.",
+    "latitude": "35.1815",
+    "longitude": "136.9066",
+    "locationType": "City"
+  },
+  {
+    "location": "Fukuoka, Japan",
+    "description": "A coastal city known for its historic temples, bustling nightlife, and proximity to beautiful beaches.",
+    "latitude": "33.5904",
+    "longitude": "130.4017",
+    "locationType": "City"
+  },
+  {
+    "location": "Yokohama, Japan",
+    "description": "A port city adjacent to Tokyo, offering a mix of modern shopping centers, scenic waterfront, and historic attractions.",
+    "latitude": "35.4437",
+    "longitude": "139.6380",
+    "locationType": "City"
+  },
+  {
+    "location": "Nara, Japan",
+    "description": "A city steeped in history, famous for its ancient temples, sacred deer park, and the iconic Great Buddha statue.",
+    "latitude": "34.6851",
+    "longitude": "135.8048",
+    "locationType": "City"
+  },
+  {
+    "location": "Kobe, Japan",
+    "description": "A picturesque city known for its scenic harbor, European-style architecture, and the world-famous Kobe beef.",
+    "latitude": "34.6937",
+    "longitude": "135.1956",
+    "locationType": "City"
+  }
+]
+
+
+//
+[
+  {
+    "locationId": "LOC001",
+    "locationName": "Tokyo Tower",
+    "speciality": "Landmark",
+    "description": "Tokyo Tower is a iconic communications and observation tower, offering panoramic views of Tokyo's skyline."
+  },
+  {
+    "locationId": "LOC002",
+    "locationName": "Kinkaku-ji",
+    "speciality": "Temple",
+    "description": "Kinkaku-ji, also known as the Golden Pavilion, is a stunning Zen Buddhist temple covered in gold leaf, surrounded by beautiful gardens."
+  },
+  {
+    "locationId": "LOC003",
+    "locationName": "Dotonbori",
+    "speciality": "Entertainment District",
+    "description": "Dotonbori is a lively and colorful entertainment district in Osaka, known for its vibrant street food, neon lights, and nightlife."
+  },
+  {
+    "locationId": "LOC004",
+    "locationName": "Hiroshima Peace Memorial",
+    "speciality": "Historical Site",
+    "description": "The Hiroshima Peace Memorial, commonly known as the Atomic Bomb Dome, is a symbol of peace and a UNESCO World Heritage Site."
+  },
+  {
+    "locationId": "LOC005",
+    "locationName": "Sapporo Snow Festival",
+    "speciality": "Festival",
+    "description": "The Sapporo Snow Festival is a famous winter event featuring stunning ice and snow sculptures, attracting visitors from around the world."
+  },
+  {
+    "locationId": "LOC006",
+    "locationName": "Nagoya Castle",
+    "speciality": "Castle",
+    "description": "Nagoya Castle is a historic Japanese castle with a beautiful golden shachi (dolphin-shaped ornament) on its roof."
+  },
+  {
+    "locationId": "LOC007",
+    "locationName": "Fukuoka Beaches",
+    "speciality": "Beach",
+    "description": "Fukuoka is known for its beautiful beaches like Momochi Beach and Nokonoshima Island Park, offering relaxation and water activities."
+  },
+  {
+    "locationId": "LOC008",
+    "locationName": "Yokohama Chinatown",
+    "speciality": "Cultural District",
+    "description": "Yokohama Chinatown is one of the largest and most vibrant Chinatowns in the world, offering a rich blend of Chinese culture and cuisine."
+  },
+  {
+    "locationId": "LOC009",
+    "locationName": "Nara Park",
+    "speciality": "Park",
+    "description": "Nara Park is a spacious public park known for its friendly deer population, ancient temples, and the majestic Great Buddha."
+  },
+  {
+    "locationId": "LOC010",
+    "locationName": "Kobe Harborland",
+    "speciality": "Waterfront District",
+    "description": "Kobe Harborland is a scenic waterfront area with shopping, dining, and entertainment options, providing picturesque views of the harbor."
+  }
+]
+
+//Tokyo data 
+[
+  {
+    "locationId": "LOC001",
+    "locationName": "Tokyo Tower",
+    "speciality": "Landmark",
+    "description": "Tokyo Tower is an iconic communications and observation tower, offering panoramic views of Tokyo's skyline."
+  },
+  {
+    "locationId": "LOC001",
+    "locationName": "Shibuya Crossing",
+    "speciality": "Pedestrian Crossing",
+    "description": "Shibuya Crossing is one of the busiest pedestrian crossings in the world, known for its bustling energy and vibrant surroundings."
+  },
+  {
+    "locationId": "LOC001",
+    "locationName": "Meiji Shrine",
+    "speciality": "Shrine",
+    "description": "Meiji Shrine is a serene Shinto shrine surrounded by a lush forest, offering a peaceful retreat in the heart of the city."
+  },
+  {
+    "locationId": "LOC001",
+    "locationName": "Akihabara",
+    "speciality": "Electronics and Anime District",
+    "description": "Akihabara is a popular district known for its electronics shops, anime culture, and vibrant entertainment options."
+  },
+  {
+    "locationId": "LOC001",
+    "locationName": "Asakusa Senso-ji",
+    "speciality": "Temple",
+    "description": "Asakusa Senso-ji is Tokyo's oldest temple, featuring a lively market street and a rich history dating back centuries."
+  },
+  {
+    "locationId": "LOC001",
+    "locationName": "Odaiba",
+    "speciality": "Entertainment and Shopping Hub",
+    "description": "Odaiba is a modern island district with shopping malls, theme parks, and stunning views of the Rainbow Bridge."
+  },
+  {
+    "locationId": "LOC001",
+    "locationName": "Ginza",
+    "speciality": "Shopping District",
+    "description": "Ginza is a high-end shopping area known for luxury boutiques, department stores, and elegant dining experiences."
+  },
+  {
+    "locationId": "LOC001",
+    "locationName": "Roppongi Hills",
+    "speciality": "Cultural and Entertainment Complex",
+    "description": "Roppongi Hills is a modern complex featuring art galleries, an observation deck, shopping, and a lively nightlife."
+  },
+  {
+    "locationId": "LOC001",
+    "locationName": "Ueno Park",
+    "speciality": "Park and Cultural Hub",
+    "description": "Ueno Park is a vast green space with museums, a zoo, temples, and a popular spot for cherry blossom viewing."
+  },
+  {
+    "locationId": "LOC001",
+    "locationName": "Tsukiji Outer Market",
+    "speciality": "Fish Market and Street Food",
+    "description": "Tsukiji Outer Market is a bustling market known for its fresh seafood, sushi stalls, and vibrant street food scene."
+  }
+]

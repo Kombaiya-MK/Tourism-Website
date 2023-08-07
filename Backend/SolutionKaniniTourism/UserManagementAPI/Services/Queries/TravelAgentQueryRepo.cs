@@ -19,13 +19,13 @@ namespace UserManagementAPI.Services.Queries
             if (string.IsNullOrEmpty(key))
             {
                 _logger.LogError("Given Email address is null");
-                throw new ArgumentNullException(nameof(key));
+                throw new ArgumentNullException("The give email address is null" , key);
             }
             var agent = await _context.TravelAgents.FirstOrDefaultAsync(x => x.AgencyEmail == key);
             if (agent == null)
             {
                 _logger.LogError("Invalid id or no data available");
-                throw new ArgumentException(nameof(agent));
+                throw new ArgumentException("No such agent is available");
             }
             return agent;
         }

@@ -5,7 +5,9 @@ import Home from './Components/Home'; // Update the path if needed
 import Packages from './Components/Packages'; // Update the path if needed
 import Booking from './Components/Booking'; // Update the path if needed
 
+
 function App() {
+
   return (
     <Navbar />
   );

@@ -3,7 +3,7 @@
 namespace UserAPI.Services
 {
     [Serializable]
-    internal class NullValueException : Exception
+    public class NullValueException : Exception
     {
         public NullValueException()
         {

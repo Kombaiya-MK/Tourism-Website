@@ -1,0 +1,9 @@
+SampleData - Feedback
+{
+  "email": "mksuresh044@gmail.com",
+  "servicename": "Tourpack12",
+  "serviceType": "Food",
+  "packId": "Pack002",
+  "review": "Not good",
+  "rating": 1
+}

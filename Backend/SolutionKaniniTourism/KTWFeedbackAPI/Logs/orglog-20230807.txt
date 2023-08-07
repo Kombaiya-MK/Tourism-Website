@@ -753,3 +753,45 @@ FROM [Feedbacks] AS [f]
 2023-08-07 14:45:49.221 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.7287ms
 2023-08-07 14:45:50.551 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - -
 2023-08-07 14:45:50.968 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 416.7961ms
+2023-08-07 21:35:38.766 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 21:35:39.655 +05:30 [INF] Now listening on: https://localhost:7026
+2023-08-07 21:35:39.671 +05:30 [INF] Now listening on: http://localhost:5266
+2023-08-07 21:35:39.685 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 21:35:39.687 +05:30 [INF] Hosting environment: Development
+2023-08-07 21:35:39.688 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWFeedbackAPI\
+2023-08-07 21:35:55.391 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - -
+2023-08-07 21:35:58.999 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - - - 200 - text/html;charset=utf-8 3615.9397ms
+2023-08-07 21:35:59.067 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - -
+2023-08-07 21:35:59.067 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 21:35:59.085 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - - - 200 12360 application/javascript;+charset=utf-8 17.7439ms
+2023-08-07 21:35:59.587 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 519.2740ms
+2023-08-07 21:35:59.801 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - -
+2023-08-07 21:35:59.979 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 178.2203ms
+2023-08-07 23:29:30.269 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 23:29:30.412 +05:30 [INF] CORS policy execution successful.
+2023-08-07 23:29:30.857 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 23:29:31.014 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 23:29:31.778 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 23:29:34.069 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 23:29:36.872 +05:30 [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 23:29:37.338 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 23:29:37.466 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 23:29:37.473 +05:30 [INF] CORS policy execution successful.
+2023-08-07 23:29:37.474 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 23:29:37.475 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 6413.0023ms
+2023-08-07 23:29:37.476 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 23:29:37.485 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 23:29:37.500 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 23:29:37.499 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 7064.1822 ms
+2023-08-07 23:29:37.504 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 23:29:37.541 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 23:29:37.543 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 23:29:37.545 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 64.4415ms
+2023-08-07 23:29:37.546 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 23:29:37.547 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 72.6345 ms
+2023-08-07 23:29:37.553 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 87.4394ms
+2023-08-07 23:29:37.553 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 7291.5277ms

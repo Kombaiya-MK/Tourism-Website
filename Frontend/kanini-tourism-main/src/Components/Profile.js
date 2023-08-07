@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -16,18 +16,41 @@ import {
   Button,
   Typography,
 } from '@mui/material';
-import { Edit as EditIcon, AccountBalanceWallet as WalletIcon, Person as PersonIcon, Email as EmailIcon, LocationOn as LocationIcon } from '@mui/icons-material';
+import {
+  Edit as EditIcon,
+  AccountBalanceWallet as WalletIcon,
+  Person as PersonIcon,
+  Email as EmailIcon,
+  LocationOn as LocationIcon,
+  AddCircleOutline as AddCircleOutlineIcon,
+} from '@mui/icons-material';
+import AgencyForm from './AgencyForm';
 
-function ProfileCard({ firstName, lastName, email, gender, age, walletAmount }) {
+function ProfileCard() {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [editedData, setEditedData] = useState({
-    firstName: firstName,
-    lastName: lastName,
-    email: email,
-    gender: gender,
-    age: age,
-    walletAmount: walletAmount,
-  });
+  const [isApplyForAgencyModalOpen, setIsApplyForAgencyModalOpen] = useState(false);
+  const [editedData, setEditedData] = useState({});
+  const [profileData, setProfileData] = useState({});
+  const [email, setEmail] = useState('');
+
+  useEffect(() => {
+    // Fetch user profile data based on the email stored in local storage
+    const storedEmail = localStorage.getItem('userEmail');
+    if (storedEmail) {
+      setEmail(storedEmail);
+      fetchProfileData(storedEmail);
+    }
+  }, []);
+
+  const fetchProfileData = async (email) => {
+    try {
+      const response = await fetch(`https://localhost:7289/api/User/GetAllUserDetails?email=${email}`);
+      const data = await response.json();
+      setProfileData(data);
+    } catch (error) {
+      console.error('Error fetching profile data:', error);
+    }
+  };
 
   const cardStyle = {
     width: '300px',
@@ -66,6 +89,14 @@ function ProfileCard({ firstName, lastName, email, gender, age, walletAmount }) 
     setIsEditModalOpen(false);
   };
 
+  const handleApplyForAgency = () => {
+    setIsApplyForAgencyModalOpen(true);
+  };
+
+  const handleCancelApplyForAgency = () => {
+    setIsApplyForAgencyModalOpen(false);
+  };
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setEditedData((prevData) => ({
@@ -79,21 +110,25 @@ function ProfileCard({ firstName, lastName, email, gender, age, walletAmount }) 
       <CardContent style={cardContentStyle}>
         <PersonIcon style={iconStyle} />
         <Typography variant="h6">
-          {firstName} {lastName}
+          {profileData.userDetails?.[0]?.userName}
         </Typography>
         <EmailIcon style={iconStyle} />
         <Typography variant="subtitle1">{email}</Typography>
         <LocationIcon style={iconStyle} />
-        <Typography variant="subtitle1">City, Country</Typography>
+        <Typography variant="subtitle1">{profileData.userDetails?.[0]?.address}</Typography>
         <WalletIcon style={iconStyle} />
-        <Typography variant="subtitle1">Wallet: ${walletAmount}</Typography>
+        <Typography variant="subtitle1">Wallet: ${profileData.walletAmount}</Typography>
       </CardContent>
       <CardActions>
         <IconButton onClick={handleEdit}>
           <EditIcon />
         </IconButton>
+        <IconButton onClick={handleApplyForAgency}>
+          <AddCircleOutlineIcon />
+        </IconButton>
       </CardActions>
 
+      {/* Edit Profile Modal */}
       <Dialog open={isEditModalOpen} onClose={handleCancel} fullWidth maxWidth="sm">
         <DialogTitle>Edit Profile</DialogTitle>
         <DialogContent>
@@ -101,7 +136,7 @@ function ProfileCard({ firstName, lastName, email, gender, age, walletAmount }) 
             label="First Name"
             fullWidth
             name="firstName"
-            value={editedData.firstName}
+            value={profileData.userDetails?.[0]?.firstName || ''}
             onChange={handleInputChange}
             margin="normal"
           />
@@ -109,19 +144,11 @@ function ProfileCard({ firstName, lastName, email, gender, age, walletAmount }) 
             label="Last Name"
             fullWidth
             name="lastName"
-            value={editedData.lastName}
+            value={profileData.userDetails?.[0]?.lastName || ''}
             onChange={handleInputChange}
             margin="normal"
           />
-          <TextField
-            label="Email"
-            fullWidth
-            name="email"
-            value={editedData.email}
-            onChange={handleInputChange}
-            margin="normal"
-          />
-          {/* Additional fields such as gender, age, etc. */}
+          {/* Additional fields such as email, gender, age, etc. */}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCancel} color="primary">
@@ -129,6 +156,19 @@ function ProfileCard({ firstName, lastName, email, gender, age, walletAmount }) 
           </Button>
           <Button onClick={handleSave} color="primary">
             Save
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Apply For Agency Modal */}
+      <Dialog open={isApplyForAgencyModalOpen} onClose={handleCancelApplyForAgency} fullWidth maxWidth="sm">
+        <DialogTitle>Apply For Agency</DialogTitle>
+        <DialogContent>
+          {<AgencyForm/>}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCancelApplyForAgency} color="primary">
+            Cancel
           </Button>
         </DialogActions>
       </Dialog>

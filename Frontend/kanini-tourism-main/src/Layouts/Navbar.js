@@ -55,13 +55,15 @@ import SpecialityInput from '../Components/SpecialityInput';
 import ImageUpload from '../Components/ImageUpload';
 import AdminPanel from '../Components/AdminPanel';
 import Logout from '../Components/Logout';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link , useNavigate} from 'react-router-dom';
 import ProfileCard from '../Components/Profile';
 import AddTourPackageForm from '../Components/AddTourPackageForm'
 import LoginForm from '../Components/LoginForm';
 import AgencyForm from '../Components/AgencyForm'
 import BookPackageForm from '../Components/BookPackageForm'
 import ForgotPassword from '../Components/ForgotPassword';
+import Modal from '@mui/material/Modal';
+import VerifyCodeAndResetPassword from '../Components/VerifyCodeandResetPassword';
 
 
 const sampleSelectedPacks = [
@@ -136,6 +138,12 @@ const DropdownItem = styled(ListItem)({
 function Navbar({ userRole }) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem('UserEmail') && localStorage.getItem('token')
+  );
+
+  const navigate = useNavigate();
   const navbarHeight = 100; 
   const childComponentStyles = {
     marginTop: `-${navbarHeight}px`,
@@ -153,6 +161,30 @@ function Navbar({ userRole }) {
     setIsLogoutModalOpen(false);
   };
 
+  const handleLogin = () => {
+    setIsLoginModalOpen(true);
+  };
+
+  const handleCloseLoginModal = () => { 
+    setIsLoginModalOpen(false);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('UserEmail');
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
+    setIsLogoutModalOpen(false);
+    navigate('/');
+  };
+
+  const guestDrawerItems = [
+    { text: 'Home', icon: <HomeIcon />, link: '/' },
+    { text: 'Destinations', icon: <LocationOnIcon />, link: '/destinations' },
+    { text: 'Experiences', icon: <FlightIcon />, link: '/experiences' },
+    { text: 'Plan Your Trip', icon: <ExploreIcon />, link: '/plan-your-trip' },
+    { text: 'Login', icon: <Login />, link: '/login' },
+  ];
+
   const userDrawerItems = [
     { text: 'Home', icon: <HomeIcon />, link: '/' },
     { text: 'Destinations', icon: <LocationOnIcon />, link: '/destinations' },
@@ -161,7 +193,7 @@ function Navbar({ userRole }) {
     { text: 'Cart', icon: <ShoppingCart />, link: '/cart' },
     { text: 'Bookings', icon: <EventSeatIcon />, link: '/booking' },
     { text: 'Profile', icon: <AccountCircleIcon />, link: '/profile' },
-    { text: 'Logout', icon: <LogoutIcon />, link: '/logout' },
+    { text: 'Logout', icon: <LogoutIcon />, onClick: toggleLogoutModal },
   ];
 
   const adminDrawerItems = [
@@ -169,7 +201,7 @@ function Navbar({ userRole }) {
     { text: 'Admin Panel', icon: <BusinessIcon />, link: '/admin' },
     { text: 'Agency Approval', icon: <PersonIcon />, link: '/agency-approval' },
     { text: 'Image Gallery', icon: <PhotoLibraryIcon />, link: '/image-gallery' },
-    { text: 'Logout', icon: <LogoutIcon />, link: '/logout' },
+    { text: 'Logout', icon: <LogoutIcon />, onClick: toggleLogoutModal },
   ];
 
   const agentDrawerItems = [
@@ -177,18 +209,22 @@ function Navbar({ userRole }) {
     { text: 'Agent Dashboard', icon: <PersonIcon />, link: '/agent' },
     { text: 'Booking', icon: <EventSeatIcon />, link: '/booking' },
     { text: 'Packages', icon: <LocalOfferIcon />, link: '/packages' },
-    { text: 'Logout', icon: <LogoutIcon />, link: '/logout' },
+    { text: 'Logout', icon: <LogoutIcon />, onClick: toggleLogoutModal },
   ];
 
-  userRole = 'user'
-  const isAgentApproved = userRole === 'agent'; // && true; 
+  userRole = 'admin'
+  //const isAgentApproved = userRole === 'agent' && true; 
+  const isAgentApproved = true
 
   
-  const drawerItems = userRole === 'admin'
-    ? adminDrawerItems
-    : (userRole === 'agent' ? (isAgentApproved ? agentDrawerItems : [{ text: 'Waiting Page', icon: <AccessTimeIcon />, link: '/waiting-page' }]) : userDrawerItems);
-
-
+  let drawerItems = [];
+  if (!isLoggedIn) {
+    drawerItems = userRole === 'admin'
+      ? adminDrawerItems
+      : (userRole === 'agent' ? (isAgentApproved ? agentDrawerItems : [{ text: 'Waiting Page', icon: <AccessTimeIcon />, link: '/waiting-page' }]) : userDrawerItems);
+  } else {
+    drawerItems = guestDrawerItems;
+  }
   return (
     <div>
       <Header>
@@ -228,6 +264,20 @@ function Navbar({ userRole }) {
           </List>
         </div>
       </Drawer>
+      <Dialog open={isLoginModalOpen} onClose={handleCloseLoginModal}>
+        <DialogTitle>Login</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            {/* Add your login form here */}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseLoginModal} color="primary">
+            Cancel
+          </Button>
+          {/* Add login button */}
+        </DialogActions>
+      </Dialog>
       <Dialog open={isLogoutModalOpen} onClose={handleCloseLogoutModal}>
         <DialogTitle>Logout</DialogTitle>
         <DialogContent>
@@ -239,11 +289,17 @@ function Navbar({ userRole }) {
           <Button onClick={handleCloseLogoutModal} color="primary">
             Cancel
           </Button>
-          <Button component={Link} to="/logout" color="primary">
+          <Button onClick={handleLogout} color="primary">
             Logout
           </Button>
         </DialogActions>
       </Dialog>
+
+      <Modal open={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)}>
+        <div style={{ width: 400, backgroundColor: 'white', padding: 20, position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+          <LoginForm />
+        </div>
+      </Modal>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/packages" element={<Packages />} />
@@ -262,13 +318,14 @@ function Navbar({ userRole }) {
         <Route path="/image-upload" element={<ImageUpload />} />
         <Route path="/admin" element={<AdminPanel />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/login" element={<LoginForm />} />
       </Routes>
       <Footer />
-      <div><LoginForm/></div>
+      {/* <div><LoginForm/></div>
         <div><AddTourPackageForm/></div>
         <div><BookPackageForm/></div>
         <div><AgencyForm/></div>
-        <div><ForgotPassword/></div>
+        <div><ForgotPassword/></div> */}
     </div>
   );
 }

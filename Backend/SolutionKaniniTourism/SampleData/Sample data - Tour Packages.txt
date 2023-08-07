@@ -1,0 +1,14 @@
+Sample data - Tour Packages
+{
+  "name": "Pack1",
+  "description": "bcd",
+  "packId": "Pack001",
+  "itineraryId": "Itr001",
+  "itemId": "Item001",
+  "dayNumber": 1,
+  "activity": "Sleep",
+  "startTime": "8.00 am",
+  "endTime": "8.00 pm",
+  "location": "Kyoto",
+  "status": "Active"
+}

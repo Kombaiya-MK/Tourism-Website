@@ -16,6 +16,9 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import EditIcon from '@mui/icons-material/Edit';
 import { styled } from '@mui/material/styles';
 import '../Assets/Styles/AgentDashboard.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css';
 
 const StyledAddIcon = styled(AddCircleOutlineIcon)(({ theme }) => ({
   color: theme.palette.success.main,
@@ -51,24 +54,7 @@ var itinerariesData = [
 ];
 
 function AgentDashboard() {
-  const [packages, setPackages] = useState([
-    {
-      id: 1,
-      name: 'Tokyo Adventure',
-      description: 'Explore the vibrant city of Tokyo',
-    },
-    {
-      id: 2,
-      name: 'Beach Getaway',
-      description: 'Relax on the beautiful sandy beaches',
-    },
-    {
-      id: 3,
-      name: 'Historical Europe',
-      description: 'Experience the rich history of European cities',
-    },
-    // Add more package data
-  ]);
+  const [packages, setPackages] = useState([]);
 
   const [openPackageDialog, setOpenPackageDialog] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState(null);
@@ -107,35 +93,83 @@ function AgentDashboard() {
   };
 
   const handleAddPackage = () => {
+    // Call the API to add a new package
     const newPackage = {
-      id: packages.length + 1,
       name: packageName,
       description: packageDescription,
+      duration: '', // Add package duration
+      locationId: '', // Add package location ID
+      price: 0, // Add package price
+      capacity: 0, // Add package capacity
+      status: 'Active', // Set the initial status
     };
 
-    setPackages([...packages, newPackage]);
-    handlePackageClose();
+    // Make an API request to add the package
+    fetch('https://localhost:7169/api/TourPack/AddPack', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        // Add any other headers required
+      },
+      body: JSON.stringify(newPackage),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Update the state with the newly added package
+        setPackages([...packages, data]);
+        handlePackageClose();
+        toast.success('Package added successfully');
+      })
+      .catch((error) => {
+        console.error('Error adding package:', error);
+        toast.error('An error occurred while adding the package');
+        // Handle error state or display an error message
+      });
   };
 
   const handleAddItinerary = () => {
-    // TODO: Implement add itinerary functionality
-    // Update the itinerariesData with the new itinerary
-    const newItinerary = {
-      packageId: selectedPackage,
-      day: parseInt(itineraryDay),
-      time: itineraryTime,
+    // Call the API to add a new itinerary item
+    const newItineraryItem = {
+      name: '', // Add itinerary item name
+      description: '', // Add itinerary item description
+      packId: selectedPackage,
+      itineraryId: '', // Add itinerary ID
+      itemId: '', // Add item ID
+      dayNumber: parseInt(itineraryDay),
+      activity: '', // Add activity
+      startTime: itineraryTime,
+      endTime: '', // Add end time
       location: itineraryLocation,
-      description: itineraryDescription,
+      status: 'Active', // Set the initial status
     };
-    const updatedItineraries = [...itinerariesData, newItinerary];
-    itinerariesData = updatedItineraries;
 
-    setItineraryTime('');
-    setItineraryLocation('');
-    setItineraryDescription('');
-    setItineraryDay('');
+    // Make an API request to add the itinerary item
+    fetch('https://localhost:7169/api/TourPack/AddItineraryItem', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        // Add any other headers required
+      },
+      body: JSON.stringify(newItineraryItem),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Update the itinerariesData with the new itinerary item
+        const updatedItineraries = [...itinerariesData, data];
+        itinerariesData = updatedItineraries;
+
+        setItineraryTime('');
+        setItineraryLocation('');
+        setItineraryDescription('');
+        setItineraryDay('');
+        toast.success('Itinerary added successfully');
+      })
+      .catch((error) => {
+        console.error('Error adding itinerary item:', error);
+        toast.error('An error occurred while adding the itinerary'); 
+        // Handle error state or display an error message
+      });
   };
-
   return (
     <div className="agent-dashboard">
       <Container>

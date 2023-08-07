@@ -12175,3 +12175,142 @@ FROM [Specializations] AS [s]
 2023-08-07 14:45:48.656 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 71.7549ms
 2023-08-07 14:45:48.950 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/v1/swagger.json - -
 2023-08-07 14:45:49.480 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 530.3179ms
+2023-08-07 21:35:39.741 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 21:35:40.250 +05:30 [INF] Now listening on: https://localhost:7153
+2023-08-07 21:35:40.251 +05:30 [INF] Now listening on: http://localhost:5261
+2023-08-07 21:35:40.258 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 21:35:40.261 +05:30 [INF] Hosting environment: Development
+2023-08-07 21:35:40.263 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWLocationsAPI\
+2023-08-07 21:35:55.406 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/index.html - -
+2023-08-07 21:35:58.707 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/index.html - - - 200 - text/html;charset=utf-8 3309.3661ms
+2023-08-07 21:35:58.803 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 21:35:58.821 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/_framework/aspnetcore-browser-refresh.js - - - 200 12362 application/javascript;+charset=utf-8 18.1277ms
+2023-08-07 21:35:58.872 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/_vs/browserLink - -
+2023-08-07 21:35:59.008 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 135.6021ms
+2023-08-07 21:35:59.423 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/swagger/v1/swagger.json - -
+2023-08-07 21:35:59.882 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 459.2334ms
+2023-08-07 21:48:39.837 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-07 21:48:39.837 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-07 21:48:39.890 +05:30 [INF] CORS policy execution successful.
+2023-08-07 21:48:39.890 +05:30 [INF] CORS policy execution successful.
+2023-08-07 21:48:40.099 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-07 21:48:40.099 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-07 21:48:40.147 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-07 21:48:40.153 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-07 21:48:40.472 +05:30 [INF] Inside GetAll of Locations
+2023-08-07 21:48:40.508 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-07 21:48:41.404 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 21:48:41.404 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 21:48:42.569 +05:30 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-07 21:48:42.569 +05:30 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-07 21:48:42.715 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 21:48:42.715 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 21:48:42.742 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - -
+2023-08-07 21:48:42.742 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - -
+2023-08-07 21:48:42.748 +05:30 [INF] CORS policy execution successful.
+2023-08-07 21:48:42.748 +05:30 [INF] CORS policy execution successful.
+2023-08-07 21:48:42.751 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 2591.662ms
+2023-08-07 21:48:42.751 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 2587.1825ms
+2023-08-07 21:48:42.753 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-07 21:48:42.753 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-07 21:48:42.756 +05:30 [INF] Route matched with {action = "GetAllLocations", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Location]]] GetAllLocations() on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-07 21:48:42.756 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-07 21:48:42.756 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-07 21:48:42.757 +05:30 [INF] Route matched with {action = "GetSpecialities", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWLocationsAPI.Models.Image]]] GetSpecialities(System.String) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-07 21:48:42.767 +05:30 [INF] Inside GetAll of Locations
+2023-08-07 21:48:42.767 +05:30 [INF] Inside GetAll of Specialitys
+2023-08-07 21:48:42.768 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 2865.6526 ms
+2023-08-07 21:48:42.768 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 2865.6499 ms
+2023-08-07 21:48:42.781 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 2946.4077ms
+2023-08-07 21:48:42.781 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 2946.3984ms
+2023-08-07 21:48:42.829 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 21:48:42.829 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 21:48:42.842 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Description], [l].[Id], [l].[Latitiude], [l].[LocationType], [l].[Longitude], [l].[Name], [l].[Status]
+FROM [Locations] AS [l]
+2023-08-07 21:48:42.843 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Description], [s].[LocationId], [s].[Special]
+FROM [Specializations] AS [s]
+2023-08-07 21:48:42.847 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Location, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 21:48:42.849 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI) in 90.6134ms
+2023-08-07 21:48:42.850 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWLocationsAPI.Models.Speciality, KTWLocationsAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 21:48:42.851 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetAllLocations (KTWLocationsAPI)'
+2023-08-07 21:48:42.852 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI) in 88.4943ms
+2023-08-07 21:48:42.853 +05:30 [INF] HTTP GET /api/Location/GetAllLocations responded 200 in 102.3841 ms
+2023-08-07 21:48:42.855 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.GetSpecialities (KTWLocationsAPI)'
+2023-08-07 21:48:42.857 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetAllLocations - - - 200 - application/json;+charset=utf-8 115.0458ms
+2023-08-07 21:48:42.858 +05:30 [INF] HTTP GET /api/Location/GetSpecialities responded 200 in 107.6667 ms
+2023-08-07 21:48:42.861 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7153/api/Location/GetSpecialities?location=LOC001 - - - 200 - application/json;+charset=utf-8 118.6619ms
+2023-08-07 23:53:21.671 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7153/api/Location/AddImage application/json 51
+2023-08-07 23:53:21.725 +05:30 [INF] CORS policy execution successful.
+2023-08-07 23:53:21.731 +05:30 [INF] Executing endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-07 23:53:21.788 +05:30 [INF] Route matched with {action = "AddImage", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWLocationsAPI.Models.Image]] AddImage(KTWLocationsAPI.Models.DTO.ImageDTO) on controller KTWLocationsAPI.Controllers.LocationController (KTWLocationsAPI).
+2023-08-07 23:53:22.010 +05:30 [INF] Into the Add Method
+2023-08-07 23:53:22.036 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'LocationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 23:53:23.279 +05:30 [ERR] Failed executing DbCommand (289ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Images] ([LocationId], [Picture])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [Images]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-07 23:53:23.588 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'KTWLocationsAPI.Models.LocationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Images_Locations_LocationId". The conflict occurred in database "DBLocationKTW", table "dbo.Locations", column 'LocationId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:5f92e64f-17da-428d-bdf1-f32173b01be5
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Images_Locations_LocationId". The conflict occurred in database "DBLocationKTW", table "dbo.Locations", column 'LocationId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:5f92e64f-17da-428d-bdf1-f32173b01be5
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-08-07 23:53:24.084 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-07 23:53:24.102 +05:30 [INF] Executed action KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI) in 2313.9884ms
+2023-08-07 23:53:24.103 +05:30 [INF] Executed endpoint 'KTWLocationsAPI.Controllers.LocationController.AddImage (KTWLocationsAPI)'
+2023-08-07 23:53:24.104 +05:30 [INF] HTTP POST /api/Location/AddImage responded 400 in 2376.7653 ms
+2023-08-07 23:53:24.105 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7153/api/Location/AddImage application/json 51 - 400 - application/json;+charset=utf-8 2439.8873ms

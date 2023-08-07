@@ -3,7 +3,7 @@
 namespace UserManagementAPI.Services
 {
     [Serializable]
-    internal class NoDataException : Exception
+    public class NoDataException : Exception
     {
         public NoDataException()
         {
