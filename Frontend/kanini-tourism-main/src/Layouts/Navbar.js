@@ -1,0 +1,258 @@
+import React, { useState } from 'react';
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  Divider,
+  Typography,
+  Tooltip,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Button,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import HomeIcon from '@mui/icons-material/Home';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import FlightIcon from '@mui/icons-material/Flight';
+import ExploreIcon from '@mui/icons-material/Explore';
+import InfoIcon from '@mui/icons-material/Info';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LogoutIcon from '@mui/icons-material/Logout';
+import PersonIcon from '@mui/icons-material/Person';
+import BusinessIcon from '@mui/icons-material/Business';
+import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import EventSeatIcon from '@mui/icons-material/EventSeat';
+import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import DescriptionIcon from '@mui/icons-material/Description';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { styled } from '@mui/system';
+import Home from '../Components/Home';
+import Footer from './Footer';
+import Packages from '../Components/Packages';
+import CartPage from '../Components/CartPage';
+import InvoicePage from '../Components/InvoicePage';
+import AgencyApproval from '../Components/AgencyApproval';
+import ImageGallery from '../Components/ImageGallery';
+import AgentDashboard from '../Components/AgentDashboard';
+import Booking from '../Components/Booking';
+import WaitingPage from '../Components/WaitingPage';
+import SuccessPage from '../Components/SuccessPage';
+import LocationForm from '../Components/LocationForm';
+import SpecialityInput from '../Components/SpecialityInput';
+import ImageUpload from '../Components/ImageUpload';
+import AdminPanel from '../Components/AdminPanel';
+import Logout from '../Components/Logout';
+import { Routes, Route, Link } from 'react-router-dom';
+
+const sampleSelectedPacks = [
+  { id: 1, name: 'Tokyo Tour', price: 300 },
+  { id: 2, name: 'Kyoto Experience', price: 250 },
+  { id: 3, name: 'Osaka Adventure', price: 180 },
+];
+
+const sampleTotalAmount = sampleSelectedPacks.reduce((total, pack) => total + pack.price, 0);
+
+const Header = styled(AppBar)({
+  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  padding: '15px 0',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  right: 0,
+  zIndex: 1000,
+  boxShadow: 'none',
+});
+
+const Container = styled(Toolbar)({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+});
+
+const Logo = styled('div')({
+  '& img': {
+    width: '100px',
+    height: 'auto',
+  },
+});
+
+const NavLinks = styled('div')({
+  display: 'flex',
+  gap: '20px',
+  listStyle: 'none',
+});
+
+const NavLinkItem = styled(ListItem)({
+  position: 'relative',
+});
+
+const NavLink = styled(Link)({
+  color: '#333',
+  fontFamily: 'Open Sans, sans-serif',
+  textDecoration: 'none',
+  transition: 'color 0.3s ease-in-out',
+
+  '&:hover': {
+    color: '#555',
+  },
+});
+
+const Dropdown = styled('div')({
+  display: 'none',
+  position: 'absolute',
+  top: '100%',
+  left: 0,
+  backgroundColor: 'white',
+  boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',
+  width: '200px',
+  zIndex: 1001,
+});
+
+const DropdownItem = styled(ListItem)({
+  padding: '10px 15px',
+  borderBottom: '1px solid #ddd',
+});
+
+function Navbar({ userRole }) {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
+
+  const toggleDrawer = (open) => () => {
+    setIsDrawerOpen(open);
+  };
+
+  const toggleLogoutModal = () => {
+    setIsLogoutModalOpen(!isLogoutModalOpen);
+  };
+
+  const handleCloseLogoutModal = () => {
+    setIsLogoutModalOpen(false);
+  };
+
+  const userDrawerItems = [
+    { text: 'Home', icon: <HomeIcon />, link: '/' },
+    { text: 'Destinations', icon: <LocationOnIcon />, link: '/destinations' },
+    { text: 'Experiences', icon: <FlightIcon />, link: '/experiences' },
+    { text: 'Plan Your Trip', icon: <ExploreIcon />, link: '/plan-your-trip' },
+    { text: 'About Japan', icon: <InfoIcon />, link: '/about-japan' },
+    { text: 'Profile', icon: <AccountCircleIcon />, link: '/profile' },
+    { text: 'Logout', icon: <LogoutIcon />, link: '/logout' },
+  ];
+
+  const adminDrawerItems = [
+    { text: 'Home', icon: <HomeIcon />, link: '/' },
+    { text: 'Admin Panel', icon: <BusinessIcon />, link: '/admin' },
+    { text: 'Agency Approval', icon: <PersonIcon />, link: '/agency-approval' },
+    { text: 'Image Gallery', icon: <PhotoLibraryIcon />, link: '/image-gallery' },
+    { text: 'Image Upload', icon: <CloudUploadIcon />, link: '/image-upload' },
+    { text: 'Location Form', icon: <LocationOnIcon />, link: '/location-form' },
+    { text: 'Speciality Input', icon: <AddCircleIcon />, link: '/speciality-input' },
+    { text: 'Logout', icon: <LogoutIcon />, link: '/logout' },
+  ];
+
+  const agentDrawerItems = [
+    { text: 'Home', icon: <HomeIcon />, link: '/' },
+    { text: 'Agent Dashboard', icon: <PersonIcon />, link: '/agent' },
+    { text: 'Booking', icon: <EventSeatIcon />, link: '/booking' },
+    { text: 'Packages', icon: <LocalOfferIcon />, link: '/packages' },
+    { text: 'Package Details', icon: <DescriptionIcon />, link: '/package-details' },
+    { text: 'Logout', icon: <LogoutIcon />, link: '/logout' },
+  ];
+
+  const isAgentApproved = userRole === 'agent' && true; // Example approval check
+
+  userRole = 'user'
+  const drawerItems = userRole === 'admin'
+    ? adminDrawerItems
+    : (userRole === 'agent' ? (isAgentApproved ? agentDrawerItems : [{ text: 'Waiting Page', icon: <AccessTimeIcon />, link: '/waiting-page' }]) : userDrawerItems);
+
+  return (
+    <div>
+      <Header>
+        <Container>
+          <Logo>
+            <img src="./resources/images/logo.png" alt="Japan Tourism" />
+          </Logo>
+          <NavLinks>
+            <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
+              <MenuIcon style={{ color: 'white' }} />
+            </IconButton>
+          </NavLinks>
+        </Container>
+      </Header>
+      <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)}>
+        <div className="drawer-content">
+          <div className="drawer-header">
+            <Typography variant="h6" color="primary">
+              Explore Japan
+            </Typography>
+          </div>
+          <Divider />
+          <IconButton edge="end" color="inherit" aria-label="close" onClick={toggleDrawer(false)}>
+            <CloseIcon />
+          </IconButton>
+          <List>
+            {drawerItems.map((item) => (
+              <ListItem key={item.text} button component={Link} to={item.link} onClick={toggleDrawer(false)}>
+                <ListItemIcon>
+                  <Tooltip title={item.text} placement="right">
+                    {item.icon}
+                  </Tooltip>
+                </ListItemIcon>
+                <ListItemText primary={item.text} />
+              </ListItem>
+            ))}
+          </List>
+        </div>
+      </Drawer>
+      <Dialog open={isLogoutModalOpen} onClose={handleCloseLogoutModal}>
+        <DialogTitle>Logout</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Are you sure you want to logout?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseLogoutModal} color="primary">
+            Cancel
+          </Button>
+          <Button component={Link} to="/logout" color="primary">
+            Logout
+          </Button>
+        </DialogActions>
+      </Dialog>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/packages" element={<Packages />} />
+        <Route path="/plan-your-trip" element={<Packages />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/invoice" element={<InvoicePage selectedPacks={sampleSelectedPacks} totalAmount={sampleTotalAmount} />} />
+        <Route path="/agency-approval" element={<AgencyApproval />} />
+        <Route path="/image-gallery" element={<ImageGallery />} />
+        <Route path="/agent" element={<AgentDashboard />} />
+        <Route path="/booking" element={<Booking isAgent={userRole === 'agent'} />} />
+        <Route path="/waiting-page" element={<WaitingPage />} />
+        <Route path="/success-page" element={<SuccessPage />} />
+        <Route path="/location-form" element={<LocationForm />} />
+        <Route path="/speciality-input" element={<SpecialityInput />} />
+        <Route path="/image-upload" element={<ImageUpload />} />
+        <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/logout" element={<Logout />} />
+      </Routes>
+      <Footer />
+    </div>
+  );
+}
+
+export default Navbar;

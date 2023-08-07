@@ -1,0 +1,21 @@
+.booking {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  
+  .card {
+    margin-bottom: 32px;
+  }
+  
+  .table {
+    min-width: 650px;
+  }
+  
+  .tableCell {
+    font-size: 1rem;
+  
+    @media (max-width: 600px) {
+      font-size: 0.8rem;
+    }
+  }
+  

@@ -2,13 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./index.css";
+import Login from "./Components/Login";
+import AgencyForm from "./Components/AgencyForm";
+import AddTourPackageForm from "./Components/AddTourPackageForm";
+import BookPackageForm from "./Components/BookPackageForm";
+
 
 const App = () => (
   <div className="container">
-    <div>Name: login</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
+    <Login/>
+    <AgencyForm/>
+    <AddTourPackageForm/>
+    <BookPackageForm/>
   </div>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

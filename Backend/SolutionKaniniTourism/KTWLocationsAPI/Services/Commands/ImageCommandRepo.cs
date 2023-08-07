@@ -1,6 +1,7 @@
 ﻿
 using KTWLocationsAPI.Interfaces;
 using KTWLocationsAPI.Models;
+using KTWLocationsAPI.Utilities.CustomExceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace KTWLocationsAPI.Services.Commands

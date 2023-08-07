@@ -13,7 +13,7 @@ namespace KTWLocationsAPI.Interfaces
 
         Task<bool> AddSpeciality(LocationSpecialityDTO locationSpeciality);
 
-        Task<Image> AddImage(Image img);
+        Task<Image> AddImage(ImageDTO img);
         Task<ICollection<Image>> GetImages(string location);
 
         Task<ICollection<Speciality>> GetSpecialities(string location);

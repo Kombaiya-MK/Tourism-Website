@@ -79,7 +79,7 @@ namespace KTWLocationsAPI.Services
                     longitude2 = loc1.Longitude,
                 };
                 if(CalculateDistance(obj) <= 10)
-                    nearbyloc.Add(loc1 );
+                    nearbyloc.Add(loc1);
             }
             return nearbyloc;
         }
@@ -131,9 +131,14 @@ namespace KTWLocationsAPI.Services
             return degrees * (Math.PI / 180.0);
         }
 
-        public async Task<Image> AddImage(Image img)
+        public async Task<Image> AddImage(ImageDTO img)
         {
-            return await _cmdImageRepo.Add(img);
+            Image image = new Image()
+            {
+                Picture = img.Picture,
+                LocationId = img.LocationId,
+            };
+            return await _cmdImageRepo.Add(image);
         }
 
         public async Task<ICollection<Image>> GetImages(string location)

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace KTWLocationsAPI.Services.Commands
+namespace KTWLocationsAPI.Utilities.CustomExceptions
 {
     [Serializable]
     internal class UnableToUpdateException : Exception

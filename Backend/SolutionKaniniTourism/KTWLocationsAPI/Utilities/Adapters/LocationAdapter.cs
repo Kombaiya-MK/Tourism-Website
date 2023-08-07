@@ -15,6 +15,7 @@ namespace KTWLocationsAPI.Utilities.Adapters
                 Latitiude = locationDTO.Latitude,
                 Longitude = locationDTO.Longitude,
                 Description = locationDTO.Description,
+                LocationType = locationDTO.LocationType,
                 Status = "Active",
             };
             return location;

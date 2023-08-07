@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const json = require('./file.json');
 
 const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
@@ -36,6 +37,21 @@ module.exports = (_, argv) => ({
           loader: "babel-loader",
         },
       },
+      {
+        type: 'javascript/auto',
+        test: /\.json$/,
+        include: /(lottie)/,
+        loader: 'lottie-web-webpack-loader',
+        options: {
+          assets: {
+            scale: 0.5 // proportional resizing multiplier
+          }
+        }
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      }
     ],
   },
 

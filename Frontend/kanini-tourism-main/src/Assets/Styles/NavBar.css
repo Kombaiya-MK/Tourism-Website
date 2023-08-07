@@ -1,0 +1,72 @@
+/* Navbar.css */
+.header {
+  background-color: white;
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #555;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  z-index: 1001;
+}
+
+.nav-links li:hover .dropdown {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Responsive Navigation */
+@media (max-width: 786px) {
+  .header {
+    background-color: white;
+  }
+
+}

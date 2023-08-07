@@ -1,0 +1,171 @@
+body {
+    overflow: visible;
+  }
+
+  .scrollable-section {
+    max-height: 500px; /* Set a maximum height for the scrollable section */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+/* Home Container */
+.home-container {
+    padding-top: 80px; /* Adjust the padding to make space for the navbar */
+  }
+.home-container {
+    width: 100%;
+    overflow-x: hidden; /* Hide horizontal overflow */
+  }
+  
+  /* Hero Section */
+  /* .hero {
+    position: relative;
+    text-align: center;
+    padding: 0px 0;
+    background-color: #f8f8f8;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #777;
+  } */
+  .hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+  
+  /* Destinations, Knowledge, and Experiences Sections */
+  .destinations,
+  .knowledge,
+  .experiences {
+    padding: 60px 0;
+    background-color: #fff;
+  }
+  
+  .destinations h2,
+  .knowledge h2,
+  .experiences h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  /* Cards */
+  .hover-card {
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-media {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 16px;
+  }
+  
+  .card h5 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .card-body2 {
+    color: #777;
+  }
+  
+  .card-button {
+    margin-top: 20px;
+  }
+  
+  /* Dialog */
+  .dialog-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .dialog-content {
+    font-size: 16px;
+    color: #777;
+  }
+  
+  /* Carousel */
+  .pure-react-carousel {
+    position: relative;
+  }
+  
+  .carousel-provider {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  
+  .carousel-slide {
+    position: relative;
+    text-align: center;
+  }
+  
+  .carousel-slide img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .carousel-dot-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .carousel-dot.selected {
+    background-color: #333;
+  }
+  
