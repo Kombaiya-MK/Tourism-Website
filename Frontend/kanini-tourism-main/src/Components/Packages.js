@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   Container,
   Typography,
@@ -27,70 +28,12 @@ import {
   Send as SendIcon,
   Info as InfoIcon,
 } from '@mui/icons-material';
-import StarRating from './StarRating'; // Replace with your StarRating component
-import PackageDetails from './PackageDetails'; // Import the PackageDetails component
+import StarRating from './StarRating'; 
 import '../Assets/Styles/Package.css';
 
 const StyledFavoriteIcon = styled(FavoriteIcon)(({ theme, liked }) => ({
   color: liked ? theme.palette.error.main : 'inherit',
 }));
-
-const tourPackagesData = [
-  {
-    id: 1,
-    name: 'Tokyo Adventure',
-    city: 'Tokyo',
-    date: '2023-09-15',
-    price: 1500,
-    speciality: 'Adventure',
-    image: 'https://via.placeholder.com/300',
-    rating: 4.5,
-    likes: 10,
-    reviews: [
-      {
-        name: 'John Doe',
-        rating: 4,
-        comment: 'Great experience! Highly recommended.',
-      },
-      // Add more reviews
-    ],
-  },
-  {
-    id: 2,
-    name: 'Zen Retreat in Kyoto',
-    city: 'Kyoto',
-    date: '2023-10-01',
-    price: 1200,
-    speciality: 'Relaxation',
-    image: 'https://via.placeholder.com/300',
-    rating: 4.2,
-    likes: 5,
-    reviews: [
-      {
-        name: 'Michael Johnson',
-        rating: 4,
-        comment: 'Relaxing tour. Enjoyed the tranquility of Kyoto.',
-      },
-      // Add more reviews
-    ],
-  },
-  // Add more tour packages
-  {
-    id: 3,
-    name: 'Osaka Discovery',
-    city: 'Osaka',
-    date: '2023-10-15',
-    price: 1100,
-    speciality: 'Culture',
-    image: 'https://via.placeholder.com/300',
-    rating: 3.8,
-    likes: 2,
-    reviews: [],
-  },
-];
-
-const specialities = [...new Set(tourPackagesData.map((pkg) => pkg.speciality))];
-const cities = [...new Set(tourPackagesData.map((pkg) => pkg.city))];
 
 function Packages() {
   const [cityFilter, setCityFilter] = useState('');
@@ -101,9 +44,44 @@ function Packages() {
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [selectedRating, setSelectedRating] = useState(0);
   const [reviewComment, setReviewComment] = useState('');
+  const [tourPackagesData, setTourPackagesData] = useState([]);
+  const [itinerariesData, setItinerariesData] = useState([]);
+  const [feedbackData, setFeedbackData] = useState([]);
+  const [serviceType, setServiceType] = useState('');
+  const [cartItem, setCartItem] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    // Fetch tour packages data
+    axios.get('https://localhost:7169/api/TourPack/GetAllPacks')
+      .then(response => {
+        setTourPackagesData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching tour packages:', error);
+      });
+
+    // Fetch itineraries data
+    axios.get('https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001')
+      .then(response => {
+        setItinerariesData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching itineraries:', error);
+      });
+
+    // Fetch feedback data
+    axios.get('https://localhost:7026/api/Feedback/GetFeedbacks')
+      .then(response => {
+        setFeedbackData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching feedbacks:', error);
+      });
+  }, []);
 
   const filteredPackages = tourPackagesData
-    .filter((pkg) => (!cityFilter || pkg.city === cityFilter))
+    .filter((pkg) => (!cityFilter || pkg.locationId === cityFilter))
     .filter((pkg) => (!priceFilter || pkg.price <= priceFilter))
     .filter((pkg) => (!specialityFilter || pkg.speciality === specialityFilter))
     .filter((pkg) => {
@@ -123,20 +101,21 @@ function Packages() {
     setSelectedPackage(null);
     setSelectedRating(0);
     setReviewComment('');
+    setServiceType('');
   };
 
-  const handleLikeClick = (packageId) => {
+  const handleLikeClick = async (packageId) => {
     const updatedPackages = tourPackagesData.map((pkg) =>
       pkg.id === packageId ? { ...pkg, likes: pkg.likes + 1 } : pkg
     );
-    tourPackagesData = updatedPackages;
+    setTourPackagesData(updatedPackages);
   };
 
   const handleRatingChange = (value) => {
     setSelectedRating(value);
   };
 
-  const handleReviewSubmit = () => {
+  const handleReviewSubmit = async () => {
     const updatedPackages = tourPackagesData.map((pkg) =>
       pkg.id === selectedPackage
         ? {
@@ -152,10 +131,35 @@ function Packages() {
           }
         : pkg
     );
-    tourPackagesData = updatedPackages;
+    setTourPackagesData(updatedPackages);
 
     // Close the dialog and reset the state
     handlePackageClose();
+  };
+
+  const handleAddToCart = (packageId) => {
+    const selectedPackage = tourPackagesData.find((pkg) => pkg.id === packageId);
+    if (selectedPackage) {
+      const cart1 = {
+        cartId: "Cart001",
+        email: 'user@example.com', 
+        packId: selectedPackage.id,
+        quantity: 1,
+        price: selectedPackage.price,
+        addedDate: new Date(),
+        status: 'pending',
+      };
+      setCartItem(cart1)
+      console.log(cartItem)
+
+      axios.post('https://localhost:7145/api/WishList/AddToCart', cartItem)
+        .then((response) => {
+          setCartItems([...cartItems, response.data]);
+        })
+        .catch((error) => {
+          console.error('Error adding to cart:', error);
+        });
+    }
   };
 
   return (
@@ -166,14 +170,15 @@ function Packages() {
         </Typography>
         <div className="filter-section">
           <Grid container spacing={2}>
+            {/* City Filter */}
             <Grid item xs={12} md={3}>
               <FormControl fullWidth variant="outlined">
                 <InputLabel>City</InputLabel>
                 <Select value={cityFilter} onChange={(e) => setCityFilter(e.target.value)}>
                   <MenuItem value="">All</MenuItem>
-                  {cities.map((city) => (
-                    <MenuItem key={city} value={city}>
-                      {city}
+                  {tourPackagesData.map((pack) => (
+                    <MenuItem key={pack.packId} value={pack}>
+                      {pack}
                     </MenuItem>
                   ))}
                 </Select>
@@ -182,10 +187,7 @@ function Packages() {
             <Grid item xs={12} md={3}>
               <FormControl fullWidth variant="outlined">
                 <InputLabel>Price</InputLabel>
-                <Select
-                  value={priceFilter}
-                  onChange={(e) => setPriceFilter(e.target.value)}
-                >
+                <Select value={priceFilter} onChange={(e) => setPriceFilter(e.target.value)}>
                   <MenuItem value="">All</MenuItem>
                   <MenuItem value={1000}>$1000 or less</MenuItem>
                   <MenuItem value={1500}>$1500 or less</MenuItem>
@@ -193,48 +195,20 @@ function Packages() {
                 </Select>
               </FormControl>
             </Grid>
+            {/* Speciality Filter */}
             <Grid item xs={12} md={3}>
               <FormControl fullWidth variant="outlined">
                 <InputLabel>Speciality</InputLabel>
-                <Select
-                  value={specialityFilter}
-                  onChange={(e) => setSpecialityFilter(e.target.value)}
-                >
+                <Select value={specialityFilter} onChange={(e) => setSpecialityFilter(e.target.value)}>
                   <MenuItem value="">All</MenuItem>
-                  {specialities.map((speciality) => (
-                    <MenuItem key={speciality} value={speciality}>
-                      {speciality}
+                  {/* Map over unique specialities */}
+                  {itinerariesData.map((Itinerary) => (
+                    <MenuItem key={Itinerary.itineraryId} value={Itinerary}>
+                      {Itinerary}
                     </MenuItem>
                   ))}
                 </Select>
               </FormControl>
-            </Grid>
-            <Grid item xs={12} md={3}>
-              <TextField
-                fullWidth
-                variant="outlined"
-                label="Date Range"
-                type="date"
-                value={dateRangeFilter[0] || ''}
-                onChange={(e) =>
-                  setDateRangeFilter([new Date(e.target.value), dateRangeFilter[1]])
-                }
-                InputLabelProps={{
-                  shrink: true,
-                }}
-              />
-              <TextField
-                fullWidth
-                variant="outlined"
-                type="date"
-                value={dateRangeFilter[1] || ''}
-                onChange={(e) =>
-                  setDateRangeFilter([dateRangeFilter[0], new Date(e.target.value)])
-                }
-                InputLabelProps={{
-                  shrink: true,
-                }}
-              />
             </Grid>
           </Grid>
         </div>
@@ -250,12 +224,7 @@ function Packages() {
                   <Typography variant="body2">${pkg.price}</Typography>
                   <Typography variant="body2">{pkg.speciality}</Typography>
                   <div className="action-buttons">
-                    <Tooltip title={pkg.likes > 0 ? 'Liked' : 'Like'}>
-                      <Button onClick={() => handleLikeClick(pkg.id)}>
-                        <StyledFavoriteIcon liked={pkg.likes > 0} />
-                      </Button>
-                    </Tooltip>
-                    <Button>
+                    <Button onClick={() => handleAddToCart(pkg.id)}>
                       <ShoppingCartIcon />
                     </Button>
                     <Button>
@@ -277,7 +246,7 @@ function Packages() {
         </Grid>
       </Container>
       {/* Package Details Dialog */}
-      <Dialog open={openPackageDialog} onClose={handlePackageClose} maxWidth="sm" fullWidth>
+      <Dialog open={openPackageDialog} onClose={handlePackageClose} maxWidth="md" fullWidth>
         <DialogTitle>Package Details</DialogTitle>
         <DialogContent>
           {selectedPackage !== null && (
@@ -299,6 +268,61 @@ function Packages() {
                 value={reviewComment}
                 onChange={(e) => setReviewComment(e.target.value)}
               />
+              <div>
+                <Typography variant="h6">Itinerary</Typography>
+                <ul>
+                  {itinerariesData
+                    .filter((item) => item.packId === `Pack00${selectedPackage}`)
+                    .map((item) => (
+                      <li key={item.itineraryId}>{item.description}</li>
+                    ))}
+                </ul>
+              </div>
+              <div>
+                <Typography variant="h6">Previous Reviews</Typography>
+                <ul>
+                  {feedbackData
+                    .filter((feedback) => feedback.packId === `Pack00${selectedPackage}`)
+                    .map((feedback) => (
+                      <li key={feedback.id}>
+                        <Typography>
+                          <strong>Service Type:</strong> {feedback.serviceType}
+                        </Typography>
+                        <Typography>
+                          <strong>Rating:</strong> {feedback.rating}
+                        </Typography>
+                        <Typography>
+                          <strong>Review:</strong> {feedback.review}
+                        </Typography>
+                        <Typography>
+                          <strong>Date:</strong> {new Date(feedback.feedbackDate).toLocaleDateString()}
+                        </Typography>
+                        <hr />
+                      </li>
+                    ))}
+                </ul>
+              </div>
+              <div>
+                <Typography variant="h6">Submit Your Review</Typography>
+                <FormControl fullWidth variant="outlined">
+                  <InputLabel>Service Type</InputLabel>
+                  <Select value={serviceType} onChange={(e) => setServiceType(e.target.value)}>
+                    <MenuItem value="Food">Food</MenuItem>
+                    <MenuItem value="Accommodation">Accommodation</MenuItem>
+                    <MenuItem value="Transportation">Transportation</MenuItem>
+                    {/* Add more options as needed */}
+                  </Select>
+                </FormControl>
+                <StarRating rating={selectedRating} onChange={handleRatingChange} />
+                <TextField
+                  label="Your Review"
+                  multiline
+                  rows={4}
+                  fullWidth
+                  value={reviewComment}
+                  onChange={(e) => setReviewComment(e.target.value)}
+                />
+              </div>
             </div>
           )}
         </DialogContent>

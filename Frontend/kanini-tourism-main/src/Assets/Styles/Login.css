@@ -1,0 +1,17 @@
+/* loginStyles.css */
+.login-paper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Add other styles as needed */
+  }
+  
+  .login-form {
+    width: 100%;
+    /* Add other styles as needed */
+  }
+  
+  .login-submit {
+    /* Add other styles as needed */
+  }
+  

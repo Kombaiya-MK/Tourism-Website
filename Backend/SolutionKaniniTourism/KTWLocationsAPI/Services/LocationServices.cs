@@ -61,7 +61,8 @@ namespace KTWLocationsAPI.Services
 
         public async Task<ICollection<Location>> GetAllLocations()
         {
-            return await _qryLocRepo.GetAll();
+            var locations =  await _qryLocRepo.GetAll();
+            return locations.DistinctBy(p => p.Name).ToList();
         }
 
         public async Task<ICollection<Location>> GetAllNearByLocations(string location)
@@ -133,7 +134,7 @@ namespace KTWLocationsAPI.Services
 
         public async Task<Image> AddImage(ImageDTO img)
         {
-            Image image = new Image()
+            Image image = new()
             {
                 Picture = img.Picture,
                 LocationId = img.LocationId,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Paper,
   Typography,
@@ -19,6 +19,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const paperStyle = {
   padding: '16px',
@@ -27,37 +30,25 @@ const paperStyle = {
 };
 
 const CartPage = () => {
-  const [selectedPacks, setSelectedPacks] = useState([
-    {
-      id: 1,
-      name: 'Tokyo Exploration',
-      startDate: '2023-08-15',
-      endDate: '2023-08-20',
-      adults: 2,
-      children: 1,
-      price: 1500,
-      image: 'https://via.placeholder.com/150', // Add image URL here
-    },
-    {
-      id: 2,
-      name: 'Kyoto Adventure',
-      startDate: '2023-09-10',
-      endDate: '2023-09-15',
-      adults: 1,
-      children: 0,
-      price: 1200,
-      image: 'https://via.placeholder.com/150', // Add image URL here
-    },
-    // Add more selected packs
-  ]);
+  const [cartItems, setCartItems] = useState([]);
 
-  const handleRemovePack = (packId) => {
-    const updatedPacks = selectedPacks.filter((pack) => pack.id !== packId);
-    setSelectedPacks(updatedPacks);
+  useEffect(() => {
+    // Fetch cart items data
+    axios.get('https://localhost:7145/api/WishList/GetAllItemsIntheCart')
+      .then(response => {
+        setCartItems(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching cart items:', error);
+      });
+  }, []);
+
+  const handleRemovePack = (cartId) => {
+    
   };
 
-  const handleSelectPack = (packId) => {
-    // Logic for selecting a pack
+  const handleSelectPack = (cartId) => {
+    
   };
 
   const getNumberOfDays = (startDate, endDate) => {
@@ -68,7 +59,7 @@ const CartPage = () => {
   };
 
   const getTotalPrice = () => {
-    return selectedPacks.reduce((total, pack) => total + pack.price, 0);
+    return cartItems.reduce((total, item) => total + item.price, 0);
   };
 
   return (
@@ -78,32 +69,26 @@ const CartPage = () => {
           Your Cart
         </Typography>
         <List>
-          {selectedPacks.map((pack) => (
-            <div key={pack.id}>
+          {cartItems.map((item) => (
+            <div key={item.id}>
               <Card variant="outlined" style={{ marginBottom: '8px' }}>
-                <CardMedia component="img" height="150" image={pack.image} alt={pack.name} />
                 <CardContent>
+                  {/* Add other details for each cart item */}
                   <Typography variant="h6" gutterBottom>
-                    {pack.name}
+                    Pack ID: {item.packId}
                   </Typography>
                   <Typography variant="body2">
-                    Date Range: {pack.startDate} - {pack.endDate}, {getNumberOfDays(pack.startDate, pack.endDate)} days
-                  </Typography>
-                  <Typography variant="body2">
-                    Adults: {pack.adults}, Children: {pack.children}
-                  </Typography>
-                  <Typography variant="h6" style={{ marginTop: '8px' }}>
-                    Price: ${pack.price}
+                    Price: ${item.price}
                   </Typography>
                 </CardContent>
                 <CardActions>
                   <Tooltip title="Remove from Cart">
-                    <IconButton color="secondary" onClick={() => handleRemovePack(pack.id)}>
+                    <IconButton color="secondary" onClick={() => handleRemovePack(item.cartId)}>
                       <DeleteIcon />
                     </IconButton>
                   </Tooltip>
                   <Tooltip title="Select Pack">
-                    <IconButton color="primary" onClick={() => handleSelectPack(pack.id)}>
+                    <IconButton color="primary" onClick={() => handleSelectPack(item.cartId)}>
                       <CheckCircleOutlineIcon />
                     </IconButton>
                   </Tooltip>
@@ -132,6 +117,7 @@ const CartPage = () => {
           </Grid>
         </Grid>
       </Paper>
+      <ToastContainer position="bottom-right" autoClose={3000} />
     </div>
   );
 };

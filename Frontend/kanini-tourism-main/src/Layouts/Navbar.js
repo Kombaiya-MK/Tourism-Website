@@ -36,6 +36,8 @@ import EventSeatIcon from '@mui/icons-material/EventSeat';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import DescriptionIcon from '@mui/icons-material/Description';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import BookIcon from '@mui/icons-material/BookOnline'
+import { Login, ShoppingCart } from '@mui/icons-material';
 import { styled } from '@mui/system';
 import Home from '../Components/Home';
 import Footer from './Footer';
@@ -54,6 +56,13 @@ import ImageUpload from '../Components/ImageUpload';
 import AdminPanel from '../Components/AdminPanel';
 import Logout from '../Components/Logout';
 import { Routes, Route, Link } from 'react-router-dom';
+import ProfileCard from '../Components/Profile';
+import AddTourPackageForm from '../Components/AddTourPackageForm'
+import LoginForm from '../Components/LoginForm';
+import AgencyForm from '../Components/AgencyForm'
+import BookPackageForm from '../Components/BookPackageForm'
+import ForgotPassword from '../Components/ForgotPassword';
+
 
 const sampleSelectedPacks = [
   { id: 1, name: 'Tokyo Tour', price: 300 },
@@ -127,6 +136,10 @@ const DropdownItem = styled(ListItem)({
 function Navbar({ userRole }) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
+  const navbarHeight = 100; 
+  const childComponentStyles = {
+    marginTop: `-${navbarHeight}px`,
+  };
 
   const toggleDrawer = (open) => () => {
     setIsDrawerOpen(open);
@@ -145,7 +158,8 @@ function Navbar({ userRole }) {
     { text: 'Destinations', icon: <LocationOnIcon />, link: '/destinations' },
     { text: 'Experiences', icon: <FlightIcon />, link: '/experiences' },
     { text: 'Plan Your Trip', icon: <ExploreIcon />, link: '/plan-your-trip' },
-    { text: 'About Japan', icon: <InfoIcon />, link: '/about-japan' },
+    { text: 'Cart', icon: <ShoppingCart />, link: '/cart' },
+    { text: 'Bookings', icon: <EventSeatIcon />, link: '/booking' },
     { text: 'Profile', icon: <AccountCircleIcon />, link: '/profile' },
     { text: 'Logout', icon: <LogoutIcon />, link: '/logout' },
   ];
@@ -155,9 +169,6 @@ function Navbar({ userRole }) {
     { text: 'Admin Panel', icon: <BusinessIcon />, link: '/admin' },
     { text: 'Agency Approval', icon: <PersonIcon />, link: '/agency-approval' },
     { text: 'Image Gallery', icon: <PhotoLibraryIcon />, link: '/image-gallery' },
-    { text: 'Image Upload', icon: <CloudUploadIcon />, link: '/image-upload' },
-    { text: 'Location Form', icon: <LocationOnIcon />, link: '/location-form' },
-    { text: 'Speciality Input', icon: <AddCircleIcon />, link: '/speciality-input' },
     { text: 'Logout', icon: <LogoutIcon />, link: '/logout' },
   ];
 
@@ -166,16 +177,17 @@ function Navbar({ userRole }) {
     { text: 'Agent Dashboard', icon: <PersonIcon />, link: '/agent' },
     { text: 'Booking', icon: <EventSeatIcon />, link: '/booking' },
     { text: 'Packages', icon: <LocalOfferIcon />, link: '/packages' },
-    { text: 'Package Details', icon: <DescriptionIcon />, link: '/package-details' },
     { text: 'Logout', icon: <LogoutIcon />, link: '/logout' },
   ];
 
-  const isAgentApproved = userRole === 'agent' && true; // Example approval check
-
   userRole = 'user'
+  const isAgentApproved = userRole === 'agent'; // && true; 
+
+  
   const drawerItems = userRole === 'admin'
     ? adminDrawerItems
     : (userRole === 'agent' ? (isAgentApproved ? agentDrawerItems : [{ text: 'Waiting Page', icon: <AccessTimeIcon />, link: '/waiting-page' }]) : userDrawerItems);
+
 
   return (
     <div>
@@ -235,6 +247,7 @@ function Navbar({ userRole }) {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/packages" element={<Packages />} />
+        <Route path="/profile" element={<ProfileCard />} />
         <Route path="/plan-your-trip" element={<Packages />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/invoice" element={<InvoicePage selectedPacks={sampleSelectedPacks} totalAmount={sampleTotalAmount} />} />
@@ -251,6 +264,11 @@ function Navbar({ userRole }) {
         <Route path="/logout" element={<Logout />} />
       </Routes>
       <Footer />
+      <div><LoginForm/></div>
+        <div><AddTourPackageForm/></div>
+        <div><BookPackageForm/></div>
+        <div><AgencyForm/></div>
+        <div><ForgotPassword/></div>
     </div>
   );
 }

@@ -1,45 +1,75 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Container, Typography, Card, CardContent, CardMedia, Grid, Button, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from '@mui/material';
 import { CarouselProvider, Slider, Slide, Dot } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import '../Assets/Styles/Home.css';
 
-
 function DestinationCard({ destination, onClick }) {
-    return (
-      <Grid item xs={12} md={4}>
-        <Card className="hover-card" onClick={() => onClick(destination)}>
-          <CardMedia component="img" height={200} image={destination.image} alt={destination.name} />
-          <CardContent>
-            <Typography variant="h5">{destination.name}</Typography>
-            <Typography variant="body2">{destination.description}</Typography>
-            <Button variant="contained" color="primary">Explore</Button>
-          </CardContent>
-        </Card>
-      </Grid>
-    );
-  }
+  return (
+    <Grid item xs={12} md={4}>
+      <Card className="hover-card" onClick={() => onClick(destination)}>
+        <CardMedia component="img" height={200} image={destination.image} alt={destination.name} />
+        <CardContent>
+          <Typography variant="h5">{destination.name}</Typography>
+          <Typography variant="body2">{destination.description}</Typography>
+          <Button variant="contained" color="primary">Explore</Button>
+        </CardContent>
+      </Card>
+    </Grid>
+  );
+}
 
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
+  const [destinations, setDestinations] = useState([]);
+  const [experiences, setExperiences] = useState([]);
 
-  const destinations = [
-    { id: 1, name: 'Tokyo', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxU-qxU4SctDt8E8VBc-kLVuwdbCyqfmifSg&usqp=CAU', description: 'Explore the vibrant city of Tokyo.' },
-    { id: 2, name: 'Kyoto', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVbsZMVz90LGfJoOVgxPd5yU2AuOn7f6AX_w&usqp=CAU', description: 'Discover the ancient charm of Kyoto.' },
-    { id: 3, name: 'Osaka', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJmxahzibgb89Dk5J9WFn6CONfg9g5q7RX-A&usqp=CAU', description: 'Experience modern culture in Osaka.' },
-    { id: 4, name: 'Hiroshima', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCxs9KgSKfBFngsftoXVRD_u-LAzmSSAef8A&usqp=CAU', description: 'Visit Hiroshima and its historical sites.' },
-    { id: 5, name: 'Nara', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe-Q8Yx1MRQ-4qZdJsypjQGjWsznUkqrWKIQ&usqp=CAU', description: 'Meet friendly deer in Nara.' },
-    { id: 6, name: 'Okinawa', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVDoDlxmTQq2qA8bnlK1cAsZl3CczNljxblQ&usqp=CAU', description: 'Relax on the beautiful beaches of Okinawa.' }
-  ];
+  useEffect(() => {
+    // Fetch destinations data
+    axios.get('https://localhost:7153/api/Location/GetAllLocations')
+      .then(response => {
+        const destinationData = response.data.map(destination => ({
+          id: destination.id,
+          name: destination.name,
+          image: destination.images && destination.images[0], // Use the first image from the array
+          description: destination.description
+        }));
+        setDestinations(destinationData);
+      })
+      .catch(error => {
+        console.error('Error fetching destinations:', error);
+      });
 
-  const experiences = [
-    { id: 1, name: 'Mount Fuji Hike', image: 'https://via.placeholder.com/300', description: 'Experience the breathtaking beauty of Mount Fuji.' },
-    { id: 2, name: 'Traditional Tea Ceremony', image: 'https://via.placeholder.com/300', description: 'Participate in a serene traditional tea ceremony.' },
-    { id: 3, name: 'Sumo Wrestling', image: 'https://via.placeholder.com/300', description: 'Witness the excitement of sumo wrestling matches.' },
-    { id: 4, name: 'Ghibli Museum', image: 'https://via.placeholder.com/300', description: 'Immerse yourself in the world of Studio Ghibli.' },
-    { id: 5, name: 'Sushi Cooking Class', image: 'https://via.placeholder.com/300', description: 'Learn to make delicious sushi in a traditional class.' },
-    { id: 6, name: 'Zen Meditation Retreat', image: 'https://via.placeholder.com/300', description: 'Find inner peace through Zen meditation in a serene temple.' }
+    axios.get('https://localhost:7153/api/Location/GetSpecialities?location=LOC001')
+      .then(response => {
+        const experienceData = response.data.map(experience => ({
+          id: experience.id,
+          name: experience.special,
+          //image: experience.location.images && experience.location.images[0], // Use the first image from the location's images
+          description: experience.description
+        }));
+        setExperiences(experienceData);
+      })
+      .catch(error => {
+        console.error('Error fetching experiences:', error);
+      });
+  }, []);
+
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedCard(null);
+    setIsModalOpen(false);
+  };
+
+  const carouselSlides = [
+    { id: 1, image: 'https://theplanetd.com/images/Cities-in-Japan.jpg', alt: 'Slide 1' },
+    { id: 2, image: 'https://wallpapercave.com/wp/wp4118244.jpg', alt: 'Slide 2' },
   ];
 
   const knowledgeCards = [
@@ -52,39 +82,25 @@ function Home() {
 
   const knowledgeCardColors = ['#f8a5c2', '#fad390', '#6a89cc', '#82ccdd', '#b8e994'];
 
-  const handleCardClick = (card) => {
-    setSelectedCard(card);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedCard(null);
-    setIsModalOpen(false);
-  };
-
   return (
     <div className="home-container">
       <section className="hero">
         <CarouselProvider
           naturalSlideWidth={100}
-          naturalSlideHeight={60} // Increase image height
-          totalSlides={3}
-          isPlaying={true} // Auto-play carousel
+          naturalSlideHeight={60} 
+          totalSlides={carouselSlides.length}
+          isPlaying={true} 
         >
           <Slider>
-            <Slide index={0}>
-              <img src="https://theplanetd.com/images/Cities-in-Japan.jpg" alt="Slide 1" />
-            </Slide>
-            <Slide index={1}>
-              <img src="https://wallpapercave.com/wp/wp4118244.jpg" alt="Slide 2" />
-            </Slide>
-            <Slide index={2}>
-              <img src="" alt="" />
-            </Slide>
+            {carouselSlides.map(slide => (
+              <Slide key={slide.id} index={slide.id - 1}>
+                <img src={slide.image} alt={slide.alt} />
+              </Slide>
+            ))}
           </Slider>
-          <Dot slide={0}></Dot>
-          <Dot slide={1}></Dot>
-          <Dot slide={2}></Dot>
+          {carouselSlides.map(slide => (
+            <Dot key={slide.id} slide={slide.id - 1}></Dot>
+          ))}
         </CarouselProvider>
         <div className="hero-content">
           <h1>Welcome to Japan</h1>

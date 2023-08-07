@@ -1,0 +1,63 @@
+2023-08-07 14:45:45.932 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 14:45:46.795 +05:30 [INF] Now listening on: https://localhost:7289
+2023-08-07 14:45:46.796 +05:30 [INF] Now listening on: http://localhost:5243
+2023-08-07 14:45:46.803 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 14:45:46.805 +05:30 [INF] Hosting environment: Development
+2023-08-07 14:45:46.809 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\UserManagementAPI\
+2023-08-07 14:45:52.222 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/index.html - -
+2023-08-07 14:45:52.902 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 14:45:52.912 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/_vs/browserLink - -
+2023-08-07 14:45:52.917 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/index.html - - - 200 - text/html;charset=utf-8 707.4600ms
+2023-08-07 14:45:52.917 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_framework/aspnetcore-browser-refresh.js - - - 200 12372 application/javascript;+charset=utf-8 14.1314ms
+2023-08-07 14:45:52.996 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 83.7164ms
+2023-08-07 14:45:53.217 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - -
+2023-08-07 14:45:53.453 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7289/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 235.7641ms
+2023-08-07 14:46:00.451 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 110
+2023-08-07 14:46:00.466 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:46:01.752 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (KTWUserManagementAPI)'
+2023-08-07 14:46:01.824 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (KTWUserManagementAPI).
+2023-08-07 14:46:04.417 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:46:08.098 +05:30 [INF] Executed DbCommand (316ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__key_0
+2023-08-07 14:46:08.238 +05:30 [ERR] Invalid id or no data available
+2023-08-07 14:46:08.762 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-07 14:46:08.780 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (KTWUserManagementAPI) in 6945.2796ms
+2023-08-07 14:46:08.784 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (KTWUserManagementAPI)'
+2023-08-07 14:46:08.792 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 8315.3613 ms
+2023-08-07 14:46:08.808 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 110 - 400 - application/json;+charset=utf-8 8356.9155ms
+2023-08-07 14:49:14.103 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7289/api/User/Login - -
+2023-08-07 14:49:14.146 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:49:14.168 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7289/api/User/Login - - - 204 - - 69.3142ms
+2023-08-07 14:49:14.173 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/Login application/json 51
+2023-08-07 14:49:14.178 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:49:14.194 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.Login (KTWUserManagementAPI)'
+2023-08-07 14:49:14.204 +05:30 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserAPI.Models.DTO.UserDTO]] Login(UserAPI.Models.DTO.UserDTO) on controller UserManagementAPI.Controllers.UserController (KTWUserManagementAPI).
+2023-08-07 14:49:14.294 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:49:14.388 +05:30 [INF] Executed DbCommand (51ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Email], [u].[HashKey], [u].[Id], [u].[Password], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__key_0
+2023-08-07 14:49:14.395 +05:30 [ERR] Invalid id or no data available
+2023-08-07 14:49:14.704 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-07 14:49:14.718 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.Login (KTWUserManagementAPI) in 510.6035ms
+2023-08-07 14:49:14.719 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.Login (KTWUserManagementAPI)'
+2023-08-07 14:49:14.720 +05:30 [INF] HTTP POST /api/User/Login responded 400 in 538.4212 ms
+2023-08-07 14:49:14.724 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/Login application/json 51 - 400 - application/json;+charset=utf-8 550.1959ms
+2023-08-07 14:53:33.818 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7289/api/User/ValidateVerificationCode application/json 36
+2023-08-07 14:53:33.826 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:53:33.840 +05:30 [INF] Executing endpoint 'UserManagementAPI.Controllers.UserController.ValidateVerificationCode (KTWUserManagementAPI)'
+2023-08-07 14:53:33.869 +05:30 [INF] Route matched with {action = "ValidateVerificationCode", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] ValidateVerificationCode(UserManagementAPI.Models.DTO.ForgotPasswordDTO) on controller UserManagementAPI.Controllers.UserController (KTWUserManagementAPI).
+2023-08-07 14:53:34.068 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'UserManagementContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:53:34.295 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Codes], [v].[Email]
+FROM [VerificationCodes] AS [v]
+WHERE [v].[Email] = @__key_0
+2023-08-07 14:53:34.306 +05:30 [ERR] Invalid id or no data available
+2023-08-07 14:53:34.651 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-07 14:53:34.660 +05:30 [INF] Executed action UserManagementAPI.Controllers.UserController.ValidateVerificationCode (KTWUserManagementAPI) in 783.0907ms
+2023-08-07 14:53:34.669 +05:30 [INF] Executed endpoint 'UserManagementAPI.Controllers.UserController.ValidateVerificationCode (KTWUserManagementAPI)'
+2023-08-07 14:53:34.674 +05:30 [INF] HTTP POST /api/User/ValidateVerificationCode responded 400 in 842.8135 ms
+2023-08-07 14:53:34.685 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7289/api/User/ValidateVerificationCode application/json 36 - 400 - application/json;+charset=utf-8 895.6118ms
+2023-08-07 15:39:47.196 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.

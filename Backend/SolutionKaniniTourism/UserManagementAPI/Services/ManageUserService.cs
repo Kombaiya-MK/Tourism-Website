@@ -197,6 +197,7 @@ namespace UserManagementAPI.Services
             return userDetails;
         }
 
+
         public Task<bool> TriggerVerificationCodeToEmail(ForgotPasswordDTO item)
         {
             throw new NotImplementedException();

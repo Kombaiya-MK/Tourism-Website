@@ -37,7 +37,6 @@ function LocationInput() {
         try {
           setSubmitting(true);
 
-        // Dummy URL for demonstration
         const dummyUrl = 'https://localhost:7153/api/Location/AddLocation';
         const response = await axios.post(dummyUrl, values);
 

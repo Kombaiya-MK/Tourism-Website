@@ -6,11 +6,27 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import LocationForm from '../Components/LocationForm';
+import SpecialityInput from '../Components/SpecialityInput';
+import ImageUpload from '../Components/ImageUpload';
 
 const AdminContainer = styled('div')({
   paddingTop: '2rem',
   paddingBottom: '2rem',
   textAlign: 'center',
+});
+
+const ModalContainer = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: 'white',
+  borderRadius: '5px',
+  outline: 'none',
+  width: '80%',
+  margin: 'auto',
+  padding: '2rem',
 });
 
 function AdminPanel() {
@@ -49,7 +65,7 @@ function AdminPanel() {
 
       const newSpeciality = {
         locationId: selectedLocation.locationId,
-        locationName: selectedLocation.name, // Add locationName
+        locationName: selectedLocation.name,
         speciality: specialityInput,
         description: specialityDescriptionInput,
       };
@@ -190,25 +206,14 @@ function AdminPanel() {
                   <li key={index}>{speciality}</li>
                 ))}
               </ul>
-              <TextField
-                label="Add Speciality"
-                fullWidth
-                margin="normal"
+              <SpecialityInput
                 value={specialityInput}
-                onChange={(e) => setSpecialityInput(e.target.value)}
+                descriptionValue={specialityDescriptionInput}
+                onSpecialityChange={(e) => setSpecialityInput(e.target.value)}
+                onDescriptionChange={(e) => setSpecialityDescriptionInput(e.target.value)}
+                onAddSpeciality={handleAddSpeciality}
+                submitting={submitting}
               />
-              <TextField
-                label="Speciality Description"
-                fullWidth
-                margin="normal"
-                value={specialityDescriptionInput}
-                onChange={(e) => setSpecialityDescriptionInput(e.target.value)}
-              />
-              <Tooltip title="Add Speciality">
-                <Button variant="contained" color="primary" onClick={handleAddSpeciality} disabled={submitting}>
-                  Add Speciality
-                </Button>
-              </Tooltip>
             </div>
             <div>
               <Typography variant="subtitle1">Images:</Typography>
@@ -217,27 +222,22 @@ function AdminPanel() {
                   <li key={index}>{image}</li>
                 ))}
               </ul>
-              <Input
-                type="file"
-                accept="image/*"
-                onChange={(e) => setImageInput(e.target.files[0])}
+              <ImageUpload
+                onImageChange={(e) => setImageInput(e.target.files[0])}
+                onAddImage={handleAddImage}
+                submitting={submitting}
               />
-              <Tooltip title="Add Image">
-                <Button variant="contained" color="primary" onClick={handleAddImage} disabled={submitting}>
-                  Add Image
-                </Button>
-              </Tooltip>
             </div>
             <div>
               {/* Edit Location Modal */}
               <Modal open={editModalOpen} onClose={() => setEditModalOpen(false)}>
-                <div>
+                <ModalContainer>
                   {/* Implement your edit location form */}
                   {/* You can use Material-UI components and form logic here */}
                   <Button variant="contained" color="primary" onClick={handleEditLocation}>
                     Save Changes
                   </Button>
-                </div>
+                </ModalContainer>
               </Modal>
             </div>
             {submitError && <Typography color="error">{submitError}</Typography>}
@@ -245,19 +245,15 @@ function AdminPanel() {
         )}
         {/* Add Location Modal */}
         <Modal open={addLocationModalOpen} onClose={() => setAddLocationModalOpen(false)}>
-          <div>
+          <ModalContainer>
             <Typography variant="h6">Add New Location</Typography>
-            <TextField
-              label="Location Name"
-              fullWidth
-              margin="normal"
-              value={locationNameInput}
-              onChange={(e) => setLocationNameInput(e.target.value)}
+            <LocationForm
+              locationName={locationNameInput}
+              onLocationNameChange={(e) => setLocationNameInput(e.target.value)}
+              onAddLocation={handleAddLocation}
+              submitting={submitting}
             />
-            <Button variant="contained" color="primary" onClick={handleAddLocation} disabled={submitting}>
-              Add Location
-            </Button>
-          </div>
+          </ModalContainer>
         </Modal>
       </Container>
       <ToastContainer position={toast.POSITION.TOP_CENTER} />

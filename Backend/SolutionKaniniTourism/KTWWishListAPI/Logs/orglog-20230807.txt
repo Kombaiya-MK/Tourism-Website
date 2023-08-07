@@ -1,0 +1,502 @@
+2023-08-07 12:01:57.691 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 12:01:57.928 +05:30 [INF] Now listening on: https://localhost:7145
+2023-08-07 12:01:57.929 +05:30 [INF] Now listening on: http://localhost:5192
+2023-08-07 12:01:57.933 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 12:01:57.934 +05:30 [INF] Hosting environment: Development
+2023-08-07 12:01:57.934 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWWishListAPI\
+2023-08-07 12:01:59.933 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger - -
+2023-08-07 12:02:00.029 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger - - - 301 0 - 98.7381ms
+2023-08-07 12:02:00.037 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/index.html - -
+2023-08-07 12:02:00.303 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/swagger-ui.css - -
+2023-08-07 12:02:00.307 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/index.html - - - 200 - text/html;charset=utf-8 269.2398ms
+2023-08-07 12:02:00.314 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/swagger-ui-bundle.js - -
+2023-08-07 12:02:00.316 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 12:02:00.314 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/swagger-ui-standalone-preset.js - -
+2023-08-07 12:02:00.327 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/_vs/browserLink - -
+2023-08-07 12:02:00.335 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/_framework/aspnetcore-browser-refresh.js - - - 200 12359 application/javascript;+charset=utf-8 18.3070ms
+2023-08-07 12:02:00.401 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 73.9843ms
+2023-08-07 12:02:00.501 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-08-07 12:02:00.501 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-08-07 12:02:00.506 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-08-07 12:02:00.504 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/swagger-ui.css - - - 200 144929 text/css 200.3131ms
+2023-08-07 12:02:00.506 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 191.5963ms
+2023-08-07 12:02:00.508 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 193.2982ms
+2023-08-07 12:02:00.725 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/v1/swagger.json - -
+2023-08-07 12:02:00.902 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 176.4491ms
+2023-08-07 12:03:09.364 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 163
+2023-08-07 12:03:09.378 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:03:09.937 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:03:10.000 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 12:03:10.486 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 12:03:11.083 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:03:12.332 +05:30 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 12:03:12.478 +05:30 [INF] Into the Add Method
+2023-08-07 12:03:12.839 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-07 12:03:12.860 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 2851.5516ms
+2023-08-07 12:03:12.863 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:03:12.869 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 400 in 3484.2864 ms
+2023-08-07 12:03:12.900 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 163 - 400 - application/json;+charset=utf-8 3536.1418ms
+2023-08-07 12:17:50.820 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - -
+2023-08-07 12:17:50.843 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:17:50.851 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - - - 204 - - 32.2516ms
+2023-08-07 12:17:50.854 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 154
+2023-08-07 12:17:50.857 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:17:50.861 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:17:50.864 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 12:17:50.908 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-07 12:17:50.926 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 61.8941ms
+2023-08-07 12:17:50.927 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:17:50.928 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 400 in 69.6285 ms
+2023-08-07 12:17:50.928 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 154 - 400 - application/problem+json;+charset=utf-8 74.9040ms
+2023-08-07 12:19:12.799 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - -
+2023-08-07 12:19:12.803 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:19:12.804 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - - - 204 - - 4.3710ms
+2023-08-07 12:19:12.810 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 136
+2023-08-07 12:19:12.810 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:19:12.816 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:19:12.817 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 12:19:12.823 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-07 12:19:12.823 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 6.485ms
+2023-08-07 12:19:12.823 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:19:12.824 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 400 in 13.1713 ms
+2023-08-07 12:19:12.824 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 136 - 400 - application/problem+json;+charset=utf-8 14.2480ms
+2023-08-07 12:19:59.799 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - -
+2023-08-07 12:19:59.801 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:19:59.801 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - - - 204 - - 2.0399ms
+2023-08-07 12:19:59.803 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 136
+2023-08-07 12:19:59.803 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:19:59.803 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:19:59.804 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 12:19:59.806 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-07 12:19:59.806 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 1.5559ms
+2023-08-07 12:19:59.806 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:19:59.806 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 400 in 2.9580 ms
+2023-08-07 12:19:59.807 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 136 - 400 - application/problem+json;+charset=utf-8 4.0491ms
+2023-08-07 12:20:57.108 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - -
+2023-08-07 12:20:57.116 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:20:57.122 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - - - 204 - - 13.5065ms
+2023-08-07 12:20:57.124 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 136
+2023-08-07 12:20:57.124 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:20:57.125 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:20:57.125 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 12:20:57.126 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-07 12:20:57.127 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 1.5139ms
+2023-08-07 12:20:57.127 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:20:57.127 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 400 in 2.3617 ms
+2023-08-07 12:20:57.127 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 136 - 400 - application/problem+json;+charset=utf-8 3.9476ms
+2023-08-07 12:21:50.999 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - -
+2023-08-07 12:21:51.004 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:21:51.005 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - - - 204 - - 5.8258ms
+2023-08-07 12:21:51.007 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 143
+2023-08-07 12:21:51.008 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:21:51.009 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:21:51.009 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 12:21:51.011 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-07 12:21:51.011 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 1.8076ms
+2023-08-07 12:21:51.012 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:21:51.012 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 400 in 3.4374 ms
+2023-08-07 12:21:51.012 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 143 - 400 - application/problem+json;+charset=utf-8 5.1884ms
+2023-08-07 12:22:31.417 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 178
+2023-08-07 12:22:31.418 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:22:31.418 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:22:31.419 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 12:22:37.889 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 12:22:38.363 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:22:38.464 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 12:22:50.666 +05:30 [INF] Into the Add Method
+2023-08-07 12:22:52.441 +05:30 [INF] Executed DbCommand (73ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Double), @p5='?' (DbType = Int32), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Wishlists] ([CartId], [AddedDate], [Email], [PackId], [Price], [Quantity], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [Wishlists]
+WHERE @@ROWCOUNT = 1 AND [CartId] = @p0;
+2023-08-07 12:22:53.150 +05:30 [INF] Wishlist Added Successfully
+2023-08-07 12:22:59.772 +05:30 [INF] Executing CreatedResult, writing value of type 'KTWWishListAPI.Models.Wishlist'.
+2023-08-07 12:22:59.879 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 28459.8639ms
+2023-08-07 12:22:59.888 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:22:59.897 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 201 in 28478.4018 ms
+2023-08-07 12:22:59.897 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 178 - 201 - application/json;+charset=utf-8 28480.1932ms
+2023-08-07 12:23:50.161 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - -
+2023-08-07 12:23:50.163 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:23:50.164 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - - - 204 - - 3.2781ms
+2023-08-07 12:23:50.170 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 143
+2023-08-07 12:23:50.171 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:23:50.171 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:23:50.172 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 12:23:50.173 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-07 12:23:50.174 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 1.6645ms
+2023-08-07 12:23:50.174 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:23:50.174 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 400 in 2.9405 ms
+2023-08-07 12:23:50.175 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 143 - 400 - application/problem+json;+charset=utf-8 4.3884ms
+2023-08-07 12:25:46.818 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - -
+2023-08-07 12:25:46.819 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:25:46.820 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - - - 204 - - 1.9406ms
+2023-08-07 12:25:46.823 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 143
+2023-08-07 12:25:46.823 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:25:46.824 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:25:46.825 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 12:25:46.829 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-07 12:25:46.830 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 3.951ms
+2023-08-07 12:25:46.831 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:25:46.832 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 400 in 8.1334 ms
+2023-08-07 12:25:46.832 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 143 - 400 - application/problem+json;+charset=utf-8 9.7652ms
+2023-08-07 12:27:02.875 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - -
+2023-08-07 12:27:02.880 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:27:02.881 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - - - 204 - - 5.7931ms
+2023-08-07 12:27:02.916 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 143
+2023-08-07 12:27:02.920 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:27:02.920 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:27:02.921 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 12:27:02.922 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-07 12:27:02.923 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 1.7375ms
+2023-08-07 12:27:02.923 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:27:02.923 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 400 in 3.1044 ms
+2023-08-07 12:27:02.924 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 143 - 400 - application/problem+json;+charset=utf-8 7.9139ms
+2023-08-07 12:28:35.886 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - -
+2023-08-07 12:28:35.893 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:28:35.896 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - - - 204 - - 10.6330ms
+2023-08-07 12:28:35.902 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 2
+2023-08-07 12:28:35.903 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:28:35.903 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:28:35.904 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 12:28:35.909 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-07 12:28:35.909 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 5.2474ms
+2023-08-07 12:28:35.910 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 12:28:35.910 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 400 in 7.0706 ms
+2023-08-07 12:28:35.912 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 2 - 400 - application/problem+json;+charset=utf-8 8.7530ms
+2023-08-07 12:34:12.264 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 12:34:12.873 +05:30 [INF] Now listening on: https://localhost:7145
+2023-08-07 12:34:12.874 +05:30 [INF] Now listening on: http://localhost:5192
+2023-08-07 12:34:12.883 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 12:34:12.885 +05:30 [INF] Hosting environment: Development
+2023-08-07 12:34:12.886 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWWishListAPI\
+2023-08-07 12:34:13.836 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/index.html - -
+2023-08-07 12:34:14.320 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 12:34:14.320 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/_vs/browserLink - -
+2023-08-07 12:34:14.322 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/index.html - - - 200 - text/html;charset=utf-8 490.4288ms
+2023-08-07 12:34:14.338 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/_framework/aspnetcore-browser-refresh.js - - - 200 12359 application/javascript;+charset=utf-8 18.4697ms
+2023-08-07 12:34:14.376 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 56.2453ms
+2023-08-07 12:34:14.563 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/v1/swagger.json - -
+2023-08-07 12:34:14.754 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 191.3968ms
+2023-08-07 12:57:27.899 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 12:57:28.519 +05:30 [INF] Now listening on: https://localhost:7145
+2023-08-07 12:57:28.520 +05:30 [INF] Now listening on: http://localhost:5192
+2023-08-07 12:57:28.526 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 12:57:28.528 +05:30 [INF] Hosting environment: Development
+2023-08-07 12:57:28.529 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWWishListAPI\
+2023-08-07 12:57:29.306 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/index.html - -
+2023-08-07 12:57:29.999 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 12:57:30.005 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/_vs/browserLink - -
+2023-08-07 12:57:30.006 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/index.html - - - 200 - text/html;charset=utf-8 706.5403ms
+2023-08-07 12:57:30.011 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/_framework/aspnetcore-browser-refresh.js - - - 200 12359 application/javascript;+charset=utf-8 12.1042ms
+2023-08-07 12:57:30.055 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 49.9851ms
+2023-08-07 12:57:30.224 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/v1/swagger.json - -
+2023-08-07 12:57:30.444 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 220.2768ms
+2023-08-07 14:25:08.946 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - -
+2023-08-07 14:25:09.005 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:25:09.010 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - - - 204 - - 68.5291ms
+2023-08-07 14:25:09.015 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 2
+2023-08-07 14:25:09.019 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:25:09.537 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 14:25:09.602 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:25:10.165 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-07 14:25:10.204 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 593.8254ms
+2023-08-07 14:25:10.206 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 14:25:10.211 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 400 in 1182.8400 ms
+2023-08-07 14:25:10.219 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 2 - 400 - application/problem+json;+charset=utf-8 1203.8410ms
+2023-08-07 14:26:50.537 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:26:50.548 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:26:50.560 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:26:50.595 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:26:52.679 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:26:56.129 +05:30 [INF] Executed DbCommand (195ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:26:56.551 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:26:56.584 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 6022.1792ms
+2023-08-07 14:26:56.587 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:26:56.594 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 6047.4604 ms
+2023-08-07 14:26:56.609 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 6074.4104ms
+2023-08-07 14:29:40.330 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:29:40.331 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:29:40.334 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:29:40.335 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:29:40.342 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:29:40.354 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:29:40.382 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:29:40.383 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:29:40.384 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 48.8993ms
+2023-08-07 14:29:40.384 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:29:40.384 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 52.8979 ms
+2023-08-07 14:29:40.385 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 54.7642ms
+2023-08-07 14:29:40.386 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:29:40.387 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:29:40.388 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:29:40.388 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:29:40.389 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:29:40.480 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:29:40.484 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:29:40.486 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:29:40.487 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 98.1387ms
+2023-08-07 14:29:40.487 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:29:40.487 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 99.3968 ms
+2023-08-07 14:29:40.488 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 101.5330ms
+2023-08-07 14:31:31.021 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - -
+2023-08-07 14:31:31.037 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:31:31.042 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7145/api/WishList/AddToCart - - - 204 - - 23.5803ms
+2023-08-07 14:31:31.047 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 2
+2023-08-07 14:31:31.048 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:31:31.049 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 14:31:31.049 +05:30 [INF] Route matched with {action = "AddToCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWWishListAPI.Models.Wishlist]] AddToCart(KTWWishListAPI.Models.DTO.CartDTO) on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:31:31.068 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-07 14:31:31.070 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI) in 19.945ms
+2023-08-07 14:31:31.071 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.AddToCart (KTWWishListAPI)'
+2023-08-07 14:31:31.071 +05:30 [INF] HTTP POST /api/WishList/AddToCart responded 400 in 22.5523 ms
+2023-08-07 14:31:31.072 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7145/api/WishList/AddToCart application/json 2 - 400 - application/problem+json;+charset=utf-8 24.7804ms
+2023-08-07 14:31:35.784 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:31:35.786 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:31:35.786 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:31:35.787 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:31:35.791 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:31:35.796 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:31:35.816 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:31:35.818 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:31:35.819 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 28.5659ms
+2023-08-07 14:31:35.819 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:31:35.820 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 33.7689 ms
+2023-08-07 14:31:35.823 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 38.7195ms
+2023-08-07 14:31:35.824 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:31:35.828 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:31:35.829 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:31:35.830 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:31:35.831 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:31:35.834 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:31:35.837 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:31:35.843 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:31:35.845 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 13.4844ms
+2023-08-07 14:31:35.845 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:31:35.846 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 17.0662 ms
+2023-08-07 14:31:35.847 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 23.5406ms
+2023-08-07 14:32:33.043 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:32:33.050 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:32:33.053 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:32:33.060 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:32:33.064 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:32:33.074 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:32:33.086 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:32:33.087 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:32:33.088 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 24.5205ms
+2023-08-07 14:32:33.089 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:32:33.089 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 36.9547 ms
+2023-08-07 14:32:33.090 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 46.4763ms
+2023-08-07 14:32:36.005 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:32:36.007 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:32:36.007 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:32:36.008 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:32:36.008 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:32:36.010 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:32:36.015 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:32:36.017 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:32:36.019 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 10.8349ms
+2023-08-07 14:32:36.020 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:32:36.021 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 13.4940 ms
+2023-08-07 14:32:36.022 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 17.1616ms
+2023-08-07 14:34:40.460 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:34:40.469 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:34:40.471 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:34:40.473 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:34:40.478 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:34:40.490 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:34:40.666 +05:30 [INF] Executed DbCommand (173ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:34:40.676 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:34:40.679 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 205.2405ms
+2023-08-07 14:34:40.679 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:34:40.680 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 210.5138 ms
+2023-08-07 14:34:40.681 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 234.9919ms
+2023-08-07 14:34:55.321 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:34:55.323 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:34:55.325 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:34:55.326 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:34:55.328 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:34:55.330 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:34:55.346 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:34:55.348 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:34:55.349 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 22.2469ms
+2023-08-07 14:34:55.350 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:34:55.351 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 26.6035 ms
+2023-08-07 14:34:55.352 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 31.0718ms
+2023-08-07 14:36:08.714 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:36:08.735 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:36:08.739 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:36:08.745 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:36:08.752 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:36:08.779 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:36:08.880 +05:30 [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:36:08.925 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:36:08.928 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 182.6955ms
+2023-08-07 14:36:08.929 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:36:08.929 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 193.5923 ms
+2023-08-07 14:36:08.930 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 219.7918ms
+2023-08-07 14:36:08.939 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:36:08.940 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:36:08.941 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:36:08.941 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:36:08.942 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:36:08.943 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:36:08.948 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:36:08.950 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:36:08.951 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 10.0302ms
+2023-08-07 14:36:08.953 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:36:08.958 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 17.8951 ms
+2023-08-07 14:36:08.959 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 20.2689ms
+2023-08-07 14:36:41.673 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:36:41.678 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:36:41.689 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:36:41.692 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:36:41.693 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:36:41.696 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:36:41.714 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:36:41.715 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:36:41.716 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 23.5513ms
+2023-08-07 14:36:41.717 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:36:41.718 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 28.6955 ms
+2023-08-07 14:36:41.720 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 48.2041ms
+2023-08-07 14:38:27.696 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:38:27.737 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:38:27.737 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:38:27.738 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:38:27.739 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:38:27.741 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:38:27.767 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:38:27.768 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:38:27.769 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 31.2721ms
+2023-08-07 14:38:27.770 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:38:27.771 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 34.0406 ms
+2023-08-07 14:38:27.774 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 78.0650ms
+2023-08-07 14:38:27.802 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:38:27.844 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:38:27.845 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:38:27.851 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:38:27.852 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:38:27.856 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:38:27.859 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:38:27.865 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:38:27.866 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 14.3977ms
+2023-08-07 14:38:27.866 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:38:27.866 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 21.7293 ms
+2023-08-07 14:38:27.867 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 65.1750ms
+2023-08-07 14:38:32.127 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:38:32.129 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:38:32.129 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:38:32.132 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:38:32.136 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:38:32.138 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:38:32.203 +05:30 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:38:32.206 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:38:32.207 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 73.0261ms
+2023-08-07 14:38:32.208 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:38:32.209 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 79.8267 ms
+2023-08-07 14:38:32.210 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:38:32.210 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 82.9896ms
+2023-08-07 14:38:32.211 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:38:32.212 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:38:32.212 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:38:32.213 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:38:32.214 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:38:32.222 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:38:32.223 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:38:32.225 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 12.5176ms
+2023-08-07 14:38:32.226 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:38:32.227 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 15.8246 ms
+2023-08-07 14:38:32.229 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 18.4302ms
+2023-08-07 14:45:49.180 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 14:45:50.254 +05:30 [INF] Now listening on: https://localhost:7145
+2023-08-07 14:45:50.274 +05:30 [INF] Now listening on: http://localhost:5192
+2023-08-07 14:45:50.281 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 14:45:50.285 +05:30 [INF] Hosting environment: Development
+2023-08-07 14:45:50.286 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWWishListAPI\
+2023-08-07 14:45:51.382 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/index.html - -
+2023-08-07 14:45:52.399 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/index.html - - - 200 - text/html;charset=utf-8 1022.1031ms
+2023-08-07 14:45:52.582 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 14:45:52.590 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/_framework/aspnetcore-browser-refresh.js - - - 200 12359 application/javascript;+charset=utf-8 8.2128ms
+2023-08-07 14:45:52.676 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/_vs/browserLink - -
+2023-08-07 14:45:52.776 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 99.9334ms
+2023-08-07 14:45:53.127 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/swagger/v1/swagger.json - -
+2023-08-07 14:45:53.370 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 242.4433ms
+2023-08-07 14:49:09.767 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:49:09.821 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:49:10.054 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:49:10.172 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:49:11.112 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:49:12.195 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:49:13.941 +05:30 [INF] Executed DbCommand (189ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:49:14.155 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:49:14.231 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:49:14.234 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:49:14.237 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:49:14.238 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 4053.9533ms
+2023-08-07 14:49:14.239 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:49:14.242 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:49:14.243 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:49:14.297 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:49:14.317 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 4464.1766 ms
+2023-08-07 14:49:14.329 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:49:14.334 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 4568.2366ms
+2023-08-07 14:49:14.341 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:49:14.343 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 100.7144ms
+2023-08-07 14:49:14.345 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:49:14.346 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 110.4955 ms
+2023-08-07 14:49:14.353 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 121.7342ms
+2023-08-07 14:57:08.520 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - -
+2023-08-07 14:57:08.666 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:57:08.755 +05:30 [INF] Executing endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:57:08.825 +05:30 [INF] Route matched with {action = "GetAllItemsIntheCart", controller = "WishList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWWishListAPI.Models.Wishlist]]] GetAllItemsIntheCart() on controller KTWWishListAPI.Controllers.WishListController (KTWWishListAPI).
+2023-08-07 14:57:08.945 +05:30 [INF] Inside GetAll of Wishlists
+2023-08-07 14:57:09.236 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'WishlistContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:57:09.754 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[CartId], [w].[AddedDate], [w].[Email], [w].[Id], [w].[PackId], [w].[Price], [w].[Quantity], [w].[Status]
+FROM [Wishlists] AS [w]
+2023-08-07 14:57:09.765 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWWishListAPI.Models.Wishlist, KTWWishListAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:57:09.770 +05:30 [INF] Executed action KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI) in 931.6889ms
+2023-08-07 14:57:09.772 +05:30 [INF] Executed endpoint 'KTWWishListAPI.Controllers.WishListController.GetAllItemsIntheCart (KTWWishListAPI)'
+2023-08-07 14:57:09.774 +05:30 [INF] HTTP GET /api/WishList/GetAllItemsIntheCart responded 200 in 1106.8830 ms
+2023-08-07 14:57:09.779 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7145/api/WishList/GetAllItemsIntheCart - - - 200 - application/json;+charset=utf-8 1264.2401ms

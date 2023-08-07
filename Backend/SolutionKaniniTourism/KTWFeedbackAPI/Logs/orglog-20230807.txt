@@ -1,0 +1,755 @@
+2023-08-07 11:46:07.654 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 11:46:08.067 +05:30 [INF] Now listening on: https://localhost:7026
+2023-08-07 11:46:08.068 +05:30 [INF] Now listening on: http://localhost:5266
+2023-08-07 11:46:08.073 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 11:46:08.074 +05:30 [INF] Hosting environment: Development
+2023-08-07 11:46:08.075 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWFeedbackAPI\
+2023-08-07 11:46:10.840 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - -
+2023-08-07 11:46:11.348 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 11:46:11.366 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - -
+2023-08-07 11:46:11.367 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - - - 200 12359 application/javascript;+charset=utf-8 17.8762ms
+2023-08-07 11:46:11.368 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - - - 200 - text/html;charset=utf-8 534.3132ms
+2023-08-07 11:46:11.403 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.7236ms
+2023-08-07 11:46:11.581 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - -
+2023-08-07 11:46:11.755 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 174.3028ms
+2023-08-07 11:46:20.074 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 11:46:20.632 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:46:20.668 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 11:46:21.123 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 11:46:21.747 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 11:46:23.251 +05:30 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 11:46:23.385 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 11:46:23.416 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 2739.8675ms
+2023-08-07 11:46:23.419 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:46:23.424 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 3338.6320 ms
+2023-08-07 11:46:23.435 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 3360.9682ms
+2023-08-07 11:49:41.437 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 11:49:41.464 +05:30 [INF] CORS policy execution successful.
+2023-08-07 11:49:41.475 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:49:41.479 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 11:49:41.493 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 11:49:41.601 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 11:49:42.130 +05:30 [INF] Executed DbCommand (491ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 11:49:42.135 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 11:49:42.143 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 661.3316ms
+2023-08-07 11:49:42.155 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 11:49:42.156 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:49:42.159 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 685.2319 ms
+2023-08-07 11:49:42.165 +05:30 [INF] CORS policy execution successful.
+2023-08-07 11:49:42.169 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 731.7470ms
+2023-08-07 11:49:42.175 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:49:42.176 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 11:49:42.184 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 11:49:42.305 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 11:49:42.313 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 11:49:42.316 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 11:49:42.318 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 139.161ms
+2023-08-07 11:49:42.323 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:49:42.324 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 154.3692 ms
+2023-08-07 11:49:42.326 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 171.1530ms
+2023-08-07 11:53:30.364 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 11:53:30.379 +05:30 [INF] CORS policy execution successful.
+2023-08-07 11:53:30.395 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:53:30.397 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 11:53:30.404 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 11:53:30.406 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 11:53:30.430 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 11:53:30.460 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 11:53:30.526 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 122.3417ms
+2023-08-07 11:53:30.528 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 11:53:30.531 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:53:30.536 +05:30 [INF] CORS policy execution successful.
+2023-08-07 11:53:30.542 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 147.2162 ms
+2023-08-07 11:53:30.543 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:53:30.546 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 182.6537ms
+2023-08-07 11:53:30.553 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 11:53:30.559 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 11:53:30.560 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 11:53:30.574 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 11:53:30.576 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 11:53:30.579 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 19.6437ms
+2023-08-07 11:53:30.585 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:53:30.586 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 43.6003 ms
+2023-08-07 11:53:30.589 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 60.6853ms
+2023-08-07 11:53:33.303 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 11:53:33.305 +05:30 [INF] CORS policy execution successful.
+2023-08-07 11:53:33.306 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:53:33.308 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 11:53:33.310 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 11:53:33.312 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 11:53:33.322 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 11:53:33.326 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 11:53:33.329 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 19.8509ms
+2023-08-07 11:53:33.334 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 11:53:33.339 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:53:33.343 +05:30 [INF] CORS policy execution successful.
+2023-08-07 11:53:33.344 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 38.0926 ms
+2023-08-07 11:53:33.346 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:53:33.349 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 45.6872ms
+2023-08-07 11:53:33.350 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 11:53:33.353 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 11:53:33.355 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 11:53:33.360 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 11:53:33.365 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 11:53:33.368 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 14.5914ms
+2023-08-07 11:53:33.370 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:53:33.371 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 24.8794 ms
+2023-08-07 11:53:33.374 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 40.1759ms
+2023-08-07 11:55:27.762 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 11:55:27.775 +05:30 [INF] CORS policy execution successful.
+2023-08-07 11:55:27.776 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:55:27.780 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 11:55:27.786 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 11:55:27.791 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 11:55:27.809 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 11:55:27.812 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 11:55:27.814 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 28.846ms
+2023-08-07 11:55:27.816 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 11:55:27.817 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 41.6472 ms
+2023-08-07 11:55:27.820 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 57.7628ms
+2023-08-07 12:01:50.496 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 12:01:50.907 +05:30 [INF] Now listening on: https://localhost:7026
+2023-08-07 12:01:50.909 +05:30 [INF] Now listening on: http://localhost:5266
+2023-08-07 12:01:50.915 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 12:01:50.916 +05:30 [INF] Hosting environment: Development
+2023-08-07 12:01:50.916 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWFeedbackAPI\
+2023-08-07 12:01:53.088 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - -
+2023-08-07 12:01:54.079 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - - - 200 - text/html;charset=utf-8 996.8366ms
+2023-08-07 12:01:54.132 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 12:01:54.144 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - - - 200 12359 application/javascript;+charset=utf-8 12.1137ms
+2023-08-07 12:01:54.220 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - -
+2023-08-07 12:01:54.453 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 233.5335ms
+2023-08-07 12:01:56.008 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - -
+2023-08-07 12:01:56.269 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 260.5299ms
+2023-08-07 12:10:36.828 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:10:36.877 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:10:37.089 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:10:37.153 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:10:37.612 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:10:39.156 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:10:41.047 +05:30 [INF] Executed DbCommand (102ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:10:41.195 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:10:41.241 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:10:41.244 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:10:41.245 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:10:41.246 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:10:41.248 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 4080.399ms
+2023-08-07 12:10:41.249 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:10:41.253 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:10:41.266 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:10:41.279 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 4382.9306 ms
+2023-08-07 12:10:41.288 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:10:41.293 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:10:41.296 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 47.7067ms
+2023-08-07 12:10:41.298 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:10:41.299 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 54.3131 ms
+2023-08-07 12:10:41.300 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 4473.2651ms
+2023-08-07 12:10:41.303 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 62.6988ms
+2023-08-07 12:14:05.078 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:14:05.086 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:14:05.090 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:14:05.090 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:14:05.099 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:14:05.190 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:14:05.198 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:14:05.199 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:14:05.200 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 108.59ms
+2023-08-07 12:14:05.200 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:14:05.200 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 113.3137 ms
+2023-08-07 12:14:05.201 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 123.1354ms
+2023-08-07 12:14:19.031 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:14:19.032 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:14:19.033 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:14:19.034 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:14:19.035 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:14:19.036 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:14:19.048 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:14:19.050 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:14:19.050 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 16.0116ms
+2023-08-07 12:14:19.051 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:14:19.051 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 18.2836 ms
+2023-08-07 12:14:19.052 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 21.0567ms
+2023-08-07 12:14:36.010 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:14:36.011 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:14:36.012 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:14:36.012 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:14:36.013 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:14:36.014 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:14:36.024 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:14:36.025 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:14:36.025 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 12.7549ms
+2023-08-07 12:14:36.026 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:14:36.026 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 14.2151 ms
+2023-08-07 12:14:36.027 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 18.7599ms
+2023-08-07 12:15:20.082 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:15:20.084 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:15:20.085 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:15:20.085 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:15:20.086 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:15:20.087 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:15:20.092 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:15:20.093 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:15:20.094 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 8.8947ms
+2023-08-07 12:15:20.095 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:15:20.095 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 10.8208 ms
+2023-08-07 12:15:20.096 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 13.8342ms
+2023-08-07 12:15:30.973 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:15:30.973 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:15:30.974 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:15:30.974 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:15:30.976 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:15:30.983 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:15:30.990 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:15:30.991 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:15:30.993 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 17.8366ms
+2023-08-07 12:15:30.994 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:15:30.994 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 20.3990 ms
+2023-08-07 12:15:30.999 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 26.2073ms
+2023-08-07 12:15:41.037 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:15:41.038 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:15:41.038 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:15:41.039 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:15:41.039 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:15:41.040 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:15:41.046 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:15:41.047 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:15:41.048 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 8.9159ms
+2023-08-07 12:15:41.048 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:15:41.049 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 10.6158 ms
+2023-08-07 12:15:41.050 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 13.2689ms
+2023-08-07 12:16:35.146 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:16:35.147 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:16:35.148 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:16:35.149 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:16:35.150 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:16:35.152 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:16:35.156 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:16:35.158 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:16:35.159 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 10.0949ms
+2023-08-07 12:16:35.160 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:16:35.161 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 12.9435 ms
+2023-08-07 12:16:35.161 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 15.4255ms
+2023-08-07 12:16:59.415 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:16:59.421 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:16:59.423 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:16:59.431 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:16:59.442 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:16:59.443 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:16:59.452 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:16:59.453 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:16:59.455 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 12.9921ms
+2023-08-07 12:16:59.456 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:16:59.456 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 33.5244 ms
+2023-08-07 12:16:59.457 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 41.1650ms
+2023-08-07 12:17:07.521 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:17:07.522 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:17:07.523 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:17:07.525 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:17:07.526 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:17:07.528 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:17:07.540 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:17:07.541 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:17:07.542 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 16.1403ms
+2023-08-07 12:17:07.542 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:17:07.543 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 19.7766 ms
+2023-08-07 12:17:07.543 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 22.1885ms
+2023-08-07 12:17:07.551 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:17:07.561 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:17:07.565 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:17:07.568 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:17:07.581 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:17:07.582 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:17:07.593 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:17:07.595 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:17:07.595 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 14.9384ms
+2023-08-07 12:17:07.596 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:17:07.596 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 31.1797 ms
+2023-08-07 12:17:07.597 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 45.4319ms
+2023-08-07 12:18:44.059 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:18:44.070 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:18:44.073 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:18:44.076 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:18:44.077 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:18:44.080 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:18:44.089 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:18:44.103 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:18:44.104 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 27.6394ms
+2023-08-07 12:18:44.105 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:18:44.105 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 31.7157 ms
+2023-08-07 12:18:44.106 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 49.2263ms
+2023-08-07 12:20:48.069 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:20:48.080 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:20:48.083 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:20:48.088 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:20:48.096 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:20:48.101 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:20:48.115 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:20:48.116 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:20:48.117 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 21.1368ms
+2023-08-07 12:20:48.118 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:20:48.118 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 35.4171 ms
+2023-08-07 12:20:48.119 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 49.8093ms
+2023-08-07 12:21:46.067 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:21:46.070 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:21:46.071 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:21:46.072 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:21:46.072 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:21:46.077 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:21:46.100 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:21:46.102 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:21:46.102 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 30.5026ms
+2023-08-07 12:21:46.106 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:21:46.112 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 41.3652 ms
+2023-08-07 12:21:46.115 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 47.8552ms
+2023-08-07 12:23:46.358 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:23:46.360 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:23:46.363 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:23:46.370 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:23:46.373 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:23:46.375 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:23:46.411 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:23:46.419 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:23:46.420 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 48.2232ms
+2023-08-07 12:23:46.421 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:23:46.422 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 58.2477 ms
+2023-08-07 12:23:46.422 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 64.2243ms
+2023-08-07 12:24:45.058 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:24:45.068 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:24:45.073 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:24:45.079 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:24:45.083 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:24:45.085 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:24:45.096 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:24:45.098 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:24:45.098 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 16.5003ms
+2023-08-07 12:24:45.099 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:24:45.099 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 26.2607 ms
+2023-08-07 12:24:45.100 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 42.1604ms
+2023-08-07 12:24:48.025 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:24:48.027 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:24:48.027 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:24:48.028 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:24:48.029 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:24:48.031 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:24:48.036 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:24:48.044 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:24:48.051 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 23.0892ms
+2023-08-07 12:24:48.057 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:24:48.058 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 30.6308 ms
+2023-08-07 12:24:48.059 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 33.7970ms
+2023-08-07 12:24:50.026 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:24:50.027 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:24:50.029 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:24:50.029 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:24:50.031 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:24:50.032 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:24:50.036 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:24:50.038 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:24:50.039 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 8.4707ms
+2023-08-07 12:24:50.039 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:24:50.040 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 10.9272 ms
+2023-08-07 12:24:50.040 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 13.9043ms
+2023-08-07 12:25:35.044 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:25:35.049 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:25:35.052 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:25:35.056 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:25:35.069 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:25:35.074 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:25:35.084 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:25:35.085 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:25:35.086 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 19.4949ms
+2023-08-07 12:25:35.086 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:25:35.086 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 34.4410 ms
+2023-08-07 12:25:35.087 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 44.1086ms
+2023-08-07 12:25:38.011 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:25:38.012 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:25:38.013 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:25:38.014 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:25:38.014 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:25:38.016 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:25:38.020 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:25:38.021 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:25:38.022 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 7.937ms
+2023-08-07 12:25:38.023 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:25:38.023 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 10.1624 ms
+2023-08-07 12:25:38.023 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 12.9402ms
+2023-08-07 12:25:41.549 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:25:41.563 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:25:41.563 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:25:41.564 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:25:41.564 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:25:41.565 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:25:41.570 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:25:41.571 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:25:41.572 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 8.0482ms
+2023-08-07 12:25:41.573 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:25:41.573 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 9.8654 ms
+2023-08-07 12:25:41.575 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 25.1930ms
+2023-08-07 12:25:44.366 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:25:44.372 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:25:44.374 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:25:44.375 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:25:44.377 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:25:44.380 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:25:44.425 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:25:44.426 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:25:44.426 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 49.4928ms
+2023-08-07 12:25:44.427 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:25:44.428 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 54.4560 ms
+2023-08-07 12:25:44.428 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 62.1392ms
+2023-08-07 12:25:44.429 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:25:44.430 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:25:44.430 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:25:44.431 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:25:44.432 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:25:44.433 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:25:44.443 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:25:44.445 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:25:44.446 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 14.0031ms
+2023-08-07 12:25:44.446 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:25:44.447 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 16.5961 ms
+2023-08-07 12:25:44.473 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 43.8833ms
+2023-08-07 12:26:27.021 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:26:27.035 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:26:27.040 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:26:27.041 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:26:27.042 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:26:27.043 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:26:27.053 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:26:27.054 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:26:27.055 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 13.8661ms
+2023-08-07 12:26:27.055 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:26:27.056 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 15.8057 ms
+2023-08-07 12:26:27.056 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 35.4036ms
+2023-08-07 12:26:27.059 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:26:27.060 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:26:27.061 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:26:27.062 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:26:27.062 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:26:27.065 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:26:27.069 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:26:27.072 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:26:27.073 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 10.5227ms
+2023-08-07 12:26:27.073 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:26:27.073 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 12.5278 ms
+2023-08-07 12:26:27.074 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 15.0971ms
+2023-08-07 12:26:32.085 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:26:32.108 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:26:32.111 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:26:32.111 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:26:32.112 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:26:32.113 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:26:32.118 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:26:32.119 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:26:32.120 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 7.9974ms
+2023-08-07 12:26:32.120 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:26:32.121 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 10.3893 ms
+2023-08-07 12:26:32.122 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 37.4242ms
+2023-08-07 12:26:32.125 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:26:32.127 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:26:32.127 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:26:32.128 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:26:32.128 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:26:32.129 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:26:32.134 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:26:32.135 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:26:32.135 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 7.2964ms
+2023-08-07 12:26:32.136 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:26:32.136 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 8.5752 ms
+2023-08-07 12:26:32.136 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 10.7905ms
+2023-08-07 12:26:42.049 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:26:42.051 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:26:42.051 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:26:42.052 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:26:42.053 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:26:42.054 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:26:42.065 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:26:42.066 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:26:42.067 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 14.6537ms
+2023-08-07 12:26:42.068 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:26:42.068 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 17.0645 ms
+2023-08-07 12:26:42.069 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 20.5223ms
+2023-08-07 12:26:42.073 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:26:42.074 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:26:42.074 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:26:42.075 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:26:42.076 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:26:42.078 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:26:42.084 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:26:42.086 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:26:42.087 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 11.2698ms
+2023-08-07 12:26:42.088 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:26:42.089 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 14.5931 ms
+2023-08-07 12:26:42.089 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 16.5245ms
+2023-08-07 12:28:17.077 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:28:17.079 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:28:17.080 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:28:17.080 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:28:17.080 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:28:17.082 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:28:17.099 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:28:17.101 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:28:17.102 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 21.6672ms
+2023-08-07 12:28:17.104 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:28:17.104 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 24.8813 ms
+2023-08-07 12:28:17.105 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 33.8383ms
+2023-08-07 12:28:21.017 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:28:21.018 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:28:21.019 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:28:21.019 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:28:21.019 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:28:21.020 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:28:21.025 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:28:21.026 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:28:21.027 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 7.8559ms
+2023-08-07 12:28:21.028 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:28:21.028 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 9.7002 ms
+2023-08-07 12:28:21.029 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 11.8338ms
+2023-08-07 12:28:26.034 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:28:26.035 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:28:26.036 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:28:26.036 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:28:26.037 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:28:26.037 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:28:26.044 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:28:26.045 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:28:26.046 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 9.6393ms
+2023-08-07 12:28:26.047 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:28:26.047 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 11.4408 ms
+2023-08-07 12:28:26.048 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 13.8985ms
+2023-08-07 12:28:33.378 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:28:33.389 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:28:33.392 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:28:33.393 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:28:33.394 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:28:33.395 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:28:33.401 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:28:33.402 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:28:33.403 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 10.0121ms
+2023-08-07 12:28:33.404 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:28:33.405 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 12.2988 ms
+2023-08-07 12:28:33.405 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 27.4549ms
+2023-08-07 12:28:33.494 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:28:33.494 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:28:33.495 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:28:33.495 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:28:33.496 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:28:33.499 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:28:33.501 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:28:33.503 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:28:33.504 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 8.5974ms
+2023-08-07 12:28:33.504 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:28:33.505 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 10.4376 ms
+2023-08-07 12:28:33.506 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 12.0969ms
+2023-08-07 12:34:06.554 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 12:34:07.821 +05:30 [INF] Now listening on: https://localhost:7026
+2023-08-07 12:34:07.845 +05:30 [INF] Now listening on: http://localhost:5266
+2023-08-07 12:34:07.881 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 12:34:07.892 +05:30 [INF] Hosting environment: Development
+2023-08-07 12:34:07.893 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWFeedbackAPI\
+2023-08-07 12:34:10.289 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - -
+2023-08-07 12:34:11.275 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - -
+2023-08-07 12:34:11.279 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 12:34:11.291 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - - - 200 - text/html;charset=utf-8 1016.0797ms
+2023-08-07 12:34:11.338 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - - - 200 12359 application/javascript;+charset=utf-8 58.8944ms
+2023-08-07 12:34:11.542 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 266.5299ms
+2023-08-07 12:34:12.274 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - -
+2023-08-07 12:34:12.573 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 298.9923ms
+2023-08-07 12:35:37.432 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:35:37.446 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:35:37.665 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:35:37.706 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:35:38.130 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:35:39.176 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:35:40.555 +05:30 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:35:40.702 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:35:40.753 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 12:35:40.758 +05:30 [INF] CORS policy execution successful.
+2023-08-07 12:35:40.761 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:35:40.763 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 3043.1336ms
+2023-08-07 12:35:40.763 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 12:35:40.768 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:35:40.770 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 12:35:40.784 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 12:35:40.791 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 3321.1341 ms
+2023-08-07 12:35:40.801 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 12:35:40.807 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 12:35:40.810 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 3378.9890ms
+2023-08-07 12:35:40.810 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 41.0421ms
+2023-08-07 12:35:40.814 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 12:35:40.816 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 55.8559 ms
+2023-08-07 12:35:40.820 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 67.2529ms
+2023-08-07 12:57:25.053 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 12:57:25.765 +05:30 [INF] Now listening on: https://localhost:7026
+2023-08-07 12:57:25.766 +05:30 [INF] Now listening on: http://localhost:5266
+2023-08-07 12:57:25.775 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 12:57:25.776 +05:30 [INF] Hosting environment: Development
+2023-08-07 12:57:25.777 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWFeedbackAPI\
+2023-08-07 12:57:27.635 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - -
+2023-08-07 12:57:28.536 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - - - 200 - text/html;charset=utf-8 908.7632ms
+2023-08-07 12:57:28.688 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 12:57:28.700 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - - - 200 12359 application/javascript;+charset=utf-8 12.2459ms
+2023-08-07 12:57:28.747 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - -
+2023-08-07 12:57:28.873 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 125.9508ms
+2023-08-07 12:57:29.407 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - -
+2023-08-07 12:57:29.683 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 276.2011ms
+2023-08-07 14:25:01.177 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 14:25:01.236 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:25:02.297 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 14:25:02.359 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 14:25:02.878 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 14:25:04.006 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:25:06.429 +05:30 [INF] Executed DbCommand (156ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 14:25:06.681 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:25:06.742 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 14:25:06.746 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:25:06.747 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 14:25:06.750 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 14:25:06.765 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 4382.4974ms
+2023-08-07 14:25:06.770 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 14:25:06.775 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 14:25:06.776 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:25:06.801 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 5538.4623 ms
+2023-08-07 14:25:06.808 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 14:25:06.810 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:25:06.811 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 58.6121ms
+2023-08-07 14:25:06.812 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 14:25:06.813 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 65.5382 ms
+2023-08-07 14:25:06.827 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 5650.5765ms
+2023-08-07 14:25:06.828 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 85.8668ms
+2023-08-07 14:31:22.342 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 14:31:22.361 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:31:22.378 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 14:31:22.381 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 14:31:22.402 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 14:31:22.610 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:31:22.652 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 14:31:22.656 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:31:22.660 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 277.4636ms
+2023-08-07 14:31:22.660 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 14:31:22.661 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 299.1143 ms
+2023-08-07 14:31:22.662 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - -
+2023-08-07 14:31:22.662 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 324.9648ms
+2023-08-07 14:31:22.662 +05:30 [INF] CORS policy execution successful.
+2023-08-07 14:31:22.663 +05:30 [INF] Executing endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 14:31:22.663 +05:30 [INF] Route matched with {action = "GetFeedbacks", controller = "Feedback"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWFeedbackAPI.Models.Feedback]]] GetFeedbacks() on controller KTWFeedbackAPI.Controllers.FeedbackController (KTWFeedbackAPI).
+2023-08-07 14:31:22.664 +05:30 [INF] Inside GetAll of Feedbacks
+2023-08-07 14:31:22.665 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'FeedbackContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-07 14:31:22.670 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Email], [f].[FeedbackDate], [f].[FeedbackId], [f].[PackId], [f].[Rating], [f].[Review], [f].[ServiceName], [f].[ServiceType]
+FROM [Feedbacks] AS [f]
+2023-08-07 14:31:22.672 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWFeedbackAPI.Models.Feedback, KTWFeedbackAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 14:31:22.673 +05:30 [INF] Executed action KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI) in 9.0121ms
+2023-08-07 14:31:22.673 +05:30 [INF] Executed endpoint 'KTWFeedbackAPI.Controllers.FeedbackController.GetFeedbacks (KTWFeedbackAPI)'
+2023-08-07 14:31:22.674 +05:30 [INF] HTTP GET /api/Feedback/GetFeedbacks responded 200 in 11.3503 ms
+2023-08-07 14:31:22.675 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/api/Feedback/GetFeedbacks - - - 200 - application/json;+charset=utf-8 13.2644ms
+2023-08-07 14:45:45.173 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 14:45:45.947 +05:30 [INF] Now listening on: https://localhost:7026
+2023-08-07 14:45:45.953 +05:30 [INF] Now listening on: http://localhost:5266
+2023-08-07 14:45:45.979 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 14:45:45.981 +05:30 [INF] Hosting environment: Development
+2023-08-07 14:45:45.983 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWFeedbackAPI\
+2023-08-07 14:45:47.348 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - -
+2023-08-07 14:45:48.407 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - - - 200 - text/html;charset=utf-8 1069.2227ms
+2023-08-07 14:45:48.481 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 14:45:48.490 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - - - 200 12359 application/javascript;+charset=utf-8 9.3054ms
+2023-08-07 14:45:49.182 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - -
+2023-08-07 14:45:49.221 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.7287ms
+2023-08-07 14:45:50.551 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - -
+2023-08-07 14:45:50.968 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 416.7961ms

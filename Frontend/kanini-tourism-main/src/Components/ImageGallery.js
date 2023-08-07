@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Typography,
   Paper,
@@ -12,14 +12,38 @@ import {
   ImageListItem,
   ImageListItemBar,
 } from '@mui/material';
+import axios from 'axios';
+import * as yup from 'yup';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const validationSchema = yup.object().shape({
+  location: yup.string().required('Location is required'),
+  images: yup.array().min(1, 'At least one image is required'),
+});
 
 const ImageGallery = () => {
   const [selectedLocation, setSelectedLocation] = useState('');
   const [imageFiles, setImageFiles] = useState([]);
   const [uploadedImages, setUploadedImages] = useState([]);
+  const [locations, setLocations] = useState([]);
+  const [locationName, setLocationName] = useState('');
+
+  useEffect(() => {
+    // Fetch locations data
+    axios.get('https://localhost:7153/api/Location/GetAllLocations')
+      .then(response => {
+        setLocations(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching locations:', error);
+      });
+  }, []);
 
   const handleLocationChange = (event) => {
     setSelectedLocation(event.target.value);
+    const selectedLocationName = locations.find(location => location.locationId === event.target.value)?.name;
+    setLocationName(selectedLocationName || '');
   };
 
   const handleImageChange = (event) => {
@@ -28,14 +52,30 @@ const ImageGallery = () => {
   };
 
   const handleUpload = () => {
-    // Logic to upload images to the selected location
-    // Here, we are just simulating the upload process
-    const uploaded = imageFiles.map((file) => ({
-      location: selectedLocation,
-      url: URL.createObjectURL(file),
-    }));
-    setUploadedImages((prevImages) => [...prevImages, ...uploaded]);
-    setImageFiles([]);
+    // Validate the form before uploading
+    validationSchema.validate({ location: selectedLocation, images: imageFiles })
+      .then(() => {
+        const uploaded = imageFiles.map((file) => ({
+          location: locationName,
+          url: URL.createObjectURL(file),
+        }));
+        setUploadedImages((prevImages) => [...prevImages, ...uploaded]);
+        setImageFiles([]);
+
+        // Show success toast
+        toast.success('Images uploaded successfully');
+      })
+      .catch(error => {
+        // Show error toast for each validation error
+        error.inner.forEach(err => {
+          toast.error(err.message);
+        });
+
+        // Show error toast for missing images
+        if (imageFiles.length === 0) {
+          toast.error('Please select at least one image');
+        }
+      });
   };
 
   return (
@@ -52,13 +92,19 @@ const ImageGallery = () => {
             onChange={handleLocationChange}
             label="Location"
           >
-            <MenuItem value="Tokyo">Tokyo</MenuItem>
-            <MenuItem value="Kyoto">Kyoto</MenuItem>
-            <MenuItem value="Osaka">Osaka</MenuItem>
-            {/* Add more locations */}
+            {locations.map(location => (
+              <MenuItem key={location.locationId} value={location.locationId}>
+                {location.name}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
-        <input type="file" multiple accept="image/*" onChange={handleImageChange} />
+        <TextField
+          type="file"
+          multiple
+          accept="image/*"
+          onChange={handleImageChange}
+        />
         <Button variant="contained" color="primary" onClick={handleUpload} style={{ marginTop: 10 }}>
           Upload
         </Button>
@@ -74,6 +120,8 @@ const ImageGallery = () => {
           ))}
         </ImageList>
       </div>
+
+      <ToastContainer position="bottom-right" autoClose={3000} />
     </div>
   );
 };
