@@ -96,8 +96,6 @@ This document provides a comprehensive requirement analysis for the Kanini Touri
 
 
 ## Features 
-- Interactive Maps
-- Weather on Location
 - tour Packages with hotel and without hotel
 - Bill generation
 - Contact page
