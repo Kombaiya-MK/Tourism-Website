@@ -1,5 +1,4 @@
-import React from 'react';
-import '../Assets/Styles/Invoice.css'
+import React, { useEffect, useState } from 'react';
 import {
   Typography,
   Paper,
@@ -15,17 +14,38 @@ import {
 import { Print as PrintIcon, ArrowBack as ArrowBackIcon, GetApp as GetAppIcon } from '@mui/icons-material';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import axios from 'axios';
 
-const InvoicePage = ({ selectedPacks, totalAmount, history }) => {
+const InvoicePage = ({ selectedBookingId, history }) => {
+  const [selectedBooking, setSelectedBooking] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBooking = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5066/api/Booking/GetBooking/${selectedBookingId}`);
+        setSelectedBooking(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error fetching booking:', error);
+        setIsLoading(false);
+      }
+    };
+
+    fetchBooking();
+  }, [selectedBookingId]);
+
   const handlePrint = () => {
+    if (!selectedBooking) return;
+
     const doc = new jsPDF();
     doc.text('Invoice', 10, 10);
     doc.autoTable({
       head: [['Package', 'No of Customers', 'Adults', 'Children']],
-      body: selectedPacks.map(pack => [pack.name, pack.customers, pack.adults, pack.children]),
+      body: [[selectedBooking.packageName, selectedBooking.noofAdults + selectedBooking.noofChildren, selectedBooking.noofAdults, selectedBooking.noofChildren]],
       startY: 20,
     });
-    doc.text(`Total Amount: $${totalAmount}`, 10, doc.autoTable.previous.finalY + 10);
+    doc.text(`Total Amount: $${selectedBooking.price}`, 10, doc.autoTable.previous.finalY + 10);
     doc.save('invoice.pdf');
   };
 
@@ -35,48 +55,61 @@ const InvoicePage = ({ selectedPacks, totalAmount, history }) => {
         <Typography variant="h4" gutterBottom>
           Invoice
         </Typography>
-        <TableContainer>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell>Package</TableCell>
-                <TableCell>No of Customers</TableCell>
-                <TableCell>Adults</TableCell>
-                <TableCell>Children</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {selectedPacks.map(pack => (
-                <TableRow key={pack.id}>
-                  <TableCell>{pack.name}</TableCell>
-                  <TableCell>{pack.customers}</TableCell>
-                  <TableCell>{pack.adults}</TableCell>
-                  <TableCell>{pack.children}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <div className="total-amount">
-          <Typography variant="h6">Total Amount: ${totalAmount}</Typography>
-        </div>
-        <div className="invoice-buttons">
-          <Tooltip title="Download Invoice PDF">
-            <Button variant="outlined" startIcon={<GetAppIcon />} onClick={handlePrint}>
-              Download
-            </Button>
-          </Tooltip>
-          <Tooltip title="Back to Cart">
-            <Button variant="outlined" startIcon={<ArrowBackIcon />} onClick={() => history.push('/cart')}>
-              Back to Cart
-            </Button>
-          </Tooltip>
-          <Tooltip title="Print Invoice">
-            <Button variant="outlined" startIcon={<PrintIcon />} onClick={handlePrint}>
-              Print
-            </Button>
-          </Tooltip>
-        </div>
+        {isLoading ? (
+          <Typography>Loading...</Typography>
+        ) : (
+          selectedBooking && (
+            <>
+              <TableContainer>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Package</TableCell>
+                      <TableCell>No of Customers</TableCell>
+                      <TableCell>Adults</TableCell>
+                      <TableCell>Children</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell>{selectedBooking.packageName}</TableCell>
+                      <TableCell>{selectedBooking.noofAdults + selectedBooking.noofChildren}</TableCell>
+                      <TableCell>{selectedBooking.noofAdults}</TableCell>
+                      <TableCell>{selectedBooking.noofChildren}</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+              <div className="total-amount">
+                <Typography variant="h6">Total Amount: ${selectedBooking.price}</Typography>
+              </div>
+              <div className="invoice-buttons">
+                <Tooltip title="Download Invoice PDF">
+                  <Button variant="outlined" startIcon={<GetAppIcon />} onClick={handlePrint}>
+                    Download
+                  </Button>
+                </Tooltip>
+                <Tooltip title="Back to Cart">
+                  <Button variant="outlined" startIcon={<ArrowBackIcon />} onClick={() => history.push('/cart')}>
+                    Back to Cart
+                  </Button>
+                </Tooltip>
+                {selectedBooking.status === 'Confirmed' && (
+                  <Tooltip title="Cancel Booking">
+                    <Button variant="outlined" color="error" onClick={() => handleCancelBooking(selectedBooking.bookingId)}>
+                      Cancel Booking
+                    </Button>
+                  </Tooltip>
+                )}
+                <Tooltip title="Print Invoice">
+                  <Button variant="outlined" startIcon={<PrintIcon />} onClick={handlePrint}>
+                    Print
+                  </Button>
+                </Tooltip>
+              </div>
+            </>
+          )
+        )}
       </Paper>
     </div>
   );

@@ -17,5 +17,7 @@ namespace KTWLocationsAPI.Interfaces
         Task<ICollection<Image>> GetImages(string location);
 
         Task<ICollection<Speciality>> GetSpecialities(string location);
+
+        Task<ICollection<Image>> GetAllImages();
     }
 }

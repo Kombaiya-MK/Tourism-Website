@@ -5,6 +5,7 @@ using KTWLocationsAPI.Utilities.CustomExceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UserAPI.Models;
+using static System.Net.Mime.MediaTypeNames;
 using static UserAPI.Models.Error;
 
 namespace KTWLocationsAPI.Controllers
@@ -80,16 +81,17 @@ namespace KTWLocationsAPI.Controllers
 
         //Add Image
         [HttpPost]
-        [ProducesResponseType(typeof(Image), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(Models.Image), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<Image>> AddImage(ImageDTO img)
+        public async Task<ActionResult<ICollection<Models.Image>>> AddImage(ImageDTO img)
         {
             try
             {
                 var item1 = await _service.AddImage(img);
+                var images = await _service.GetAllImages();
                 if (item1 != null)
                 {
-                    return Created("Image added Successfully!!!", item1);
+                    return Created("Image added Successfully!!!", images);
                 }
                 return BadRequest(new Error((int)(ErrorCode.BadRequest), "Process Failed"));
             }
@@ -130,6 +132,27 @@ namespace KTWLocationsAPI.Controllers
             }
         }
 
+        //Get All Images
+        [HttpGet]
+        [ProducesResponseType(typeof(Models.Image), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<ICollection<Models.Image>>> GetAllImages()
+        {
+            try
+            {
+                var images = await _service.GetAllImages();
+                if (images.Count >= 1)
+                {
+                    return Ok(images);
+                }
+                return NotFound(new Error((int)(ErrorCode.NotFound), "No  data available!!!"));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new Error((int)(ErrorCode.BadRequest), ex.Message));
+            }
+        }
         //Get all nearby locations
         [HttpGet]
         [ProducesResponseType(typeof(Location), StatusCodes.Status200OK)]
@@ -154,10 +177,10 @@ namespace KTWLocationsAPI.Controllers
 
         //Get Images
         [HttpGet]
-        [ProducesResponseType(typeof(Image), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Models.Image), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<ICollection<Image>>> GetImages(string location)
+        public async Task<ActionResult<ICollection<Models.Image>>> GetImages(string location)
         {
             try
             {
@@ -176,10 +199,10 @@ namespace KTWLocationsAPI.Controllers
 
         //Get specialities
         [HttpGet]
-        [ProducesResponseType(typeof(Image), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Models.Image), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<ICollection<Image>>> GetSpecialities(string location)
+        public async Task<ActionResult<ICollection<Models.Image>>> GetSpecialities(string location)
         {
             try
             {

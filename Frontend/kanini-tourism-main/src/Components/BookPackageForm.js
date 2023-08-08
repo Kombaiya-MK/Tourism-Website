@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
-import { TextField, Button, Grid, Paper, Typography } from '@mui/material';
-import { useFormik } from 'formik';
-import * as yup from 'yup';
+import React from 'react';
+import { TextField, Button, Paper, Typography } from '@mui/material';
+import { styled } from '@mui/system';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const paperStyle = {
   padding: '16px',
@@ -23,57 +26,56 @@ const buttonStyle = {
   },
 };
 
-const validationSchema = yup.object().shape({
-  name: yup.string().required('Name is required'),
-  email: yup.string().email('Invalid email address').required('Email is required'),
-  date: yup.date().required('Travel date is required'),
-  adults: yup
-    .number()
-    .typeError('Please enter a valid number')
-    .positive('Number must be positive')
-    .integer('Number must be an integer')
-    .required('Number of adults is required'),
-  children: yup
-    .number()
-    .typeError('Please enter a valid number')
-    .integer('Number must be an integer')
-    .min(0, 'Number of children cannot be negative')
-    .required('Number of children is required'),
-});
-
 const BookPackageForm = ({ packageName }) => {
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      email: '',
-      date: '',
-      adults: 1,
-      children: 0,
-    },
-    validationSchema: validationSchema,
-    onSubmit: (values) => {
-      // Implement your form submission logic here
-      console.log('Form submitted:', {
-        packageName,
-        ...values,
-      });
-    },
-  });
+  const navigate = useNavigate();
+
+  const handleNewBooking = async (formData) => {
+    try {
+      const newBooking = {
+        bookingId: 'id',
+        packageId: sessionStorage.getItem('packageId'),
+        email: sessionStorage.getItem('email'),
+        bookedDate: new Date().toISOString(),
+        checkInDate: formData.checkInDate, 
+        checkOutDate: formData.checkOutDate, 
+        price: formData.price, 
+        status: 'Pending', 
+        paymentMethod: formData.paymentMethod, 
+        noofAdults: formData.adults,
+        noofChildren: formData.children,
+      };
+
+      await axios.post('http://localhost:5066/api/Booking/AddBooking', newBooking);
+      toast.success('Booking successful');
+      navigate('/');
+    } catch (error) {
+      console.error('Error creating booking:', error);
+      toast.error('An error occurred while creating booking');
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = {
+      name: event.target.name.value,
+      email: event.target.email.value,
+      date: event.target.date.value,
+      adults: parseInt(event.target.adults.value),
+      children: parseInt(event.target.children.value),
+    };
+    handleNewBooking(formData);
+  };
 
   return (
     <Paper elevation={3} style={paperStyle}>
       <Typography variant="h5" gutterBottom>
         Book {packageName}
       </Typography>
-      <form style={formStyle} onSubmit={formik.handleSubmit}>
+      <form style={formStyle} onSubmit={handleSubmit}>
         <TextField
           label="Name"
           variant="outlined"
           name="name"
-          value={formik.values.name}
-          onChange={formik.handleChange}
-          error={formik.touched.name && formik.errors.name}
-          helperText={formik.touched.name && formik.errors.name}
           required
         />
         <TextField
@@ -81,21 +83,26 @@ const BookPackageForm = ({ packageName }) => {
           variant="outlined"
           type="email"
           name="email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          error={formik.touched.email && formik.errors.email}
-          helperText={formik.touched.email && formik.errors.email}
           required
         />
         <TextField
-          label="Travel Date"
+          label="Check-in Date"
           variant="outlined"
-          type="date"
-          name="date"
-          value={formik.values.date}
-          onChange={formik.handleChange}
-          error={formik.touched.date && formik.errors.date}
-          helperText={formik.touched.date && formik.errors.date}
+          type="datetime-local" 
+          name="checkInDate"
+          required
+        />
+        <TextField
+          label="Check-out Date"
+          variant="outlined"
+          type="datetime-local" 
+          name="checkOutDate"
+          required
+        />
+        <TextField
+          label="Payment Method"
+          variant="outlined"
+          name="paymentMethod"
           required
         />
         <TextField
@@ -103,10 +110,6 @@ const BookPackageForm = ({ packageName }) => {
           variant="outlined"
           type="number"
           name="adults"
-          value={formik.values.adults}
-          onChange={formik.handleChange}
-          error={formik.touched.adults && formik.errors.adults}
-          helperText={formik.touched.adults && formik.errors.adults}
           required
         />
         <TextField
@@ -114,10 +117,6 @@ const BookPackageForm = ({ packageName }) => {
           variant="outlined"
           type="number"
           name="children"
-          value={formik.values.children}
-          onChange={formik.handleChange}
-          error={formik.touched.children && formik.errors.children}
-          helperText={formik.touched.children && formik.errors.children}
         />
         <Button type="submit" style={buttonStyle}>
           Book Now

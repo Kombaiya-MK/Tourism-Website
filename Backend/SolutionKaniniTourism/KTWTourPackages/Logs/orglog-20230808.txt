@@ -229,3 +229,339 @@ FROM [Touraries] AS [t]
 2023-08-08 02:58:59.417 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
 2023-08-08 02:58:59.419 +05:30 [INF] HTTP GET /api/TourPack/GetAllTouraries responded 200 in 47.1971 ms
 2023-08-08 02:58:59.424 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - - - 200 - application/json;+charset=utf-8 60.4621ms
+2023-08-08 08:35:32.644 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 08:35:35.706 +05:30 [INF] Now listening on: https://localhost:7169
+2023-08-08 08:35:35.714 +05:30 [INF] Now listening on: http://localhost:5004
+2023-08-08 08:35:35.728 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 08:35:36.014 +05:30 [INF] Hosting environment: Development
+2023-08-08 08:35:36.586 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWTourPackages\
+2023-08-08 08:35:37.496 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger - -
+2023-08-08 08:35:38.429 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger - - - 301 0 - 937.9873ms
+2023-08-08 08:35:38.481 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/index.html - -
+2023-08-08 08:35:40.588 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/index.html - - - 200 - text/html;charset=utf-8 2106.5501ms
+2023-08-08 08:35:40.746 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/swagger-ui-standalone-preset.js - -
+2023-08-08 08:35:40.746 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/swagger-ui.css - -
+2023-08-08 08:35:40.747 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/swagger-ui-bundle.js - -
+2023-08-08 08:35:40.931 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-08-08 08:35:40.931 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-08-08 08:35:40.983 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/swagger-ui.css - - - 200 144929 text/css 236.4539ms
+2023-08-08 08:35:40.990 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 244.0637ms
+2023-08-08 08:35:41.012 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-08-08 08:35:41.222 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 475.0496ms
+2023-08-08 08:35:42.646 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 08:35:42.661 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - - - 200 12361 application/javascript;+charset=utf-8 14.6889ms
+2023-08-08 08:35:42.741 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_vs/browserLink - -
+2023-08-08 08:35:42.880 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 139.1689ms
+2023-08-08 08:35:45.774 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - -
+2023-08-08 08:35:45.774 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/favicon-32x32.png - -
+2023-08-08 08:35:45.786 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-08-08 08:35:45.788 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/favicon-32x32.png - - - 200 628 image/png 14.1543ms
+2023-08-08 08:35:46.426 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 652.0402ms
+2023-08-08 10:33:50.887 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 10:33:53.443 +05:30 [INF] Now listening on: https://localhost:7169
+2023-08-08 10:33:53.484 +05:30 [INF] Now listening on: http://localhost:5004
+2023-08-08 10:33:53.494 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 10:33:53.498 +05:30 [INF] Hosting environment: Development
+2023-08-08 10:33:53.500 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWTourPackages\
+2023-08-08 10:33:55.655 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/index.html - -
+2023-08-08 10:33:56.920 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 10:33:56.927 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_vs/browserLink - -
+2023-08-08 10:33:56.935 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/index.html - - - 200 - text/html;charset=utf-8 1287.0857ms
+2023-08-08 10:33:57.203 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - - - 200 12361 application/javascript;+charset=utf-8 282.0902ms
+2023-08-08 10:33:58.357 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1430.1214ms
+2023-08-08 10:33:58.468 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - -
+2023-08-08 10:33:58.793 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 325.8952ms
+2023-08-08 11:06:11.987 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 11:06:12.852 +05:30 [INF] Now listening on: https://localhost:7169
+2023-08-08 11:06:12.891 +05:30 [INF] Now listening on: http://localhost:5004
+2023-08-08 11:06:12.900 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 11:06:12.904 +05:30 [INF] Hosting environment: Development
+2023-08-08 11:06:12.909 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWTourPackages\
+2023-08-08 11:06:19.340 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/index.html - -
+2023-08-08 11:06:21.621 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/index.html - - - 200 - text/html;charset=utf-8 2298.6125ms
+2023-08-08 11:06:21.782 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 11:06:21.790 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - - - 200 12361 application/javascript;+charset=utf-8 8.4022ms
+2023-08-08 11:06:21.857 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_vs/browserLink - -
+2023-08-08 11:06:22.669 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 811.9330ms
+2023-08-08 11:06:23.056 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - -
+2023-08-08 11:06:23.959 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 959.6509ms
+2023-08-08 11:24:25.422 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 11:24:25.838 +05:30 [INF] Now listening on: https://localhost:7169
+2023-08-08 11:24:25.839 +05:30 [INF] Now listening on: http://localhost:5004
+2023-08-08 11:24:25.845 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 11:24:25.846 +05:30 [INF] Hosting environment: Development
+2023-08-08 11:24:25.847 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWTourPackages\
+2023-08-08 11:24:29.686 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/index.html - -
+2023-08-08 11:24:31.741 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/index.html - - - 200 - text/html;charset=utf-8 2071.6658ms
+2023-08-08 11:24:31.781 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 11:24:31.813 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - - - 200 12361 application/javascript;+charset=utf-8 32.1667ms
+2023-08-08 11:24:31.912 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_vs/browserLink - -
+2023-08-08 11:24:32.051 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 139.6876ms
+2023-08-08 11:24:33.201 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - -
+2023-08-08 11:24:33.480 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 278.4153ms
+2023-08-08 11:37:22.881 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 11:37:24.993 +05:30 [INF] Now listening on: https://localhost:7169
+2023-08-08 11:37:25.044 +05:30 [INF] Now listening on: http://localhost:5004
+2023-08-08 11:37:25.052 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 11:37:25.058 +05:30 [INF] Hosting environment: Development
+2023-08-08 11:37:25.059 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWTourPackages\
+2023-08-08 11:37:26.802 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/index.html - -
+2023-08-08 11:37:29.409 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/index.html - - - 200 - text/html;charset=utf-8 2637.3364ms
+2023-08-08 11:37:30.554 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_vs/browserLink - -
+2023-08-08 11:37:30.554 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 11:37:30.644 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - - - 200 12361 application/javascript;+charset=utf-8 89.8509ms
+2023-08-08 11:37:31.086 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 531.8470ms
+2023-08-08 11:37:34.385 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - -
+2023-08-08 11:37:34.718 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 333.0594ms
+2023-08-08 11:59:35.580 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - -
+2023-08-08 11:59:35.581 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - -
+2023-08-08 11:59:35.652 +05:30 [INF] CORS policy execution successful.
+2023-08-08 11:59:35.652 +05:30 [INF] CORS policy execution successful.
+2023-08-08 11:59:36.748 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 11:59:36.748 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 11:59:36.797 +05:30 [INF] Route matched with {action = "GetAllPacks", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.TourPackage]]] GetAllPacks() on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 11:59:36.800 +05:30 [INF] Route matched with {action = "GetAllTouraries", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.Itinerary]]] GetAllTouraries(System.String) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 11:59:37.263 +05:30 [INF] Inside GetAll of TourPackages
+2023-08-08 11:59:37.296 +05:30 [INF] Inside GetAll of Itineraries
+2023-08-08 11:59:38.126 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 11:59:38.126 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 11:59:39.337 +05:30 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PackId], [t].[Capacity], [t].[Description], [t].[Duration], [t].[Id], [t].[LocationId], [t].[Name], [t].[Price], [t].[Status]
+FROM [TourPackages] AS [t]
+2023-08-08 11:59:39.337 +05:30 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItineraryId], [t].[Description], [t].[Id], [t].[Name], [t].[PackId]
+FROM [Touraries] AS [t]
+2023-08-08 11:59:39.462 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.Itinerary, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 11:59:39.462 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.TourPackage, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 11:59:39.490 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - -
+2023-08-08 11:59:39.496 +05:30 [INF] CORS policy execution successful.
+2023-08-08 11:59:39.498 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages) in 2683.1167ms
+2023-08-08 11:59:39.498 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages) in 2696.8018ms
+2023-08-08 11:59:39.500 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 11:59:39.501 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - -
+2023-08-08 11:59:39.502 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 11:59:39.502 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 11:59:39.503 +05:30 [INF] Route matched with {action = "GetAllTouraries", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.Itinerary]]] GetAllTouraries(System.String) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 11:59:39.504 +05:30 [INF] CORS policy execution successful.
+2023-08-08 11:59:39.509 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 11:59:39.510 +05:30 [INF] Route matched with {action = "GetAllPacks", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.TourPackage]]] GetAllPacks() on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 11:59:39.514 +05:30 [INF] HTTP GET /api/TourPack/GetAllTouraries responded 200 in 3847.7014 ms
+2023-08-08 11:59:39.514 +05:30 [INF] HTTP GET /api/TourPack/GetAllPacks responded 200 in 3847.6859 ms
+2023-08-08 11:59:39.517 +05:30 [INF] Inside GetAll of TourPackages
+2023-08-08 11:59:39.518 +05:30 [INF] Inside GetAll of Itineraries
+2023-08-08 11:59:39.530 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - - - 200 - application/json;+charset=utf-8 3957.3435ms
+2023-08-08 11:59:39.530 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - - - 200 - application/json;+charset=utf-8 3956.8005ms
+2023-08-08 11:59:39.593 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 11:59:39.593 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 11:59:39.605 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PackId], [t].[Capacity], [t].[Description], [t].[Duration], [t].[Id], [t].[LocationId], [t].[Name], [t].[Price], [t].[Status]
+FROM [TourPackages] AS [t]
+2023-08-08 11:59:39.606 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItineraryId], [t].[Description], [t].[Id], [t].[Name], [t].[PackId]
+FROM [Touraries] AS [t]
+2023-08-08 11:59:39.612 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.TourPackage, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 11:59:39.613 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.Itinerary, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 11:59:39.614 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages) in 101.6912ms
+2023-08-08 11:59:39.615 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages) in 107.0191ms
+2023-08-08 11:59:39.616 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 11:59:39.617 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 11:59:39.618 +05:30 [INF] HTTP GET /api/TourPack/GetAllPacks responded 200 in 109.5306 ms
+2023-08-08 11:59:39.619 +05:30 [INF] HTTP GET /api/TourPack/GetAllTouraries responded 200 in 121.3789 ms
+2023-08-08 11:59:39.622 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - - - 200 - application/json;+charset=utf-8 120.9170ms
+2023-08-08 11:59:39.623 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - - - 200 - application/json;+charset=utf-8 133.0768ms
+2023-08-08 12:10:32.161 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - -
+2023-08-08 12:10:32.161 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - -
+2023-08-08 12:10:32.171 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:10:32.171 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:10:32.175 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 12:10:32.175 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 12:10:32.178 +05:30 [INF] Route matched with {action = "GetAllTouraries", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.Itinerary]]] GetAllTouraries(System.String) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 12:10:32.178 +05:30 [INF] Route matched with {action = "GetAllPacks", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.TourPackage]]] GetAllPacks() on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 12:10:32.187 +05:30 [INF] Inside GetAll of TourPackages
+2023-08-08 12:10:32.190 +05:30 [INF] Inside GetAll of Itineraries
+2023-08-08 12:10:32.244 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:10:32.244 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:10:32.518 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItineraryId], [t].[Description], [t].[Id], [t].[Name], [t].[PackId]
+FROM [Touraries] AS [t]
+2023-08-08 12:10:32.518 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PackId], [t].[Capacity], [t].[Description], [t].[Duration], [t].[Id], [t].[LocationId], [t].[Name], [t].[Price], [t].[Status]
+FROM [TourPackages] AS [t]
+2023-08-08 12:10:32.535 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.Itinerary, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 12:10:32.536 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.TourPackage, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 12:10:32.540 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages) in 359.7431ms
+2023-08-08 12:10:32.540 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages) in 357.6477ms
+2023-08-08 12:10:32.544 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - -
+2023-08-08 12:10:32.544 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - -
+2023-08-08 12:10:32.544 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 12:10:32.546 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 12:10:32.547 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:10:32.548 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:10:32.549 +05:30 [INF] HTTP GET /api/TourPack/GetAllTouraries responded 200 in 376.5487 ms
+2023-08-08 12:10:32.550 +05:30 [INF] HTTP GET /api/TourPack/GetAllPacks responded 200 in 376.6671 ms
+2023-08-08 12:10:32.550 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 12:10:32.551 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 12:10:32.554 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - - - 200 - application/json;+charset=utf-8 394.7861ms
+2023-08-08 12:10:32.558 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - - - 200 - application/json;+charset=utf-8 399.5685ms
+2023-08-08 12:10:32.560 +05:30 [INF] Route matched with {action = "GetAllTouraries", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.Itinerary]]] GetAllTouraries(System.String) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 12:10:32.561 +05:30 [INF] Route matched with {action = "GetAllPacks", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.TourPackage]]] GetAllPacks() on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 12:10:32.566 +05:30 [INF] Inside GetAll of Itineraries
+2023-08-08 12:10:32.569 +05:30 [INF] Inside GetAll of TourPackages
+2023-08-08 12:10:32.572 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:10:32.581 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:10:32.588 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItineraryId], [t].[Description], [t].[Id], [t].[Name], [t].[PackId]
+FROM [Touraries] AS [t]
+2023-08-08 12:10:32.601 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PackId], [t].[Capacity], [t].[Description], [t].[Duration], [t].[Id], [t].[LocationId], [t].[Name], [t].[Price], [t].[Status]
+FROM [TourPackages] AS [t]
+2023-08-08 12:10:32.604 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.Itinerary, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 12:10:32.608 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.TourPackage, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 12:10:32.609 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages) in 43.1372ms
+2023-08-08 12:10:32.612 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages) in 44.2403ms
+2023-08-08 12:10:32.614 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 12:10:32.616 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 12:10:32.617 +05:30 [INF] HTTP GET /api/TourPack/GetAllTouraries responded 200 in 67.1453 ms
+2023-08-08 12:10:32.619 +05:30 [INF] HTTP GET /api/TourPack/GetAllPacks responded 200 in 67.6552 ms
+2023-08-08 12:10:32.621 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - - - 200 - application/json;+charset=utf-8 76.9137ms
+2023-08-08 12:10:32.623 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - - - 200 - application/json;+charset=utf-8 78.8376ms
+2023-08-08 12:33:18.708 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 12:33:19.261 +05:30 [INF] Now listening on: https://localhost:7169
+2023-08-08 12:33:19.300 +05:30 [INF] Now listening on: http://localhost:5004
+2023-08-08 12:33:19.312 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 12:33:19.320 +05:30 [INF] Hosting environment: Development
+2023-08-08 12:33:19.324 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWTourPackages\
+2023-08-08 12:33:29.066 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/index.html - -
+2023-08-08 12:33:32.368 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/index.html - - - 200 - text/html;charset=utf-8 3328.5577ms
+2023-08-08 12:33:33.296 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 12:33:33.312 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - - - 200 12361 application/javascript;+charset=utf-8 15.5726ms
+2023-08-08 12:33:33.368 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_vs/browserLink - -
+2023-08-08 12:33:33.416 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 48.5738ms
+2023-08-08 12:33:34.603 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - -
+2023-08-08 12:33:35.192 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 588.8813ms
+2023-08-08 12:41:13.725 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - -
+2023-08-08 12:41:13.725 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - -
+2023-08-08 12:41:13.771 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:41:13.771 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:41:13.943 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 12:41:13.943 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 12:41:13.989 +05:30 [INF] Route matched with {action = "GetAllPacks", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.TourPackage]]] GetAllPacks() on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 12:41:13.996 +05:30 [INF] Route matched with {action = "GetAllTouraries", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.Itinerary]]] GetAllTouraries(System.String) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 12:41:14.258 +05:30 [INF] Inside GetAll of TourPackages
+2023-08-08 12:41:14.296 +05:30 [INF] Inside GetAll of Itineraries
+2023-08-08 12:41:15.333 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:41:15.333 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:41:16.324 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItineraryId], [t].[Description], [t].[Id], [t].[Name], [t].[PackId]
+FROM [Touraries] AS [t]
+2023-08-08 12:41:16.324 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PackId], [t].[Capacity], [t].[Description], [t].[Duration], [t].[Id], [t].[LocationId], [t].[Name], [t].[Price], [t].[Status]
+FROM [TourPackages] AS [t]
+2023-08-08 12:41:16.476 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.TourPackage, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 12:41:16.476 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.Itinerary, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 12:41:16.500 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - -
+2023-08-08 12:41:16.504 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:41:16.507 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages) in 2502.1978ms
+2023-08-08 12:41:16.508 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 12:41:16.507 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages) in 2512.5785ms
+2023-08-08 12:41:16.508 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - -
+2023-08-08 12:41:16.511 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 12:41:16.511 +05:30 [INF] Route matched with {action = "GetAllTouraries", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.Itinerary]]] GetAllTouraries(System.String) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 12:41:16.513 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 12:41:16.514 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:41:16.518 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 12:41:16.521 +05:30 [INF] Route matched with {action = "GetAllPacks", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.TourPackage]]] GetAllPacks() on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 12:41:16.522 +05:30 [INF] HTTP GET /api/TourPack/GetAllPacks responded 200 in 2739.7792 ms
+2023-08-08 12:41:16.522 +05:30 [INF] HTTP GET /api/TourPack/GetAllTouraries responded 200 in 2739.7797 ms
+2023-08-08 12:41:16.526 +05:30 [INF] Inside GetAll of TourPackages
+2023-08-08 12:41:16.526 +05:30 [INF] Inside GetAll of Itineraries
+2023-08-08 12:41:16.541 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - - - 200 - application/json;+charset=utf-8 2817.1180ms
+2023-08-08 12:41:16.541 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - - - 200 - application/json;+charset=utf-8 2817.3978ms
+2023-08-08 12:41:16.602 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:41:16.602 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:41:16.620 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItineraryId], [t].[Description], [t].[Id], [t].[Name], [t].[PackId]
+FROM [Touraries] AS [t]
+2023-08-08 12:41:16.623 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PackId], [t].[Capacity], [t].[Description], [t].[Duration], [t].[Id], [t].[LocationId], [t].[Name], [t].[Price], [t].[Status]
+FROM [TourPackages] AS [t]
+2023-08-08 12:41:16.641 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.Itinerary, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 12:41:16.643 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.TourPackage, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 12:41:16.644 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages) in 126.8506ms
+2023-08-08 12:41:16.645 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages) in 121.64ms
+2023-08-08 12:41:16.646 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 12:41:16.648 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 12:41:16.649 +05:30 [INF] HTTP GET /api/TourPack/GetAllTouraries responded 200 in 143.7217 ms
+2023-08-08 12:41:16.650 +05:30 [INF] HTTP GET /api/TourPack/GetAllPacks responded 200 in 131.2611 ms
+2023-08-08 12:41:16.652 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - - - 200 - application/json;+charset=utf-8 152.3871ms
+2023-08-08 12:41:16.657 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - - - 200 - application/json;+charset=utf-8 148.5094ms
+2023-08-08 12:42:01.895 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - -
+2023-08-08 12:42:01.902 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:42:01.911 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - -
+2023-08-08 12:42:01.914 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 12:42:01.915 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:42:01.917 +05:30 [INF] Route matched with {action = "GetAllPacks", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.TourPackage]]] GetAllPacks() on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 12:42:01.918 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 12:42:01.921 +05:30 [INF] Inside GetAll of TourPackages
+2023-08-08 12:42:01.922 +05:30 [INF] Route matched with {action = "GetAllTouraries", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.Itinerary]]] GetAllTouraries(System.String) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 12:42:01.924 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:42:01.926 +05:30 [INF] Inside GetAll of Itineraries
+2023-08-08 12:42:01.943 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:42:01.946 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PackId], [t].[Capacity], [t].[Description], [t].[Duration], [t].[Id], [t].[LocationId], [t].[Name], [t].[Price], [t].[Status]
+FROM [TourPackages] AS [t]
+2023-08-08 12:42:01.960 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.TourPackage, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 12:42:01.963 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages) in 42.0228ms
+2023-08-08 12:42:01.964 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 12:42:01.965 +05:30 [INF] HTTP GET /api/TourPack/GetAllPacks responded 200 in 51.2994 ms
+2023-08-08 12:42:01.968 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - - - 200 - application/json;+charset=utf-8 73.2254ms
+2023-08-08 12:42:01.975 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItineraryId], [t].[Description], [t].[Id], [t].[Name], [t].[PackId]
+FROM [Touraries] AS [t]
+2023-08-08 12:42:01.976 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - -
+2023-08-08 12:42:01.984 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.Itinerary, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 12:42:01.985 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:42:01.986 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages) in 60.922ms
+2023-08-08 12:42:01.987 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 12:42:01.988 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 12:42:01.989 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - -
+2023-08-08 12:42:01.990 +05:30 [INF] Route matched with {action = "GetAllPacks", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.TourPackage]]] GetAllPacks() on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 12:42:01.991 +05:30 [INF] HTTP GET /api/TourPack/GetAllTouraries responded 200 in 72.4592 ms
+2023-08-08 12:42:01.992 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:42:01.997 +05:30 [INF] Inside GetAll of TourPackages
+2023-08-08 12:42:01.999 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - - - 200 - application/json;+charset=utf-8 88.5715ms
+2023-08-08 12:42:02.000 +05:30 [INF] Executing endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 12:42:02.003 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:42:02.005 +05:30 [INF] Route matched with {action = "GetAllTouraries", controller = "TourPack"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[KTWTourPackages.Models.Itinerary]]] GetAllTouraries(System.String) on controller KTWTourPackages.Controllers.TourPackController (KTWTourPackages).
+2023-08-08 12:42:02.012 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PackId], [t].[Capacity], [t].[Description], [t].[Duration], [t].[Id], [t].[LocationId], [t].[Name], [t].[Price], [t].[Status]
+FROM [TourPackages] AS [t]
+2023-08-08 12:42:02.015 +05:30 [INF] Inside GetAll of Itineraries
+2023-08-08 12:42:02.018 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.TourPackage, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 12:42:02.019 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'PackageContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:42:02.019 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages) in 22.4264ms
+2023-08-08 12:42:02.025 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ItineraryId], [t].[Description], [t].[Id], [t].[Name], [t].[PackId]
+FROM [Touraries] AS [t]
+2023-08-08 12:42:02.025 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllPacks (KTWTourPackages)'
+2023-08-08 12:42:02.031 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[KTWTourPackages.Models.Itinerary, KTWTourPackages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 12:42:02.031 +05:30 [INF] HTTP GET /api/TourPack/GetAllPacks responded 200 in 44.5929 ms
+2023-08-08 12:42:02.033 +05:30 [INF] Executed action KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages) in 17.5188ms
+2023-08-08 12:42:02.035 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllPacks - - - 200 - application/json;+charset=utf-8 58.5133ms
+2023-08-08 12:42:02.036 +05:30 [INF] Executed endpoint 'KTWTourPackages.Controllers.TourPackController.GetAllTouraries (KTWTourPackages)'
+2023-08-08 12:42:02.038 +05:30 [INF] HTTP GET /api/TourPack/GetAllTouraries responded 200 in 37.7983 ms
+2023-08-08 12:42:02.040 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/api/TourPack/GetAllTouraries?packid=Pack001 - - - 200 - application/json;+charset=utf-8 51.5781ms
+2023-08-08 13:38:11.763 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 13:38:13.152 +05:30 [INF] Now listening on: https://localhost:7169
+2023-08-08 13:38:13.509 +05:30 [INF] Now listening on: http://localhost:5004
+2023-08-08 13:38:13.518 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 13:38:13.543 +05:30 [INF] Hosting environment: Development
+2023-08-08 13:38:13.548 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWTourPackages\
+2023-08-08 13:38:17.464 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/index.html - -
+2023-08-08 13:38:18.655 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/index.html - - - 200 - text/html;charset=utf-8 1194.0964ms
+2023-08-08 13:38:18.661 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 13:38:18.685 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - - - 200 12361 application/javascript;+charset=utf-8 25.1796ms
+2023-08-08 13:38:18.694 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_vs/browserLink - -
+2023-08-08 13:38:18.731 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.4029ms
+2023-08-08 13:38:19.449 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - -
+2023-08-08 13:38:19.954 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 504.5205ms

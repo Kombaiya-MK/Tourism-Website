@@ -22,6 +22,8 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
+import BookPackageForm from './BookPackageForm';
 
 const paperStyle = {
   padding: '16px',
@@ -31,7 +33,7 @@ const paperStyle = {
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
-
+  const [proceedToCheckout, setProceedToCheckout] = useState(false);
   useEffect(() => {
     // Fetch cart items data
     axios.get('https://localhost:7145/api/WishList/GetAllItemsIntheCart')
@@ -64,11 +66,14 @@ const CartPage = () => {
 
   return (
     <div style={{ margin: '16px' }}>
-      <Paper elevation={3} style={paperStyle}>
-        <Typography variant="h5" gutterBottom>
-          Your Cart
-        </Typography>
-        <List>
+      {proceedToCheckout ? ( // Render BookPackageForm on Proceed to Checkout
+        <BookPackageForm packageName="Selected Package Name" /> // Replace with the selected package name
+      ) : (
+        <Paper elevation={3} style={paperStyle}>
+          <Typography variant="h5" gutterBottom>
+            Your Cart
+          </Typography>
+          <List>
           {cartItems.map((item) => (
             <div key={item.id}>
               <Card variant="outlined" style={{ marginBottom: '8px' }}>
@@ -97,26 +102,33 @@ const CartPage = () => {
             </div>
           ))}
         </List>
-        <Typography variant="h6" style={{ marginTop: '16px' }}>
-          Total: ${getTotalPrice()}
-        </Typography>
-        <Grid container spacing={2} style={{ marginTop: '16px' }}>
-          <Grid item xs={6}>
-            <Tooltip title="Continue Shopping">
-              <Button variant="contained" color="primary" fullWidth startIcon={<ShoppingCartIcon />}>
-                Continue Shopping
-              </Button>
-            </Tooltip>
+          <Typography variant="h6" style={{ marginTop: '16px' }}>
+            Total: ${getTotalPrice()}
+          </Typography>
+          <Grid container spacing={2} style={{ marginTop: '16px' }}>
+            <Grid item xs={6}>
+              <Tooltip title="Continue Shopping">
+                <Button variant="contained" color="primary" fullWidth startIcon={<ShoppingCartIcon />}>
+                  Continue Shopping
+                </Button>
+              </Tooltip>
+            </Grid>
+            <Grid item xs={6}>
+              <Tooltip title="Proceed to Checkout">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  fullWidth
+                  startIcon={<MonetizationOnIcon />}
+                  onClick={() => setProceedToCheckout(true)} // Set proceedToCheckout to true on click
+                >
+                  Proceed to Checkout
+                </Button>
+              </Tooltip>
+            </Grid>
           </Grid>
-          <Grid item xs={6}>
-            <Tooltip title="Proceed to Checkout">
-              <Button variant="contained" color="secondary" fullWidth startIcon={<MonetizationOnIcon />}>
-                Proceed to Checkout
-              </Button>
-            </Tooltip>
-          </Grid>
-        </Grid>
-      </Paper>
+        </Paper>
+      )}
       <ToastContainer position="bottom-right" autoClose={3000} />
     </div>
   );

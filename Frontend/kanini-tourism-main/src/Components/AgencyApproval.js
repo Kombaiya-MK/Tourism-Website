@@ -50,13 +50,11 @@ const AgencyApproval = () => {
   };
 
   const handleApprove = (agencyId) => {
-    // Logic to approve the travel agency with the given agencyId
     console.log(`Approving agency with ID: ${agencyId}`);
     toast.success('Agency approved successfully');
   };
 
   const handleDisapprove = (agencyId) => {
-    // Logic to disapprove the travel agency with the given agencyId
     console.log(`Disapproving agency with ID: ${agencyId}`);
     toast.error('Agency disapproved');
   };

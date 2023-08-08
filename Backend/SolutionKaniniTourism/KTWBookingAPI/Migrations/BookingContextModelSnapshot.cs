@@ -63,7 +63,7 @@ namespace KTWBookingAPI.Migrations
 
                     b.HasKey("BookingId");
 
-                    b.ToTable("Bookings");
+                    b.ToTable("Bookings", (string)null);
                 });
 
             modelBuilder.Entity("KTWBookingAPI.Models.Customer", b =>
@@ -96,7 +96,7 @@ namespace KTWBookingAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("KTWBookingAPI.Models.PackageBooking", b =>
@@ -127,7 +127,7 @@ namespace KTWBookingAPI.Migrations
 
                     b.HasIndex("BookindId");
 
-                    b.ToTable("Packages");
+                    b.ToTable("Packages", (string)null);
                 });
 
             modelBuilder.Entity("KTWBookingAPI.Models.PackageBooking", b =>

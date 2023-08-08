@@ -11,3 +11,272 @@
 2023-08-08 02:27:43.596 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 75.9087ms
 2023-08-08 02:27:43.969 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
 2023-08-08 02:27:44.568 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 598.8685ms
+2023-08-08 08:35:24.178 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 08:35:26.451 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-08 08:35:26.501 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 08:35:26.521 +05:30 [INF] Hosting environment: Development
+2023-08-08 08:35:26.523 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-08 08:35:30.927 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger - -
+2023-08-08 08:35:31.444 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger - - - 301 0 - 527.2910ms
+2023-08-08 08:35:31.722 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-08 08:35:34.695 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 2972.8303ms
+2023-08-08 08:35:34.793 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-standalone-preset.js - -
+2023-08-08 08:35:34.826 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui.css - -
+2023-08-08 08:35:34.898 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-bundle.js - -
+2023-08-08 08:35:35.034 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-08 08:35:35.123 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-08-08 08:35:35.123 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-08-08 08:35:35.913 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-08-08 08:35:36.007 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 1109.6988ms
+2023-08-08 08:35:36.001 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 1207.7766ms
+2023-08-08 08:35:36.005 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/swagger-ui.css - - - 200 144929 text/css 1178.3490ms
+2023-08-08 08:35:35.034 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 08:35:36.343 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1308.9923ms
+2023-08-08 08:35:36.597 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12357 application/javascript;+charset=utf-8 1562.6681ms
+2023-08-08 08:35:41.830 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-08 08:35:42.217 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 386.5775ms
+2023-08-08 08:35:43.875 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/favicon-32x32.png - -
+2023-08-08 08:35:43.879 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-08-08 08:35:43.889 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/favicon-32x32.png - - - 200 628 image/png 14.3039ms
+2023-08-08 10:33:48.790 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 10:33:49.333 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-08 10:33:49.344 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 10:33:49.346 +05:30 [INF] Hosting environment: Development
+2023-08-08 10:33:49.349 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-08 10:33:52.595 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-08 10:33:53.692 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 10:33:53.696 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-08 10:33:53.705 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12357 application/javascript;+charset=utf-8 11.1091ms
+2023-08-08 10:33:53.858 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 1272.3699ms
+2023-08-08 10:33:54.214 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 518.2420ms
+2023-08-08 10:33:55.148 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-08 10:33:55.659 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 511.3373ms
+2023-08-08 11:06:08.354 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 11:06:08.750 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-08 11:06:08.757 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 11:06:08.758 +05:30 [INF] Hosting environment: Development
+2023-08-08 11:06:08.759 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-08 11:06:18.990 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-08 11:06:21.569 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 2586.6187ms
+2023-08-08 11:06:21.672 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 11:06:21.694 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12357 application/javascript;+charset=utf-8 21.7457ms
+2023-08-08 11:06:21.851 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-08 11:06:22.844 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 993.5177ms
+2023-08-08 11:06:23.706 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-08 11:06:24.325 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 619.0076ms
+2023-08-08 11:24:20.305 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 11:24:20.808 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-08 11:24:20.831 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 11:24:20.838 +05:30 [INF] Hosting environment: Development
+2023-08-08 11:24:20.841 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-08 11:24:29.524 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-08 11:24:31.511 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 1997.6334ms
+2023-08-08 11:24:31.697 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 11:24:31.721 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12357 application/javascript;+charset=utf-8 23.0565ms
+2023-08-08 11:24:32.120 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-08 11:24:32.205 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 85.8444ms
+2023-08-08 11:24:33.453 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-08 11:24:33.779 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 325.9793ms
+2023-08-08 11:37:15.238 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 11:37:16.006 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-08 11:37:16.229 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 11:37:16.235 +05:30 [INF] Hosting environment: Development
+2023-08-08 11:37:16.237 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-08 11:37:22.083 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-08 11:37:25.435 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 3362.3402ms
+2023-08-08 11:37:32.907 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 11:37:32.916 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12357 application/javascript;+charset=utf-8 9.0576ms
+2023-08-08 11:37:33.221 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-08 11:37:33.353 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 132.2764ms
+2023-08-08 11:37:35.087 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-08 11:37:35.332 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 245.2000ms
+2023-08-08 12:01:00.714 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Booking/AddBooking application/json 288
+2023-08-08 12:01:00.757 +05:30 [WRN] Failed to determine the https port for redirect.
+2023-08-08 12:01:00.763 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:01:01.340 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.AddBooking (KTWBookingAPI)'
+2023-08-08 12:01:01.387 +05:30 [INF] Route matched with {action = "AddBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWBookingAPI.Models.Booking]] AddBooking(KTWBookingAPI.Models.DTO.BookingDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-08 12:01:01.886 +05:30 [INF] Inside GetAll of Bookings
+2023-08-08 12:01:02.680 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:01:04.313 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingId], [b].[BookedDate], [b].[CheckInDate], [b].[CheckOutDate], [b].[Email], [b].[Id], [b].[PaymentMethod], [b].[Price], [b].[Status]
+FROM [Bookings] AS [b]
+2023-08-08 12:01:04.463 +05:30 [INF] Inside GetAll of booked packages
+2023-08-08 12:01:04.494 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PackageId], [p].[BookindId], [p].[BookingId], [p].[Id], [p].[NoofAdults], [p].[NoofChildren]
+FROM [Packages] AS [p]
+2023-08-08 12:01:04.512 +05:30 [INF] Into the Add Method
+2023-08-08 12:01:04.753 +05:30 [INF] Executed DbCommand (52ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Double), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([BookingId], [BookedDate], [CheckInDate], [CheckOutDate], [Email], [PaymentMethod], [Price], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [Bookings]
+WHERE @@ROWCOUNT = 1 AND [BookingId] = @p0;
+2023-08-08 12:01:04.833 +05:30 [INF] Booking Added Successfully
+2023-08-08 12:01:04.834 +05:30 [INF] Into the Add Method
+2023-08-08 12:01:04.851 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Packages] ([PackageId], [BookindId], [BookingId], [NoofAdults], [NoofChildren])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Packages]
+WHERE @@ROWCOUNT = 1 AND [PackageId] = @p0;
+2023-08-08 12:01:04.855 +05:30 [INF] Package Booking Added Successfully
+2023-08-08 12:01:04.871 +05:30 [INF] Executing CreatedResult, writing value of type 'System.Boolean'.
+2023-08-08 12:01:04.902 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.AddBooking (KTWBookingAPI) in 3507.0481ms
+2023-08-08 12:01:04.905 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.AddBooking (KTWBookingAPI)'
+2023-08-08 12:01:04.917 +05:30 [INF] HTTP POST /api/Booking/AddBooking responded 201 in 4143.2687 ms
+2023-08-08 12:01:04.934 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Booking/AddBooking application/json 288 - 201 - application/json;+charset=utf-8 4221.8957ms
+2023-08-08 12:33:14.745 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 12:33:15.259 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-08 12:33:15.265 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 12:33:15.267 +05:30 [INF] Hosting environment: Development
+2023-08-08 12:33:15.268 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-08 12:33:28.889 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-08 12:33:31.816 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 2927.2031ms
+2023-08-08 12:33:32.344 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 12:33:32.378 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12357 application/javascript;+charset=utf-8 34.0640ms
+2023-08-08 12:33:32.769 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-08 12:33:32.903 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 134.7367ms
+2023-08-08 12:33:34.215 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-08 12:33:34.554 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 339.6117ms
+2023-08-08 12:52:05.931 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Booking/GeneratePrice application/json 50
+2023-08-08 12:52:06.021 +05:30 [WRN] Failed to determine the https port for redirect.
+2023-08-08 12:52:06.051 +05:30 [INF] CORS policy execution successful.
+2023-08-08 12:52:06.296 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.GeneratePrice (KTWBookingAPI)'
+2023-08-08 12:52:06.398 +05:30 [INF] Route matched with {action = "GeneratePrice", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Double]] GeneratePrice(KTWBookingAPI.Models.DTO.GeneratePriceDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-08 12:52:06.902 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-08 12:52:06.931 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.GeneratePrice (KTWBookingAPI) in 523.1547ms
+2023-08-08 12:52:06.946 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.GeneratePrice (KTWBookingAPI)'
+2023-08-08 12:52:06.951 +05:30 [INF] HTTP POST /api/Booking/GeneratePrice responded 400 in 889.4747 ms
+2023-08-08 12:52:06.957 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Booking/GeneratePrice application/json 50 - 400 - application/json;+charset=utf-8 1032.2534ms
+2023-08-08 12:57:18.633 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:57:32.059 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 12:57:32.734 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-08-08 12:57:32.772 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-08-08 12:57:32.827 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-08-08 12:57:56.016 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 12:57:56.285 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-08 12:57:56.291 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 12:57:56.292 +05:30 [INF] Hosting environment: Development
+2023-08-08 12:57:56.294 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-08 12:57:57.223 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-08 12:57:57.807 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 12:57:57.808 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-08 12:57:57.831 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12357 application/javascript;+charset=utf-8 21.5310ms
+2023-08-08 12:57:57.831 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 617.1199ms
+2023-08-08 12:57:57.902 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 93.8378ms
+2023-08-08 12:57:57.970 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-08 12:57:58.104 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 134.0678ms
+2023-08-08 13:01:04.501 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Booking/AddBooking application/json 313
+2023-08-08 13:01:04.583 +05:30 [WRN] Failed to determine the https port for redirect.
+2023-08-08 13:01:04.587 +05:30 [INF] CORS policy execution successful.
+2023-08-08 13:01:04.835 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.AddBooking (KTWBookingAPI)'
+2023-08-08 13:01:04.917 +05:30 [INF] Route matched with {action = "AddBooking", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWBookingAPI.Models.Booking]] AddBooking(KTWBookingAPI.Models.DTO.BookingDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-08 13:01:05.560 +05:30 [INF] Inside GetAll of Bookings
+2023-08-08 13:01:07.750 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 13:01:09.447 +05:30 [INF] Executed DbCommand (132ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingId], [b].[BookedDate], [b].[CheckInDate], [b].[CheckOutDate], [b].[Email], [b].[Id], [b].[PaymentMethod], [b].[Price], [b].[Status]
+FROM [Bookings] AS [b]
+2023-08-08 13:01:09.680 +05:30 [INF] Into the Add Method
+2023-08-08 13:01:10.107 +05:30 [INF] Executed DbCommand (114ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Double), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([BookingId], [BookedDate], [CheckInDate], [CheckOutDate], [Email], [PaymentMethod], [Price], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [Bookings]
+WHERE @@ROWCOUNT = 1 AND [BookingId] = @p0;
+2023-08-08 13:01:10.213 +05:30 [INF] Booking Added Successfully
+2023-08-08 13:01:10.216 +05:30 [INF] Into the Add Method
+2023-08-08 13:01:10.263 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Packages] ([PackageId], [BookindId], [BookingId], [NoofAdults], [NoofChildren])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Packages]
+WHERE @@ROWCOUNT = 1 AND [PackageId] = @p0;
+2023-08-08 13:01:10.266 +05:30 [INF] Package Booking Added Successfully
+2023-08-08 13:01:10.288 +05:30 [INF] Executing CreatedResult, writing value of type 'System.Boolean'.
+2023-08-08 13:01:10.312 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.AddBooking (KTWBookingAPI) in 5383.2093ms
+2023-08-08 13:01:10.315 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.AddBooking (KTWBookingAPI)'
+2023-08-08 13:01:10.324 +05:30 [INF] HTTP POST /api/Booking/AddBooking responded 201 in 5724.6222 ms
+2023-08-08 13:01:10.342 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Booking/AddBooking application/json 313 - 201 - application/json;+charset=utf-8 5842.7162ms
+2023-08-08 13:02:02.436 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Booking/AddCustomer application/json 143
+2023-08-08 13:02:02.448 +05:30 [INF] CORS policy execution successful.
+2023-08-08 13:02:02.459 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI)'
+2023-08-08 13:02:02.470 +05:30 [INF] Route matched with {action = "AddCustomer", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[KTWBookingAPI.Models.Customer]] AddCustomer(KTWBookingAPI.Models.DTO.CustomerDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-08 13:02:22.618 +05:30 [INF] Inside GetAll of Customers
+2023-08-08 13:02:22.670 +05:30 [INF] Entity Framework Core 6.0.20 initialized 'BookingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-08 13:02:22.681 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CustomerAge], [c].[CustomerGender], [c].[CustomerId], [c].[CustomerName], [c].[CustomerStatus]
+FROM [Customers] AS [c]
+2023-08-08 13:02:22.710 +05:30 [INF] Into the Add Method
+2023-08-08 13:02:22.749 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([CustomerAge], [CustomerGender], [CustomerId], [CustomerName], [CustomerStatus])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Customers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-08-08 13:02:22.765 +05:30 [INF] Customer Added Successfully
+2023-08-08 13:02:22.767 +05:30 [INF] Executing CreatedResult, writing value of type 'KTWBookingAPI.Models.Customer'.
+2023-08-08 13:02:22.773 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI) in 20298.0076ms
+2023-08-08 13:02:22.775 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.AddCustomer (KTWBookingAPI)'
+2023-08-08 13:02:22.778 +05:30 [INF] HTTP POST /api/Booking/AddCustomer responded 201 in 20324.4674 ms
+2023-08-08 13:02:22.779 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Booking/AddCustomer application/json 143 - 201 - application/json;+charset=utf-8 20344.7319ms
+2023-08-08 13:03:18.316 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5066/api/Booking/GeneratePrice application/json 50
+2023-08-08 13:03:18.327 +05:30 [INF] CORS policy execution successful.
+2023-08-08 13:03:18.332 +05:30 [INF] Executing endpoint 'KTWBookingAPI.Controllers.BookingController.GeneratePrice (KTWBookingAPI)'
+2023-08-08 13:03:18.338 +05:30 [INF] Route matched with {action = "GeneratePrice", controller = "Booking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Double]] GeneratePrice(KTWBookingAPI.Models.DTO.GeneratePriceDTO) on controller KTWBookingAPI.Controllers.BookingController (KTWBookingAPI).
+2023-08-08 13:03:18.365 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'UserAPI.Models.Error'.
+2023-08-08 13:03:18.378 +05:30 [INF] Executed action KTWBookingAPI.Controllers.BookingController.GeneratePrice (KTWBookingAPI) in 36.4629ms
+2023-08-08 13:03:18.389 +05:30 [INF] Executed endpoint 'KTWBookingAPI.Controllers.BookingController.GeneratePrice (KTWBookingAPI)'
+2023-08-08 13:03:18.390 +05:30 [INF] HTTP POST /api/Booking/GeneratePrice responded 400 in 61.5806 ms
+2023-08-08 13:03:18.392 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5066/api/Booking/GeneratePrice application/json 50 - 400 - application/json;+charset=utf-8 75.6211ms
+2023-08-08 13:11:19.201 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Booking/GetBookings - -
+2023-08-08 13:11:19.227 +05:30 [INF] CORS policy execution successful.
+2023-08-08 13:11:19.242 +05:30 [INF] HTTP GET /api/Booking/GetBookings responded 404 in 12.3269 ms
+2023-08-08 13:11:19.250 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Booking/GetBookings - - - 404 0 - 51.7911ms
+2023-08-08 13:11:19.267 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Booking/GetBookings - -
+2023-08-08 13:11:19.269 +05:30 [INF] CORS policy execution successful.
+2023-08-08 13:11:19.271 +05:30 [INF] HTTP GET /api/Booking/GetBookings responded 404 in 0.2022 ms
+2023-08-08 13:11:19.275 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Booking/GetBookings - - - 404 0 - 7.6611ms
+2023-08-08 13:20:00.816 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Booking/GetBookings - -
+2023-08-08 13:20:00.825 +05:30 [INF] CORS policy execution successful.
+2023-08-08 13:20:00.832 +05:30 [INF] HTTP GET /api/Booking/GetBookings responded 404 in 1.5443 ms
+2023-08-08 13:20:00.836 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Booking/GetBookings - - - 404 0 - 23.3430ms
+2023-08-08 13:20:00.840 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/api/Booking/GetBookings - -
+2023-08-08 13:20:00.845 +05:30 [INF] CORS policy execution successful.
+2023-08-08 13:20:00.846 +05:30 [INF] HTTP GET /api/Booking/GetBookings responded 404 in 0.0590 ms
+2023-08-08 13:20:00.853 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/api/Booking/GetBookings - - - 404 0 - 13.5420ms
+2023-08-08 13:36:59.984 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 13:37:00.255 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-08 13:37:00.261 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 13:37:00.263 +05:30 [INF] Hosting environment: Development
+2023-08-08 13:37:00.264 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-08 13:37:01.310 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-08 13:37:01.928 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 13:37:01.930 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-08 13:37:01.940 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12357 application/javascript;+charset=utf-8 9.5606ms
+2023-08-08 13:37:02.000 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 693.0413ms
+2023-08-08 13:37:02.040 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 109.6989ms
+2023-08-08 13:37:02.118 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-08 13:37:02.338 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 220.4292ms
+2023-08-08 13:38:07.518 +05:30 [INF] User profile is available. Using 'C:\Users\Acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-08 13:38:07.972 +05:30 [INF] Now listening on: http://localhost:5066
+2023-08-08 13:38:07.977 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 13:38:07.978 +05:30 [INF] Hosting environment: Development
+2023-08-08 13:38:07.979 +05:30 [INF] Content root path: D:\Kanini-Tourism-updated\Backend\SolutionKaniniTourism\KTWBookingAPI\
+2023-08-08 13:38:14.969 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/index.html - -
+2023-08-08 13:38:17.877 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/index.html - - - 200 - text/html;charset=utf-8 2920.3402ms
+2023-08-08 13:38:17.989 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - -
+2023-08-08 13:38:17.998 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_framework/aspnetcore-browser-refresh.js - - - 200 12357 application/javascript;+charset=utf-8 8.3552ms
+2023-08-08 13:38:18.060 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/_vs/browserLink - -
+2023-08-08 13:38:18.217 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 156.3444ms
+2023-08-08 13:38:19.286 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - -
+2023-08-08 13:38:19.954 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5066/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 667.3702ms

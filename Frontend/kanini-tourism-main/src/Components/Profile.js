@@ -35,7 +35,7 @@ function ProfileCard() {
 
   useEffect(() => {
     // Fetch user profile data based on the email stored in local storage
-    const storedEmail = localStorage.getItem('userEmail');
+    const storedEmail = sessionStorage.getItem('userEmail');
     if (storedEmail) {
       setEmail(storedEmail);
       fetchProfileData(storedEmail);

@@ -153,5 +153,10 @@ namespace KTWLocationsAPI.Services
             var specialities = await _qrySplRepo.GetAll();
             return specialities.Where(x=>x.LocationId == location).ToList();
         }
+
+        public Task<ICollection<Image>> GetAllImages()
+        {
+            return _qryImageRepo.GetAll();
+        }
     }
 }

@@ -22,6 +22,12 @@ import {
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { styled } from '@mui/system';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import ModalForm from './ModelForm';
 
 // Styled components
 const BookingContainer = styled('div')({
@@ -60,38 +66,29 @@ const ConfirmButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-// Sample booking data for users
-const sampleUserBookings = [
-  { id: 1, packageName: 'Tokyo Tour', agent: 'John Doe', date: '2023-08-10', status: 'Confirmed', amount: 300 },
-  { id: 2, packageName: 'Kyoto Experience', agent: 'Jane Smith', date: '2023-08-15', status: 'Pending', amount: 250 },
-  { id: 3, packageName: 'Osaka Adventure', agent: 'Michael Johnson', date: '2023-08-20', status: 'Confirmed', amount: 180 },
-];
-
-// Sample booking data for agents
-const sampleAgentBookings = [
-  { id: 1, packageName: 'Mount Fuji Trek', user: 'Alice Brown', date: '2023-09-05', status: 'Confirmed', amount: 280 },
-  { id: 2, packageName: 'Kyoto Experience', user: 'Bob Green', date: '2023-09-10', status: 'Pending', amount: 230 },
-  { id: 3, packageName: 'Tokyo City Tour', user: 'Charlie White', date: '2023-09-15', status: 'Confirmed', amount: 150 },
-];
-
 function Booking({ isAgent }) {
   const theme = useTheme();
-  const [bookings, setBookings] = useState(isAgent ? sampleAgentBookings : sampleUserBookings);
+  const [bookings, setBookings] = useState([]);
   const [selectedBooking, setSelectedBooking] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const navigate = useNavigate();
 
-  const handleCancelBooking = (bookingId) => {
-    const updatedBookings = bookings.map((booking) =>
-      booking.id === bookingId ? { ...booking, status: 'Canceled' } : booking
-    );
-    setBookings(updatedBookings);
-
-    // Implement wallet update logic here for user cancellations
-
-    handleCloseConfirmModal();
+  const handleCancelBooking = async (bookingId) => {
+    try {
+      await axios.put(`http://localhost:5066/api/Booking/CancelBooking/${bookingId}`);
+      const updatedBookings = bookings.map((booking) =>
+        booking.bookingId === bookingId ? { ...booking, status: 'Canceled' } : booking
+      );
+      setBookings(updatedBookings);
+      handleCloseConfirmModal();
+      toast.success('Booking canceled successfully');
+    } catch (error) {
+      console.error('Error canceling booking:', error);
+      toast.error('An error occurred while canceling booking');
+    }
   };
 
   const handleOpenModal = (bookingId) => {
@@ -114,6 +111,43 @@ function Booking({ isAgent }) {
     setIsConfirmModalOpen(false);
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5066/api/Booking/GetBookings');
+        setBookings(response.data);
+      } catch (error) {
+        console.error('Error fetching bookings:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const handleNewBooking = async () => {
+    try {
+      const newBooking = {
+        bookingId: 'id',
+        packageId: sessionStorage.getItem('packageId'),
+        email: sessionStorage.getItem('email'),
+        bookedDate: new Date().toISOString(),
+        checkInDate: '2023-08-08T06:30:57.827Z',
+        checkOutDate: '2023-08-08T06:30:57.827Z',
+        price: 0,
+        status: 'string',
+        paymentMethod: 'string',
+        noofAdults: 0,
+        noofChildren: 0,
+      };
+
+      await axios.post('http://localhost:5066/api/Booking/AddBooking', newBooking);
+      toast.success('Booking successful');
+      navigate('/');
+    } catch (error) {
+      console.error('Error creating booking:', error);
+      toast.error('An error occurred while creating booking');
+    }
+  };
+
   return (
     <BookingContainer>
       <Container>
@@ -127,46 +161,36 @@ function Booking({ isAgent }) {
                 <TableHead>
                   <TableRow>
                     <TableCellBold>Booking ID</TableCellBold>
-                    <TableCellBold>Package Name</TableCellBold>
-                    <TableCellBold>{isAgent ? 'User' : 'Agent'}</TableCellBold>
-                    <TableCellBold>Date</TableCellBold>
+                    <TableCellBold>Package Name</TableCellBold> 
+                    <TableCellBold>Booked Date</TableCellBold> 
                     <TableCellBold>Status</TableCellBold>
                     <TableCellBold>Actions</TableCellBold>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {bookings.map((booking) => (
-                    <TableRow key={booking.id}>
-                      <TableCellBold>{booking.id}</TableCellBold>
-                      <TableCellBold>{booking.packageName}</TableCellBold>
-                      <TableCellBold>{isAgent ? booking.user : booking.agent}</TableCellBold>
-                      <TableCellBold>{booking.date}</TableCellBold>
-                      <TableCellBold>{booking.status}</TableCellBold>
+                    <TableRow key={booking.bookingId}>
+                      <TableCellBold>{booking.bookingId}</TableCellBold>
+                      <TableCellBold>{booking.packageName}</TableCellBold> {/* Display Package Name */}
+                      <TableCellBold>{new Date(booking.bookedDate).toLocaleDateString()}</TableCellBold> {/* Display Booked Date */}
                       <TableCellBold>
                         {booking.status === 'Confirmed' && (
                           <>
-                            <Button onClick={() => handleOpenModal(booking.id)}>View</Button>
-                            {!isAgent && (
-                              <>
-                                <Button onClick={() => handleOpenConfirmModal(booking.id)} color="error">
-                                  Cancel
-                                </Button>
-                                <Dialog open={isConfirmModalOpen} onClose={handleCloseConfirmModal}>
-                                  <DialogTitle>Confirm Cancellation</DialogTitle>
-                                  <DialogContent>
-                                    Are you sure you want to cancel this booking?
-                                  </DialogContent>
-                                  <DialogActions>
-                                    <Button onClick={handleCloseConfirmModal} color="primary">
-                                      No
-                                    </Button>
-                                    <ConfirmButton onClick={() => handleCancelBooking(selectedBooking)}>
-                                      Yes, Cancel
-                                    </ConfirmButton>
-                                  </DialogActions>
-                                </Dialog>
-                              </>
-                            )}
+                            <Button onClick={() => handleOpenConfirmModal(booking.bookingId)} color="error">
+                              Cancel
+                            </Button>
+                          </>
+                        )}
+                      </TableCellBold>
+                      <TableCellBold>
+                        {booking.status === 'Confirmed' && (
+                          <>
+                            <Button onClick={() =>handleCancelBooking} color="error">
+                              Cancel
+                            </Button>
+                            <Button onClick={() => navigate(`/invoice/${booking.bookingId}`)} color="primary">
+                              View Details
+                            </Button>
                           </>
                         )}
                       </TableCellBold>
@@ -177,32 +201,9 @@ function Booking({ isAgent }) {
             </TableContainer>
           </CardContent>
         </BookingCard>
-        <Modal
-          open={isModalOpen}
-          onClose={handleCloseModal}
-          closeAfterTransition
-          BackdropComponent={Backdrop}
-          BackdropProps={{
-            timeout: 500,
-          }}
-        >
-          <Fade in={isModalOpen}>
-            <ModalContainer>
-              <ModalContent>
-                {/* Modal content goes here */}
-                {selectedBooking !== null && (
-                  <div>
-                    <Typography variant="h6">Booking Details</Typography>
-                    {/* Display booking details */}
-                  </div>
-                )}
-              </ModalContent>
-            </ModalContainer>
-          </Fade>
-        </Modal>
+        <ToastContainer position="bottom-right" autoClose={3000} />
       </Container>
     </BookingContainer>
   );
 }
-
 export default Booking;

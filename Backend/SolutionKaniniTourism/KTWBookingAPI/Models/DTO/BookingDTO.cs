@@ -5,6 +5,7 @@ namespace KTWBookingAPI.Models.DTO
     public class BookingDTO
     {
         public string? BookingId { get; set; }
+        public string? PackageId { get; set; }
         public string? Email { get; set; }
         public DateTime? BookedDate { get; set; }
         public DateTime? CheckInDate { get; set; }
@@ -14,5 +15,6 @@ namespace KTWBookingAPI.Models.DTO
         public string? PaymentMethod { get; set; }
         public int NoofAdults { get; set; }
         public int NoofChildren { get; set; }
+
     }
 }

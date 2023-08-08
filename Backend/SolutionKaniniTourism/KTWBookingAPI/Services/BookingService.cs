@@ -55,7 +55,7 @@ namespace KTWBookingAPI.Services
                 throw new EmptyValueException("Adapter returned null for Book object");
             PackageBooking pack = new()
             {
-                PackageId = "JPNBOOKPACK00" + GetPackageBookingCount().ToString(),
+                PackageId = booking.PackageId,
                 NoofAdults = booking.NoofAdults,
                 NoofChildren = booking.NoofChildren,
                 BookingId = booking.BookingId,

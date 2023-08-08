@@ -41,6 +41,21 @@ const ImageGallery = () => {
       });
   }, []);
 
+  useEffect(() => {
+    // Fetch images data
+    axios.get('https://localhost:7153/api/Location/GetAllImages')
+      .then(response => {
+        const uploaded = response.data.map(image => ({
+          location: locationName,
+          url: image,
+        }));
+        setUploadedImages(uploaded);
+      })
+      .catch(error => {
+        console.error('Error fetching Images:', error);
+      });
+  }, []);
+
   const handleLocationChange = (event) => {
     setSelectedLocation(event.target.value);
     const selectedLocationName = locations.find(location => location.locationId === event.target.value)?.name;
@@ -52,58 +67,54 @@ const ImageGallery = () => {
     setImageFiles(files);
   };
 
-  const handleUpload = () => {
-    // Validate the form before uploading
+  const handleUpload = async () => {
+    await validationSchema.validate({
+      location: selectedLocation,
+      images: imageFiles,
+    });
+
     const AZURITE_BLOB_SERVICE_URL = 'http://localhost:10000';
     const ACCOUNT_NAME = 'devstoreaccount1';
     const ACCOUNT_KEY = 'Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==';
 
     const blobServiceClient = new BlobServiceClient(
-      "http://127.0.0.1:10000/devstoreaccount1/locations?sv=2018-03-28&st=2023-08-07T21%3A18%3A28Z&se=2023-08-08T21%3A18%3A28Z&sr=c&sp=racwdl&sig=PPX0G2c4rQ4a1QoJec12sKbMD5FOCls92W03FxEkkSs%3D",
-      "?sv=2018-03-28&st=2023-08-07T21%3A18%3A28Z&se=2023-08-08T21%3A18%3A28Z&sr=c&sp=racwdl&sig=PPX0G2c4rQ4a1QoJec12sKbMD5FOCls92W03FxEkkSs%3D"
+      "http://127.0.0.1:10000/devstoreaccount1/locations?sv=2018-03-28&st=2023-08-08T04%3A27%3A10Z&se=2023-08-09T04%3A27%3A10Z&sr=c&sp=racwdl&sig=C4v1SLpP16IxXVf8gFhcRlsH86I%2FVulmXsn9vQfRsXA%3D",
+      "sv=2018-03-28&st=2023-08-08T04%3A27%3A10Z&se=2023-08-09T04%3A27%3A10Z&sr=c&sp=racwdl&sig=C4v1SLpP16IxXVf8gFhcRlsH86I%2FVulmXsn9vQfRsXA%3D"
     );
 
     const containerClient = blobServiceClient.getContainerClient('locations');
-    for(let i = 0; i < imageFiles.length;i++)
-    {
-      const blobClient = containerClient.getBlobClient(imageFiles[i].name);
-            const blockBlobClient = blobClient.getBlockBlobClient();
-            const result = blockBlobClient.uploadBrowserData(imageFiles[i], {
-                blockSize: 4 * 1024 * 1024,
-                concurrency: 20,
-                onProgress: ev => console.log(ev)
-            });
+    for (let i = 0; i < imageFiles.length; i++) {
+      if (imageFiles[i]) {
+        const blobClient = containerClient.getBlobClient(imageFiles[i].name);
+        const blockBlobClient = blobClient.getBlockBlobClient();
+        const result = blockBlobClient.uploadBrowserData(imageFiles[i], {
+          blockSize: 4 * 1024 * 1024,
+          concurrency: 20,
+          onProgress: ev => console.log(ev)
+        });
+      }
     }
 
+    const imageObject = {
+      locationId: selectedLocation,
+      picture: imageFiles[0].name,
+    };
 
-    validationSchema.validate({ location: selectedLocation, images: imageFiles })
-      .then(() => {
-        const formData = new FormData();
-        formData.append('locationId', selectedLocation);
-        imageFiles.forEach(file => {
-          formData.append('picture', imageFiles.name);
-        });
+    console.log(imageObject)
 
-        axios.post('https://localhost:7153/api/Location/AddImage', formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        })
-          .then(response => {
-            const uploaded = response.data.map(image => ({
-              location: locationName,
-              url: image,
-            }));
-            setUploadedImages((prevImages) => [...prevImages, ...uploaded]);
-            setImageFiles([]);
-            toast.success('Images uploaded successfully');
-          })
-          .catch(error => {
-            console.error('Error uploading images:', error);
-            toast.error('An error occurred while uploading images');
-          });
+    axios.post('https://localhost:7153/api/Location/AddImage', imageObject)
+      .then(response => {
+        const uploaded = response.data.map(image => ({
+          location: locationName,
+          url: image,
+        }));
+        setImageFiles([]);
+        toast.success('Images uploaded successfully');
       })
       .catch(error => {
+        console.error('Error uploading images:', error);
+        toast.error('An error occurred while uploading images');
+      }).catch(error => {
         error.inner.forEach(err => {
           toast.error(err.message);
         });
@@ -127,11 +138,15 @@ const ImageGallery = () => {
             onChange={handleLocationChange}
             label="Location"
           >
-            {locations.map(location => (
-              <MenuItem key={location.locationId} value={location.locationId}>
-                {location.name}
-              </MenuItem>
-            ))}
+            {locations.length === 0 ? (
+              <p>No Data available</p>
+            ) : (
+              locations.map(location => (
+                <MenuItem key={location.locationId} value={location.locationId}>
+                  {location.name}
+                </MenuItem>
+              ))
+            )}
           </Select>
         </FormControl>
         <TextField
@@ -147,10 +162,12 @@ const ImageGallery = () => {
 
       <div style={{ marginTop: 20, width: '100%' }}>
         <ImageList cols={4} gap={8}>
-          {uploadedImages.map((image, index) => (
-            <ImageListItem key={index}>
-              <img src={image.url} alt={`Location: ${image.location}`} />
-              <ImageListItemBar title={`Location: ${image.location}`} />
+          {uploadedImages.length === 0 ? (
+              <p>No Data available</p>
+            ) :uploadedImages.map((image) => (
+            <ImageListItem key={image.url.locationId}>
+              <img src={`http://127.0.0.1:10000/devstoreaccount1/locations/locations/${image.url.picture}`} alt={`Location: ${image.locationId}`} />
+              <ImageListItemBar title={`Location: ${locations.find(x => x.locationId === image.url.locationId)?.locationName}`} />
             </ImageListItem>
           ))}
         </ImageList>

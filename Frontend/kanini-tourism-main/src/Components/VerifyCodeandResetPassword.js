@@ -45,7 +45,7 @@ function VerifyCodeAndResetPassword() {
 
       if (!isCodeVerified) {
         // Validate verification code
-        const email = localStorage.getItem('email'); // Get email from local storage
+        const email = sessionStorage.getItem('email'); // Get email from local storage
         const verificationData = {
           email: email,
           code: code,
@@ -66,7 +66,7 @@ function VerifyCodeAndResetPassword() {
         }
       } else {
         // Reset password
-        const email = localStorage.getItem('email'); // Get email from local storage
+        const email = sessionStorage.getItem('email'); // Get email from local storage
         const passwordData = {
           email: email,
           password: password,

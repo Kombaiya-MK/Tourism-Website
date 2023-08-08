@@ -64,6 +64,9 @@ import BookPackageForm from '../Components/BookPackageForm'
 import ForgotPassword from '../Components/ForgotPassword';
 import Modal from '@mui/material/Modal';
 import VerifyCodeAndResetPassword from '../Components/VerifyCodeandResetPassword';
+import Admin from '../Components/Protected/Admin';
+import Agent from '../Components/Protected/Agent';
+import User from '../Components/Protected/User';
 
 
 const sampleSelectedPacks = [
@@ -140,7 +143,7 @@ function Navbar({ userRole }) {
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(
-    localStorage.getItem('UserEmail') && localStorage.getItem('token')
+    sessionStorage.getItem('email') && sessionStorage.getItem('token')
   );
 
   const navigate = useNavigate();
@@ -170,8 +173,8 @@ function Navbar({ userRole }) {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('UserEmail');
-    localStorage.removeItem('token');
+    sessionStorage.removeItem('email');
+    sessionStorage.removeItem('token');
     setIsLoggedIn(false);
     setIsLogoutModalOpen(false);
     navigate('/');
@@ -212,19 +215,18 @@ function Navbar({ userRole }) {
     { text: 'Logout', icon: <LogoutIcon />, onClick: toggleLogoutModal },
   ];
 
-  userRole = 'admin'
-  //const isAgentApproved = userRole === 'agent' && true; 
-  const isAgentApproved = true
 
+  const isAgentApproved = userRole === 'agent' && true; 
   
   let drawerItems = [];
-  if (!isLoggedIn) {
+  if (isLoggedIn) {
     drawerItems = userRole === 'admin'
       ? adminDrawerItems
       : (userRole === 'agent' ? (isAgentApproved ? agentDrawerItems : [{ text: 'Waiting Page', icon: <AccessTimeIcon />, link: '/waiting-page' }]) : userDrawerItems);
   } else {
     drawerItems = guestDrawerItems;
   }
+  
   return (
     <div>
       <Header>
@@ -307,16 +309,16 @@ function Navbar({ userRole }) {
         <Route path="/plan-your-trip" element={<Packages />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/invoice" element={<InvoicePage selectedPacks={sampleSelectedPacks} totalAmount={sampleTotalAmount} />} />
-        <Route path="/agency-approval" element={<AgencyApproval />} />
-        <Route path="/image-gallery" element={<ImageGallery />} />
-        <Route path="/agent" element={<AgentDashboard />} />
+        <Route path="/agency-approval" element={<Admin role = {sessionStorage.getItem('role')} ><AgencyApproval/></Admin>} />
+        <Route path="/image-gallery" element={<Admin role = {sessionStorage.getItem('role')} ><ImageGallery/></Admin>} />
+        <Route path="/agent" element={<Agent role = {sessionStorage.getItem('role')} ><AgentDashboard/></Agent>} />
         <Route path="/booking" element={<Booking isAgent={userRole === 'agent'} />} />
-        <Route path="/waiting-page" element={<WaitingPage />} />
-        <Route path="/success-page" element={<SuccessPage />} />
-        <Route path="/location-form" element={<LocationForm />} />
-        <Route path="/speciality-input" element={<SpecialityInput />} />
-        <Route path="/image-upload" element={<ImageUpload />} />
-        <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/waiting-page" element={<Agent role = {sessionStorage.getItem('role')} ><WaitingPage/></Agent>} />
+        <Route path="/success-page" element={<Agent role = {sessionStorage.getItem('role')} ><SuccessPage/></Agent>} />
+        <Route path="/location-form" element={<Admin role = {sessionStorage.getItem('role')} ><LocationForm/></Admin>} />
+        <Route path="/speciality-input" element= {<Admin role = {sessionStorage.getItem('role')} ><SpecialityInput/></Admin>} />
+        <Route path="/image-upload" element={<Admin role = {sessionStorage.getItem('role')} ><ImageUpload/></Admin>} />
+        <Route path="/admin" element={<Admin role = {sessionStorage.getItem('role')} ><AdminPanel/></Admin>} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/login" element={<LoginForm />} />
       </Routes>
@@ -326,6 +328,7 @@ function Navbar({ userRole }) {
         <div><BookPackageForm/></div>
         <div><AgencyForm/></div>
         <div><ForgotPassword/></div> */}
+        <div><LoginForm/></div>
     </div>
   );
 }

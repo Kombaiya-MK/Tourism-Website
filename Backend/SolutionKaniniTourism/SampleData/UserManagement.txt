@@ -14,3 +14,5 @@
 }
 
 http://127.0.0.1:10000/devstoreaccount1/locations?sv=2018-03-28&st=2023-08-07T21%3A18%3A28Z&se=2023-08-08T21%3A18%3A28Z&sr=c&sp=racwdl&sig=PPX0G2c4rQ4a1QoJec12sKbMD5FOCls92W03FxEkkSs%3D
+
+ <img src={`http://127.0.0.1:10000/devstoreaccount1/locations/locations/${image.picture}`} alt={`Location: ${image.location}`} />

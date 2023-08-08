@@ -5,11 +5,18 @@ import { CarouselProvider, Slider, Slide, Dot } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import '../Assets/Styles/Home.css';
 
-function DestinationCard({ destination, onClick }) {
+function DestinationCard({ destination, onClick, images }) {
+  let destinationImage = ''
+  if(images == undefined || images.length == 0)
+    destinationImage = ''
+  else
+    destinationImage = images.find(image => image.locationId === destination.id)?.picture;
+  console.log(destinationImage)
+
   return (
     <Grid item xs={12} md={4}>
       <Card className="hover-card" onClick={() => onClick(destination)}>
-        <CardMedia component="img" height={200} image={destination.image} alt={destination.name} />
+        <CardMedia component="img" height={200} image={`http://127.0.0.1:10000/devstoreaccount1/locations/locations/${destinationImage}`} alt={destination.name} />
         <CardContent>
           <Typography variant="h5">{destination.name}</Typography>
           <Typography variant="body2">{destination.description}</Typography>
@@ -25,6 +32,7 @@ function Home() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [destinations, setDestinations] = useState([]);
   const [experiences, setExperiences] = useState([]);
+  const [images , setImages] = useState()
 
   useEffect(() => {
     // Fetch destinations data
@@ -51,6 +59,14 @@ function Home() {
           description: experience.description
         }));
         setExperiences(experienceData);
+      })
+      .catch(error => {
+        console.error('Error fetching experiences:', error);
+      });
+
+  axios.get('https://localhost:7153/api/Location/GetAllImages')
+      .then(response => {
+        setExperiences(response.data);
       })
       .catch(error => {
         console.error('Error fetching experiences:', error);
